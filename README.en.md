@@ -1,36 +1,12 @@
 # plus-doc
 
 #### Description
-{**When you're done, you can delete the content in this README and update the file with details for others getting started with your repository**}
+- `RuoYi-Vue-Plus` 分布式集群框架
+- `RuoYi-Cloud-Plus` 微服务框架
 
-#### Software Architecture
-Software architecture description
+#### Repository
+| 介绍          | 项目名              | 项目地址                                                                                                                   | 注意事项                       |
+|-------------|:-----------------|------------------------------------------------------------------------------------------------------------------------|----------------------------|
+| 🔥 分布式集群框架  | RuoYi-Vue-Plus   | - [Gitee](https://gitee.com/JavaLionLi/RuoYi-Vue-Plus)<br> - [GitHub](https://github.com/JavaLionLi/RuoYi-Vue-Plus)    | 重写RuoYi-Vue全方位升级(不兼容原框架)   |
+| 🔥 微服务框架    | RuoYi-Cloud-Plus | - [Gitee](https://gitee.com/JavaLionLi/RuoYi-Cloud-Plus)<br>- [GitHub](https://github.com/JavaLionLi/RuoYi-Cloud-Plus) | 重写RuoYi-Cloud全方位升级(不兼容原框架) |
 
-#### Installation
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### Instructions
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### Contribution
-
-1.  Fork the repository
-2.  Create Feat_xxx branch
-3.  Commit your code
-4.  Create Pull Request
-
-
-#### Gitee Feature
-
-1.  You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4.  The most valuable open source project [GVP](https://gitee.com/gvp)
-5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
