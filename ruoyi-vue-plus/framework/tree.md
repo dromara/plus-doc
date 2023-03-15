@@ -1,8 +1,8 @@
 ## 目录结构
-v4.3.0
+v5.0.0
 ~~~
 RuoYi-Vue-Plus
-├─ ruoyi-admin          // 管理模块 [8080,9101]
+├─ ruoyi-admin                         // 管理模块 [8080,9101]
 │  └─ RuoYiApplication                 // 启动类
 │  └─ RuoYiServletInitializer          // 容器部署初始化类
 │  └─ resources                        // 资源文件
@@ -13,66 +13,40 @@ RuoYi-Vue-Plus
 │      └─ banner.txt                   // 框架启动图标
 │      └─ logback.xml                  // 日志配置文件
 │      └─ spy.properties               // p6spy配置文件
-├─ ruoyi-common         // 通用模块
-│  └─ annotation                       // 通用注解
-│      └─ Anonymous                    // 匿名访问不鉴权注解
-│      └─ CellMerge                    // excel列合并
-│      └─ DataColumn                   // 数据权限字段绑定
-│      └─ DataPermission               // 数据权限组
-│      └─ ExcelDictFormat              // 字典格式化
-│      └─ Log                          // 自定义操作日志记录注解
-│      └─ RateLimiter                  // 自定义限流注解
-│      └─ RepeatSubmit                 // 自定义注解防止表单重复提交
-│      └─ Sensitive                    // 数据脱敏注解
-│  └─ captcha                          // 验证码相关
-│  └─ config                           // 通用配置
-│  └─ constant                         // 通用常量
-│  └─ convert                          // 转换器
-│  └─ core                             // 通用核心代码
-│      └─ controller                   // web层通用数据处理
-│      └─ domain                       // 通用实体
-│      └─ page                         // 分页实体
-│      └─ mapper                       // 通用mapper
-│      └─ validate                     // 通用校验类
-│      └─ service                      // 通用接口
-│  └─ enums                            // 枚举包    
-│  └─ exception                        // 异常包
-│  └─ excel                            // 异常包
-│  └─ filter                           // 过滤器包
-│  └─ helper
-│      └─ DataBaseHelper               // 数据库助手
-│      └─ DataPermissionHelper         // 数据权限助手
-│      └─ LoginHelper                  // 登录鉴权助手
-│  └─ jackson                          // json序列化工具
-│  └─ xss                              // xss过滤拦截
-│  └─ utils                            // 工具类包
-│      └─ email/MailUtils              // 邮件工具
-│      └─ file/FileUtils               // 文件处理工具类
-│      └─ ip/AddressUtils              // 获取地址类
-│      └─ poi/ExcelUtil                // Excel相关处理
-│      └─ redis/CacheUtils             // 缓存操作工具类
-│      └─ redis/QueueUtils             // 分布式队列工具
-│      └─ redis/RedisUtils             // redis 工具类
-│      └─ reflect/ReflectUtils         // 反射工具类
-│      └─ spring/SpringUtils           // spring工具类
-│      └─ sql/SqlUtil                  // sql操作工具类
-│      └─ BeanCopyUtils                // bean深拷贝工具
-│      └─ DateUtils                    // 时间工具类
-│      └─ JsonUtils                    // JSON 工具类
-│      └─ MessageUtils                 // 获取i18n资源文件
-│      └─ ServletUtils                 // 客户端工具类
-│      └─ StreamUtils                  // stream 流工具类
-│      └─ StringUtils                  // 自定义字符串工具
-│      └─ Threads                      // 线程相关工具类
-│      └─ TreeBuildUtils               // 封装系统树构建
-│      └─ ValidatorUtils               // 校验框架工具
-├─ ruoyi-demo           // 演示模块
-│  └─ controller        // 演示controller
-│      └─ queue         // 队列演示案例
-│          └─ BoundedQueueController   // 有界队列 演示案例
-│          └─ DelayedQueueController   // 延迟队列 演示案例
-│          └─ PriorityDemo             // 优先队列 实体类
-│          └─ PriorityQueueController  // 优先队列 演示案例
+│      └─ ip2region.xdb                // IP区域地址库
+├─ ruoyi-extend                        // 扩展模块
+│  └─ ruoyi-monitor-admin              // admin监控模块 [9090]
+│  └─ ruoyi-xxl-job-admin              // 任务调度中心模块 [9100]
+├─ ruoyi-common                        // 通用模块
+│  └─ ruoyi-common-bom                 // common依赖包管理
+│  └─ ruoyi-common-core                // 核心模块
+│  └─ ruoyi-common-doc                 // 系统接口模块
+│  └─ ruoyi-common-encrypt             // 数据加解密模块
+│  └─ ruoyi-common-excel               // excel模块
+│  └─ ruoyi-common-idempotent          // 幂等功能模块
+│  └─ ruoyi-common-job                 // 定时任务模块
+│  └─ ruoyi-common-json                // 序列化模块
+│  └─ ruoyi-common-log                 // 日志模块
+│  └─ ruoyi-common-mail                // 邮件模块
+│  └─ ruoyi-common-mybatis             // 数据库模块
+│  └─ ruoyi-common-oss                 // oss服务模块
+│  └─ ruoyi-common-ratelimiter         // 限流功能模块
+│  └─ ruoyi-common-redis               // 缓存服务模块
+│  └─ ruoyi-common-satoken             // satoken模块
+│  └─ ruoyi-common-security            // 安全模块
+│  └─ ruoyi-common-sensitive           // 脱敏模块
+│  └─ ruoyi-common-sms                 // 短信模块
+│  └─ ruoyi-common-tenant              // 租户模块
+│  └─ ruoyi-common-translation         // 通用翻译模块
+│  └─ ruoyi-common-web                 // web模块
+├─ ruoyi-modules                       // 模块组
+│  └─ ruoyi-demo                       // 演示模块
+│    └─ controller                     // 演示controller
+│      └─ queue                        // 队列演示案例
+│        └─ BoundedQueueController     // 有界队列 演示案例
+│        └─ DelayedQueueController     // 延迟队列 演示案例
+│        └─ PriorityDemo               // 优先队列 实体类
+│        └─ PriorityQueueController    // 优先队列 演示案例
 │      └─ MailController               // 邮件发送案例
 │      └─ RedisCacheController         // spring-cache 演示案例
 │      └─ RedisLockController          // Redis锁演示类
@@ -86,42 +60,12 @@ RuoYi-Vue-Plus
 │      └─ TestSensitiveController      // 测试数据脱敏控制器
 │      └─ TestDemoController           // 测试crud数据权限类
 │      └─ TestTreeController           // 测试树表数据权限类
-├─ ruoyi-extend         // 扩展模块
-│  └─ ruoyi-monitor-admin              // admin监控模块 [9090]
-│  └─ ruoyi-xxl-job-admin              // 任务调度中心模块 [9100]
-├─ ruoyi-framework      // 核心配置模块
-│  └─ aspectj                          // aop相关处理
-│  └─ config                           // 系统配置相关
-│      └─ properties                   // 配置映射包
-│      └─ ApplicationConfig            // 框架配置
-│      └─ AsyncConfig                  // 异步配置
-│      └─ CaptchaConfig                // 验证码配置
-│      └─ DruidConfig                  // druid 配置多数据源
-│      └─ FilterConfig                 // filter 配置
-│      └─ I18nConfig                   // 国际化配置
-│      └─ JacksonConfig                // jackson 序列化配置
-│      └─ MailConfig                   // JavaMail 配置
-│      └─ MybatisPlusConfig            // mybatis-plus 配置
-│      └─ RedisConfig                  // redis 配置
-│      └─ ResourcesConfig              // 通用资源配置
-│      └─ SaTokenConfig                // sa-token 配置
-│      └─ SwaggerConfig                // Swagger 文档配置
-│      └─ ThreadPoolConfig             // 线程池配置
-│      └─ TLogConfig                   // TLog 分布式日志配置
-│      └─ UndertowConfig               // Undertow 自定义配置
-│      └─ ValidatorConfig              // 校验框架配置
-│  └─ jackson                          // jackson相关
-│  └─ manager                          // 管理器相关
-│  └─ handler                          // 处理器相关
-│  └─ Interceptor                      // 拦截器相关
-│  └─ satoken                          // 权限鉴权相关
-│  └─ web                              // 全局异常处理器
-├─ ruoyi-generator      // 代码生成模块
-│  └─ util                             // 工具类
+│  └─ ruoyi-generator                  // 代码生成模块
+│    └─ util                           // 工具类
 │      └─ GenUtils                     // 代码生成器 工具类
 │      └─ VelocityInitializer          // 模板初始化工厂
 │      └─ VelocityUtils                // 模板处理工具类
-│  └─ resources                        // 资源文件
+│    └─ resources                      // 资源文件
 │      └─ vm/java
 │          └─ bo.java.vm               // 业务bo对象模板
 │          └─ domain.java.vm           // 数据实体对象模板
@@ -134,9 +78,6 @@ RuoYi-Vue-Plus
 │          └─ mapper.xml.vm            // mapper XML 模板
 │      └─ vm/js/api.js.vm              // 页面 js api 模板
 │      └─ vm/vue
-│          └─ v3                       // vue3版本页面生成模板
-│              └─ index.vue.vm         // crud 页面模板
-│              └─ index-tree.vue.vm    // 树表 页面模板
 │          └─ index.vue.vm             // crud 页面模板
 │          └─ index-tree.vue.vm        // 树表 页面模板
 │      └─ vm/sql
@@ -145,15 +86,13 @@ RuoYi-Vue-Plus
 │          └─ sqlserver/sql.vm         // sqlserver页面菜单 sql 模板
 │          └─ sql.vm                   // 页面菜单 sql 模板
 │      └─ generator.yml                // 生成器默认配置文件
-├─ ruoyi-oss            // OSS对象存储模块
-├─ ruoyi-sms            // 短信模块
-├─ ruoyi-job            // 任务调度服务
-├─ ruoyi-system         // 业务模块
-│  └─ domain                           // 系统数据对象
-│  └─ mapper                           // 系统mapper
-│  └─ service                          // 系统业务接口
+│  └─ ruoyi-job                        // 任务调度服务
+│  └─ ruoyi-system                     // 业务模块
+│    └─ domain                         // 系统数据对象
+│    └─ mapper                         // 系统mapper
+│    └─ service                        // 系统业务接口
 │      └─ impl                         // 系统业务接口实现类
-│  └─ resources
+│    └─ resources
 │      └─ mapper/system                // 系统业务XML
 ├─ ruoyi-ui             // 前端框架 [80]
 │  └─ build                            // 打包配置
