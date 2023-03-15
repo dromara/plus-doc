@@ -1,0 +1,24 @@
+# 修改后端路径
+
+更改 `application.yml` 的 `server.servlet.context-path` 即可更改后端容器路径
+
+![输入图片说明](https://images.gitee.com/uploads/images/2021/1109/110350_1254af96_1766278.png "屏幕截图.png")
+
+与之对应前端 `dev`环境 需更改 `vue.config.js` 的代理路径
+
+![输入图片说明](https://images.gitee.com/uploads/images/2021/1109/110632_2f464201_1766278.png "屏幕截图.png")
+
+`prod` 生产环境需修改 `nginx.conf` 后端代理路径
+
+![输入图片说明](https://foruda.gitee.com/images/1661823876773225117/f1f912a9_1766278.png "屏幕截图")
+
+# 修改前端路径
+### 注意: 3.4.0 提供便捷更改方式
+直接修改对应环境的 `.env.环境` 文件内的 `VUE_APP_CONTEXT_PATH` 应用访问路径即可
+
+![输入图片说明](https://foruda.gitee.com/images/1661824572484410642/14265f05_1766278.png "屏幕截图") <br>
+![输入图片说明](https://foruda.gitee.com/images/1661824554927577058/af022983_1766278.png "屏幕截图")
+
+生产环境 `nginx.conf` 与之对应修改即可 <br>
+**注意: 文件真实目录为 `/usr/share/nginx/html/admin/index.html` 此功能一般为多项目部署需要 故会增加一层目录 如不需要可以自行修改** <br>
+![输入图片说明](https://images.gitee.com/uploads/images/2022/0409/131040_3deba74b_1766278.png "屏幕截图.png")
