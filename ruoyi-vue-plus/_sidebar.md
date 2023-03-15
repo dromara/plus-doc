@@ -20,3 +20,9 @@
     * [(旧)接口文档](/ruoyi-vue-plus/framework/association/doc_old.md)
     * [修改应用路径](/ruoyi-vue-plus/framework/association/update_url.md)
     * [国际化](/ruoyi-vue-plus/framework/association/i18n.md)
+  * 基础功能
+    * [代码生成](/ruoyi-vue-plus/framework/basic/code_generate.md)
+    * [分页功能](/ruoyi-vue-plus/framework/basic/page.md)
+    * [OSS功能](/ruoyi-vue-plus/framework/basic/oss.md)
+    * [数据权限](/ruoyi-vue-plus/framework/basic/permissions.md)
+    * [接口放行](/ruoyi-vue-plus/framework/basic/interface_release.md)
