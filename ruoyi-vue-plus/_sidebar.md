@@ -34,3 +34,8 @@
     * [数据加密](/ruoyi-vue-plus/framework/extend/encrypt.md)
     * [翻译功能](/ruoyi-vue-plus/framework/extend/translation.md)
     * [Skywalking链路监控](/ruoyi-vue-plus/framework/extend/skywalking.md)
+  * 功能说明
+    * [事务相关](/ruoyi-vue-plus/framework/explain/transaction.md)
+    * [单元测试](/ruoyi-vue-plus/framework/explain/test.md)
+    * [主键使用说明](/ruoyi-vue-plus/framework/explain/key.md)
+    * [关于多表查询](/ruoyi-vue-plus/framework/explain/about_join.md)
