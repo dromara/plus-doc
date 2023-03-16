@@ -12,7 +12,7 @@
 
 需要在 `ruoyi-gateway` `ruoyi-auth` `ruoyi-modules` 引入 `ruoyi-common-loadbalancer` 模块
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0228/170732_fd64a7b0_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678980590168990366/afa2fdf6_1766278.png "屏幕截图")
 
 启动前端访问本机 `ruoyi-gateway` 网关在请求转发 和 `dubbo` 进行 RPC 调用时<br>
 会获取与本机IP地址相同的服务优先调用(如未找到 会随机返回)

@@ -15,11 +15,15 @@
 
 
 ### 美团GTIS系统流程图
-[美团 分布式系统互斥性与幂等性问题的分析与解决](https://tech.meituan.com/2016/09/29/distributed-system-mutually-exclusive-idempotence-cerberus-gtis.html)<br>
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0303/221926_94763cce_1766278.png "屏幕截图.png")
+
+[美团 分布式系统互斥性与幂等性问题的分析与解决](https://tech.meituan.com/2016/09/29/distributed-system-mutually-exclusive-idempotence-cerberus-gtis.html)
+
+![输入图片说明](https://foruda.gitee.com/images/1678979231862359032/34f030c5_1766278.png "屏幕截图")
 
 ### 使用方法
 
-在Controller标注 `@RepeatSubmit` 注解即可<br>
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0303/223128_fe9cd8ab_1766278.png "屏幕截图.png")<br>
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0303/222210_9d380a93_1766278.png "屏幕截图.png")
+在Controller标注 `@RepeatSubmit` 注解即可
+
+![输入图片说明](https://foruda.gitee.com/images/1678979236772683145/9fa27e5b_1766278.png "屏幕截图")
+
+![输入图片说明](https://foruda.gitee.com/images/1678979240831458322/8e1fac4b_1766278.png "屏幕截图")

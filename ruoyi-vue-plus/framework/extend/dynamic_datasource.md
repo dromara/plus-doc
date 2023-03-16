@@ -21,12 +21,17 @@
 * 提供 本地多数据源事务方案。 附：不能和原生spring事务混用。
 
 ### 用法说明
-加载顺序 `方法 => 类 => 默认`<br>
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1215/213757_821f616d_1766278.png "屏幕截图.png")
+
+> 加载顺序 `方法 => 类 => 默认`<br>
+
+![输入图片说明](https://foruda.gitee.com/images/1678979069737596299/abe8ae7f_1766278.png "屏幕截图")
 
 ### 配置方式
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1221/145455_f924ca42_1766278.png "屏幕截图.png")
+
+![输入图片说明](https://foruda.gitee.com/images/1678979074000345758/b9238f0b_1766278.png "屏幕截图")
 
 ### 数据库异构
+
 例如: `mysql + oracle` 参考对应多数据源框架文档 [dynamic-ds文档](https://www.kancloud.cn/tracy5546/dynamic-datasource)
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1221/151102_0f1c90fe_1766278.png "屏幕截图.png")
+
+![输入图片说明](https://foruda.gitee.com/images/1678979078387192317/2de94a78_1766278.png "屏幕截图")

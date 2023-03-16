@@ -3,7 +3,7 @@
 ## 使用方式
 
 在配置文件填写路径放行<br>
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0528/231537_57baa4ac_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678979039071447990/8b272aba_1766278.png "屏幕截图")
 
 ### 注解放行
 版本 4.3.1 以上 建议使用 `@SaIgnore` 忽略注解<br>

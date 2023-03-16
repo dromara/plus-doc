@@ -7,7 +7,6 @@
   * [项目初始化](/ruoyi-cloud-plus/quickstart/init.md)
   * [idea环境配置](/ruoyi-cloud-plus/quickstart/idea_environment.md)
   * [应用部署](/ruoyi-cloud-plus/quickstart/deploy.md)
-  * [(旧)应用部署](/ruoyi-cloud-plus/quickstart/deploy_old.md)
   * [Seata服务搭建](/ruoyi-cloud-plus/quickstart/seata.md)
 * **框架功能**
   * [项目结构](/ruoyi-cloud-plus/framework/tree.md)
@@ -16,7 +15,6 @@
     * [创建新服务](/ruoyi-cloud-plus/framework/association/new_module.md)
     * [修改包名](/ruoyi-cloud-plus/framework/association/update_package_name.md)
     * [接口文档](/ruoyi-cloud-plus/framework/association/doc.md)
-    * [(旧)接口文档](/ruoyi-cloud-plus/framework/association/doc_old.md)
     * [修改应用路径](/ruoyi-cloud-plus/framework/association/update_url.md)
     * [国际化](/ruoyi-cloud-plus/framework/association/i18n.md)
     * [多团队开发](/ruoyi-cloud-plus/framework/association/collaboration.md)

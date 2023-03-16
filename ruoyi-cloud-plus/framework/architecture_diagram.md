@@ -1,3 +1,3 @@
 # 软件架构图
 - - -
-<img src="https://images.gitee.com/uploads/images/2022/0520/152809_0edbfaf1_1766278.png"/>
+![输入图片说明](https://foruda.gitee.com/images/1678980131147747524/5c2d5a5c_1766278.png "屏幕截图")

@@ -8,7 +8,6 @@
   * [vue与boot整合部署](/questions/deploy_vue.md)
   * [导入excel实体类为空](/questions/import_excel.md)
   * [如何同步项目更新](/questions/synchronous_update.md)
-  * [关于XXL-JOB同步增强失败](/questions/xxljob_fail.md)
   * [ParseException SQL解析异常](/questions/parse_exception.md)
   * [swagger相关问题](/questions/swagger.md)
   * [实体bean为空问题](/questions/bean_null.md)

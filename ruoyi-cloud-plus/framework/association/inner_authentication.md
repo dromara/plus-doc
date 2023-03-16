@@ -11,9 +11,9 @@
 
 更改 `application-common.yml` 配置文件的 `sa-token.check-id-token` 配置即可
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0615/163056_fe02a430_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678980608778275681/9a2c1054_1766278.png "屏幕截图")
 
 ## 放行内网鉴权
 进入 `ruoyi-common-security` 模块找到 `SecurityConfiguration` 类 增加排除路径即可
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0615/163400_fccb0f63_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678980612657326393/cea32a8c_1766278.png "屏幕截图")

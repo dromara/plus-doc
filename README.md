@@ -45,10 +45,10 @@
 
 公众号: **<狮子领域 程序圈>**
 <br>
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0526/114956_cc00ecbf_1766278.jpeg "qrcode_for_gh_23471f7470c1_344.jpg")
+![输入图片说明](https://foruda.gitee.com/images/1678975769377570440/507062df_1766278.png "屏幕截图")
 
 ## 捐献作者
 
 **作者为兼职做开源,平时还需要工作,如果帮到了您可以请作者吃个盒饭**
 <br>
-<img src="https://images.gitee.com/uploads/images/2022/0218/213734_b1b8197f_1766278.jpeg" width="300px" height="450px" /><img src="https://images.gitee.com/uploads/images/2021/0525/101713_3d18b119_1766278.jpeg" width="300px" height="450px" />
+<img src="https://foruda.gitee.com/images/1678975784848381069/d8661ed9_1766278.png" width="300px" height="450px" /><img src="https://foruda.gitee.com/images/1678975801230205215/6f96229d_1766278.png" width="300px" height="450px" />

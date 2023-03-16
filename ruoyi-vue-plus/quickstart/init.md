@@ -21,7 +21,7 @@
 * npm 8.X (7.X确认有问题)
 
 ### 勾选maven对应环境
-![输入图片说明](https://images.gitee.com/uploads/images/2021/0914/121055_05a47002_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678976284045210056/a2f28d33_1766278.png "屏幕截图")
 
 ### 默认 `JDK17` 如有变动 需更改以下配置
 
@@ -43,7 +43,7 @@
 ### 应用启动
 应用列表
 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1027/103354_d2294981_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678976302776168895/7333341c_1766278.png "屏幕截图")
 * `MonitorAdminApplication` 为 Admin监控服务(非必要 可参考对应文档关闭)
 * `XxlJobAdminApplication` 为 任务调度中心服务(非必要 可参考对应文档关闭)
 * `RuoYiApplication` 为 主应用服务

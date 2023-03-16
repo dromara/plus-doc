@@ -36,7 +36,7 @@
 官网连接: [https://www.apifox.cn/](https://www.apifox.cn/) <br>
 视频教程: [springdoc与apifox配合使用](https://www.bilibili.com/video/BV1mr4y1j75M?p=8&vd_source=8f52c77be3233dbdd1c5e332d4d45bfb)
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0711/154552_59b621ba_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678976476639902970/f1617b40_1766278.png "屏幕截图")
 
 支持 文档编写 接口调试 Mock 接口压测 自动化测试 等一系列功能
 
@@ -44,11 +44,11 @@
 
 > 1.下载或使用web在线版 创建一个自己的项目
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0711/154936_894dc83b_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678976502850663851/7bbd8728_1766278.png "屏幕截图")
 
 > 2.进入项目 选择项目设置 找到自动同步
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0711/155056_b162fbd6_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678976508918240326/6a4a61a8_1766278.png "屏幕截图")
 
 > 3.根据项目内所有文档组完成所有数据源创建(拉取后端`openapi`结构体)<br>
 数据源URL格式 `http://后端ip:端口/v3/api-docs/组名`<br>
@@ -58,27 +58,25 @@
 `http://localhost:8080/v3/api-docs/3.代码生成模块` <br>
 也可不分组统一导入: `http://localhost:8080/v3/api-docs` <br>
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0711/155220_58c90baa_1766278.png "屏幕截图.png")
-
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0711/155330_eaefd73f_1766278.png "屏幕截图.png")
-
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0711/155344_cb4358b6_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678976514385097727/05c7e0a6_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1678976522299732812/c874d181_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1678976527495742967/79836e7f_1766278.png "屏幕截图")
 
 > 4.选择 接口管理 项目概览 点击立即导入 并等待导入完成<br>
 后续会根据策略每3个小时自动导入一次<br>
 每次重新进入apifox也会自动同步一次<br>
 后端有改动也可以手动点击导入<br>
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0711/155524_d2df2401_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678976534677430926/f32c64c5_1766278.png "屏幕截图")
 
 > 5.设置鉴权 选择接口管理 项目概览 找到Auth 按照如下配置
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0711/155830_746cb333_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678976539608390075/77246461_1766278.png "屏幕截图")
 
 > key对应项目配置 默认为 `Authorization`
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0711/163618_ed2465d8_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678976544342001474/c2ff85d3_1766278.png "屏幕截图")
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0711/163635_ac81f83e_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678976549237304743/bcdfadda_1766278.png "屏幕截图")
 
 

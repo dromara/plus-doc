@@ -21,8 +21,3 @@ QQ群号 : **<637757165>**
 
 **加群扫码**<br>
 <img src="https://foruda.gitee.com/images/1664426470791458454/aaa84304_1766278.jpeg" width="300px" height="450px" /><img src="https://foruda.gitee.com/images/1664426481006423852/6ee14bfa_1766278.jpeg" width="300px" height="450px" />
-
-## 关注作者
-作者博客: [https://lionli.blog.csdn.net/?type=blog](https://lionli.blog.csdn.net/?type=blog)<br>
-公众号: **<狮子领域 程序圈>**<br>
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0526/114956_cc00ecbf_1766278.jpeg "qrcode_for_gh_23471f7470c1_344.jpg")

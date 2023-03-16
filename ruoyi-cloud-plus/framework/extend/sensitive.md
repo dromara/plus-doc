@@ -8,21 +8,21 @@
 
 > 使用注解标注需要脱敏的字段 选择对应的策略
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0527/105325_3740cbf1_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678979315796014155/614adf91_1766278.png "屏幕截图")
 
 > 可再 `SensitiveStrategy` 内自定义策略
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0527/105417_25916103_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678979319996224858/3b3e3c8b_1766278.png "屏幕截图")
 
 ## 脱敏逻辑修改
 
 > 系统使用通用接口处理是否需要脱敏 多个系统可以自定义不同的脱敏逻辑实现
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0527/105641_6d978f2a_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678979325448998856/b262e425_1766278.png "屏幕截图")
 
 > 系统默认处理逻辑为 非管理员脱敏 可自行修改默认实现
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0527/105819_1d32091c_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678979329773559315/eda3eebc_1766278.png "屏幕截图")
 
 
 

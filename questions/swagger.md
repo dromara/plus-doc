@@ -2,7 +2,7 @@
 - - -
 ### 空指针问题
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0120/181039_2abbeec2_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678981243258646781/01bcdc27_1766278.png "屏幕截图")
 
 一般为多对象参数字段重复问题<br>
 解决方案: 去掉或者改名 保证字段不重复即可
@@ -14,4 +14,5 @@
 检查是否使用`jrebel`热更插件 swagger与之不兼容 使用idea自带方式启动即可解决<br>
 检查是否使用了 特殊符号 例如 `/` 注解内容不允许使用此类特殊符号 请尽量使用 `,` 处理<br>
 错误示例<br>
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0407/190209_17f062e1_1766278.png "屏幕截图.png")
+
+![输入图片说明](https://foruda.gitee.com/images/1678981248859632330/afbbc08d_1766278.png "屏幕截图")

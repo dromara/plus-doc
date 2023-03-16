@@ -1,3 +1,3 @@
 # 软件架构图
 - - -
-![Plus部署架构图](https://images.gitee.com/uploads/images/2021/1112/202137_673ac5d2_1766278.png "Plus部署架构图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678981882624240692/ae2a3f3e_1766278.png "屏幕截图")

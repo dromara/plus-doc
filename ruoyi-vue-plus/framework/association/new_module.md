@@ -3,8 +3,8 @@
 * 参考ruoyi-demo模块
 * 需要改动: 父pom 与 admin模块pom
 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/0721/153228_6532d907_1766278.png "屏幕截图.png")
-![输入图片说明](https://images.gitee.com/uploads/images/2021/0721/153248_404e5e23_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678976440419705039/c0a1f3a7_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1678976444237046987/e85071d1_1766278.png "屏幕截图")
 
 ### 注意事项
 如果是两个不同包名的模块 需要修改如下配置

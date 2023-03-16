@@ -14,8 +14,8 @@
 **默认账号密码 `admin` `123456` 账号在数据库里 可以在页面修改密码**
 
 > 在 `扩展项目 -> xxl-job-admin模块` 启动
-> 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1027/104404_2d29a798_1766278.png "屏幕截图.png")
+>
+![输入图片说明](https://foruda.gitee.com/images/1678976353500205883/058fef13_1766278.png "屏幕截图")
 
 > 需修改配置文件数据库连接地址(**注意: 此处为xxl-job-admin服务的配置文件**)
 >
@@ -28,12 +28,12 @@
 ### 前端修改任务调度中心访问路径
 `dev`环境 默认使用 `.env.development` 配置文件内地址
 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1027/104533_e43f1e2e_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678976378255854583/8cdbf4e3_1766278.png "屏幕截图")
 
 `prod`环境 使用 `.env.production` 本机路由
 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1027/104549_891a854f_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678976382819019066/96288331_1766278.png "屏幕截图")
 
 故而 `prod` 环境只需更改 `nginx` 反向代理路径即可
 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1027/104620_2247699f_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678976386764602366/55894f85_1766278.png "屏幕截图")

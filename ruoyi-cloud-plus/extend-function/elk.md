@@ -33,4 +33,5 @@ docker-compose up -d elasticsearch kibana logstash
 ```
 
 更改主 `pom` 文件 `logstash.address` 地址<br>
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0712/152316_acb7238d_1766278.png "屏幕截图.png")
+
+![输入图片说明](https://foruda.gitee.com/images/1678981534923588112/ba6cb5b7_1766278.png "屏幕截图")

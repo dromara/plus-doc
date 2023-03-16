@@ -6,11 +6,13 @@
 使用哪家的短信 引入哪家的依赖 即可动态加载<br>
 目前支持: `阿里云` `腾讯云` 欢迎扩展PR其他
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0507/101022_82b165d9_1766278.png "屏幕截图.png")
+> 参考 `ruoyi-demo` pom文件写法
 
-修改配置文件
+![输入图片说明](https://foruda.gitee.com/images/1678979157797419426/cc9b7444_1766278.png "屏幕截图")
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0507/101743_961048d6_1766278.png "屏幕截图.png")
+> 修改配置文件
+
+![输入图片说明](https://foruda.gitee.com/images/1678979163029635375/e5fd6e20_1766278.png "屏幕截图")
 
 * `enabled` 为短信功能开关
 * `endpoint` 为域名 各厂家域名固定 按照文档配置即可
@@ -25,10 +27,10 @@
 功能采用 `模板模式` 动态加载对应厂家的工具模板<br>
 引入 `SmsTemplate` 即可使用
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0507/101513_955e78c1_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678979168699323982/e9301e84_1766278.png "屏幕截图")
 
 ## 重点须知
 
 由于各厂家参数解析不一致 请遵守以下规则
 
-![输入图片说明](https://images.gitee.com/uploads/images/2022/0507/101648_35f4723a_1766278.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1678979172581090456/ac1f10e8_1766278.png "屏幕截图")
