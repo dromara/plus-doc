@@ -12,6 +12,7 @@
   * [(旧)应用部署](/ruoyi-vue-plus/quickstart/deploy_old.md)
 * **框架功能**
   * [项目结构](/ruoyi-vue-plus/framework/tree.md)
+  * [软件架构图](/ruoyi-vue-plus/framework/architecture_diagram.md)
   * 框架相关
     * [创建新模块](/ruoyi-vue-plus/framework/association/new_module.md)
     * [修改包名](/ruoyi-vue-plus/framework/association/update_package_name.md)
@@ -55,3 +56,7 @@
     * [放行接口提示认证失败](/ruoyi-vue-plus/questions/identify_fail.md)
     * [打包jar运行报错](/ruoyi-vue-plus/questions/jar_run_fail.md)
     * [如何提交PR贡献代码](/ruoyi-vue-plus/questions/pr.md)
+* **扩展项目**
+  * [扩展项目](/ruoyi-vue-plus/extend-project/list.md)
+* **其他**
+  * [加群方式](/ruoyi-vue-plus/other/group_chat.md)
