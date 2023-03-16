@@ -1,8 +1,9 @@
-# 手动部署
+# (旧)应用部署
+## 手动部署
 
 在服务器安装 `mysql` `redis` `nginx` `minio`
 
-将项目内 `docker/nginx/nginx.conf` 配置文件 复制到 `nginx` 配置内
+将项目内 `docker/nginx/nginx.conf` 配置文件 复制到 `nginx` 配置内<br>
 将项目内 `docker/redis/redis.conf` 配置文件 复制到 `redis` 配置内
 
 并修改相关参数如 `前端页面存放位置` `后端Ip地址` 等使其生效
@@ -20,7 +21,7 @@ mvn clean package -D maven.test.skip=true -P prod
 前端参考下方前端部署章节
 
 
-# docker 后端部署
+## docker 后端部署
 
 **重点: 一知半解的必看**
 > [docker安装](https://lionli.blog.csdn.net/article/details/83153029)<br>
@@ -85,7 +86,7 @@ sh deploy.sh rmiNoneTag
 
 然后 使用 `docker-maven-plugin` 插件上传构建 `ruoyi-server` 镜像
 
-需修改 `pom` 文件对应 `docker` 服务器的 `ip` 地址
+需修改 `pom` 文件对应 `docker` 服务器的 `ip` 地址<br>
 与 `docker` 服务配置开启 `2375` api端口 [docker 开启端口 2375 供外部程序访问](https://lionli.blog.csdn.net/article/details/92627962)
 
 > 未开启 `2375` api端口将无法远程连接 `docker`<br>
@@ -101,15 +102,15 @@ mvn docker:build
 ```
 
 
-# 前端部署
+## 前端部署
 
 执行打包命令
 ```shell
 # 打包正式环境
 npm run build:prod
 ```
-打包后生成打包文件在 `ruoyi-ui/dist` 目录
-将 `dist` 目录下文件(不包含 `dist` 目录) 上传到部署服务器 `docker/nginx/html` 目录下(手动部署放入自己配置的路径即可)
+打包后生成打包文件在 `ruoyi-ui/dist` 目录<br>
+将 `dist` 目录下文件(不包含 `dist` 目录) 上传到部署服务器 `docker/nginx/html` 目录下(手动部署放入自己配置的路径即可)<br>
 重启 `nginx` 服务即可
 
 ### 更改后端代理路径或者后端ip地址

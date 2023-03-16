@@ -1,12 +1,13 @@
-# 版本 >= 4.3.0
+# 应用部署
+## 版本 >= 4.3.0
 
 ### 请优先阅读 [idea环境配置](https://gitee.com/JavaLionLi/RuoYi-Vue-Plus/wikis/pages?sort_id=5985043&doc_id=1469725)
 
-# 手动部署
+## 手动部署
 
 在服务器安装 `mysql` `redis` `nginx` `minio`
 
-将项目内 `docker/nginx/nginx.conf` 配置文件 复制到 `nginx` 配置内
+将项目内 `docker/nginx/nginx.conf` 配置文件 复制到 `nginx` 配置内<br>
 将项目内 `docker/redis/redis.conf` 配置文件 复制到 `redis` 配置内
 
 并修改相关参数如 `前端页面存放位置` `后端Ip地址` 等使其生效
@@ -24,7 +25,7 @@ mvn clean package -D maven.test.skip=true -P prod
 前端参考下方前端部署章节
 
 
-# docker 后端部署
+## docker 后端部署
 
 ### 请优先阅读 [idea环境配置](https://gitee.com/JavaLionLi/RuoYi-Vue-Plus/wikis/pages?sort_id=5985043&doc_id=1469725)
 
@@ -82,7 +83,7 @@ docker-compose up -d ruoyi-monitor-admin ruoyi-xxl-job-admin ruoyi-server1 ruoyi
 ### docker其他操作(idea的docker插件 推荐使用)
 ![输入图片说明](https://foruda.gitee.com/images/1662458271941863770/cd180a04_1766278.png "屏幕截图")
 
-# 前端部署
+## 前端部署
 
 执行打包命令
 ```shell

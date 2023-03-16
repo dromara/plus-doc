@@ -1,3 +1,4 @@
+# Redis 报错 Permission denied
 ### 此报错为无权限
 
 需确保 redis 数据存储文件夹具有写权限

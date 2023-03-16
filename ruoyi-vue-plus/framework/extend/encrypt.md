@@ -1,14 +1,15 @@
-# 框架版本 >= 4.6.0
-# 功能说明
+# 数据加密
+## 框架版本 >= 4.6.0
+## 功能说明
 
 数据库 数据存储加密 查询解密功能<br>
 支持加密算法: `BASE64` `AES` `RSA` `SM2` `SM4`
 
-# 注解 `@EncryptField`
+## 注解 `@EncryptField`
 
 ![输入图片说明](https://foruda.gitee.com/images/1675577493013639395/cd920f15_1766278.png "屏幕截图")
 
-# 用法说明
+## 用法说明
 
 **详细用法可参考案例 TestEncryptController 测试数据库加解密功能**
 
@@ -20,7 +21,7 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1675577725117970708/7ee7a833_1766278.png "屏幕截图")
 
-# 密钥生成说明
+## 密钥生成说明
 
 ![输入图片说明](https://foruda.gitee.com/images/1675577852271308699/9b30258e_1766278.png "屏幕截图")
 

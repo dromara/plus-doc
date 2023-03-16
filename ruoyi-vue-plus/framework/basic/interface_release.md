@@ -1,4 +1,5 @@
-# 使用方式
+# 接口放行
+## 使用方式
 
 在配置文件填写路径放行<br>
 ![输入图片说明](https://images.gitee.com/uploads/images/2022/0528/231537_57baa4ac_1766278.png "屏幕截图.png")
@@ -15,7 +16,7 @@
 ![输入图片说明](https://images.gitee.com/uploads/images/2022/0528/231730_e1054ff5_1766278.png "屏幕截图.png")
 ![输入图片说明](https://images.gitee.com/uploads/images/2022/0528/231747_bac32888_1766278.png "屏幕截图.png")
 
-# 注意事项
+## 注意事项
 
 接口放行后不需要token即可访问<br>
 但是没有token也就无法获取用户信息与鉴权

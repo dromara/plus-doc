@@ -1,4 +1,5 @@
-# 建议单表查询
+# 关于多表查询
+## 建议单表查询
 
 文章连接: [大连接查询分解好处](https://java.isture.com/db/mysql/mysql-x-optimize-decompose-connection.html)
 

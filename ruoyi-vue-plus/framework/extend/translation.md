@@ -1,5 +1,6 @@
-# 框架版本 >= 4.6.0
-# 注解
+# 翻译功能
+## 框架版本 >= 4.6.0
+## 注解
 
 ![输入图片说明](https://foruda.gitee.com/images/1675575648043199227/d04b3e21_1766278.png "屏幕截图")
 
@@ -7,7 +8,7 @@
 `@TranslationType` 翻译类别注解 用于实现类上标注与 `@Translation` 注解相同的 `type` 类型 实现翻译功能
 
 
-# 用法说明
+## 用法说明
 
 默认提供功能 `用户id转账号(用户名)` `部门id转名称` `字典type转label` `ossId转url`
 
@@ -25,7 +26,7 @@ ossUrl翻译(直接翻译) 直接根据此字段值翻译后替换此字段值
 
 ![输入图片说明](https://foruda.gitee.com/images/1675576391012282823/f95c5d78_1766278.png "屏幕截图")
 
-# 自定义扩展
+## 自定义扩展
 
 实现接口 `TranslationInterface` 标注注解 `@TranslationType` 可参考框架默认实现
 

@@ -1,7 +1,7 @@
-## 关于数据权限
+# 关于数据权限
 * 参考 demo 模块用法(需导入 test.sql 文件)
 
-## 版本 >= 3.5.0 使用教程(由于 3.4.0 功能局限性太大 且有一定安全性问题 故重写实现)
+### 版本 >= 3.5.0 使用教程(由于 3.4.0 功能局限性太大 且有一定安全性问题 故重写实现)
 
 ### 新版数据权限功能:
 1.支持自动注入 sql 数据过滤<br>
@@ -11,15 +11,15 @@
 
 ### 数据权限相关代码
 
-| 类  | 说明  | 功能 |
-|---|---|---|
-| DataScopeType  | 数据权限模板定义  | 用于定义数据权限模板  |
-| DataPermission  | 数据权限组注解  | 用于标注开启数据权限 (默认过滤部门权限)  |
-| DataColumn  | 具体的数据权限字段标注  | 用于替换数据权限模板内的 key 变量  |
-| PlusDataPermissionInterceptor  | 数据权限 sql 拦截器  | 用于拦截所有 sql 检查是否标注了 `DataPermission` 注解  |
-| PlusDataPermissionHandler  | 数据权限处理器  | 用于处理被拦截到的 sql 为其添加数据权限过滤条件  |
-| DataPermissionHelper | 数据权限助手  | 操作数据权限上下文变量  |
-| SysDataScopeService  | 自定义 Bean 处理数据权限  | 用于自定义扩展  |
+| 类                             | 说明              | 功能                                     |
+|-------------------------------|-----------------|----------------------------------------|
+| DataScopeType                 | 数据权限模板定义        | 用于定义数据权限模板                             |
+| DataPermission                | 数据权限组注解         | 用于标注开启数据权限 (默认过滤部门权限)                  |
+| DataColumn                    | 具体的数据权限字段标注     | 用于替换数据权限模板内的 key 变量                    |
+| PlusDataPermissionInterceptor | 数据权限 sql 拦截器    | 用于拦截所有 sql 检查是否标注了 `DataPermission` 注解 |
+| PlusDataPermissionHandler     | 数据权限处理器         | 用于处理被拦截到的 sql 为其添加数据权限过滤条件             |
+| DataPermissionHelper          | 数据权限助手          | 操作数据权限上下文变量                            |
+| SysDataScopeService           | 自定义 Bean 处理数据权限 | 用于自定义扩展                                |
 
 ### 使用方式 `参考demo模块`
 数据权限体系 `用户 -> 多角色 => 角色 -> 单数据权限`
