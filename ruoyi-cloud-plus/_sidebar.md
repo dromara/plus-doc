@@ -9,3 +9,25 @@
   * [应用部署](/ruoyi-cloud-plus/quickstart/deploy.md)
   * [(旧)应用部署](/ruoyi-cloud-plus/quickstart/deploy_old.md)
   * [Seata服务搭建](/ruoyi-cloud-plus/quickstart/seata.md)
+* **框架功能**
+  * [项目结构](/ruoyi-cloud-plus/framework/tree.md)
+  * [软件架构图](/ruoyi-cloud-plus/framework/architecture_diagram.md)
+  * 框架相关
+    * [创建新服务](/ruoyi-cloud-plus/framework/association/new_module.md)
+    * [修改包名](/ruoyi-cloud-plus/framework/association/update_package_name.md)
+    * [接口文档](/ruoyi-cloud-plus/framework/association/doc.md)
+    * [(旧)接口文档](/ruoyi-cloud-plus/framework/association/doc_old.md)
+    * [修改应用路径](/ruoyi-cloud-plus/framework/association/update_url.md)
+    * [国际化](/ruoyi-cloud-plus/framework/association/i18n.md)
+    * [多团队开发](/ruoyi-cloud-plus/framework/association/collaboration.md)
+    * [内网鉴权](/ruoyi-cloud-plus/framework/association/inner_authentication.md)
+  * 基础功能
+    * [代码生成](/ruoyi-cloud-plus/framework/basic/code_generate.md)
+    * [分页功能](/ruoyi-cloud-plus/framework/basic/page.md)
+    * [OSS功能](/ruoyi-cloud-plus/framework/basic/oss.md)
+    * [数据权限](/ruoyi-cloud-plus/framework/basic/permissions.md)
+    * [网关路由与放行](/ruoyi-cloud-plus/framework/basic/router_release.md)
+  * 扩展功能
+  * 常见问题
+* **扩展项目**
+* **其他**
