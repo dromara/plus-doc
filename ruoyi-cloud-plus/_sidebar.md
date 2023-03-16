@@ -28,6 +28,12 @@
     * [数据权限](/ruoyi-cloud-plus/framework/basic/permissions.md)
     * [网关路由与放行](/ruoyi-cloud-plus/framework/basic/router_release.md)
   * 扩展功能
-  * 常见问题
+    * [多数据源](/ruoyi-cloud-plus/framework/extend/dynamic_datasource.md)
+    * [短信模块](/ruoyi-cloud-plus/framework/extend/sms.md)
+    * [邮件功能](/ruoyi-cloud-plus/framework/extend/mail.md)
+    * [防重幂等](/ruoyi-cloud-plus/framework/extend/idempotent.md)
+    * [数据脱敏](/ruoyi-cloud-plus/framework/extend/sensitive.md)
+    * [数据加密](/ruoyi-cloud-plus/framework/extend/encrypt.md)
+    * [翻译功能](/ruoyi-cloud-plus/framework/extend/translation.md)
 * **扩展项目**
 * **其他**
