@@ -3,7 +3,6 @@
 * **简介**
   * [项目简介](/ruoyi-vue-plus/home.md)
   * [更新日志](/ruoyi-vue-plus/changlog.md)
-  * [专栏与视频](/ruoyi-vue-plus/column.md)
 * **快速开始**
   * [项目初始化](/ruoyi-vue-plus/quickstart/init.md)
   * [搭建Admin监控](/ruoyi-vue-plus/quickstart/admin_init.md)
@@ -26,3 +25,12 @@
     * [OSS功能](/ruoyi-vue-plus/framework/basic/oss.md)
     * [数据权限](/ruoyi-vue-plus/framework/basic/permissions.md)
     * [接口放行](/ruoyi-vue-plus/framework/basic/interface_release.md)
+  * 扩展功能
+    * [多数据源](/ruoyi-vue-plus/framework/extend/dynamic_datasource.md)
+    * [短信模块](/ruoyi-vue-plus/framework/extend/sms.md)
+    * [邮件功能](/ruoyi-vue-plus/framework/extend/mail.md)
+    * [防重幂等](/ruoyi-vue-plus/framework/extend/idempotent.md)
+    * [数据脱敏](/ruoyi-vue-plus/framework/extend/sensitive.md)
+    * [数据加密](/ruoyi-vue-plus/framework/extend/encrypt.md)
+    * [翻译功能](/ruoyi-vue-plus/framework/extend/translation.md)
+    * [Skywalking链路监控](/ruoyi-vue-plus/framework/extend/skywalking.md)
