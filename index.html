@@ -8,8 +8,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- 设置浏览器图标 -->
-    <link rel="icon" href="/static/image/favicon.ico" type="image/x-icon"/>
-    <link rel="shortcut icon" href="/static/image/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="./static/image/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="./static/image/favicon.ico" type="image/x-icon"/>
+    <meta charset="UTF-8">
     <!-- 默认主题 -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
 </head>
@@ -33,6 +34,8 @@
         subMaxLevel: 4,
         // 小屏设备下合并导航栏到侧边栏
         mergeNavbar: true,
+        // 页脚支持，默认加载的是 _footer.md
+        loadFooter: true,
     }
 </script>
 <script>
@@ -64,8 +67,13 @@
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 <!--在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码-->
 <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+
 <!-- 回到顶部 -->
 <script src="//unpkg.com/docsify-scroll-to-top/dist/docsify-scroll-to-top.min.js"></script>
+<!-- 分页导航 -->
+<script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<!-- 页脚-->
+<script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
 
 </body>
 </html>
