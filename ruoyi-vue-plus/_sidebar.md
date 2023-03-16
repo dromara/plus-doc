@@ -38,21 +38,6 @@
     * [单元测试](/ruoyi-vue-plus/framework/explain/test.md)
     * [主键使用说明](/ruoyi-vue-plus/framework/explain/key.md)
     * [关于多表查询](/ruoyi-vue-plus/framework/explain/about_join.md)
-  * 常见问题
-    * [Lombok注解爆红](/ruoyi-vue-plus/questions/lombok.md)
-    * [如何使用Tomcat](/ruoyi-vue-plus/questions/use_tomcat.md)
-    * [如何使用druid连接池](/ruoyi-vue-plus/questions/use_druid.md)
-    * [vue与boot整合部署](/ruoyi-vue-plus/questions/deploy_vue.md)
-    * [导入excel实体类为空](/ruoyi-vue-plus/questions/import_excel.md)
-    * [如何同步项目更新](/ruoyi-vue-plus/questions/synchronous_update.md)
-    * [关于XXL-JOB同步增强失败](/ruoyi-vue-plus/questions/xxljob_fail.md)
-    * [ParseException SQL解析异常](/ruoyi-vue-plus/questions/parse_exception.md)
-    * [swagger相关问题](/ruoyi-vue-plus/questions/swagger.md)
-    * [实体bean为空问题](/ruoyi-vue-plus/questions/bean_null.md)
-    * [Redis 报错 Permission denied](/ruoyi-vue-plus/questions/permission_denied.md)
-    * [关于HTTPS配置](/ruoyi-vue-plus/questions/https_config.md)
-    * [放行接口提示认证失败](/ruoyi-vue-plus/questions/identify_fail.md)
-    * [打包jar运行报错](/ruoyi-vue-plus/questions/jar_run_fail.md)
 * **扩展项目**
   * [扩展项目](/ruoyi-vue-plus/extend-project/list.md)
 * **其他**
