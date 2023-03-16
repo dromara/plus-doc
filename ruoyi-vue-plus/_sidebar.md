@@ -9,7 +9,6 @@
   * [搭建任务调度中心](/ruoyi-vue-plus/quickstart/job_init.md)
   * [idea环境配置](/ruoyi-vue-plus/quickstart/idea_environment.md)
   * [应用部署](/ruoyi-vue-plus/quickstart/deploy.md)
-  * [(旧)应用部署](/ruoyi-vue-plus/quickstart/deploy_old.md)
 * **框架功能**
   * [项目结构](/ruoyi-vue-plus/framework/tree.md)
   * [软件架构图](/ruoyi-vue-plus/framework/architecture_diagram.md)
@@ -17,7 +16,6 @@
     * [创建新模块](/ruoyi-vue-plus/framework/association/new_module.md)
     * [修改包名](/ruoyi-vue-plus/framework/association/update_package_name.md)
     * [接口文档](/ruoyi-vue-plus/framework/association/doc.md)
-    * [(旧)接口文档](/ruoyi-vue-plus/framework/association/doc_old.md)
     * [修改应用路径](/ruoyi-vue-plus/framework/association/update_url.md)
     * [国际化](/ruoyi-vue-plus/framework/association/i18n.md)
   * 基础功能

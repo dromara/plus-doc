@@ -2,7 +2,7 @@
 - - -
 ## 版本 >= 4.3.0
 
-### 请优先阅读 [idea环境配置](https://gitee.com/JavaLionLi/RuoYi-Vue-Plus/wikis/pages?sort_id=5985043&doc_id=1469725)
+### 请优先阅读 [idea环境配置](/ruoyi-vue-plus/quickstart/idea_environment.md)
 
 ## 手动部署
 
@@ -28,7 +28,7 @@ mvn clean package -D maven.test.skip=true -P prod
 
 ## docker 后端部署
 
-### 请优先阅读 [idea环境配置](https://gitee.com/JavaLionLi/RuoYi-Vue-Plus/wikis/pages?sort_id=5985043&doc_id=1469725)
+### 请优先阅读 [idea环境配置](/ruoyi-vue-plus/quickstart/idea_environment.md)
 
 **重点: 一知半解的必看**
 > [docker安装](https://lionli.blog.csdn.net/article/details/83153029)<br>

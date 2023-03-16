@@ -2,8 +2,8 @@
 - - -
 ### 配置调度中心客户端
 > 修改主服务配置文件
-> 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1027/104037_f7f702e7_1766278.png "屏幕截图.png")
+>
+![输入图片说明](https://foruda.gitee.com/images/1678941760168414366/b81e023b_1766278.png "屏幕截图")
 
 * `enabled` 可启用或关闭客户端注册
 * `admin-addresses` 为调度中心地址
@@ -18,12 +18,12 @@
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/1027/104404_2d29a798_1766278.png "屏幕截图.png")
 
 > 需修改配置文件数据库连接地址(**注意: 此处为xxl-job-admin服务的配置文件**)
-> 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1027/104441_78319ca3_1766278.png "屏幕截图.png")
+>
+![输入图片说明](https://foruda.gitee.com/images/1678941813423551656/04c32a5b_1766278.png "屏幕截图")
 
 > 也可配置邮件发送
-> 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1027/104459_5358f30a_1766278.png "屏幕截图.png")
+>
+![输入图片说明](https://foruda.gitee.com/images/1678941825447455298/1baa5e43_1766278.png "屏幕截图")
 
 ### 前端修改任务调度中心访问路径
 `dev`环境 默认使用 `.env.development` 配置文件内地址
