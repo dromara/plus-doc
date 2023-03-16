@@ -55,7 +55,6 @@
     * [关于HTTPS配置](/ruoyi-vue-plus/questions/https_config.md)
     * [放行接口提示认证失败](/ruoyi-vue-plus/questions/identify_fail.md)
     * [打包jar运行报错](/ruoyi-vue-plus/questions/jar_run_fail.md)
-    * [如何提交PR贡献代码](/ruoyi-vue-plus/questions/pr.md)
 * **扩展项目**
   * [扩展项目](/ruoyi-vue-plus/extend-project/list.md)
 * **其他**

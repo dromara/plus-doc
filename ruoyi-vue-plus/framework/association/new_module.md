@@ -1,4 +1,5 @@
 # 关于如何创建新模块
+- - -
 * 参考ruoyi-demo模块
 * 需要改动: 父pom 与 admin模块pom
 

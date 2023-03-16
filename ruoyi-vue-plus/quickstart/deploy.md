@@ -1,4 +1,5 @@
 # 应用部署
+- - -
 ## 版本 >= 4.3.0
 
 ### 请优先阅读 [idea环境配置](https://gitee.com/JavaLionLi/RuoYi-Vue-Plus/wikis/pages?sort_id=5985043&doc_id=1469725)

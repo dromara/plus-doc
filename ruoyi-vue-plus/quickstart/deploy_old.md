@@ -1,4 +1,5 @@
 # (旧)应用部署
+- - -
 ## 手动部署
 
 在服务器安装 `mysql` `redis` `nginx` `minio`
