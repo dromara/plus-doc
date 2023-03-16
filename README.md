@@ -3,6 +3,7 @@
 - `RuoYi-Vue-Plus` 分布式集群框架 [文档跳转](/ruoyi-vue-plus/home.md)
 - `RuoYi-Cloud-Plus` 微服务框架 [文档跳转](/ruoyi-cloud-plus/home.md)
 - `plus-ui` 统一 Vue3 前端项目 [文档跳转](/plus-ui/home.md)
+- `plus-doc` 统一文档项目
 
 ## 代码地址
 
@@ -10,7 +11,9 @@
 |------------|:-----------------|------------------------------------------------------------------------------------------------------------------------|----------------------------|
 | 🔥 分布式集群框架 | RuoYi-Vue-Plus   | - [Gitee](https://gitee.com/JavaLionLi/RuoYi-Vue-Plus)<br> - [GitHub](https://github.com/JavaLionLi/RuoYi-Vue-Plus)    | 重写RuoYi-Vue全方位升级(不兼容原框架)   |
 | 🔥 微服务框架   | RuoYi-Cloud-Plus | - [Gitee](https://gitee.com/JavaLionLi/RuoYi-Cloud-Plus)<br>- [GitHub](https://github.com/JavaLionLi/RuoYi-Cloud-Plus) | 重写RuoYi-Cloud全方位升级(不兼容原框架) |
-| 🔥 统一前端项目  | plus-ui          | - [Gitee](https://gitee.com/JavaLionLi/plus-ui)<br>- [GitHub](https://gitee.com/JavaLionLi/plus-ui)                    | Vue与Cloud项目通用前端            |
+| 🔥 统一前端项目  | plus-ui          | - [Gitee](https://gitee.com/JavaLionLi/plus-ui)<br>- [GitHub](https://github.com/JavaLionLi/plus-ui)                   | Vue与Cloud项目通用前端            |
+| 🔥 统一文档项目  | plus-doc         | - [Gitee](https://gitee.com/JavaLionLi/plus-doc)<br>- [GitHub](https://gitee.com/JavaLionLi/plus-doc)                  | 通用文档                       |
+
 
 ## 业务功能
 
