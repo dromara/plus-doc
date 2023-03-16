@@ -40,5 +40,14 @@
     * [单元测试](/ruoyi-cloud-plus/framework/explain/test.md)
     * [主键使用说明](/ruoyi-cloud-plus/framework/explain/key.md)
     * [关于多表查询](/ruoyi-cloud-plus/framework/explain/about_join.md)
+* **扩展功能**
+  * [ELK搭建](/ruoyi-cloud-plus/extend-function/elk.md)
+  * [ES搜索引擎](/ruoyi-cloud-plus/extend-function/es.md)
+  * [RabbitMQ搭建](/ruoyi-cloud-plus/extend-function/rabbitmq.md)
+  * [RocketMQ搭建](/ruoyi-cloud-plus/extend-function/rocketmq.md)
+  * [Kafka搭建](/ruoyi-cloud-plus/extend-function/kafka.md)
+  * [Nacos集群搭建](/ruoyi-cloud-plus/extend-function/nacos.md)
+  * [SkyWalking搭建与集成](/ruoyi-cloud-plus/extend-function/skywalking.md)
+  * [Prometheus+Grafana搭建](/ruoyi-cloud-plus/extend-function/prometheus_grafana.md)
 * **扩展项目**
 * **其他**
