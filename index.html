@@ -12,9 +12,7 @@
     <link rel="shortcut icon" href="./static/image/favicon.ico" type="image/x-icon"/>
     <meta charset="UTF-8">
     <!-- 默认主题 -->
-    <link rel="stylesheet" href="./static/lib/vue.css">
-    <!-- 右侧目录 docsify-toc https://github.com/mrpotatoes/docsify-toc -->
-    <link rel="stylesheet" href="./static/lib/toc.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
 </head>
 <body>
 <div id="app"></div>
@@ -33,7 +31,7 @@
         // 最大支持渲染的标题层级
         maxLevel: 5,
         // 自定义侧边栏后默认不会再生成目录，设置生成目录的最大层级（建议配置为2-4）
-        subMaxLevel: 1,
+        subMaxLevel: 4,
         // 小屏设备下合并导航栏到侧边栏
         mergeNavbar: true,
         // 页脚支持，默认加载的是 _footer.md
@@ -76,8 +74,6 @@
 <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
 <!-- 页脚-->
 <script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
-<!-- 右侧目录 docsify-toc https://github.com/mrpotatoes/docsify-toc -->
-<script src="static/lib/toc.js"></script>
 
 </body>
 </html>
