@@ -2,7 +2,7 @@
 - - -
 ## 版本 >= 1.3.0
 
-### 请优先阅读 [idea环境配置](https://gitee.com/JavaLionLi/RuoYi-Cloud-Plus/wikis/pages?sort_id=5985190&doc_id=2056143)
+### 请优先阅读 [idea环境配置](idea_environment.md)
 
 ## 手动部署
 
@@ -24,7 +24,7 @@ mvn clean install -D maven.test.skip=true -P prod
 
 ## docker 后端部署
 
-### 请优先阅读 [idea环境配置](https://gitee.com/JavaLionLi/RuoYi-Cloud-Plus/wikis/pages?sort_id=5985190&doc_id=2056143)
+### 请优先阅读 [idea环境配置](https://gitee.com/dromara/RuoYi-Cloud-Plus/wikis/pages?sort_id=5985190&doc_id=2056143)
 
 **重点: 一知半解的必看**
 > [docker安装](https://lionli.blog.csdn.net/article/details/83153029)<br>

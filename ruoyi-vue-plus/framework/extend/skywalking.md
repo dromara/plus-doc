@@ -7,7 +7,7 @@
 
 ## 代码改动
 
-https://gitee.com/JavaLionLi/RuoYi-Vue-Plus/commit/4d02466fed4f3ea012a80c3359cde9af0737141f <br>
+https://gitee.com/dromara/RuoYi-Vue-Plus/commit/4d02466fed4f3ea012a80c3359cde9af0737141f <br>
 根据上方commit提交记录 开启注释掉的代码
 
 ## 本地使用

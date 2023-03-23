@@ -1,7 +1,7 @@
 # 项目结构
 - - -
 ## 目录结构
-v1.3.0
+v1.6.0
 ~~~
 RuoYi-Cloud-Plus
 ├─ ruoyi-api             // api模块
@@ -17,6 +17,7 @@ RuoYi-Cloud-Plus
 │  └─ ruoyi-common-doc             // 文档集成模块
 │  └─ ruoyi-common-dubbo           // dubbo集成模块
 │  └─ ruoyi-common-elasticsearch   // ES集成模块
+│  └─ ruoyi-common-encrypt         // 数据加解密模块
 │  └─ ruoyi-common-excel           // excel集成模块
 │  └─ ruoyi-common-idempotent      // 幂等功能模块
 │  └─ ruoyi-common-job             // job定时任务集成模块
@@ -26,12 +27,15 @@ RuoYi-Cloud-Plus
 │  └─ ruoyi-common-mail            // 邮件集成模块
 │  └─ ruoyi-common-mybatis         // mybatis数据库相关集成模块
 │  └─ ruoyi-common-oss             // oss相关集成模块
+│  └─ ruoyi-common-prometheus      // prometheus监控
 │  └─ ruoyi-common-redis           // redis集成模块
 │  └─ ruoyi-common-satoken         // satoken集成模块
 │  └─ ruoyi-common-seata           // seata分布式事务集成模块
 │  └─ ruoyi-common-security        // 框架权限鉴权集成模块
 │  └─ ruoyi-common-sentinel        // sentinel集成模块
+│  └─ ruoyi-common-skylog          // skywalking日志收集模块
 │  └─ ruoyi-common-sms             // 短信集成模块
+│  └─ ruoyi-common-translation     // 通用翻译功能
 │  └─ ruoyi-common-web             // web服务集成模块
 ├─ ruoyi-example        // 例子模块
 │  └─ ruoyi-demo        // 演示模块 [9401]
@@ -49,7 +53,7 @@ RuoYi-Cloud-Plus
 │  └─ ruoyi-sentinel-dashboard     // sentinel控制台模块 [8718]
 │  └─ ruoyi-xxl-job-admin          // 任务调度控制台模块 [9900]
 ├─ ruoyi-ui             // 前端框架 [80]
-├─ config/dev           // nacos配置文件(需复制到nacos配置中心使用)
+├─ config/nacos         // nacos配置文件(需复制到nacos配置中心使用)
 │  └─ sentinel-ruoyi-gateway.json  // sentinel对接gateway限流配置文件
 │  └─ seata-server.properties      // seata服务配置文件
 │  └─ application.yml              // 所有应用主共享配置文件
@@ -63,6 +67,10 @@ RuoYi-Cloud-Plus
 │  └─ ruoyi-system.yml             // systen 模块配置文件
 │  └─ ruoyi-sentinel-dashboard.yml // sentinel 控制台 模块配置文件
 │  └─ ruoyi-xxl-job-admin.yml      // xxljob 控制台 模块配置文件
+├─ config/grafana       // grafana配置文件(需复制到grafana使用)
+│  └─ Nacos.json                        // Nacos监控页面
+│  └─ SLS JVM监控大盘.json               // JVM监控页面
+│  └─ Spring Boot 2.1 Statistics.json   // SpringBoot监控页面
 ├─ sql                  // sql脚本
 │  └─ ry-cloud.sql                 // 主sql文件
 │  └─ ry-config.sql                // 配置中心sql文件

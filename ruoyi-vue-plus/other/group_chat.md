@@ -14,7 +14,7 @@ VIP群是作者提供的私人服务 不代表着项目收费
 > 一个人接触的问题有限 一群人接触的问题无限 早进群早接触更多的问题(每天99+)<br>
 > 承诺: 看见必回复 让你感受作者有多话痨<br>
 > 入群须知: 技术支持 不等于 基础教学<br>
-> 重点事项: 此群不解答 微服务分支 相关问题(请加微服务分支对应VIP群 [跳转微服务群](https://gitee.com/JavaLionLi/RuoYi-Cloud-Plus/wikis/pages?sort_id=5303321&doc_id=2056143))
+> 重点事项: 此群不解答 微服务分支 相关问题(请加微服务分支对应VIP群 [跳转微服务群](https://gitee.com/dromara/RuoYi-Cloud-Plus/wikis/pages?sort_id=5303321&doc_id=2056143))
 
 QQ群号: **<713349725>**
 

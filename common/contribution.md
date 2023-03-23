@@ -16,9 +16,9 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1678934493115487351/0c45121e_1766278.png "屏幕截图")
 <br>
-<font size="4">Vue版本: [Gitee我要点Star](https://gitee.com/JavaLionLi/RuoYi-Vue-Plus/stargazers) [Github我要点Star](https://github.com/JavaLionLi/RuoYi-Vue-Plus)</font>
+<font size="4">Vue版本: [Gitee我要点Star](https://gitee.com/dromara/RuoYi-Vue-Plus/stargazers) [Github我要点Star](https://github.com/dromara/RuoYi-Vue-Plus)</font>
 <br>
-<font size="4">Cloud版本: [Gitee我要点Star](https://gitee.com/JavaLionLi/RuoYi-Cloud-Plus/stargazers) [Github我要点Star](https://github.com/JavaLionLi/RuoYi-Cloud-Plus)</font>
+<font size="4">Cloud版本: [Gitee我要点Star](https://gitee.com/dromara/RuoYi-Cloud-Plus/stargazers) [Github我要点Star](https://github.com/dromara/RuoYi-Cloud-Plus)</font>
 
 ## 为社区处理问题
 

@@ -16,5 +16,5 @@ spring默认自带 代码量少结构简单 稳定可靠 性能突出(自行百�
 
 ## 参考提交记录反向操作即可
 
-https://gitee.com/JavaLionLi/RuoYi-Vue-Plus/commit/1f42bd3d22c104aaa2d780c20a555b5e467858bf <br>
-https://gitee.com/JavaLionLi/RuoYi-Vue-Plus/commit/a63abbf268e4c0a60344f63b5cba828a1347e178
+https://gitee.com/dromara/RuoYi-Vue-Plus/commit/1f42bd3d22c104aaa2d780c20a555b5e467858bf <br>
+https://gitee.com/dromara/RuoYi-Vue-Plus/commit/a63abbf268e4c0a60344f63b5cba828a1347e178
