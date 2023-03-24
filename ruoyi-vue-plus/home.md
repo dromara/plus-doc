@@ -1,4 +1,4 @@
-<img src="../static/image/ruoyivueplus.png" width="50%" height="50%">
+<img src="../static/project/ruoyivueplus.png" width="50%" height="50%">
 <div style="height: 10px; clear: both;"></div>
 
 - - -
