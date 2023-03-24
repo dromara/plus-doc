@@ -1,9 +1,10 @@
 <!-- _coverpage.md -->
 <html>
-    <div style="display: flex; align-content:center; justify-content: center;">
-<div style="margin-right: 80px;">
+<img src="./static/image/logo.png" width="260px" height="260px">
+<div style="display: flex; align-content:center; justify-content: center;">
+<div style="margin-right: 200px;">
 <div style="font-weight: bold; font-size: 40px;">RuoYi-Vue-Plus</div>
-<div style="font-weight: bold; font-size: 40px;margin-bottom: 25px;">多租户后台管理系统</div>
+<div style="font-weight: bold; font-size: 40px;margin-bottom: 25px;">多租户权限管理系统</div>
 
 [![码云Gitee](https://gitee.com/dromara/RuoYi-Vue-Plus/badge/star.svg?theme=blue)](https://gitee.com/dromara/RuoYi-Vue-Plus)
 [![GitHub](https://img.shields.io/github/stars/JavaLionLi/RuoYi-Vue-Plus.svg?style=social&label=Stars)](https://github.com/dromara/RuoYi-Vue-Plus)
@@ -15,7 +16,7 @@
 </div>
 <div>
 <div style="font-weight: bold; font-size: 40px;">RuoYi-Cloud-Plus</div>
-<div style="font-weight: bold; font-size: 40px; margin-bottom: 25px;">多租户微服务管理系统</div>
+<div style="font-weight: bold; font-size: 40px; margin-bottom: 25px;">微服务权限管理系统</div>
 
 [![码云Gitee](https://gitee.com/dromara/RuoYi-Cloud-Plus/badge/star.svg?theme=blue)](https://gitee.com/dromara/RuoYi-Cloud-Plus)
 [![GitHub](https://img.shields.io/github/stars/JavaLionLi/RuoYi-Cloud-Plus.svg?style=social&label=Stars)](https://github.com/dromara/RuoYi-Cloud-Plus)
@@ -32,5 +33,7 @@
 > 💪真正面向企业级的应用框架
 > 
 > 组件化 模块化 轻耦合 高扩展 针对企业痛点 业界一流技术栈
+
+Copyright © 2018-2023 疯狂的狮子Li All Rights Reserved.
 
 [开始使用 Let's Go](/README.md)

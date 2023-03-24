@@ -1,5 +1,10 @@
-# 平台简介
+<img src="../static/image/ruoyi_cloud_plus.png" width="56%" height="56%">
+<div style="height: 10px; clear: both;"></div>
+
 - - -
+# 平台简介
+<br>
+
 [![码云Gitee](https://gitee.com/dromara/RuoYi-Cloud-Plus/badge/star.svg?theme=blue)](https://gitee.com/dromara/RuoYi-Cloud-Plus)
 [![GitHub](https://img.shields.io/github/stars/JavaLionLi/RuoYi-Cloud-Plus.svg?style=social&label=Stars)](https://github.com/dromara/RuoYi-Cloud-Plus)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://gitee.com/dromara/RuoYi-Cloud-Plus/blob/master/LICENSE)
