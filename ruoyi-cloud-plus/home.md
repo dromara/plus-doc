@@ -1,4 +1,4 @@
-<img src="../static/project/ruoyicloudplus.png" width="56%" height="56%">
+<img src="https://foruda.gitee.com/images/1679673780944866919/d908a86f_1766278.png" width="56%" height="56%">
 <div style="height: 10px; clear: both;"></div>
 
 - - -
