@@ -15,7 +15,7 @@
 * oracle 11g 12c
 * postgres 13 14
 * sqlserver 2017 2019
-* redis 5.X 6.X 由于框架大量使用了redis特性 版本必须 >= 5.X ([win redis 下载地址](https://github.com/tporadowski/redis))
+* redis 5.X 6.X 7.X 由于框架大量使用了redis特性 版本必须 >= 5.X ([win redis 下载地址](https://github.com/zkteco-home/redis-windows))
 * minio 本地文件存储 或 阿里云 腾讯云 七牛云等一切支持S3协议的云存储
 * maven 3.6.3 3.8.X
 * nodejs >= 14
