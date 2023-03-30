@@ -2,7 +2,7 @@
 - - -
 ### 交流群(不提供任何问题解答 纯交流)
 
-<img src="https://foruda.gitee.com/images/1679646701241687740/8be5b289_1766278.png" width="300" height="300">
+<img src="https://foruda.gitee.com/images/1680152723857593476/8ccf8409_1766278.png" width="300" height="300">
 
 ### VIP群(付费加群 提供问题解答、技术支持、技术分享)
 
