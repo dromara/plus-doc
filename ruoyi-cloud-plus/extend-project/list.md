@@ -22,5 +22,5 @@
 |-----------------|--------------------------------------------------------|
 | 分布式集群扩展         | https://gitee.com/dromara/RuoYi-Vue-Plus            |
 | 单体fast扩展        | https://gitee.com/dromara/RuoYi-Vue-Plus/tree/fast/ |
-| Plus学习笔记(常规功能)  | https://gitee.com/michelle1028/ruoyi-vue-plus-notes    |
-| Plus学习笔记(微服务组件) | https://gitee.com/michelle1028/ruoyi-cloud-plus-notes  |
+| Plus学习笔记(常规功能)  | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-vue-plus/home    |
+| Plus学习笔记(微服务组件) | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-cloud-plus/home  |
