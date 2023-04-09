@@ -23,7 +23,7 @@
 
 ### 搭建视频
 
-<iframe src="//player.bilibili.com/player.html?aid=824649431&bvid=BV1Fg4y137JK&cid=1087091587&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="false" height="300" weight="400"></iframe>
+[RuoYi-Vue-Plus 5.0 搭建与运行](https://www.bilibili.com/video/BV1Fg4y137JK/)
 
 ### 勾选maven对应环境
 ![输入图片说明](https://foruda.gitee.com/images/1678976284045210056/a2f28d33_1766278.png "屏幕截图")
