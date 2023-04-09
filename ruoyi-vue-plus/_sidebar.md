@@ -5,6 +5,7 @@
   * [更新日志](/ruoyi-vue-plus/changlog.md)
 * **快速开始**
   * [项目初始化](/ruoyi-vue-plus/quickstart/init.md)
+  * [4.X项目初始化](/ruoyi-vue-plus/quickstart/4.Xinit.md)
   * [搭建Admin监控](/ruoyi-vue-plus/quickstart/admin_init.md)
   * [搭建任务调度中心](/ruoyi-vue-plus/quickstart/job_init.md)
   * [idea环境配置](/ruoyi-vue-plus/quickstart/idea_environment.md)
