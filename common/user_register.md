@@ -21,6 +21,7 @@
 | 中山厚德快速模具有限公司    | http://hordrt.com             | <img src="https://foruda.gitee.com/images/1678975986213675141/7436dcb9_1766278.png" width="400" height="200"> |
 | 深圳市深南夙星科技有限公司   | http://www.szsnsx.com/        | <img src="https://foruda.gitee.com/images/1678975994674685698/a2c05a6e_1766278.png" width="400" height="200"> |
 | 陕西华恒军创信息科技有限公司  | http://hhjc.cc                | <img src="https://foruda.gitee.com/images/1678976006389002991/3786a1bc_1766278.png" width="400" height="200"> |
+| 河南小牛信息科技有限公司    | http://www.hnxn888.com/       | <img src="https://foruda.gitee.com/images/1681106560964010687/d8969ed2_1766278.png" width="200" height="100"> |
 | 武汉华智讯网络信息技术有限公司 | http://www.xun188.com         | <img src="https://foruda.gitee.com/images/1678975944577016382/93c4541d_1766278.png" width="200" height="100"> |
 | 易税信息技术有限公司      | https://www.etax.top          | <img src="https://foruda.gitee.com/images/1678975950137235651/211a63c4_1766278.png" width="200" height="100"> |
 | 广西华景城建筑设计有限公司   | http://www.hjcadc.com         | <img src="https://foruda.gitee.com/images/1678975955216975234/e83c8c6e_1766278.png" width="200" height="100"> |
