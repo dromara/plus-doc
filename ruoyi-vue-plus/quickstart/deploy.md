@@ -25,6 +25,9 @@ mvn clean package -D maven.test.skip=true -P prod
 
 前端参考下方前端部署章节
 
+## 部署视频
+
+[RuoYi-Vue-Plus 5.0 生产环境搭建部署](https://www.bilibili.com/video/BV1mL411e7ha/)
 
 ## docker 后端部署
 
