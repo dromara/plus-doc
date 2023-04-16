@@ -26,7 +26,7 @@
 > 进入 `系统管理 -> 文件管理 -> 配置管理` 填写对应的OSS服务相关配置<br>
 
 ![输入图片说明](https://foruda.gitee.com/images/1678978349820700551/1f91a237_1766278.png "屏幕截图")<br>
-![输入图片说明](https://foruda.gitee.com/images/1678978354387669856/3a91a3a9_1766278.png "屏幕截图")<br
+![输入图片说明](https://foruda.gitee.com/images/1678978354387669856/3a91a3a9_1766278.png "屏幕截图")<br>
 ![输入图片说明](https://foruda.gitee.com/images/1678978358019307086/0c2523e4_1766278.png "屏幕截图")
 
 <font size="6">**重点说明**</font>
