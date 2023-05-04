@@ -8,6 +8,7 @@
 | 公司名             | 官网                            | LOGO                                                                                                          |
 |-----------------|:------------------------------|---------------------------------------------------------------------------------------------------------------|
 | 中国联通(长春分公司)     | http://www.10010.com          | <img src="https://foruda.gitee.com/images/1679554727740431371/bd179d0f_1766278.png" width="300" height="200"> |
+| 福建亘前科技有限公司    | https://genqian.top        | <img src="https://foruda.gitee.com/images/1683170298723703161/891feff4_1766278.png" width="400" height="200"> |
 | 北京联宇信通科技有限公司    | http://www.lyxtkj.com/        | <img src="https://foruda.gitee.com/images/1680068618387237935/5e195ad8_1766278.png" width="400" height="200"> |
 | 厦门市熵时光科技有限公司    | https://www.xetsoft.com       | <img src="https://foruda.gitee.com/images/1672299365177532128/f0e78c26_1766278.png" width="400" height="200"> |
 | 广州润沁教育科技有限公司    | https://www.ca163.net         | <img src="https://foruda.gitee.com/images/1678976000893686992/1acbda54_1766278.png" width="400" height="200"> |
