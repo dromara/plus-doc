@@ -1,5 +1,68 @@
 # 更新日志
 - - -
+
+## v4.7.0 - 2023-05-08
+
+### 依赖升级
+
+* update springboot 2.7.9 => 2.7.11 修复 DoS 漏洞
+* update xxljob 2.3.1 => 2.4.0
+* update minio 升级至最新版 避免低版本信息泄漏问题
+* update hutool 5.8.15 => 5.8.18
+* update redisson 3.20.0 => 3.20.1
+
+### 功能更新
+
+* update 优化 更改 sys_oss_config 表注释 避免误解
+* update 项目正式入驻 dromara 开源社区 更改项目地址
+* update 全新 logo 全新背景图(设计师打造)
+* update 优化代码生成 同步操作使用批量处理
+* update 重写项目 readme 说明
+* update 修改controller中校验直接返回R.fail
+* update 更换默认用户头像
+* update 优化 限流注解 key 支持简单 spel 表达式
+* update 优化弹窗后导航栏偏移的问题
+* update 优化$tab.closePage后存在非首页页签时不应该跳转首页
+* update delete build style
+* update 优化选择图标组件
+* update 移除vue-multiselect样式
+* update 优化固定头部页签滚动条被隐藏的问题
+* update 按代码规范补全重写注解
+* update 优化 极端情况获取LoginUser可能为null问题
+* update 优化 更改系统所有服务日志配置文件命名为 logback-plus.xml 避免与其他框架默认配置冲突
+* update 优化 加解密模块 将null判断下推防止任何可能的null出现
+* update 优化 调整配置文件错误注释
+* update 优化 在线用户token获取方式
+* update 优化 用户更改角色 踢掉角色相关所有在线用户
+* update 优化 下拉图标选择组件优化：1.已选择图标高亮回显 2.滚动条采用el-scrollbar
+* update 优化 Vue的DictTag组件 当value没有匹配的值时 展示空value
+* update 优化 恢复翻页/切换路由滚动功能
+
+### 新增功能
+
+* add 新增 ip2region 实现离线IP地址定位库
+* add 增加 邮箱验证码发送接口
+* add 增加 邮箱登陆接口
+* add 增加 SecurityUtils 加解密安全工具类 可以处理base64,aes,sm4,sm2,rsa,md5,sha256加解密
+* add 增加 SecurityUtils 类中增加国密sm3的不可逆加密算法
+* add 新增 忽略数据权限写法 防止异常不执行关闭问题
+
+### 问题修复
+
+* fix 修复 代码生成 点选按钮不生效问题
+* fix 修复 用户密码更新无效问题
+* fix 修复 findInSet 在mysql下方法搜索非数字字段时 无引号报错问题
+* fix 修复 oracle postgres 数据库日志表索引创建错误
+* fix 角色列表关联多表sort值都一样 导致排序不稳定、临时表没有原来的主键顺序
+* fix 修复 DefaultExcelResult 单词拼写错误
+* fix 修复页面切换时布局错乱的问题
+* fix 修复tab栏“关闭其他”异常的问题
+* fix 修复 加解密拦截器 对象属性为null问题
+* fix 修复 取消oss预览状态修改 图标变化不正常问题
+* fix 修复 开启TopNav后一级菜单路由参数设置无效问题
+* fix 修复 路由跳转被阻止时vue-router内部产生报错信息问题
+* fix 修复 缓存列表：多次清除操作，提示不变的问题
+
 ## v4.6.0 - 2023-03-13
 
 ### 重大更新
