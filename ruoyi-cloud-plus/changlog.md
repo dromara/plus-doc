@@ -1,5 +1,66 @@
 # 更新日志
 - - -
+
+## v1.7.0 - 2023-05-10
+
+### 依赖升级
+
+* update springboot 2.7.9 => 2.7.11 修复 DoS 漏洞 修复CVE漏洞
+* update springcloud 2021.0.6 => 2021.0.7
+* update springcloud-alibaba 2021.0.4.0 => 2021.0.5.0
+* update dubbo 3.1.7 => 3.1.10
+* update nacos 2.2.0 => 2.2.1
+* update xxljob 2.3.1 => 2.4.0
+* update minio 升级至最新版 避免低版本信息泄漏问题
+* update hutool 5.8.15 => 5.8.18
+* update redisson 3.20.0 => 3.20.1
+* update lombok 1.18.24 => 1.18.26
+
+### 功能更新
+
+* update 优化 更改 sys_oss_config 表注释 避免误解
+* update 优化 sys_logininfor 丰富多种信息
+* update 项目正式入驻 dromara 开源社区 更改项目地址
+* update 全新 logo 全新背景图(设计师打造)
+* update 优化 代码生成模块的数据同步功能
+* update 修改多团队开发插件，支持多网卡
+* update 修改controller中校验直接返回R.fail
+* update 优化 角色sort值一样的排序问题
+* update 更换默认用户头像
+* update 优化 WebFluxUtils.getOriginalRequestUrl 方法获取空路径报错问题
+* update 去除same-token有限期配置，使用默认配置（一天）
+* update 优化固定头部页签滚动条被隐藏的问题
+* update delete vue-multiselect style
+* update 按代码规范补全重写注解
+* update 优化 极端情况获取LoginUser可能为null问题
+* update 优化 更改系统所有服务日志配置文件命名为 logback-plus.xml 避免与其他框架默认配置冲突
+* update 优化 skywalking-agent 探针日志等级调整为 WARN 减少无用日志输出
+* update 优化 加解密模块 将null判断下推防止任何可能的null出现
+* update 优化 在线用户token获取方式
+* update 优化 用户更改角色 踢掉角色相关所有在线用户
+
+### 新功能
+
+* add 集成 ip2region 实现离线IP地址定位库
+* add 增加 邮箱验证码发送接口
+* add 增加 邮箱登陆接口
+* add 增加 EncryptUtils 加解密安全工具类 可以处理base64,aes,sm4,sm2,rsa,md5,sha256加解密
+* add 增加 EncryptUtils 类中增加国密sm3的不可逆加密算法
+* add 新增 忽略数据权限写法 防止异常不执行关闭问题
+
+### 问题修复
+
+* fix 修复 MybatisExceptionHandler 未自动装载问题
+* fix 修复 代码生成 点选按钮不生效问题
+* fix 修复 Nacos 服务 SpringBoot-admin 客户端功能失效问题
+* fix 修复 findInSet 在mysql下方法搜索非数字字段时 无引号报错问题
+* fix 修复 ruoyi-demo postgres 数据库用户名密码变量错误
+* fix 修复 oracle postgres 数据库日志表索引创建错误
+* fix 修复 无法注入 mailProperties 导致 resource 模块无法启动问题
+* fix 修复tab栏”关闭其他“异常的问题
+* fix 修复 加解密拦截器 对象属性为null问题
+* fix 修复 取消oss预览状态修改 图标变化不正常问题
+
 ## v1.6.0 - 2023-03-14
 
 ### 重大更新
