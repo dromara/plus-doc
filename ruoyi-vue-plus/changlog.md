@@ -43,8 +43,8 @@
 * add 新增 ip2region 实现离线IP地址定位库
 * add 增加 邮箱验证码发送接口
 * add 增加 邮箱登陆接口
-* add 增加 SecurityUtils 加解密安全工具类 可以处理base64,aes,sm4,sm2,rsa,md5,sha256加解密
-* add 增加 SecurityUtils 类中增加国密sm3的不可逆加密算法
+* add 增加 EncryptUtils 加解密安全工具类 可以处理base64,aes,sm4,sm2,rsa,md5,sha256加解密
+* add 增加 EncryptUtils 类中增加国密sm3的不可逆加密算法
 * add 新增 忽略数据权限写法 防止异常不执行关闭问题
 
 ### 问题修复
