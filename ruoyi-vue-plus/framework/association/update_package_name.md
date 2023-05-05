@@ -1,6 +1,8 @@
 # 关于修改包名
 - - -
 
+**注意: 新包名为 org.dromara**
+
 ## 1.随便找个地方新建 com.ruoyi 包
 ![输入图片说明](https://foruda.gitee.com/images/1683276819877387946/8e48385c_1766278.png "屏幕截图")
 
