@@ -5,4 +5,5 @@
 * [Cloud版本](/ruoyi-cloud-plus/home.md)
 * [前端文档](/plus-ui/home.md)
 * [常见问题](/questions/lombok.md)
+* [视频教程](/common/video.md)
 * [演示系统](/common/demo_system.md)
