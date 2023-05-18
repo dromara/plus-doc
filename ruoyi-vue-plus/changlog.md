@@ -1,6 +1,98 @@
 # 更新日志
 - - -
 
+## v5.0.0 - 2023-05-19
+
+# 开发历程
+
+* 2022年11月 开始5.X计划 历经2个月的设计与讨论
+* 2023年1月 开始着手开发 历经3个月的开发 特别感谢团队的小伙伴与一些热心的粉丝 参与功能开发与测试
+* 2023年4月 开始公测 历经将近2个月的公测与修复工作(期间成功支持多位使用者生产使用)
+* 2023年5月底 正式发布 虽然已经有生产实践 但是springboot3.0与jdk17使用者还处于少数 另外5.X后续还有一些不兼容更新 求稳者建议在等一等
+* 关于4.X的说明 由于springboot2.X 与 vue2.X 匀在年底停止维护 故此4.X也将于年底同boot2一同停止维护
+
+# 视频介绍
+
+为了更好的让大家了解 5.X 作者录制了相关的视频 供大家快速了解上手
+
+* 搭建与运行: https://www.bilibili.com/video/BV1Fg4y137JK/
+* 新功能与变更介绍: https://www.bilibili.com/video/BV1Us4y1m7ky/
+* 生产环境搭建部署: https://www.bilibili.com/video/BV1mL411e7ha/
+
+# 更新日志
+
+### 重大更新
+
+* [不兼容升级] java 版本从 jdk 8 升级到 jdk 17 且需要使用 graalvm 运行(暂时未解决原生jdk存在的问题)
+* [不兼容升级] springboot 升级 3.0 版本
+* [不兼容升级] 重构 项目模块结构 采用插件化结构 易扩展易解耦
+* [不兼容升级] com.sun.mail 更改为 jakarta.mail 修改最新写法
+* [不兼容升级] javax.servlet 替换为 jakarta.servlet 更新所有代码
+* [简化性升级] 默认开启复杂结构 resultMap 自动映射 简化xml编码(多结构实体需带上主键id) 
+* [数据库改动] 更新 create_by update_by 字段类型 (保存用户id)
+* [数据库改动] 新增 create_dept 字段 (保存创建部门id)
+* [不兼容更新] system 模块 所有实体类均使用 bo|vo 规范化
+* [重大更新] 新增 多租户功能设计 整体框架代码结构与数据库更改
+* [重大更新] 新增 mapstruct-plus 替换 BeanUtil 与 BeanCopyUtils 工具
+* [不兼容更新] 重构 登录注解接口与cloud版本统一接口路径
+* [不兼容更新] 重构 BaseMapperPlus接口 去除 `@param <M> Mapper` 泛型
+* [不兼容更新] 移除 vue2 前端工程 全面启用 vue3
+* [重大更新] 新增 vue3 + TS 版本前端(独立仓库后续与Cloud版本共用)
+* [重大更新] 增加 websocket 模块 支持token鉴权 支持分布式集群消息同步
+* [重大更新] 框架文档全面翻新 https://plus-doc.dromara.org
+
+### 依赖升级
+
+* update java 1.8 => 17
+* update springboot 2.7.7 => 3.0.7
+* update springboot-admin 2.7.10 => 3.0.4
+* update springdoc 1.6.14 => 2.1.0
+* update lock4j 2.2.3 => 2.2.4
+* update dynamic-ds 3.5.2 => 3.6.1
+* update easyexcel 3.1.5 => 3.2.1
+* update hutool 5.8.11 => 5.8.18
+* update redisson 3.19.2 => 3.20.1
+* update lombok 1.18.24 => 1.18.26
+* update spring-boot.mybatis 2.2.2 => 3.0.1
+* update mapstruct-plus 1.2.3
+* update maven-compiler-plugin 3.10.1 => 3.11.0
+* update maven-surefire-plugin 3.0.0-M7 => 3.0.0
+* update docker mysql 8.0.31 => 8.0.33
+* update docker nginx 1.22.1 => 1.32.4
+* update docker redis 6.2.7 => 6.2.12
+* update docker minio RELEASE.2023-04-13T03-08-07Z
+
+### 功能更新
+
+* update 适配 AsyncConfig 替换过期继承类改为实现 AsyncConfigurer 接口
+* update 适配 redis 新版本配置文件写法
+* update 适配 获取redis 监控参数接口 替换过期语法
+* update 适配 sa-token 替换新依赖 sa-token-spring-boot3-starter
+* update 适配 springboot-admin 改为最新 spring-security 写法
+* update 适配 springdoc 新版本配置方式
+* update 适配 ServletUtils 更换继承 JakartaServletUtil
+* update 适配 新序列化注解
+* update 优化 利用 resultMap 自动映射配置 简化 xml (非嵌套)
+* update 优化 调整 system entity 实体与 controller 包结构
+* update 优化 实体类中校验注解的提示信息
+* update 优化 使用 jdk17 语法优化代码
+* update 优化 所有 properties 文件改为注解启用
+* update 更新 docker 基础镜像 graalvm java17
+* update 优化 用户头像 改为存储 ossId 使用转换模块转为 url 展示
+* update 优化 重构 CellMergeStrategy 支持多级表头修复一些小问题 整理代码结构
+* update 优化 登录流程代码注释
+
+### 新增功能
+
+* add 新增 flatten-maven-plugin 插件统一版本号管理
+* add 新增 ip2region 实现离线IP地址定位库
+
+### 移除功能
+
+* remove 移除 BeanCopyUtils 工具类 与 JDK17 不兼容
+* remove 移除 devtools 依赖 并不好用(建议直接用idea自带的热更)
+* remove 移除 vue2 前端工程 统一使用 vue3 工程
+
 ## v4.7.0 - 2023-05-08
 
 ### 依赖升级
