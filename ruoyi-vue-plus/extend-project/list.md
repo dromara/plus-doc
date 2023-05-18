@@ -23,7 +23,7 @@
 | 微服务扩展             | https://gitee.com/dromara/RuoYi-Cloud-Plus                             |
 | 单体fast扩展          | https://gitee.com/dromara/RuoYi-Vue-Plus/tree/fast/                    |
 | Plus学习笔记          | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-vue-plus/home  |
-| 基于vue-next-admin的vue3+ts前端 | https://gitee.com/thiszhc/Rouyi-plus-admin |
+| 基于vue-next-admin的vue3+ts前端 | https://gitee.com/thiszhc/RuoYi-Vue3-UI |
 | ant-design-vue3版本 | https://gitee.com/Double_AutoEE/AutoEE/tree/autoee-ui-for-ruoyi-vue-plus/ |
 | blog博客系统          | https://gitee.com/kalashok-pan/zhi-blog-plus                              |
 | Activiti扩展        | https://gitee.com/sgs98/RuoYi-Vue-Plus-Activiti                           |
