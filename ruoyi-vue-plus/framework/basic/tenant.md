@@ -25,18 +25,24 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1680168468127690787/2cd3279e_4959041.png "屏幕截图")
 
+## 忽略租户
 
-如果需要指定单独 SQL 不开启过滤，可在对应的 Mapper 接口添加如下忽略注解：
+1.如果需要指定单独 SQL 不开启过滤，可在对应的 Mapper 接口添加如下忽略注解：
 ```
 @InterceptorIgnore(tenantLine = "true")
 ```
 
-如果需要在业务层忽略多租户，可调用以下方法：
+2.如果需要在业务层忽略多租户，可调用以下方法：
 ```
-TenantHelper.enableIgnore();
+# 无返回值
+TenantHelper.ignore(() -> { 业务代码 });
+# 有返回值
+Class result = TenantHelper.ignore(() -> { return 业务代码 });
 ```
 
 ![输入图片说明](https://foruda.gitee.com/images/1680176903544128494/5bd8ac21_4959041.png "屏幕截图")
+
+
 
 ## 登录界面
 
@@ -90,6 +96,7 @@ TenantHelper.enableIgnore();
 
 ### 同步套餐
 应用场景：租户套餐进行了修改，配置的菜单需要同步到特定租户。
+(不是所有租户都有更新套餐的权利, 这是跟钱挂钩的)
 
 > 点一下按钮的事，图略。
 
