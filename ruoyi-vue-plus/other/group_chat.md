@@ -16,7 +16,9 @@ VIP群是作者提供的私人服务 不代表着项目收费
 > 入群须知: 技术支持 不等于 基础教学<br>
 > 重点事项: 此群不解答 微服务分支 相关问题(请加微服务分支对应VIP群 [跳转微服务群](https://gitee.com/dromara/RuoYi-Cloud-Plus/wikis/pages?sort_id=5303321&doc_id=2056143))
 
-QQ群号: **<713349725>**
+支付后申请加群即可 QQ群号: **<713349725>**
+支付后申请加群即可 QQ群号: **<713349725>**
+支付后申请加群即可 QQ群号: **<713349725>**
 
 **加群扫码**<br>
 <img src="https://foruda.gitee.com/images/1664426156617067495/e8937148_1766278.jpeg" width="300px" height="450px" /><img src="https://foruda.gitee.com/images/1664426221966906609/3eabec88_1766278.jpeg" width="300px" height="450px" />
