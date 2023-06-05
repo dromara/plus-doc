@@ -55,6 +55,9 @@ knife4j:
       - name: 系统服务
         uri: localhost:8080
         location: /system/v3/api-docs
+      - name: 监控服务
+        uri: localhost:8080
+        location: /monitor/v3/api-docs
       - name: 代码生成服务
         uri: localhost:8080
         location: /gen/v3/api-docs
