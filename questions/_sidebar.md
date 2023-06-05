@@ -18,6 +18,7 @@
   * [如何指定dubbo注册ip](/questions/dubbo_ip.md)
   * [Sentinel页面404问题](/questions/sentinel_404.md)
   * [无法读取nacos配置](/questions/nacos_read_fail.md)
+  * [接口文档对接knife4j](/questions/kinfe4j.md)
   * [不支持ST请求](/questions/st_not_support.md)
   * [Only one connection receive subscriber allowed](/questions/only_one_subscriber.md)
   * [nacos 报错 The Raft Group [naming_instance_metadata]](/questions/nacos_naming_instance_metadata.md)
