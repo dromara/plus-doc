@@ -1,6 +1,7 @@
 # 对接前声明
 
 经常有小伙伴希望可以对接 knife4j
+
 那么这里将介绍如何使用 框架生成的 openapi 对接 knife4j
 
 # 如何对接
@@ -8,7 +9,9 @@
 **重点声明: 本框架生成标准openapi结构 如对接后遇到不好用等问题 皆与本框架无关**
 
 knife4j 本身提供了独立的文档中间件 可以零成本的介入 openapi
+
 文档地址: https://doc.xiaominfo.com/docs/middleware-sources
+
 使用文档提供的 Cloud 模式 对接咱们框架的 openapi 地址即可完成对接
 
 ![输入图片说明](https://foruda.gitee.com/images/1685953873117929554/22dce56e_1766278.png "屏幕截图")
