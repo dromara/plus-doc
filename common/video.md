@@ -78,134 +78,136 @@
 61. LoginHelper功能分析与登录密码匹配逻辑
 62. LoginHelper登录功能深入底层源码讲解
 63. 请求接口token认证逻辑与拦截器讲解
-64. LoginHelper获取当前用户数据源码讲解
+64. getInfo接口获取当前用户信息讲解
 65. 全局异常拦截器讲解
-66. LoginHelper系统登出源码讲解
-67. 获取系统路由菜单接口讲解
+66. logout接口系统登出源码讲解
+67. router接口获取系统路由菜单讲解
 68. 路由生成处理逻辑router.js与permission.js源码讲解
 69. 侧边栏菜单和顶部菜单渲染过程源码讲解
-70. sa-token 权限标识符校验源码讲解
-71. sa-token 如何与用户权限交互
-72. 用户管理-新建用户(角色、部门、岗位)
-73. sa-token 角色校验源码讲解
-74. 角色鉴权-角色关联菜单
-75. 角色鉴权-角色关联部门
-76. 角色鉴权-数据权限(DataPermission、DataPermissionHelper)
-77. 部门管理-树组件
-78. 岗位管理
-79. EasyExcel的使用（ExcelUtil工具类）
-80. 用户管理-导入用户
-81. 用户管理-导出用户
-82. SpringCache+CacheManager
-83. 注解缓存+CacheUtils
-84. 缓存穿透、缓存击穿、缓存雪崩
-85. 字典管理
-86. 参数管理
-87. 通知公告（富文本组件）
-88. SpringEvent
-89. 日志管理（登录日志）
-90. 日志管理（操作日志、日志注解）
-91. aws-s3亚马逊简单存储服务协议（Amazon Simple Storage Service）
-92. ruoyi-oss模块文件上传
-93. 文件上传-前端上传组件
-94. 文件上传-minio
-95. 文件上传-阿里云
-96. 文件上传-腾讯云
-97. 文件上传-七牛云
-98. 在线用户管理-强退用户(satoken行为监听)
-99. 缓存监控-redis状态管理
-100. 缓存列表-redis key管理
-101. 表单构建原理
-102. velocity模板语法和修改
-103. 代码生成原理及流程
-104. zip压缩包
-105. 代码生成预览
-106. 扩展-监控中心配置和运行
-107. 扩展-监控中心应用监控
-108. 扩展-任务中心配置和运行
-109. 扩展-任务中心-简单任务编写
-110. 扩展-任务中心-分片任务
-111. 扩展-任务中心-任务生命周期
-112. Logback日志配置
-113. p6spy sql性能分析(sql打印)
-114. 公共实体(BaseEntity、BaseController、R、LoginUser)
-115. common模块讲解(常量、枚举、异常)
-116. hutool介绍与文档使用
-117. ServletUtils 客户端工具
-118. SpringUtils Spring工具
-119. StreamUtils 流处理工具
-120. StringUtils 字符串工具
-121. TreeBuildUtils 树工具
-122. ReflectUtils 反射工具
-123. SqlUtil sql工具
-124. RegionUtils 区域定位工具(ip2region)
-125. AddressUtils 地址工具
-126. Validator 校验框架配置
-127. Validator 注解与 ValidatorUtils 工具使用
-128. MessageUtils 国际化工具(国际化配置)
-129. undertow对比tomcat
-130. XSS安全防护
-131. requestBody 缓存配置(可重复读)
-132. 日志请求/响应时间拦截器
-133. openapi 介绍与文档生成
-134. SpringDoc 注解生成文档
-135. javadoc 注释生成文档
-136. apifox 接口文档工具
-137. 连接池 hikaricp与druid 
-138. 连接池配置
-139. 多数据源配置与使用
-140. DynamicDataSourceContextHolder 手动切换数据源
-141. 多数据源的事务问题与 @DsTransactional 解决方案
-142. DataBaseHelper 多数据源语法差异处理
-143. 应用案例-代码生成多数据源切换
-144. QueueUtils 队列工具
-145. 普通队列(订阅队列)
-146. 延迟队列
-147. 优先队列
-148. 有界队列
-149. 防重幂等设计(美团GTIS系统)
-150. 防重幂等功能使用
-151. 限流功能使用(全局、IP、集群实例限流)
-152. 短信功能配置与使用
-153. 邮件功能配置与使用
-154. 翻译模块讲解(三种模式)
-155. 翻译用户名、字典、ossId转url、对象翻译
-156. 数据脱敏讲解(内置脱敏策略)
-157. 数据加解密-配置与用法
-158. 数据加解密-mybatis拦截器
-159. 单元测试 JUnit5、注解与断言
-160. 单元测试 基于springboot环境
-161. 单元测试 带参数单元测试
-162. 单元测试 标签单元测试
-163. ElementUI介绍和使用
-164. ES6语法介绍
-165. 前端App.Vue和main.js配置
-166. 接口封装和使用
-167. Vuex的模块封装和使用
-168. directive自定义指令使用
-169. plugins插件封装和使用
-170. utils工具-dict字典工具
-171. utils工具-其他工具的使用
-172. 前端页面生命周期
-173. 前端组件的封装和引用
-174. 前端组件示例讲解
-175. linux CentOS环境搭建（mysql、redis）
-176. linux CentOS环境搭建二（java、nginx、minio）
-177. 后端打包发布运行
-178. nginx配置（反向代理）
-179. 前端打包发布
-180. docker安装与使用
-181. docker-compose安装与使用
-182. dockerfile语法
-183. 构建镜像
-184. docker-compose语法
-185. 一键编排启动
-186. IDEA的docker插件使用
-187. 服务日志的监控
-188. 拓展-如何搭建C端应用（uniapp）
-189. 拓展-多设备多用户设计
-190. 拓展-移动端用户的登录和鉴权（小程序端）
-191. 拓展-移动端用户的登录和鉴权（公众号端）
-192. 拓展-移动端用户的登录和鉴权（手机号）
-193. 拓展-移动端简单业务开发
+70. 前端按钮权限控制与后端权限获取(自定义指令)
+71. sa-token 权限拦截器 SaInterceptor 源码讲解
+72. sa-token @SaCheckLogin 注解校验逻辑
+73. sa-token @SaCheckPermission、@SaCheckRole 注解校验逻辑
+74. sa-token @SaCheckSafe 二级认证 用法与校验逻辑
+75. sa-token @SaCheckDisable 账号封禁 用法与校验逻辑
+76. sa-token @SaCheckBasic HttpBasic认证 用法与校验逻辑
+77. 角色部门-数据权限使用讲解
+78. 角色部门-数据权限实现源码讲解(DataPermission、DataPermissionHelper)
+79. 部门管理-树组件
+80. 岗位管理
+81. EasyExcel的使用（ExcelUtil工具类）
+82. 用户管理-导入用户
+83. 用户管理-导出用户
+84. SpringCache+CacheManager
+85. 注解缓存+CacheUtils
+86. 缓存穿透、缓存击穿、缓存雪崩
+87. 字典管理
+88. 参数管理
+89. 通知公告（富文本组件）
+90. SpringEvent
+91. 日志管理（登录日志）
+92. 日志管理（操作日志、日志注解）
+93. aws-s3亚马逊简单存储服务协议（Amazon Simple Storage Service）
+94. ruoyi-oss模块文件上传
+95. 文件上传-前端上传组件
+96. 文件上传-minio
+97. 文件上传-阿里云
+98. 文件上传-腾讯云
+99. 文件上传-七牛云
+100. 在线用户管理-强退用户(satoken行为监听)
+101. 缓存监控-redis状态管理
+102. 缓存列表-redis key管理
+103. 表单构建原理
+104. velocity模板语法和修改
+105. 代码生成原理及流程
+106. zip压缩包
+107. 代码生成预览
+108. 扩展-监控中心配置和运行
+109. 扩展-监控中心应用监控
+110. 扩展-任务中心配置和运行
+111. 扩展-任务中心-简单任务编写
+112. 扩展-任务中心-分片任务
+113. 扩展-任务中心-任务生命周期
+114. Logback日志配置
+115. p6spy sql性能分析(sql打印)
+116. 公共实体(BaseEntity、BaseController、R、LoginUser)
+117. common模块讲解(常量、枚举、异常)
+118. hutool介绍与文档使用
+119. ServletUtils 客户端工具
+120. SpringUtils Spring工具
+121. StreamUtils 流处理工具
+122. StringUtils 字符串工具
+123. TreeBuildUtils 树工具
+124. ReflectUtils 反射工具
+125. SqlUtil sql工具
+126. RegionUtils 区域定位工具(ip2region)
+127. AddressUtils 地址工具
+128. Validator 校验框架配置
+129. Validator 注解与 ValidatorUtils 工具使用
+130. MessageUtils 国际化工具(国际化配置)
+131. undertow对比tomcat
+132. XSS安全防护
+133. requestBody 缓存配置(可重复读)
+134. 日志请求/响应时间拦截器
+135. openapi 介绍与文档生成
+136. SpringDoc 注解生成文档
+137. javadoc 注释生成文档
+138. apifox 接口文档工具
+139. 连接池 hikaricp与druid 
+140. 连接池配置
+141. 多数据源配置与使用
+142. DynamicDataSourceContextHolder 手动切换数据源
+143. 多数据源的事务问题与 @DsTransactional 解决方案
+144. DataBaseHelper 多数据源语法差异处理
+145. 应用案例-代码生成多数据源切换
+146. QueueUtils 队列工具
+147. 普通队列(订阅队列)
+148. 延迟队列
+149. 优先队列
+150. 有界队列
+151. 防重幂等设计(美团GTIS系统)
+152. 防重幂等功能使用
+153. 限流功能使用(全局、IP、集群实例限流)
+154. 短信功能配置与使用
+155. 邮件功能配置与使用
+156. 翻译模块讲解(三种模式)
+157. 翻译用户名、字典、ossId转url、对象翻译
+158. 数据脱敏讲解(内置脱敏策略)
+159. 数据加解密-配置与用法
+160. 数据加解密-mybatis拦截器
+161. 单元测试 JUnit5、注解与断言
+162. 单元测试 基于springboot环境
+163. 单元测试 带参数单元测试
+164. 单元测试 标签单元测试
+165. ElementUI介绍和使用
+166. ES6语法介绍
+167. 前端App.Vue和main.js配置
+168. 接口封装和使用
+169. Vuex的模块封装和使用
+170. directive自定义指令使用
+171. plugins插件封装和使用
+172. utils工具-dict字典工具
+173. utils工具-其他工具的使用
+174. 前端页面生命周期
+175. 前端组件的封装和引用
+176. 前端组件示例讲解
+177. linux CentOS环境搭建（mysql、redis）
+178. linux CentOS环境搭建二（java、nginx、minio）
+179. 后端打包发布运行
+180. nginx配置（反向代理）
+181. 前端打包发布
+182. docker安装与使用
+183. docker-compose安装与使用
+184. dockerfile语法
+185. 构建镜像
+186. docker-compose语法
+187. 一键编排启动
+188. IDEA的docker插件使用
+189. 服务日志的监控
+190. 拓展-如何搭建C端应用（uniapp）
+191. 拓展-多设备多用户设计
+192. 拓展-移动端用户的登录和鉴权（小程序端）
+193. 拓展-移动端用户的登录和鉴权（公众号端）
+194. 拓展-移动端用户的登录和鉴权（手机号）
+195. 拓展-移动端简单业务开发
 ```
