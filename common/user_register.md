@@ -17,6 +17,7 @@
 | 广东乐善智能装备股份有限公司  | https://www.china-leshan.com/ | <img src="https://foruda.gitee.com/images/1672299473733272899/2065e28c_1766278.png" width="400" height="200"> |
 | 数字江西科技有限公司      | https://www.digitaljx.com/    | <img src="https://foruda.gitee.com/images/1660527156328976445/屏幕截图.png" width="300" height="200">             |
 | 上海极锐星瀚传感技术有限公司  | http://www.jrsensing.com/     | <img src="https://foruda.gitee.com/images/1669694597446652604/6997f99a_1766278.png" width="400" height="100"> |
+| 北京数影互联科技有限公司 | http://www.dataflying.top/ | <img src="https://foruda.gitee.com/images/1686118090145603656/46dbe579_1766278.png" width="200" height="100"> |
 | 广州创服信息科技有限公司    | https://www.cfkjcloud.com     | <img src="https://foruda.gitee.com/images/1678975960889135530/85fa904f_1766278.png" width="400" height="200"> |
 | 茂名云智科技有限公司      | http://www.winzkj.com         | <img src="https://foruda.gitee.com/images/1678975967691323451/6343e6b7_1766278.png" width="400" height="200"> |
 | 成都时光旅迹科技有限公司    | https://www.ttmup.com/        | <img src="https://foruda.gitee.com/images/1678975973935607983/a0f8dce2_1766278.png" width="400" height="200"> |
