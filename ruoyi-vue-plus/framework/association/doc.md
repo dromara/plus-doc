@@ -59,7 +59,7 @@
 也可不分组统一导入: `http://localhost:8080/v3/api-docs` <br>
 
 ![输入图片说明](https://foruda.gitee.com/images/1678976514385097727/05c7e0a6_1766278.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1678976522299732812/c874d181_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1686626073422245046/df4b6a54_1766278.png "屏幕截图")
 ![输入图片说明](https://foruda.gitee.com/images/1678976527495742967/79836e7f_1766278.png "屏幕截图")
 
 > 4.选择 接口管理 项目概览 点击立即导入 并等待导入完成<br>
