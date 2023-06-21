@@ -40,22 +40,25 @@
 
 请按照以下顺序依次导入
 
-![输入图片说明](https://foruda.gitee.com/images/1678941244222406539/21b1b4cc_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1687336289766464082/2cab265c_1766278.png "屏幕截图")
 
 默认为 `mysql` 其他数据库需导入对应的sql文件
 
-![输入图片说明](https://foruda.gitee.com/images/1678941167773891809/1c437c1f_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1687336338776140514/f9852ad0_1766278.png "屏幕截图")
 
-**多数据库仅支持主应用 扩展应用需自行适配(例如: xxl-job仅支持mysql)**
+**~~多数据库仅支持主应用 扩展应用需自行适配(例如: xxl-job仅支持mysql)~~**
+
+**多数据库支持 5.X 调度中心采用 PowerJob 底层为 JPA 支持所有数据库**
 
 ### 应用启动
 应用列表
 
 ![输入图片说明](https://foruda.gitee.com/images/1678976302776168895/7333341c_1766278.png "屏幕截图")
 * `MonitorAdminApplication` 为 Admin监控服务(非必要 可参考对应文档关闭)
-* `XxlJobAdminApplication` 为 任务调度中心服务(非必要 可参考对应文档关闭)
+* ~~`XxlJobAdminApplication` 为 任务调度中心服务(非必要 可参考对应文档关闭)~~ (5.X 弃用)
+* `PowerJobServerApplication` 为 任务调度中心服务(非必要 可参考对应文档关闭)
 * `RuoYiApplication` 为 主应用服务
-> 需优先启动 `MonitorAdminApplication` 与 `XxlJobAdminApplication` 具体配置方式参考对应文档<br>
+> 需优先启动 `MonitorAdminApplication` 与 `PowerJobServerApplication` 具体配置方式参考对应文档<br>
 > 最后启动 主服务 `RuoYiApplication`
 
 ### 主服务配置方式
