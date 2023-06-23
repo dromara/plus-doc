@@ -1,11 +1,13 @@
 # 项目简介
-- - -
+
+---
+
 ## 平台简介
 
-* 本仓库为前端技术栈 [Vue3](https://v3.cn.vuejs.org) + [Element Plus](https://element-plus.org/zh-CN) + [Vite](https://cn.vitejs.dev) 版本。
-* 配套后端代码仓库地址
-* [RuoYi-Vue-Plus 5.X(注意版本号)](https://gitee.com/dromara/RuoYi-Vue-Plus)
-* [RuoYi-Cloud-Plus 2.X(注意版本号)](https://gitee.com/dromara/RuoYi-Cloud-Plus)
+- 本仓库为前端技术栈 [Vue3](https://v3.cn.vuejs.org) + [Element Plus](https://element-plus.org/zh-CN) + [Vite](https://cn.vitejs.dev) 版本。
+- 配套后端代码仓库地址
+- [RuoYi-Vue-Plus 5.X(注意版本号)](https://gitee.com/dromara/RuoYi-Vue-Plus)
+- [RuoYi-Cloud-Plus 2.X(注意版本号)](https://gitee.com/dromara/RuoYi-Cloud-Plus)
 
 ## 前端运行
 
@@ -19,12 +21,14 @@ npm install --registry=https://registry.npmmirror.com
 # 启动服务
 npm run dev
 
+# 推荐使用yarn或pnpm包管理工具
 # 构建测试环境 yarn build:stage
 # 构建生产环境 yarn build:prod
 # 前端访问地址 http://localhost:80
 ```
 
 ## 后端改造
+
 参考后端代码内 `ruoyi-gen/resources/vm/vue/v3/readme.txt` 说明
 
 ## 内置功能
@@ -42,8 +46,8 @@ npm run dev
 11. 登录日志：系统登录日志记录查询包含登录异常。
 12. 在线用户：当前系统中活跃用户状态监控。
 13. 定时任务：在线（添加、修改、删除)任务调度包含执行结果日志。
-14. 代码生成：前后端代码的生成（java、html、xml、sql）支持CRUD下载 。
-15. 系统接口：根据业务代码自动生成相关的api接口文档。
-16. 服务监控：监视当前系统CPU、内存、磁盘、堆栈等相关信息。
+14. 代码生成：前后端代码的生成（java、html、xml、sql）支持 CRUD 下载 。
+15. 系统接口：根据业务代码自动生成相关的 api 接口文档。
+16. 服务监控：监视当前系统 CPU、内存、磁盘、堆栈等相关信息。
 17. 缓存监控：对系统的缓存信息查询，命令统计等。
-18. 在线构建器：拖动表单元素生成相应的HTML代码。
+18. 在线构建器：拖动表单元素生成相应的 HTML 代码。(TS 版本正在开发中。)
