@@ -3,6 +3,9 @@
 ### 配置调度中心客户端
 > 修改主服务配置文件
 >
+
+![输入图片说明](https://foruda.gitee.com/images/1687656939847353725/951c1af7_1766278.png "屏幕截图")
+
 ![输入图片说明](https://foruda.gitee.com/images/1687335574708412835/41d6c9d7_1766278.png "屏幕截图")
 
 * `enabled` 可启用或关闭客户端注册
@@ -10,7 +13,11 @@
 * `app-name` 为执行器组账户名(需在调度中心注册方可登录查看)
 
 ### 启用调度中心
-**默认账号密码 `ruoyi-worker` `123456` 账号在数据库里 可以在页面修改密码**
+**需执行 powerjob_demo.sql 默认账号密码 `ruoyi-worker` `123456` 账号在数据库里 可以在页面修改密码**
+<br>
+**先启动 powerjob-server 生成表结构后 执行powerjob_demo.sql灌入测试数据 如无需测试数据则可不用执行**
+<br>
+![输入图片说明](https://foruda.gitee.com/images/1687656863284679248/09fbe15b_1766278.png "屏幕截图")
 
 > 在 `扩展项目 -> powerjob-server模块` 启动
 >
