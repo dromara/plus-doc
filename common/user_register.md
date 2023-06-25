@@ -29,7 +29,9 @@
 | 武汉华智讯网络信息技术有限公司 | http://www.xun188.com         | <img src="https://foruda.gitee.com/images/1678975944577016382/93c4541d_1766278.png" width="200" height="100"> |
 | 易税信息技术有限公司      | https://www.etax.top          | <img src="https://foruda.gitee.com/images/1678975950137235651/211a63c4_1766278.png" width="200" height="100"> |
 | 广西华景城建筑设计有限公司   | http://www.hjcadc.com         | <img src="https://foruda.gitee.com/images/1678975955216975234/e83c8c6e_1766278.png" width="200" height="100"> |
+| 南昌漫库书店有限公司    |                               | <img src="https://foruda.gitee.com/images/1687656369793887183/ce1a33f6_1766278.png" width="200" height="100"> |
 | 广西文韬智能科技有限公司    |                               | <img src="https://foruda.gitee.com/images/1678976034543683491/8d8a1ebe_1766278.png" width="200" height="100"> |
+| 亿世达餐饮管理（北京）有限公司 | |
 | 深圳市凯帝电子商务有限公司 | |
 | 成都数智源蓉卡科技有限公司 | |
 | 上海振福信息科技有限公司 | |
