@@ -40,7 +40,7 @@
 
 请按照以下顺序依次导入
 
-![输入图片说明](https://foruda.gitee.com/images/1687336289766464082/2cab265c_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1687656687655900994/e8c6b6b9_1766278.png "屏幕截图")
 
 默认为 `mysql` 其他数据库需导入对应的sql文件
 
