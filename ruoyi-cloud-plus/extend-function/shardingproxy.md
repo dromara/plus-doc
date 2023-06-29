@@ -19,4 +19,4 @@ docker-compose up -d shardingproxy
 ![输入图片说明](https://foruda.gitee.com/images/1688014028842337522/cd26026a_1766278.png "屏幕截图")
 
 用法参考文章: https://blog.csdn.net/zhaozhiqiang1981/article/details/129935075
-
+用法参考视频: https://www.bilibili.com/video/BV1XN411A7Tv/
