@@ -38,7 +38,7 @@
 ### sql导入
 将sql导入到与sql文件名对应的数据库(不要放到一个库下)<br>
 
-![输入图片说明](https://foruda.gitee.com/images/1678981513725772842/8097a816_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1688013241561792410/ad687cb2_1766278.png "屏幕截图")
 
 ### 使用内置 `ruoyi-naocs` 服务 从这开始
 

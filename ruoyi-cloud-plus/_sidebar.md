@@ -9,6 +9,7 @@
   * [idea环境配置](/ruoyi-cloud-plus/quickstart/idea_environment.md)
   * [应用部署](/ruoyi-cloud-plus/quickstart/deploy.md)
   * [Seata服务搭建](/ruoyi-cloud-plus/quickstart/seata.md)
+  * [搭建PowerJob调度中心](/ruoyi-cloud-plus/quickstart/power_job_init.md)
 * **框架功能**
   * [项目结构](/ruoyi-cloud-plus/framework/tree.md)
   * [软件架构图](/ruoyi-cloud-plus/framework/architecture_diagram.md)
@@ -48,6 +49,7 @@
   * [Nacos集群搭建](/ruoyi-cloud-plus/extend-function/nacos.md)
   * [SkyWalking搭建与集成](/ruoyi-cloud-plus/extend-function/skywalking.md)
   * [Prometheus+Grafana搭建](/ruoyi-cloud-plus/extend-function/prometheus_grafana.md)
+  * [Sharding-Proxy搭建分库分表](/ruoyi-cloud-plus/extend-function/shardingproxy.md)
 * **扩展项目**
   * [扩展项目](/ruoyi-cloud-plus/extend-project/list.md)
 * **其他**
