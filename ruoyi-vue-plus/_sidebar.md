@@ -36,6 +36,7 @@
     * [数据脱敏](/ruoyi-vue-plus/framework/extend/sensitive.md)
     * [数据加密](/ruoyi-vue-plus/framework/extend/encrypt.md)
     * [翻译功能](/ruoyi-vue-plus/framework/extend/translation.md)
+    * [WebSocket功能](/ruoyi-vue-plus/framework/extend/websocket.md)
     * [Skywalking链路监控](/ruoyi-vue-plus/framework/extend/skywalking.md)
   * 功能说明
     * [事务相关](/ruoyi-vue-plus/framework/explain/transaction.md)

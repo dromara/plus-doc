@@ -35,6 +35,7 @@
     * [数据脱敏](/ruoyi-cloud-plus/framework/extend/sensitive.md)
     * [数据加密](/ruoyi-cloud-plus/framework/extend/encrypt.md)
     * [翻译功能](/ruoyi-cloud-plus/framework/extend/translation.md)
+    * [WebSocket功能](/ruoyi-cloud-plus/framework/extend/websocket.md)
   * 功能说明
     * [事务相关](/ruoyi-cloud-plus/framework/explain/transaction.md)
     * [单元测试](/ruoyi-cloud-plus/framework/explain/test.md)
