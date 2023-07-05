@@ -9,7 +9,7 @@
 
 ## 文档工具使用
 由于框架采用 `openapi` 行业规范 故市面上大部分的框架均支持 可自行选择<br>
-例如: `apifox` `postman` `torna` 等 根据对应工具的文档接入即可
+例如: `apifox` `apipost` `postman` `torna` `knife4j` 等 根据对应工具的文档接入即可
 
 ## Swagger升级SpringDoc指南
 
@@ -30,7 +30,7 @@
 | @ApiModelProperty(hidden = true) | @Schema(accessMode = READ_ONLY) | 无                  | 
 | @ApiResponse                     | @ApiResponse                    | java方法@return返回值注释 | 
 
-# 建议使用 `Apifox`
+# 建议使用 `Apifox`(常见问题有其他对接方式)
 
 官网连接: [https://www.apifox.cn/](https://www.apifox.cn/)<br>
 视频教程: [springdoc与apifox配合使用](https://www.bilibili.com/video/BV1mr4y1j75M?p=8&vd_source=8f52c77be3233dbdd1c5e332d4d45bfb)
