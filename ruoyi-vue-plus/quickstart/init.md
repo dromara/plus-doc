@@ -38,13 +38,11 @@
 
 ### sql导入
 
-请按照以下顺序依次导入
+请按照以下顺序依次导入 默认为 `mysql` 其他数据库需导入对应的sql文件
 
-![输入图片说明](https://foruda.gitee.com/images/1687656687655900994/e8c6b6b9_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1688634217677295748/f9919efd_1766278.png "屏幕截图")
 
-默认为 `mysql` 其他数据库需导入对应的sql文件
-
-![输入图片说明](https://foruda.gitee.com/images/1687336338776140514/f9852ad0_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1688634290787855369/c09c268f_1766278.png "屏幕截图")
 
 **~~多数据库仅支持主应用 扩展应用需自行适配(例如: xxl-job仅支持mysql)~~**
 
