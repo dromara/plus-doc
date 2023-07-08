@@ -8,7 +8,7 @@
 
 疯狂的狮子Li简介: RuoYi-Vue-Plus 与 RuoYi-Cloud-Plus 作者
 
-## 预售日期: 6月21日起开售 预售价: 548(仅限前100名) ~~原价: 598~~
+## 预售日期: 6月21日起开售 预售价: 548(仅限前100名 剩余38名额) ~~原价: 598~~
 
 > 视频采用 Vue 版本 4.X 分支讲解 (内容为通用技术与版本关联性不大)
 >
@@ -16,7 +16,7 @@
 
 课程简介: https://www.bilibili.com/video/BV16j411D7BX/<br>
 试看课程: https://www.bilibili.com/video/BV1xV4y127KM/<br>
-**小本生意 用心录制 拒绝砍价 目前已更新到 91 集完成主线功能讲解**<br>
+**小本生意 用心录制 拒绝砍价 目前已更新到 96 集完成主线功能讲解**<br>
 课程咨询群: QQ群号: **<866407661>** 进群后联系管理员购买即可<br>
 课程咨询群: QQ群号: **<866407661>** 进群后联系管理员购买即可<br>
 课程咨询群: QQ群号: **<866407661>** 进群后联系管理员购买即可<br>
@@ -117,126 +117,127 @@
 92. echarts图表介绍与使用
 93. 缓存监控-redis状态管理
 94. 缓存列表-redis key管理
-95. Logback日志配置
-96. p6spy sql性能分析(sql打印)
-97. SpringEvent
-98. 登录日志、操作日志、日志注解
-99. aws-s3亚马逊简单存储服务协议（Amazon Simple Storage Service）
-100. ruoyi-oss模块文件上传
-101. 文件上传-前端上传组件
-102. 文件上传-minio
-103. 文件上传-阿里云
-104. 文件上传-腾讯云
-105. 文件上传-七牛云
-106. 表单构建原理
-107. velocity模板语法和修改
-108. 代码生成原理及流程
-109. zip压缩包
-110. 代码生成预览
-111. 扩展-监控中心配置和运行
-112. 扩展-监控中心应用监控
-113. 扩展-任务中心配置和运行
-114. 扩展-任务中心-简单任务编写
-115. 扩展-任务中心-分片任务
-116. 扩展-任务中心-任务生命周期
-117. 公共实体(BaseEntity、BaseController、R、LoginUser)
-118. common模块讲解(常量、枚举、异常)
-119. hutool介绍与文档使用
-120. ServletUtils 客户端工具
-121. SpringUtils Spring工具
-122. StreamUtils 流处理工具
-123. StringUtils 字符串工具
-124. TreeBuildUtils 树工具
-125. ReflectUtils 反射工具
-126. SqlUtil sql工具
-127. RegionUtils 区域定位工具(ip2region)
-128. AddressUtils 地址工具
-129. Validator 校验框架配置
-130. Validator 注解与 ValidatorUtils 工具使用
-131. MessageUtils 国际化工具(国际化配置)
-132. undertow对比tomcat
-133. XSS安全防护
-134. requestBody 缓存配置(可重复读)
-135. openapi 介绍与文档生成
-136. SpringDoc 注解生成文档
-137. javadoc 注释生成文档
-138. apifox 接口文档工具
-139. 连接池配置 hikaricp
-140. 多数据源配置与使用
-141. DynamicDataSourceContextHolder 手动切换数据源
-142. 多数据源的事务问题与 @DsTransactional 解决方案
-143. DataBaseHelper 多数据源语法差异处理
-144. QueueUtils 队列工具
-145. 普通队列(订阅队列) 有界队列
-146. 延迟队列 优先队列
-147. 防重幂等功能使用
-148. 防重幂等设计(美团GTIS系统)
-149. 限流功能使用(全局、IP、集群实例限流)
-150. 短信功能配置与使用
-151. 邮件功能配置与使用
-152. 翻译模块讲解(三种模式)
-153. 翻译用户名、字典、ossId转url、对象翻译
-154. 数据脱敏讲解(内置脱敏策略)
-155. 数据加解密-配置与用法
-156. 数据加解密-mybatis拦截器
-157. 单元测试 JUnit5、注解与断言
-158. 单元测试 基于springboot环境
-159. 单元测试 带参数单元测试
-160. 单元测试 标签单元测试
-161. ElementUI介绍和使用
-162. ES6语法介绍
-163. 前端App.Vue和main.js配置
-164. 接口封装和使用
-165. Vuex的模块封装和使用
-166. directive自定义指令使用
-167. plugins插件封装和使用
-168. utils工具-dict字典工具
-169. utils工具-其他工具的使用
-170. 前端页面生命周期
-171. 前端组件的封装和引用
-172. Breadcrumb面包屑组件
-173. DictData字典数据组件
-174. DictTag字典标签组件
-175. Editor富文本编辑组件
-176. FileUpload文件上传组件
-177. Hamburger汉堡包组件
-178. HeaderSearch顶部搜索组件
-179. IconSelect图标选择组件
-180. iFrame内置框架组件
-181. ImagePreview图片预览组件
-182. ImageUpload图片上传组件
-183. Pagination分页组件
-184. PanThumb圆形缩略图组件
-185. ParentView组件
-186. RightPanel右侧设置面板组件
-187. RightToolbar右侧工具条组件
-188. Screenfull全屏组件
-189. SizeSelect字体大小选择组件
-190. SvgIcon svg图标组件
-191. ThemePicker主题选择组件
-192. TopNav顶部菜单组件
-193. layout公共页面相关组件
-194. 部门树组件
-195. plugins插件使用与封装
-196. Vuex模块使用与封装
-197. utils工具类index.js讲解
-198. utils工具类ruoyi.js讲解
-199. utils工具类validate.js讲解
-200. 后端打包发布运行
-201. nginx配置（反向代理）
-202. 前端打包发布
-203. docker介绍与原理讲解
-204. docker安装与使用
-205. dockerfile语法与构建镜像
-206. docker-compose介绍与安装
-207. docker-compose语法与使用
-208. 一键编排启动
-209. IDEA的docker插件使用
-210. 服务日志的监控
-211. 拓展-如何搭建C端应用（uniapp）
-212. 拓展-多设备多用户设计
-213. 拓展-移动端用户的登录和鉴权（小程序端）
-214. 拓展-移动端用户的登录和鉴权（公众号端）
-215. 拓展-移动端用户的登录和鉴权（手机号）
-216. 拓展-移动端简单业务开发
+95. Logback日志框架介绍和@Slf4j注解及日志方法调用
+96. Logback日志框架配置logback-plus.xml详解
+97. p6spy sql性能分析(sql打印)
+98. SpringEvent
+99. 登录日志、操作日志、日志注解
+100. aws-s3亚马逊简单存储服务协议（Amazon Simple Storage Service）
+101. ruoyi-oss模块文件上传
+102. 文件上传-前端上传组件
+103. 文件上传-minio
+104. 文件上传-阿里云
+105. 文件上传-腾讯云
+106. 文件上传-七牛云
+107. 表单构建原理
+108. velocity模板语法和修改
+109. 代码生成原理及流程
+110. zip压缩包
+111. 代码生成预览
+112. 扩展-监控中心配置和运行
+113. 扩展-监控中心应用监控
+114. 扩展-任务中心配置和运行
+115. 扩展-任务中心-简单任务编写
+116. 扩展-任务中心-分片任务
+117. 扩展-任务中心-任务生命周期
+118. 公共实体(BaseEntity、BaseController、R、LoginUser)
+119. common模块讲解(常量、枚举、异常)
+120. hutool介绍与文档使用
+121. ServletUtils 客户端工具
+122. SpringUtils Spring工具
+123. StreamUtils 流处理工具
+124. StringUtils 字符串工具
+125. TreeBuildUtils 树工具
+126. ReflectUtils 反射工具
+127. SqlUtil sql工具
+128. RegionUtils 区域定位工具(ip2region)
+129. AddressUtils 地址工具
+130. Validator 校验框架配置
+131. Validator 注解与 ValidatorUtils 工具使用
+132. MessageUtils 国际化工具(国际化配置)
+133. undertow对比tomcat
+134. XSS安全防护
+135. requestBody 缓存配置(可重复读)
+136. openapi 介绍与文档生成
+137. SpringDoc 注解生成文档
+138. javadoc 注释生成文档
+139. apifox 接口文档工具
+140. 连接池配置 hikaricp
+141. 多数据源配置与使用
+142. DynamicDataSourceContextHolder 手动切换数据源
+143. 多数据源的事务问题与 @DsTransactional 解决方案
+144. DataBaseHelper 多数据源语法差异处理
+145. QueueUtils 队列工具
+146. 普通队列(订阅队列) 有界队列
+147. 延迟队列 优先队列
+148. 防重幂等功能使用
+149. 防重幂等设计(美团GTIS系统)
+150. 限流功能使用(全局、IP、集群实例限流)
+151. 短信功能配置与使用
+152. 邮件功能配置与使用
+153. 翻译模块讲解(三种模式)
+154. 翻译用户名、字典、ossId转url、对象翻译
+155. 数据脱敏讲解(内置脱敏策略)
+156. 数据加解密-配置与用法
+157. 数据加解密-mybatis拦截器
+158. 单元测试 JUnit5、注解与断言
+159. 单元测试 基于springboot环境
+160. 单元测试 带参数单元测试
+161. 单元测试 标签单元测试
+162. ElementUI介绍和使用
+163. ES6语法介绍
+164. 前端App.Vue和main.js配置
+165. 接口封装和使用
+166. Vuex的模块封装和使用
+167. directive自定义指令使用
+168. plugins插件封装和使用
+169. utils工具-dict字典工具
+170. utils工具-其他工具的使用
+171. 前端页面生命周期
+172. 前端组件的封装和引用
+173. Breadcrumb面包屑组件
+174. DictData字典数据组件
+175. DictTag字典标签组件
+176. Editor富文本编辑组件
+177. FileUpload文件上传组件
+178. Hamburger汉堡包组件
+179. HeaderSearch顶部搜索组件
+180. IconSelect图标选择组件
+181. iFrame内置框架组件
+182. ImagePreview图片预览组件
+183. ImageUpload图片上传组件
+184. Pagination分页组件
+185. PanThumb圆形缩略图组件
+186. ParentView组件
+187. RightPanel右侧设置面板组件
+188. RightToolbar右侧工具条组件
+189. Screenfull全屏组件
+190. SizeSelect字体大小选择组件
+191. SvgIcon svg图标组件
+192. ThemePicker主题选择组件
+193. TopNav顶部菜单组件
+194. layout公共页面相关组件
+195. 部门树组件
+196. plugins插件使用与封装
+197. Vuex模块使用与封装
+198. utils工具类index.js讲解
+199. utils工具类ruoyi.js讲解
+200. utils工具类validate.js讲解
+201. 后端打包发布运行
+202. nginx配置（反向代理）
+203. 前端打包发布
+204. docker介绍与原理讲解
+205. docker安装与使用
+206. dockerfile语法与构建镜像
+207. docker-compose介绍与安装
+208. docker-compose语法与使用
+209. 一键编排启动
+210. IDEA的docker插件使用
+211. 服务日志的监控
+212. 拓展-如何搭建C端应用（uniapp）
+213. 拓展-多设备多用户设计
+214. 拓展-移动端用户的登录和鉴权（小程序端）
+215. 拓展-移动端用户的登录和鉴权（公众号端）
+216. 拓展-移动端用户的登录和鉴权（手机号）
+217. 拓展-移动端简单业务开发
 ```
