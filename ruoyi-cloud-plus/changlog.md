@@ -1,6 +1,67 @@
 # 更新日志
 - - -
 
+## v1.8.0 - 2023-07-11
+
+### 重大更新
+
+* [重大更新] 新增 sms4j 短信融合框架整合(支持数十种短信厂商接入、发送限制、负载均衡等功能)
+* [不兼容更新] 移除 原短信功能(建议使用新 sms4j 功能)
+* [重要迁移] 迁移 vue3 前端到主仓库统一维护
+
+### 依赖升级
+
+* update springboot 2.7.11 => 2.7.13
+* update spring-cloud 2021.0.7 => 2021.0.8
+* update satoken 1.34.0 => 1.35.0.RC
+* update easyexcel 3.2.1 => 3.3.1
+* update sms4j 2.2.0
+* update element 2.15.12 => 2.15.13
+
+### 功能更新
+
+* update 优化 StreamUtils 方法过滤null值
+* update 优化 页签在Firefox浏览器被遮挡
+* update 优化 在全局异常拦截器中增加两类异常处理
+* update 优化 下载zip方法增加遮罩层(感谢@梁剑锋)
+* update 优化 用户昵称非空校验
+* update 优化 修改角色如果未绑定用户则无需清理
+* update 优化 RepeatSubmitAspect 逻辑避免并发请求问题
+* update 优化 satoken 过期配置 支持多端token自定义有效期
+* update 优化 加密注解注释错误
+* update 优化 切换 maven 仓库到华为云(aliyun 不可用)
+* update 优化 excel 导出存在合并项时在初始化类时进行数据的处理避免多次调用(感谢@yueye)
+* update 优化 重构 CellMergeStrategy 支持多级表头修复一些小问题 整理代码结构
+* update 补全 SysLogininforMapper.xml 缺失字段
+* update 优化 demo 模块 路径适配统一前端
+* update 调整 gateway 访问日志输出等级
+
+### 新增功能
+
+* add 新增 RedisUtils.setObjectIfAbsent 不存在则设置方法
+* add 新增 Excel 导出附带有下拉框(字典自动导出为下拉框) 可自定义多级下拉框(感谢@Emil.Zhang)
+* add 新增 OssClient File 文件上传方法
+* add 增加 RedisUtils 批量删除 hash key 方法
+
+### 问题修复
+
+* fix 修复 sa-token.check-same-token 开关对网关鉴权无效问题
+* fix 修复 服务未添加 common-security 模块导致异常拦截器不生效问题
+* fix 修复 删除 skywalking dubbo 2.X 插件避免与 3.X 出现兼容性问题
+* fix 修复 excel 枚举反向解析失败问题
+* fix 修复 字典缓存注解使用错误问题
+* fix 修复 新增角色使用内置管理员标识符问题
+* fix 修复 缓存监控图表 支持跟随屏幕大小自适应调整(感谢@抓蛙师)
+* fix 修复 防重组件 错删注解问题
+* fix 修复 CacheName 缓存key存储错误问题
+* fix 修复 字典缓存注解使用错误问题
+* fix 修复 用户篡改管理员角色标识符越权问题
+* fix 修复 登录校验错误次数未达到上限时 错误次数缓存未设置有效时间问题
+* fix 修复 OssClient 切换服务 实例不正确问题
+* fix 修复 element ui 因版本而未被工具识别问题(感谢@梁剑锋)
+* fix 修复 admin监控 切换tab页需要重复登录问题
+* fix 修复 个人中心tab栏关闭页面内容压缩问题
+
 ## v2.0.0 - 2023-06-15
 
 **重点说明: 由于 SpringCloudAlibaba 一直未发布正式版 导致系统底层组件可能存在些许问题 故而不建议生产使用 框架也将直接开启后续 2.1.0 的开发工作**
