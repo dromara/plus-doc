@@ -9,7 +9,7 @@
 与之对应前端 `dev`环境 需更改 `vue.config.js` 的代理路径
 
 ![输入图片说明](https://foruda.gitee.com/images/1678976644560954993/2c40e768_1766278.png "屏幕截图")
-v
+
 `prod` 生产环境需修改 `nginx.conf` 后端代理路径
 
 ![输入图片说明](https://foruda.gitee.com/images/1661823876773225117/f1f912a9_1766278.png "屏幕截图")
