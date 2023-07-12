@@ -1,6 +1,6 @@
 # 多租户功能
 - - -
-## 版本 >= 5.X
+## 版本 >= 2.X
 
 ## 前置说明（重要）
 1. 这里是列表文本本框架多租户功能的实现是基于 [MyBatis-Plus 多租户插件](https://baomidou.com/pages/aef2f2/#tenantlineinnerinterceptor) 的，只支持最简单的隔离。

@@ -20,6 +20,21 @@
 | DataPermissionHelper          | 数据权限助手          | 操作数据权限上下文变量                            |
 | SysDataScopeService           | 自定义 Bean 处理数据权限 | 用于自定义扩展                                |
 
+## 忽略数据权限
+
+1.如果需要指定单独 SQL 不开启过滤，可在对应的 Mapper 接口添加如下忽略注解：
+```
+@InterceptorIgnore(dataPermission = "true")
+```
+
+2.如果需要在业务层忽略多租户，可调用以下方法：
+```
+# 无返回值
+DataPermissionHelper.ignore(() -> { 业务代码 });
+# 有返回值
+Class result = DataPermissionHelper.ignore(() -> { return 业务代码 });
+```
+
 ### 使用方式 `参考demo模块`
 数据权限体系 `用户 -> 多角色 => 角色 -> 单数据权限`
 > 例子: 用户A 拥有两个角色<br>
@@ -47,6 +62,8 @@
 ### 重点注意: 如下情况不生效
 
 > 有自定义实现方法 最终执行的mapper不是这个方法 所以无法生效
+> 
+> 解决方案: 一直往下点 找到最终的执行mapper重写即可
 
 ![输入图片说明](https://foruda.gitee.com/images/1678978692558777291/78b0a3dd_1766278.png "屏幕截图")
 
