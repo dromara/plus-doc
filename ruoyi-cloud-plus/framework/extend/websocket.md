@@ -13,7 +13,7 @@
 
 ## 使用方法
 
-前端连接方式: `ws://localhost/websocket?Authorization=Bearer eyJ0eXAiO......`
+前端连接方式: `ws://后端ip:端口/resource/websocket?Authorization=Bearer eyJ0eXAiO......`
 
 **由于js不支持请求头传输故而采用参数传输 如支持请求头传输建议使用请求头传输**
 
