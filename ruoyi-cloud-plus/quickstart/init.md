@@ -11,7 +11,7 @@
 
 **注意: 需要使用 `openjdk` 或者 `graalvm` 运行程序 禁止使用 `oraclejdk`(由于spring的bug导致打包运行会报错)**
 
-**graalvm 是oracle旗下的高性能jdk 下载地址: https://www.graalvm.org/downloads/**
+**graalvm 是oracle旗下的高性能jdk 下载地址: https://github.com/graalvm/graalvm-ce-builds/releases**
 
 * openjdk-17 或 graalvm-22.X-community版本
 * mysql 5.7 8.0 (5.6未适配可能会有问题)
