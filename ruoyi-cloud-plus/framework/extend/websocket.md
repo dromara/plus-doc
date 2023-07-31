@@ -1,7 +1,7 @@
 # WebSocket功能
 - - -
 
-## 框架版本 >= 2.0.0
+## 框架版本 >= 2.1.0
 
 ## 配置说明
 
@@ -13,9 +13,17 @@
 
 ## 使用方法
 
-前端连接方式: `ws://后端ip:端口/resource/websocket?Authorization=Bearer eyJ0eXAiO......`
+前端连接方式: `ws://后端ip:端口/resource/websocket?clientid=import.meta.env.VITE_APP_CLIENT_ID&Authorization=Bearer eyJ0eXAiO......`
 
 **由于js不支持请求头传输故而采用参数传输 如支持请求头传输建议使用请求头传输**
+
+传输方式:
+```js
+headers: {
+    Authorization: "Bearer " + getToken(),
+    clientid: import.meta.env.VITE_APP_CLIENT_ID
+}
+```
 
 其中 `Authorization` 为请求token需要登录后获取 连接成功之后 与框架内其他获取登录用户方式一致
 
