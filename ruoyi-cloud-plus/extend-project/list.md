@@ -1,8 +1,8 @@
 # 基于 RuoYi-Cloud-Plus 的扩展项目列表
 - - -
 ### 精品PR 欢迎投稿
-| 功能介绍                                | PR地址                                                   |
-|-------------------------------------|--------------------------------------------------------|
+| 功能介绍                                | PR地址                                                |
+|-------------------------------------|-----------------------------------------------------|
 | 拖拽图片调整显示顺序                          | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/173  |
 | 增加Jasypt加密库对配置文件加密                  | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/177  |
 | 使用富文本wangeditor5替换Quill             | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/213  |
@@ -16,11 +16,12 @@
 
 ### 欢迎投稿 项目介绍+项目地址
 
-用户需求量大: `vue3+ts扩展`
 
-| 项目介绍            | 项目地址                                                   |
-|-----------------|--------------------------------------------------------|
-| 分布式集群扩展         | https://gitee.com/dromara/RuoYi-Vue-Plus            |
-| 单体fast扩展        | https://gitee.com/dromara/RuoYi-Vue-Plus/tree/fast/ |
-| Plus学习笔记(常规功能)  | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-vue-plus/home    |
-| Plus学习笔记(微服务组件) | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-cloud-plus/home  |
+| 项目介绍                       | 项目地址                                                                    |
+|----------------------------|-------------------------------------------------------------------------|
+| 分布式集群扩展                    | https://gitee.com/dromara/RuoYi-Vue-Plus                                |
+| 单体fast扩展                   | https://gitee.com/dromara/RuoYi-Vue-Plus/tree/fast/                     |
+| Plus学习笔记(常规功能)             | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-vue-plus/home   |
+| Plus学习笔记(微服务组件)            | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-cloud-plus/home |
+| 基于vben(ant-design-vue)前端项目 | https://gitee.com/dapppp/ruoyi-plus-vben                                |
+| 基于vue-next-admin的vue3+ts前端 | https://gitee.com/thiszhc/RuoYi-Vue3-UI                                 |
