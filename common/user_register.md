@@ -8,6 +8,7 @@
 | 公司名             | 官网                            | LOGO                                                                                                          |
 |-----------------|:------------------------------|---------------------------------------------------------------------------------------------------------------|
 | 中国联通(长春分公司)     | http://www.10010.com          | <img src="https://foruda.gitee.com/images/1679554727740431371/bd179d0f_1766278.png" width="300" height="200"> |
+| 杭州码恒信息科技有限公司 | http://www.mh-barcode.com/ | <img src="https://foruda.gitee.com/images/1690881482450489558/2d689bc1_1766278.png" width="400" height="200"> |
 | 南京晶益科技有限公司 | https://www.nanjingjingyi.com/ | <img src="https://foruda.gitee.com/images/1689576488369281878/bec504ce_1766278.png" width="400" height="200"> | 
 | 合肥智享亿云科技有限公司 | http://www.izxyy.com | <img src="https://foruda.gitee.com/images/1685096398913604988/e6c16816_1766278.png" width="300" height="200"> |
 | 锡简科技 | https://www.xj-fast.com | <img src="https://foruda.gitee.com/images/1683858424104223718/172f2c2e_1766278.png" width="300" height="200"> |
