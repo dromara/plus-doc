@@ -28,6 +28,8 @@
     * [数据权限](/ruoyi-vue-plus/framework/basic/permissions.md)
     * [接口放行](/ruoyi-vue-plus/framework/basic/interface_release.md)
     * [多租户功能](/ruoyi-vue-plus/framework/basic/tenant.md)
+    * [第三方授权功能](/ruoyi-vue-plus/framework/basic/social.md)
+    * [客户端管理功能](/ruoyi-vue-plus/framework/basic/client.md)
   * 扩展功能
     * [多数据源](/ruoyi-vue-plus/framework/extend/dynamic_datasource.md)
     * [短信模块](/ruoyi-vue-plus/framework/extend/sms.md)
