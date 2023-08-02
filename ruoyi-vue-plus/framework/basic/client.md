@@ -22,3 +22,38 @@
 2. 将新的客户端id复制到前端配置文件。
 
 ![输入图片说明](https://foruda.gitee.com/images/1690962894318847386/133d2f90_4959041.png "屏幕截图")
+
+## 新增自定义客户端
+### 步骤一：新增数据
+![输入图片说明](https://foruda.gitee.com/images/1690965463070099188/baeb4441_4959041.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1690965508836621042/df06248f_4959041.png "屏幕截图")
+### 步骤二：配置前端请求头信息（以项目的前端项目为例）
+`request.ts` <br>
+![输入图片说明](https://foruda.gitee.com/images/1690965768235114596/980b88d2_4959041.png "屏幕截图")
+`VITE_APP_CLIENT_ID` 即配置文件中的客户端id。
+
+> 注：不同客户端id请求的token不同，在系统中不通用。
+
+## 新增自定义授权类型
+### 步骤一：新增字典数据
+![输入图片说明](https://foruda.gitee.com/images/1690968849418013624/3b28417e_4959041.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1690968865819397010/64529fad_4959041.png "屏幕截图")
+
+### 步骤二：新增/修改客户端数据
+
+### 步骤三：后端新增认证策略
+新增策略实现类实现 `IAuthStrategy` 接口。<br>
+![输入图片说明](https://foruda.gitee.com/images/1690972828588111954/7614a4c5_4959041.png "屏幕截图")
+
+参照已有策略实现类实现自定义参数校验登录方法逻辑。<br>
+![输入图片说明](https://foruda.gitee.com/images/1690973133723883893/2e72df49_4959041.png "屏幕截图")
+
+> 注意修改 `@Service` 名称
+
+![输入图片说明](https://foruda.gitee.com/images/1690973250687158482/964e47e7_4959041.png "屏幕截图")
+
+`LoginBody` 校验参数（可自定义）<br>
+![输入图片说明](https://foruda.gitee.com/images/1690973017092618009/7b2af9ab_4959041.png "屏幕截图")
+
+校验分组（可自定义）<br>
+![输入图片说明](https://foruda.gitee.com/images/1690973039038361511/8a1248bb_4959041.png "屏幕截图")
