@@ -12,6 +12,8 @@ knife4j 本身提供了独立的文档中间件 可以零成本的介入 openapi
 
 文档地址: https://doc.xiaominfo.com/docs/middleware-sources
 
+**注意: 此组件应单独搞一个boot项目 不要往框架里做任何代码上的更改**
+
 使用文档提供的 Cloud 模式 对接咱们框架的 openapi 地址即可完成对接
 
 ![输入图片说明](https://foruda.gitee.com/images/1685953873117929554/22dce56e_1766278.png "屏幕截图")
