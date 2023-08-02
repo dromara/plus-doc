@@ -28,6 +28,8 @@
     * [数据权限](/ruoyi-cloud-plus/framework/basic/permissions.md)
     * [网关路由与放行](/ruoyi-cloud-plus/framework/basic/router_release.md)
     * [多租户功能](/ruoyi-cloud-plus/framework/basic/tenant.md)
+    * [第三方授权功能](/ruoyi-cloud-plus/framework/basic/social.md)
+    * [客户端管理功能](/ruoyi-cloud-plus/framework/basic/client.md)
   * 扩展功能
     * [多数据源](/ruoyi-cloud-plus/framework/extend/dynamic_datasource.md)
     * [短信模块](/ruoyi-cloud-plus/framework/extend/sms.md)
