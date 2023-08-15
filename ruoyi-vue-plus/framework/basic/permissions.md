@@ -27,7 +27,7 @@
 @InterceptorIgnore(dataPermission = "true")
 ```
 
-2.如果需要在业务层忽略多租户，可调用以下方法：
+2.如果需要在业务层忽略数据权限，可调用以下方法：
 ```
 # 无返回值
 DataPermissionHelper.ignore(() -> { 业务代码 });
