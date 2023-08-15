@@ -18,7 +18,7 @@
 <br>
 试看课程: https://www.bilibili.com/video/BV1xV4y127KM/
 <br>
-**小本生意 用心录制 拒绝砍价 目前已更新到 139 集**<br>
+**小本生意 用心录制 拒绝砍价 目前已更新到 147 集**<br>
 课程咨询群: QQ群号: **<866407661>** 进群后联系管理员通过微信或支付宝付款即可<br>
 课程咨询群: QQ群号: **<866407661>** 进群后联系管理员通过微信或支付宝付款即可<br>
 课程咨询群: QQ群号: **<866407661>** 进群后联系管理员通过微信或支付宝付款即可<br>
@@ -184,87 +184,88 @@
 137. RegionUtils与AddressUtils工具讲解
 138. MessageUtils 国际化工具(国际化配置)
 139. Validator 校验框架配置与注解、ValidatorUtils工具使用
-140. undertow对比tomcat
+140. undertow对比tomcat与jmeter压力测试工具使用
 141. XSS安全防护
 142. requestBody 缓存配置(可重复读)
 143. openapi 介绍与文档生成
 144. SpringDoc 注解生成文档
 145. javadoc 注释生成文档
 146. apifox 接口文档工具
-147. QueueUtils 队列工具
-148. 普通队列(订阅队列) 有界队列
-149. 延迟队列 优先队列
-150. 防重幂等功能使用
-151. 防重幂等设计(美团GTIS系统)
-152. 限流功能使用(全局、IP、集群实例限流)
-153. 短信功能配置与使用
-154. 邮件功能配置与使用
-155. 翻译模块讲解(三种模式)
-156. 翻译用户名、字典、ossId转url、对象翻译
-157. 数据脱敏讲解(内置脱敏策略)
-158. 数据加解密-配置与用法
-159. 数据加解密-mybatis拦截器
-160. 单元测试 JUnit5、注解与断言
-161. 单元测试 基于springboot环境
-162. 单元测试 带参数单元测试
-163. 单元测试 标签单元测试
-164. ElementUI介绍和使用
-165. ES6语法介绍
-166. 前端App.Vue和main.js配置
-167. 接口封装和使用
-168. Vuex的模块封装和使用
-169. directive自定义指令使用
-170. plugins插件封装和使用
-171. utils工具-dict字典工具
-172. utils工具-其他工具的使用
-173. 前端页面生命周期
-174. 前端组件的封装和引用
-175. Breadcrumb面包屑组件
-176. DictData字典数据组件
-177. DictTag字典标签组件
-178. Editor富文本编辑组件
-179. FileUpload文件上传组件
-180. Hamburger汉堡包组件
-181. HeaderSearch顶部搜索组件
-182. IconSelect图标选择组件
-183. iFrame内置框架组件
-184. ImagePreview图片预览组件
-185. ImageUpload图片上传组件
-186. Pagination分页组件
-187. PanThumb圆形缩略图组件
-188. ParentView组件
-189. RightPanel右侧设置面板组件
-190. RightToolbar右侧工具条组件
-191. Screenfull全屏组件
-192. SizeSelect字体大小选择组件
-193. SvgIcon svg图标组件
-194. ThemePicker主题选择组件
-195. TopNav顶部菜单组件
-196. layout公共页面相关组件
-197. 部门树组件
-198. plugins插件使用与封装
-199. Vuex模块使用与封装
-200. utils工具类index.js讲解
-201. utils工具类ruoyi.js讲解
-202. utils工具类validate.js讲解
-203. 表单构建原理
-204. 后端打包发布运行
-205. nginx配置（反向代理）
-206. 前端打包发布
-207. docker介绍与原理讲解
-208. docker安装与使用
-209. dockerfile语法与构建镜像
-210. docker-compose介绍与安装
-211. docker-compose语法与使用
-212. 一键编排启动
-213. IDEA的docker插件使用
-214. 服务日志的监控
-215. 拓展-如何搭建C端应用（uniapp）
-216. 拓展-多设备多用户设计
-217. 拓展-移动端用户的登录和鉴权（小程序端）
-218. 拓展-移动端用户的登录和鉴权（公众号端）
-219. 拓展-移动端用户的登录和鉴权（手机号）
-220. 拓展-移动端简单业务开发
+147. 使用apifox管理项目api
+148. QueueUtils 队列工具
+149. 普通队列(订阅队列) 有界队列
+150. 延迟队列 优先队列
+151. 防重幂等功能使用
+152. 防重幂等设计(美团GTIS系统)
+153. 限流功能使用(全局、IP、集群实例限流)
+154. 短信功能配置与使用
+155. 邮件功能配置与使用
+156. 翻译模块讲解(三种模式)
+157. 翻译用户名、字典、ossId转url、对象翻译
+158. 数据脱敏讲解(内置脱敏策略)
+159. 数据加解密-配置与用法
+160. 数据加解密-mybatis拦截器
+161. 单元测试 JUnit5、注解与断言
+162. 单元测试 基于springboot环境
+163. 单元测试 带参数单元测试
+164. 单元测试 标签单元测试
+165. ElementUI介绍和使用
+166. ES6语法介绍
+167. 前端App.Vue和main.js配置
+168. 接口封装和使用
+169. Vuex的模块封装和使用
+170. directive自定义指令使用
+171. plugins插件封装和使用
+172. utils工具-dict字典工具
+173. utils工具-其他工具的使用
+174. 前端页面生命周期
+175. 前端组件的封装和引用
+176. Breadcrumb面包屑组件
+177. DictData字典数据组件
+178. DictTag字典标签组件
+179. Editor富文本编辑组件
+180. FileUpload文件上传组件
+181. Hamburger汉堡包组件
+182. HeaderSearch顶部搜索组件
+183. IconSelect图标选择组件
+184. iFrame内置框架组件
+185. ImagePreview图片预览组件
+186. ImageUpload图片上传组件
+187. Pagination分页组件
+188. PanThumb圆形缩略图组件
+189. ParentView组件
+190. RightPanel右侧设置面板组件
+191. RightToolbar右侧工具条组件
+192. Screenfull全屏组件
+193. SizeSelect字体大小选择组件
+194. SvgIcon svg图标组件
+195. ThemePicker主题选择组件
+196. TopNav顶部菜单组件
+197. layout公共页面相关组件
+198. 部门树组件
+199. plugins插件使用与封装
+200. Vuex模块使用与封装
+201. utils工具类index.js讲解
+202. utils工具类ruoyi.js讲解
+203. utils工具类validate.js讲解
+204. 表单构建原理
+205. 后端打包发布运行
+206. nginx配置（反向代理）
+207. 前端打包发布
+208. docker介绍与原理讲解
+209. docker安装与使用
+210. dockerfile语法与构建镜像
+211. docker-compose介绍与安装
+212. docker-compose语法与使用
+213. 一键编排启动
+214. IDEA的docker插件使用
+215. 服务日志的监控
+216. 拓展-如何搭建C端应用（uniapp）
+217. 拓展-多设备多用户设计
+218. 拓展-移动端用户的登录和鉴权（小程序端）
+219. 拓展-移动端用户的登录和鉴权（公众号端）
+220. 拓展-移动端用户的登录和鉴权（手机号）
+221. 拓展-移动端简单业务开发
 ```
 
 ## 学员观后感
