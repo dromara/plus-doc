@@ -15,8 +15,12 @@ VIP群是作者提供的私人服务 不代表着项目收费
 > 问问题等于做习题 听作者解答问题等于习题讲解<br>
 > 一个人接触的问题有限 一群人接触的问题无限 早进群早接触更多的问题(每天99+)<br>
 > 承诺: 看见必回复 让你感受作者有多话痨<br>
-> 入群须知: 技术支持 不等于 基础教学<br>
 
-<font size="4">Vue版本: [加群跳转](/ruoyi-vue-plus/other/group_chat.md)👈点他点他</font>
-<br>
-<font size="4">Cloud版本: [加群跳转](/ruoyi-cloud-plus/other/group_chat.md)👈点他点他</font>
+两种途径:
+1. 购买官方视频进群 [官方视频](/common/video.md)
+2. 扫描下方二维码付款进群(无视频)
+
+支付后申请加群即可 QQ群号 : **<637757165>**<br>
+
+**加群扫码**<br>
+<img src="https://foruda.gitee.com/images/1664426470791458454/aaa84304_1766278.jpeg" width="300px" height="450px" /><img src="https://foruda.gitee.com/images/1664426481006423852/6ee14bfa_1766278.jpeg" width="300px" height="450px" />
