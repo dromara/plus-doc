@@ -47,5 +47,3 @@
     * [关于多表查询](/ruoyi-vue-plus/framework/explain/about_join.md)
 * **扩展项目**
   * [扩展项目](/ruoyi-vue-plus/extend-project/list.md)
-* **其他**
-  * [加群方式](/ruoyi-vue-plus/other/group_chat.md)

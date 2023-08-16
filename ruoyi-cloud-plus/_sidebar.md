@@ -56,5 +56,3 @@
   * [Sharding-Proxy搭建分库分表](/ruoyi-cloud-plus/extend-function/shardingproxy.md)
 * **扩展项目**
   * [扩展项目](/ruoyi-cloud-plus/extend-project/list.md)
-* **其他**
-  * [加群方式](/ruoyi-cloud-plus/other/group_chat.md)
