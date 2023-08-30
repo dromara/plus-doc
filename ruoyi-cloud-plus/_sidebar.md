@@ -54,5 +54,6 @@
   * [SkyWalking搭建与集成](/ruoyi-cloud-plus/extend-function/skywalking.md)
   * [Prometheus+Grafana搭建](/ruoyi-cloud-plus/extend-function/prometheus_grafana.md)
   * [Sharding-Proxy搭建分库分表](/ruoyi-cloud-plus/extend-function/shardingproxy.md)
+  * [对接MaxKey单点登录](/ruoyi-cloud-plus/extend-function/maxkey.md)
 * **扩展项目**
   * [扩展项目](/ruoyi-cloud-plus/extend-project/list.md)
