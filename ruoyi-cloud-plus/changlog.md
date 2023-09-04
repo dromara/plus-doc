@@ -1,6 +1,147 @@
 # 更新日志
 - - -
 
+## v5.1.0 - 2023-09-06
+
+# 开发历程
+
+* 2023年5月 开始 2.1.0 计划 历经1个月的设计与讨论
+* 2023年6月 开始着手开发 历经2个多月的开发 特别感谢团队的小伙伴与一些热心的粉丝 参与功能开发与测试
+* 2023年8月 开始公测 历经将近1个月的公测与修复工作(期间成功支持多位使用者生产使用)
+* 2023年9月初 正式发布(经过多个小伙伴的生产实践 已基本可尝试生产使用)
+> 关于1.X的说明 由于SpringBoot2.X与vue2.X均在11月底停止维护<br>
+> 故而咱们vue版本1.X也无法再继续更新<br>
+> 介于1.X的用户量特别庞大 功能也非常的稳定<br>
+> 计划于11月底同Boot2.X一同停止更新但还会持续维护修复bug(修复的形式为直接提交到1.X分支停止发版)<br>
+
+# 视频介绍
+
+为了更好的让大家了解 2.1.0 作者录制了相关的视频 供大家快速了解上手
+
+* 2.1.0 新功能与变更介绍: https://www.bilibili.com/video/BV1fj411y71X/
+
+# 更新日志
+
+### 重大更新
+
+* [重大更新] 优化 相关代码 完成代码生成多数据源统一存储(感谢 WangBQ)
+* [不兼容更新] 移除 原短信功能 集成更强大的 sms4j 短信工具包(感谢 友杰)
+* [不兼容更新] 对接 powerjob 实现分布式任务调度 删除原有 xxljob 原因为社区不更新功能太少只支持mysql(感谢 yhan219)
+* [重大更新] 新增 三方授权绑定登录功能 基于 justauth 支持市面上大部分三方登录(感谢 三个三)
+* [不兼容更新] 新增 客户端授权功能 不需要更改任何代码即可完成多端动态对接(感谢 Michelle.Chung)
+* [重大更新] 新增 前后端接口请求加密传输 基于AES+RSA动态高强度加密(感谢 wdhcr)
+* [重大更新] 新增 三方授权登录 对接 maxkey 单点登录
+* [不兼容更新] 优化 redis序列化配置 更改为通用格式(升级需清除redis所有数据)
+* [重大更新] 新增 通过 sharding-proxy 实现分库分表(感谢 rice666 !pr94)
+
+### 依赖升级
+
+* update springboot 3.0.7 => 3.1.3
+* update springboot-admin 3.1.3 => 3.1.5
+* update springcloud 2022.0.2 => 2022.0.4
+* update springcloud-alibaba 2022.0.0.0-RC2 => 2022.0.0.0
+* update springdoc 2.1.0 => 2.2.0
+* update spring-mybatis 3.0.1 => 3.0.2
+* update mybatis-plus 3.5.3.1 => 3.5.3.2
+* update easyexcel 3.2.1 => 3.3.2
+* update mapstruct-plus 1.2.3 => 1.3.5 解决修改实体类 idea不编译问题
+* update satoken 1.34.0 => 1.35.0.RC 优化过期配置 支持多端token自定义有效期
+* update dynamic-ds 3.6.1 => 4.1.3 支持 SpringBoot3
+* update sms4j 2.2.0
+* update hutool 5.8.18 => 5.8.20
+* update redisson 3.20.1 => 3.23.4
+* update lock4j 2.2.4 => 2.2.5
+* update aws-java-sdk-s3 1.12.400 => 1.12.540
+* update maven-surefire-plugin 3.0.0 => 3.1.2
+* update seata 1.6.1 => 1.7.0
+* update sharding-proxy 5.4.0
+* update dubbo 3.2.2 => 3.2.5
+* update skywalking-toolkit 8.14.0 => 8.16.0
+* update logstash 7.2 => 7.4
+
+### 功能更新
+
+update 优化 与 vue 版本同步代码结构
+update 优化 放行springboot默认error接口
+update 优化 RepeatSubmitAspect 逻辑避免并发请求问题
+update 调整 gateway 访问日志输出等级
+update 优化 修改角色如果未绑定用户则无需清理
+update 优化 用户昵称非空校验
+update 优化 在全局异常拦截器中增加两类异常处理
+update 优化 StreamUtils 方法过滤null值
+update 优化 powerjob 端口随着主应用端口飘逸 避免集群冲突
+update 优化 角色权限支持仅本人权限查看 解决无法查看自己创建的角色问题
+update 修改代码生成模版，日期范围统一采用addDateRange方法
+update 优化 树表生成前端缺少 children 字段
+update 优化 ruoyi-resource 服务添加 websocket 模块
+update 优化 放行验证码接口、第三方登录请求与回调
+update 更新 GlobalLogFilter#filter 根据请求头判断加密参数(感谢 Michelle.Chung !pr100)
+update 优化 SaReactorFilter 过滤器判断 token 客户端 id 是否有效(感谢 Michelle.Chung !pr101)
+update 删除一些跟swagger有关的字眼 避免误解
+update 优化 兼容 clientid 通过 param 传输
+update 优化 excel导出字典转下拉框 无需标记index自动处理(感谢 一夏coco)
+update 优化 增加线程池销毁配置
+update 优化 屏蔽 powerjob 无用的心跳日志
+update 优化 适配 mysql 8.0.34 升级连接机制
+update 优化 加密实现 使用 EncryptUtils 统一处理
+update 优化 删除字典无用状态字段(基本用不上 禁用后还会导致回显问题)
+update 优化 部门与角色如果绑定了用户则不允许禁用
+update 优化 岗位如果绑定了用户则不允许禁用
+update 优化 用户管理 只查询未禁用的部门角色岗位数据
+update 优化 登录用户增加昵称返回
+update 优化 全局异常处理器 业务异常不输出具体堆栈信息 减少无用日志存储
+update 优化 将部门管理 负责人选项改为下拉框选择
+update 优化 登录用户缓存 去除冗余统一存储
+update 优化 注册用户异常报错不正确问题
+update 优化 放宽菜单权限 角色关联菜单无需管理员
+
+### 新增功能
+
+* add 增加 RedisUtils 批量删除 hash key 方法
+* add 新增 Oss 上传 File 文件方法(感谢 jenn)
+* add 增加 excel 导出下拉框功能
+* add 新增 RedisUtils.setObjectIfAbsent 如果不存在则设置方法
+
+### 修复问题
+
+fix 修复 用户重名登录报错问题
+fix 修复 服务未添加 common-security 模块导致异常拦截器不生效问题
+fix 修复 用户篡改管理员角色标识符越权问题
+fix 修复 文件管理 创建人未翻译问题
+fix 修复 monitor 监控无法展示数据问题
+fix 修复 更换 satoken dubbo 插件导致包名不一致问题
+fix 修复 字典缓存注解使用错误问题
+fix 修复 接口文档未拼接服务路径问题
+fix 修复 excel 枚举反向解析失败问题
+fix 修复 查询部门下拉树未过滤数据权限问题
+fix 修复 CacheName 缓存key存储错误问题
+fix 修复 oss 列表 用户名回显错误
+fix 修复 不同vo相同字段mybatis会自动赋值问题
+fix 修复 删除 skywalking dubbo 2.X 插件避免与 3.X 出现兼容性问题
+fix 修复 新增角色使用内置管理员标识符问题
+fix 修复 token 过期登出无法清理在线用户问题
+fix 修复 动态设置 token 有效期不生效问题
+fix 修复 加密模块数据转换异常问题
+fix 修复 dubbo 更改内部序列化方式 导致异常类无法反序列化问题
+fix 修复 客户端编辑时授权类型变更未保存的问题
+fix 修正 缺失 SysClientVoConvert 导致转换异常(感谢 Michelle.Chung)
+fix 修正 auth 模块缺失引用导致解密异常(感谢 Michelle.Chung)
+fix 修复 demo 与 stream-mq 模块缺少 security 依赖问题
+fix 修复 导入用户数据 变量使用错误问题
+fix 修复 验证码开关未动态刷新问题
+fix 修复 自动填充数据 loginUser 为 null(感谢 charles !pr108)
+fix 修复 修复树模板父级编码变量错误
+fix 修复 部署部分系统出现乱码问题
+fix 修复 一级菜单无法显示问题
+fix 修复 新建用户可能会存在的越权行为
+fix 修复 代码生成页面参数缺少逗号问题
+
+### 移除功能
+
+* remove 移除原有短信功能(建议使用sms4j)
+* remove 移除xxljob功能(建议使用powerjob)
+
+
 ## v1.8.0 - 2023-07-11
 
 ### 重大更新
