@@ -21,6 +21,7 @@ RuoYi-Cloud-Plus
 │  └─ ruoyi-common-excel           // excel集成模块
 │  └─ ruoyi-common-idempotent      // 幂等功能模块
 │  └─ ruoyi-common-job             // job定时任务集成模块
+│  └─ ruoyi-common-json            // json集成模块
 │  └─ ruoyi-common-loadbalancer    // 团队负载均衡集成模块
 │  └─ ruoyi-common-log             // 日志集成模块
 │  └─ ruoyi-common-logstash        // elk日志集成模块
@@ -32,11 +33,15 @@ RuoYi-Cloud-Plus
 │  └─ ruoyi-common-satoken         // satoken集成模块
 │  └─ ruoyi-common-seata           // seata分布式事务集成模块
 │  └─ ruoyi-common-security        // 框架权限鉴权集成模块
+│  └─ ruoyi-common-sensitive       // 脱敏功能模块
 │  └─ ruoyi-common-sentinel        // sentinel集成模块
 │  └─ ruoyi-common-skylog          // skywalking日志收集模块
 │  └─ ruoyi-common-sms             // 短信集成模块
+│  └─ ruoyi-common-social          // 社交三方功能模块
+│  └─ ruoyi-common-tenant          // 租户功能模块
 │  └─ ruoyi-common-translation     // 通用翻译功能
 │  └─ ruoyi-common-web             // web服务集成模块
+│  └─ ruoyi-common-websocket       // websocket服务集成模块
 ├─ ruoyi-example        // 例子模块
 │  └─ ruoyi-demo        // 演示模块 [9401]
 │  └─ ruoyi-stream-mq   // mq演示模块 [9402]
@@ -51,8 +56,8 @@ RuoYi-Cloud-Plus
 │  └─ ruoyi-nacos                  // nacos服务模块 [8848,9848,9849]
 │  └─ ruoyi-seata-server           // seata服务模块 [7091,8091]
 │  └─ ruoyi-sentinel-dashboard     // sentinel控制台模块 [8718]
-│  └─ ruoyi-xxl-job-admin          // 任务调度控制台模块 [9900]
-├─ ruoyi-ui             // 前端框架 [80]
+│  └─ ruoyi-powerjob-server        // 任务调度控制台模块 [7700]
+├─ plus-ui              // 前端框架 [80]
 ├─ config/nacos         // nacos配置文件(需复制到nacos配置中心使用)
 │  └─ sentinel-ruoyi-gateway.json  // sentinel对接gateway限流配置文件
 │  └─ seata-server.properties      // seata服务配置文件
