@@ -61,39 +61,39 @@
 
 ### 功能更新
 
-update 优化 与 vue 版本同步代码结构
-update 优化 放行springboot默认error接口
-update 优化 RepeatSubmitAspect 逻辑避免并发请求问题
-update 调整 gateway 访问日志输出等级
-update 优化 修改角色如果未绑定用户则无需清理
-update 优化 用户昵称非空校验
-update 优化 在全局异常拦截器中增加两类异常处理
-update 优化 StreamUtils 方法过滤null值
-update 优化 powerjob 端口随着主应用端口飘逸 避免集群冲突
-update 优化 角色权限支持仅本人权限查看 解决无法查看自己创建的角色问题
-update 修改代码生成模版，日期范围统一采用addDateRange方法
-update 优化 树表生成前端缺少 children 字段
-update 优化 ruoyi-resource 服务添加 websocket 模块
-update 优化 放行验证码接口、第三方登录请求与回调
-update 更新 GlobalLogFilter#filter 根据请求头判断加密参数(感谢 Michelle.Chung !pr100)
-update 优化 SaReactorFilter 过滤器判断 token 客户端 id 是否有效(感谢 Michelle.Chung !pr101)
-update 删除一些跟swagger有关的字眼 避免误解
-update 优化 兼容 clientid 通过 param 传输
-update 优化 excel导出字典转下拉框 无需标记index自动处理(感谢 一夏coco)
-update 优化 增加线程池销毁配置
-update 优化 屏蔽 powerjob 无用的心跳日志
-update 优化 适配 mysql 8.0.34 升级连接机制
-update 优化 加密实现 使用 EncryptUtils 统一处理
-update 优化 删除字典无用状态字段(基本用不上 禁用后还会导致回显问题)
-update 优化 部门与角色如果绑定了用户则不允许禁用
-update 优化 岗位如果绑定了用户则不允许禁用
-update 优化 用户管理 只查询未禁用的部门角色岗位数据
-update 优化 登录用户增加昵称返回
-update 优化 全局异常处理器 业务异常不输出具体堆栈信息 减少无用日志存储
-update 优化 将部门管理 负责人选项改为下拉框选择
-update 优化 登录用户缓存 去除冗余统一存储
-update 优化 注册用户异常报错不正确问题
-update 优化 放宽菜单权限 角色关联菜单无需管理员
+* update 优化 与 vue 版本同步代码结构
+* update 优化 放行springboot默认error接口
+* update 优化 RepeatSubmitAspect 逻辑避免并发请求问题
+* update 调整 gateway 访问日志输出等级
+* update 优化 修改角色如果未绑定用户则无需清理
+* update 优化 用户昵称非空校验
+* update 优化 在全局异常拦截器中增加两类异常处理
+* update 优化 StreamUtils 方法过滤null值
+* update 优化 powerjob 端口随着主应用端口飘逸 避免集群冲突
+* update 优化 角色权限支持仅本人权限查看 解决无法查看自己创建的角色问题
+* update 修改代码生成模版，日期范围统一采用addDateRange方法
+* update 优化 树表生成前端缺少 children 字段
+* update 优化 ruoyi-resource 服务添加 websocket 模块
+* update 优化 放行验证码接口、第三方登录请求与回调
+* update 更新 GlobalLogFilter#filter 根据请求头判断加密参数(感谢 Michelle.Chung !pr100)
+* update 优化 SaReactorFilter 过滤器判断 token 客户端 id 是否有效(感谢 Michelle.Chung !pr101)
+* update 删除一些跟swagger有关的字眼 避免误解
+* update 优化 兼容 clientid 通过 param 传输
+* update 优化 excel导出字典转下拉框 无需标记index自动处理(感谢 一夏coco)
+* update 优化 增加线程池销毁配置
+* update 优化 屏蔽 powerjob 无用的心跳日志
+* update 优化 适配 mysql 8.0.34 升级连接机制
+* update 优化 加密实现 使用 EncryptUtils 统一处理
+* update 优化 删除字典无用状态字段(基本用不上 禁用后还会导致回显问题)
+* update 优化 部门与角色如果绑定了用户则不允许禁用
+* update 优化 岗位如果绑定了用户则不允许禁用
+* update 优化 用户管理 只查询未禁用的部门角色岗位数据
+* update 优化 登录用户增加昵称返回
+* update 优化 全局异常处理器 业务异常不输出具体堆栈信息 减少无用日志存储
+* update 优化 将部门管理 负责人选项改为下拉框选择
+* update 优化 登录用户缓存 去除冗余统一存储
+* update 优化 注册用户异常报错不正确问题
+* update 优化 放宽菜单权限 角色关联菜单无需管理员
 
 ### 新增功能
 
@@ -104,37 +104,37 @@ update 优化 放宽菜单权限 角色关联菜单无需管理员
 
 ### 修复问题
 
-fix 修复 用户重名登录报错问题
-fix 修复 服务未添加 common-security 模块导致异常拦截器不生效问题
-fix 修复 用户篡改管理员角色标识符越权问题
-fix 修复 文件管理 创建人未翻译问题
-fix 修复 monitor 监控无法展示数据问题
-fix 修复 更换 satoken dubbo 插件导致包名不一致问题
-fix 修复 字典缓存注解使用错误问题
-fix 修复 接口文档未拼接服务路径问题
-fix 修复 excel 枚举反向解析失败问题
-fix 修复 查询部门下拉树未过滤数据权限问题
-fix 修复 CacheName 缓存key存储错误问题
-fix 修复 oss 列表 用户名回显错误
-fix 修复 不同vo相同字段mybatis会自动赋值问题
-fix 修复 删除 skywalking dubbo 2.X 插件避免与 3.X 出现兼容性问题
-fix 修复 新增角色使用内置管理员标识符问题
-fix 修复 token 过期登出无法清理在线用户问题
-fix 修复 动态设置 token 有效期不生效问题
-fix 修复 加密模块数据转换异常问题
-fix 修复 dubbo 更改内部序列化方式 导致异常类无法反序列化问题
-fix 修复 客户端编辑时授权类型变更未保存的问题
-fix 修正 缺失 SysClientVoConvert 导致转换异常(感谢 Michelle.Chung)
-fix 修正 auth 模块缺失引用导致解密异常(感谢 Michelle.Chung)
-fix 修复 demo 与 stream-mq 模块缺少 security 依赖问题
-fix 修复 导入用户数据 变量使用错误问题
-fix 修复 验证码开关未动态刷新问题
-fix 修复 自动填充数据 loginUser 为 null(感谢 charles !pr108)
-fix 修复 修复树模板父级编码变量错误
-fix 修复 部署部分系统出现乱码问题
-fix 修复 一级菜单无法显示问题
-fix 修复 新建用户可能会存在的越权行为
-fix 修复 代码生成页面参数缺少逗号问题
+* fix 修复 用户重名登录报错问题
+* fix 修复 服务未添加 common-security 模块导致异常拦截器不生效问题
+* fix 修复 用户篡改管理员角色标识符越权问题
+* fix 修复 文件管理 创建人未翻译问题
+* fix 修复 monitor 监控无法展示数据问题
+* fix 修复 更换 satoken dubbo 插件导致包名不一致问题
+* fix 修复 字典缓存注解使用错误问题
+* fix 修复 接口文档未拼接服务路径问题
+* fix 修复 excel 枚举反向解析失败问题
+* fix 修复 查询部门下拉树未过滤数据权限问题
+* fix 修复 CacheName 缓存key存储错误问题
+* fix 修复 oss 列表 用户名回显错误
+* fix 修复 不同vo相同字段mybatis会自动赋值问题
+* fix 修复 删除 skywalking dubbo 2.X 插件避免与 3.X 出现兼容性问题
+* fix 修复 新增角色使用内置管理员标识符问题
+* fix 修复 token 过期登出无法清理在线用户问题
+* fix 修复 动态设置 token 有效期不生效问题
+* fix 修复 加密模块数据转换异常问题
+* fix 修复 dubbo 更改内部序列化方式 导致异常类无法反序列化问题
+* fix 修复 客户端编辑时授权类型变更未保存的问题
+* fix 修正 缺失 SysClientVoConvert 导致转换异常(感谢 Michelle.Chung)
+* fix 修正 auth 模块缺失引用导致解密异常(感谢 Michelle.Chung)
+* fix 修复 demo 与 stream-mq 模块缺少 security 依赖问题
+* fix 修复 导入用户数据 变量使用错误问题
+* fix 修复 验证码开关未动态刷新问题
+* fix 修复 自动填充数据 loginUser 为 null(感谢 charles !pr108)
+* fix 修复 修复树模板父级编码变量错误
+* fix 修复 部署部分系统出现乱码问题
+* fix 修复 一级菜单无法显示问题
+* fix 修复 新建用户可能会存在的越权行为
+* fix 修复 代码生成页面参数缺少逗号问题
 
 ### 移除功能
 
