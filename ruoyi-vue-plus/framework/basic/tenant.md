@@ -3,7 +3,7 @@
 ## 版本 >= 5.X
 
 ## 前置说明（重要）
-1. 这里是列表文本本框架多租户功能的实现是基于 [MyBatis-Plus 多租户插件](https://baomidou.com/pages/aef2f2/#tenantlineinnerinterceptor) 的，只支持最简单的隔离。
+1. 本框架多租户功能的实现是基于 [MyBatis-Plus 多租户插件](https://baomidou.com/pages/aef2f2/#tenantlineinnerinterceptor) 的，只支持最简单的隔离。
 2. 本系统默认开启多租户功能。
 3. 多租户业务表建表需要加上租户id `tenant_id`，可参考其他系统表。
 4. 非多租户表可在配置文件进行配置排除。
