@@ -80,8 +80,15 @@ docker-compose up -d mysql nginx-web redis minio
 ```
 
 ### 创建业务服务(需要先构建服务镜像)
+
+4.X
 ```shell
 docker-compose up -d ruoyi-monitor-admin ruoyi-xxl-job-admin ruoyi-server1 ruoyi-server2
+```
+
+5.X
+```shell
+docker-compose up -d ruoyi-monitor-admin ruoyi-powerjob-server ruoyi-server1 ruoyi-server2
 ```
 
 ### docker其他操作(idea的docker插件 推荐使用)

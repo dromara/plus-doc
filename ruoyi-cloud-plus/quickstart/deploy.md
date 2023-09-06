@@ -68,8 +68,14 @@ docker-compose up -d mysql nginx-web redis minio
 
 ### 创建中心服务(需要先构建服务镜像)
 
+1.X
 ```shell
 docker-compose up -d nacos seata-server sentinel ruoyi-monitor ruoyi-xxl-job-admin
+```
+
+2.X
+```shell
+docker-compose up -d nacos seata-server sentinel ruoyi-monitor ruoyi-powerjob-server
 ```
 
 ### 创建业务服务(需要先构建服务镜像)
