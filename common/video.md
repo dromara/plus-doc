@@ -18,7 +18,7 @@
 <br>
 试看课程: https://www.bilibili.com/video/BV1xV4y127KM/
 <br>
-**小本生意 用心录制 拒绝砍价 目前已更新到 170 集**<br>
+**小本生意 用心录制 拒绝砍价 目前已更新到 183 集**<br>
 课程咨询群: QQ群号: **<866407661>** 进群后联系管理员通过微信或支付宝付款即可<br>
 课程咨询群: QQ群号: **<866407661>** 进群后联系管理员通过微信或支付宝付款即可<br>
 课程咨询群: QQ群号: **<866407661>** 进群后联系管理员通过微信或支付宝付款即可<br>
@@ -41,7 +41,7 @@
 >
 > 问题5: 视频平均时长和总时长大概多久<br>
 > 答: 视频每集短的大概10分钟以上 长的大概40个分钟左右 平均时长20多分钟每集<br>
-> 目前已经录制了170集总时长为60多个小时 预计总时长80多个小时
+> 目前已经录制了180集总时长为60多个小时 预计总时长80多个小时
 > 
 > 问题6: 是否有讲解 Cloud 版本相关内容<br>
 > 答: 视频主要讲解内容为框架内所用到的技术与设计原理 无论什么版本 功能和设计都是一样的<br>
@@ -218,62 +218,61 @@
 168. 单元测试 带参数单元测试
 169. 单元测试 标签单元测试
 170. ElementUI介绍和使用
-171. ES6语法介绍
-172. 前端App.Vue和main.js配置
-173. 接口封装和使用
-174. Vuex的模块封装和使用
-175. directive自定义指令使用
-176. plugins插件封装和使用
-177. utils工具-dict字典工具
-178. utils工具-其他工具的使用
-179. 前端页面生命周期
-180. 前端组件的封装和引用
-181. Breadcrumb面包屑组件
-182. DictData字典数据组件
-183. DictTag字典标签组件
-184. Editor富文本编辑组件
-185. FileUpload文件上传组件
-186. Hamburger汉堡包组件
-187. HeaderSearch顶部搜索组件
-188. IconSelect图标选择组件
-189. iFrame内置框架组件
-190. ImagePreview图片预览组件
-191. ImageUpload图片上传组件
-192. Pagination分页组件
-193. PanThumb圆形缩略图组件
-194. ParentView组件
-195. RightPanel右侧设置面板组件
-196. RightToolbar右侧工具条组件
-197. Screenfull全屏组件
-198. SizeSelect字体大小选择组件
-199. SvgIcon svg图标组件
-200. ThemePicker主题选择组件
-201. TopNav顶部菜单组件
-202. layout公共页面相关组件
-203. 部门树组件
-204. plugins插件使用与封装
-205. Vuex模块使用与封装
-206. utils工具类index.js讲解
-207. utils工具类ruoyi.js讲解
-208. utils工具类validate.js讲解
-209. 表单构建原理
-210. 后端打包发布运行
-211. nginx配置（反向代理）
-212. 前端打包发布
-213. docker介绍与原理讲解
-214. docker安装与使用
-215. dockerfile语法与构建镜像
-216. docker-compose介绍与安装
-217. docker-compose语法与使用
-218. 一键编排启动
-219. IDEA的docker插件使用
-220. 服务日志的监控
-221. 拓展-如何搭建C端应用（uniapp）
-222. 拓展-多设备多用户设计
-223. 拓展-移动端用户的登录和鉴权（小程序端）
-224. 拓展-移动端用户的登录和鉴权（公众号端）
-225. 拓展-移动端用户的登录和鉴权（手机号）
-226. 拓展-移动端简单业务开发
+171. ES6常用语法讲解
+172. 前端项目结构（各类配置文件和打包）
+173. 前端项目结构（各个目录的功能概览）
+174. Vue生命周期、数据、Dom讲解
+175. 父子组件通讯与v-model双向绑定
+176. 父子组件插槽、具名插槽、作用域插槽的使用
+177. 接口封装和使用
+178. vuex的模块封装和使用
+179. directive自定义指令使用
+180. plugins插件封装和使用
+181. utils工具-dict字典工具的使用和深度剖析原理
+182. utils工具-auth、errCode、index.js全部方法的讲解
+183. utils工具-jsencrypt、permission、ruoyi、scrollTo、validate全部方法的讲解
+184. Breadcrumb面包屑组件
+185. DictData字典数据组件
+186. DictTag字典标签组件
+187. Editor富文本编辑组件
+188. FileUpload文件上传组件
+189. Hamburger汉堡包组件
+190. HeaderSearch顶部搜索组件
+191. IconSelect图标选择组件
+192. iFrame内置框架组件
+193. ImagePreview图片预览组件
+194. ImageUpload图片上传组件
+195. Pagination分页组件
+196. PanThumb圆形缩略图组件
+197. ParentView组件
+198. RightPanel右侧设置面板组件
+199. RightToolbar右侧工具条组件
+200. Screenfull全屏组件
+201. SizeSelect字体大小选择组件
+202. SvgIcon svg图标组件
+203. ThemePicker主题选择组件
+204. TopNav顶部菜单组件
+205. layout公共页面相关组件
+206. 部门树组件
+207. plugins插件使用与封装
+208. 表单构建原理
+209. 后端打包发布运行
+210. nginx配置（反向代理）
+211. 前端打包发布
+212. docker介绍与原理讲解
+213. docker安装与使用
+214. dockerfile语法与构建镜像
+215. docker-compose介绍与安装
+216. docker-compose语法与使用
+217. 一键编排启动
+218. IDEA的docker插件使用
+219. 服务日志的监控
+220. 拓展-如何搭建C端应用（uniapp）
+221. 拓展-多设备多用户设计
+222. 拓展-移动端用户的登录和鉴权（小程序端）
+223. 拓展-移动端用户的登录和鉴权（公众号端）
+224. 拓展-移动端用户的登录和鉴权（手机号）
+225. 拓展-移动端简单业务开发
 ```
 
 ## 学员观后感
