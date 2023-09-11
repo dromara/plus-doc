@@ -18,7 +18,7 @@
 <br>
 试看课程: https://www.bilibili.com/video/BV1xV4y127KM/
 <br>
-**小本生意 用心录制 拒绝砍价 目前已更新到 183 集**<br>
+**小本生意 用心录制 拒绝砍价 目前已更新到 192 集**<br>
 课程咨询群: QQ群号: **<866407661>** 进群后联系管理员通过微信或支付宝付款即可<br>
 课程咨询群: QQ群号: **<866407661>** 进群后联系管理员通过微信或支付宝付款即可<br>
 课程咨询群: QQ群号: **<866407661>** 进群后联系管理员通过微信或支付宝付款即可<br>
@@ -41,7 +41,7 @@
 >
 > 问题5: 视频平均时长和总时长大概多久<br>
 > 答: 视频每集短的大概10分钟以上 长的大概40个分钟左右 平均时长20多分钟每集<br>
-> 目前已经录制了180集总时长为60多个小时 预计总时长80多个小时
+> 目前已经录制了190集总时长为70多个小时 预计总时长80多个小时
 > 
 > 问题6: 是否有讲解 Cloud 版本相关内容<br>
 > 答: 视频主要讲解内容为框架内所用到的技术与设计原理 无论什么版本 功能和设计都是一样的<br>
@@ -231,48 +231,50 @@
 181. utils工具-dict字典工具的使用和深度剖析原理
 182. utils工具-auth、errCode、index.js全部方法的讲解
 183. utils工具-jsencrypt、permission、ruoyi、scrollTo、validate全部方法的讲解
-184. Breadcrumb面包屑组件
-185. DictData字典数据组件
+184. Vue内置组件transition、transition-group过渡动画的使用和讲解
+185. Breadcrumb面包屑组件
 186. DictTag字典标签组件
-187. Editor富文本编辑组件
-188. FileUpload文件上传组件
+187. Editor富文本编辑组件(Quill)
+188. Svg矢量图绘制原理与SvgIcon svg图标组件
 189. Hamburger汉堡包组件
-190. HeaderSearch顶部搜索组件
-191. IconSelect图标选择组件
-192. iFrame内置框架组件
-193. ImagePreview图片预览组件
-194. ImageUpload图片上传组件
-195. Pagination分页组件
-196. PanThumb圆形缩略图组件
-197. ParentView组件
-198. RightPanel右侧设置面板组件
-199. RightToolbar右侧工具条组件
-200. Screenfull全屏组件
-201. SizeSelect字体大小选择组件
-202. SvgIcon svg图标组件
-203. ThemePicker主题选择组件
-204. TopNav顶部菜单组件
-205. layout公共页面相关组件
-206. 部门树组件
-207. plugins插件使用与封装
-208. 表单构建原理
-209. 后端打包发布运行
-210. nginx配置（反向代理）
-211. 前端打包发布
-212. docker介绍与原理讲解
-213. docker安装与使用
-214. dockerfile语法与构建镜像
-215. docker-compose介绍与安装
-216. docker-compose语法与使用
-217. 一键编排启动
-218. IDEA的docker插件使用
-219. 服务日志的监控
-220. 拓展-如何搭建C端应用（uniapp）
-221. 拓展-多设备多用户设计
-222. 拓展-移动端用户的登录和鉴权（小程序端）
-223. 拓展-移动端用户的登录和鉴权（公众号端）
-224. 拓展-移动端用户的登录和鉴权（手机号）
-225. 拓展-移动端简单业务开发
+190. el-popover与IconSelect图标选择组件
+191. HearderSearch顶部搜索组件前置知识-el-select标签与Fuse模糊搜索
+192. HeaderSearch顶部搜索组件
+193. DictData字典数据组件
+194. iFrame内置框架组件
+195. FileUpload文件上传组件
+196. ImagePreview图片预览组件
+197. ImageUpload图片上传组件
+198. Pagination分页组件
+199. PanThumb圆形缩略图组件
+200. ParentView组件
+201. RightPanel右侧设置面板组件
+202. RightToolbar右侧工具条组件
+203. Screenfull全屏组件
+204. SizeSelect字体大小选择组件
+205. ThemePicker主题选择组件
+206. TopNav顶部菜单组件
+207. layout公共页面相关组件
+208. 部门树组件
+209. plugins插件使用与封装
+210. 表单构建原理
+211. 后端打包发布运行
+212. nginx配置（反向代理）
+213. 前端打包发布
+214. docker介绍与原理讲解
+215. docker安装与使用
+216. dockerfile语法与构建镜像
+217. docker-compose介绍与安装
+218. docker-compose语法与使用
+219. 一键编排启动
+220. IDEA的docker插件使用
+221. 服务日志的监控
+222. 拓展-如何搭建C端应用（uniapp）
+223. 拓展-多设备多用户设计
+224. 拓展-移动端用户的登录和鉴权（小程序端）
+225. 拓展-移动端用户的登录和鉴权（公众号端）
+226. 拓展-移动端用户的登录和鉴权（手机号）
+227. 拓展-移动端简单业务开发
 ```
 
 ## 学员观后感
