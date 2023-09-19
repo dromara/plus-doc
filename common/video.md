@@ -18,7 +18,7 @@
 <br>
 试看课程: https://www.bilibili.com/video/BV1xV4y127KM/
 <br>
-**小本生意 用心录制 拒绝砍价 目前已更新到 192 集**<br>
+**小本生意 用心录制 拒绝砍价 目前已更新到 200 集**<br>
 课程咨询群: QQ群号: **<866407661>** 进群后联系管理员通过微信或支付宝付款即可<br>
 课程咨询群: QQ群号: **<866407661>** 进群后联系管理员通过微信或支付宝付款即可<br>
 课程咨询群: QQ群号: **<866407661>** 进群后联系管理员通过微信或支付宝付款即可<br>
@@ -41,7 +41,7 @@
 >
 > 问题5: 视频平均时长和总时长大概多久<br>
 > 答: 视频每集短的大概10分钟以上 长的大概40个分钟左右 平均时长20多分钟每集<br>
-> 目前已经录制了190集总时长为70多个小时 预计总时长80多个小时
+> 目前已经录制了200集总时长为70多个小时 预计总时长80多个小时
 > 
 > 问题6: 是否有讲解 Cloud 版本相关内容<br>
 > 答: 视频主要讲解内容为框架内所用到的技术与设计原理 无论什么版本 功能和设计都是一样的<br>
@@ -240,23 +240,23 @@
 190. el-popover与IconSelect图标选择组件
 191. HearderSearch顶部搜索组件前置知识-el-select标签与Fuse模糊搜索
 192. HeaderSearch顶部搜索组件
-193. DictData字典数据组件
-194. iFrame内置框架组件
-195. FileUpload文件上传组件
-196. ImagePreview图片预览组件
-197. ImageUpload图片上传组件
-198. Pagination分页组件
-199. PanThumb圆形缩略图组件
-200. ParentView组件
-201. RightPanel右侧设置面板组件
-202. RightToolbar右侧工具条组件
-203. Screenfull全屏组件
-204. SizeSelect字体大小选择组件
-205. ThemePicker主题选择组件
-206. TopNav顶部菜单组件
-207. layout公共页面相关组件
-208. 部门树组件
-209. plugins插件使用与封装
+193. iFrame内置框架组件
+194. Screenfull全屏组件
+195. SizeSelect字体大小选择组件
+196. NavBar顶部导航栏与TopNav顶部菜单组件
+197. 渲染函数 render 与 JSX
+198. component内置组件和keep-alive组件与AppMain组件
+199. Sidebar组件完整拆解分析
+200. ColorPicker颜色选择器和ThemePicker主题选择组件
+201. RightPanel、settings右侧设置面板组件
+202. ScrollPane和TagsView页签组件
+203. layout公共页面相关组件
+204. ParentView组件
+205. ImagePreview图片预览组件
+206. PanThumb圆形缩略图组件
+207. RightToolbar右侧工具条组件
+208. Pagination分页组件
+209. 部门树组件
 210. 表单构建原理
 211. 后端打包发布运行
 212. nginx配置（反向代理）
