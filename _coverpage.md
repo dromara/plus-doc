@@ -7,7 +7,7 @@
 <div style="font-weight: bold; font-size: 40px;margin-bottom: 25px;">多租户权限管理系统</div>
 
 [![码云Gitee](https://gitee.com/dromara/RuoYi-Vue-Plus/badge/star.svg?theme=blue)](https://gitee.com/dromara/RuoYi-Vue-Plus)
-[![GitHub](https://img.shields.io/github/stars/JavaLionLi/RuoYi-Vue-Plus.svg?style=social&label=Stars)](https://github.com/dromara/RuoYi-Vue-Plus)
+[![GitHub](https://img.shields.io/github/stars/dromara/RuoYi-Vue-Plus.svg?style=social&label=Stars)](https://github.com/dromara/RuoYi-Vue-Plus)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://gitee.com/dromara/RuoYi-Vue-Plus/blob/master/LICENSE)
 <br>
 [![RuoYi-Vue-Plus](https://img.shields.io/badge/RuoYi_Vue_Plus-5.1.0-success.svg)](https://gitee.com/dromara/RuoYi-Vue-Plus)
@@ -19,7 +19,7 @@
 <div style="font-weight: bold; font-size: 40px; margin-bottom: 25px;">微服务权限管理系统</div>
 
 [![码云Gitee](https://gitee.com/dromara/RuoYi-Cloud-Plus/badge/star.svg?theme=blue)](https://gitee.com/dromara/RuoYi-Cloud-Plus)
-[![GitHub](https://img.shields.io/github/stars/JavaLionLi/RuoYi-Cloud-Plus.svg?style=social&label=Stars)](https://github.com/dromara/RuoYi-Cloud-Plus)
+[![GitHub](https://img.shields.io/github/stars/dromara/RuoYi-Cloud-Plus.svg?style=social&label=Stars)](https://github.com/dromara/RuoYi-Cloud-Plus)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://gitee.com/dromara/RuoYi-Cloud-Plus/blob/master/LICENSE)
 <br>
 [![RuoYi-Cloud-Plus](https://img.shields.io/badge/RuoYi_Cloud_Plus-2.1.0-success.svg)](https://gitee.com/dromara/RuoYi-Cloud-Plus)
