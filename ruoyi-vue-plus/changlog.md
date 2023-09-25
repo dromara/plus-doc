@@ -1,6 +1,54 @@
 # 更新日志
 - - -
 
+## v4.8.1 - 2023-09-25
+
+### 依赖升级
+
+* update springboot 2.7.15 => 2.7.16
+* update springboot-admin 2.7.10 => 2.7.11
+* update satoken 1.35.0.RC => 1.36.0
+* update lombok 1.18.26 =. 1.18.30
+* update mybatis-plus 3.5.3.1 => 3.5.3.2
+* update easyexcel 3.3.1 => 3.3.2
+* update hutool 5.8.18 => 5.8.20
+
+### 功能更新
+
+* update 优化 重置密码注释参数中文解释错误
+* update 优化 getTokenActivityTimeout => getTokenActiveTimeout
+* update 优化字典标签支持传分隔符分隔的字符串和数组，优化渲染效果
+* update 优化 控制台debuger位置错误问题
+* update 优化 TopNav 菜单样式
+* update 优化 全局异常处理器 业务异常不输出具体堆栈信息 减少无用日志存储
+* update 优化 用户管理 只查询未禁用的部门角色岗位数据
+* update 优化 岗位如果绑定了用户则不允许禁用
+* update 优化 部门与角色如果绑定了用户则不允许禁用
+* update 优化 加密实现 使用 EncryptUtils 统一处理
+* update 优化 excel导出字典转下拉框 无需标记index自动处理
+* update 优化 excel 导出字典默认转为下拉框
+* update  优化 删除一些跟 swagger 有关的字眼 避免误解
+* update 优化 角色权限支持仅本人权限查看 解决无法查看自己创建的角色问题
+* update 优化 RedisCacheController 注释错误
+* update 优化 xxljob 端口随着主应用端口飘逸 避免集群冲突
+* update 优化 powerjob 端口随着主应用端口飘逸 避免集群冲突
+
+### 问题修复
+
+* fix 修复 代码生成后 vo 定义 'serialVersionUID' 字段的不可序列化类
+* fix 修复 自定义字典样式不生效的问题
+* fix 修复 布局配置失效问题
+* fix 修复 新建用户可能会存在的越权行为
+* fix 修复 字典缓存删除方法参数错误问题
+* fix 修复 修复树模板父级编码变量错误
+* fix 修复 有界队列与优先队列 错误使用问题
+* fix 修复 升级 mp 版本导致的问题
+* fix 修复 vue3 版本注册页验证码不显示问题
+* fix 修复 加密模块数据转换异常问题
+* fix 修复 动态设置 token 有效期不生效问题
+* fix 修复 token 过期登出无法清理在线用户问题
+
+
 ## v5.1.0 - 2023-09-05
 
 # 开发历程
