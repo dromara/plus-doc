@@ -20,7 +20,8 @@
 * update 优化 代码生成 vo实体类序列化
 * update 优化 excel 导出不必要的请求头
 * update 优化 字典标签支持传分隔符分隔的字符串和数组
-* update 优化 控制台debuger位置错误问题 * update 优化 TopNav 菜单样式 fix 修复 布局配置失效问题
+* update 优化 控制台debuger位置错误问题 
+* update 优化 TopNav 菜单样式
 * update 优化 注册用户异常报错不正确问题
 * update 优化 全局异常处理器 业务异常不输出具体堆栈信息 减少无用日志存储
 * update 优化 用户管理 只查询未禁用的部门角色岗位数据
