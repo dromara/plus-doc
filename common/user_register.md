@@ -8,6 +8,7 @@
 | 公司名               | 官网                             | LOGO                                                                                                          |
 |-------------------|:-------------------------------|---------------------------------------------------------------------------------------------------------------|
 | 中国联通(长春分公司)       | http://www.10010.com           | <img src="https://foruda.gitee.com/images/1679554727740431371/bd179d0f_1766278.png" width="300" height="200"> |
+| 南昌鼎欣科技股份有限公司 | https://www.openzt.com           | <img src="https://foruda.gitee.com/images/1697701810520579719/4da9666e_1766278.png" width="400" height="200"> |
 | 东莞市码载网络科技有限公司 | https://www.codeload.top           | <img src="https://foruda.gitee.com/images/1697618746817506398/57af2eaa_10583761.png" width="400" height="200"> |
 | 北京农信通科技有限责任公司 | http://www.nxt.com.cn           | <img src="https://foruda.gitee.com/images/1696428611360166577/72e7f7c4_971517.png" width="400" height="200"> |
 | 中康腾华网络科技（重庆）有限公司 | https://www.zkthwlkj.com/   | <img src="https://foruda.gitee.com/images/1695112845600729239/a16e34e2_1766278.png" width="200" height="100"> |
