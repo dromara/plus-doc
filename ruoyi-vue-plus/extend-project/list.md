@@ -32,6 +32,7 @@
 | Activiti扩展                     | https://gitee.com/sgs98/RuoYi-Vue-Plus-Activiti                           |
 | flowable扩展                     | https://gitee.com/sgs98/RuoYi-Vue-Plus-Flowable                           |
 | flowable扩展                     | https://gitee.com/KonBAI-Q/ruoyi-flowable-plus                            |
+| mybatis-flex版本                 | https://gitee.com/yhan219/ruoyi-vue-flex                                  |
 | security版本                     | https://gitee.com/gzyy/RuoYi-Vue-Plust                                    |
 | Oracle扩展                       | https://gitee.com/phanes/RuoYi-Vue-Plus-Oracle                            |
 | Oracle扩展                       | https://gitee.com/zj_Gitttttttte/ruoyi-vue-plus-oracle                    |
