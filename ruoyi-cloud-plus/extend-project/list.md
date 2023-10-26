@@ -24,5 +24,6 @@
 | Plus学习笔记(常规功能)                 | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-vue-plus/home   |
 | Plus学习笔记(微服务组件)                | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-cloud-plus/home |
 | 基于RuoYi-App框架二次修改使用Uniapp+Vue3 | https://gitee.com/wangying110166/ruo-yi-uni-app-plus                    |
+| 基于RuoYi-App框架对接Plus后端      | https://gitee.com/FnTop/RuoYi-App-Plus                                   |
 | 基于vben(ant-design-vue)前端项目     | https://gitee.com/dapppp/ruoyi-plus-vben                                |
 | 基于vue-next-admin的vue3+ts前端     | https://gitee.com/thiszhc/RuoYi-Vue3-UI                                 |
