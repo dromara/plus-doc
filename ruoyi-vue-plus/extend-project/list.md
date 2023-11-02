@@ -13,6 +13,7 @@
 | 数据库字段加解密(支持 base64 aes rsa sm2 sm4) | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/274  |
 | 增加liquibase迁移数据库                    | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/299  |
 | 增加OSS模块支持本地环境                       | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/353  |
+| 扩展模块独立集成flyway                       | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/439  |
 
 
 ### 项目介绍+项目地址 欢迎投稿
