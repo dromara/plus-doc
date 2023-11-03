@@ -13,7 +13,7 @@
 
 **graalvm 是oracle旗下的高性能jdk 下载地址: https://github.com/graalvm/graalvm-ce-builds/releases**
 
-* openjdk-17 或 graalvm-22.X-community版本
+* openjdk-17/21 或 graalvm-community-jdk-17/21 版本
 * mysql 5.7 8.0 (5.6未适配可能会有问题)
 * oracle 11g 12c
 * postgres 13 14
