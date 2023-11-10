@@ -11,6 +11,10 @@
 * path 应用路径
 * allowedOrigins 设置访问源地址
 
+**重点: 如关闭ws功能需连同前端ws开关一同关闭 不然前端启动会报错**
+
+![输入图片说明](https://foruda.gitee.com/images/1699611520336255650/bb622db5_1766278.png "屏幕截图")
+
 ## 使用方法
 
 前端连接方式: `ws://后端ip:端口/resource/websocket?clientid=import.meta.env.VITE_APP_CLIENT_ID&Authorization=Bearer eyJ0eXAiO......`
