@@ -12,7 +12,10 @@
 | 压缩包处理工具 支持本地文件/目录+oss文件/网络文件混合      | https://gitee.com/dromara/RuoYi-Cloud-Plus/pulls/44 |
 | 添加websocket模块 支持satoken鉴权           | https://gitee.com/dromara/RuoYi-Cloud-Plus/pulls/65 |
 | 数据库字段加解密(支持 base64 aes rsa sm2 sm4) | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/274  |
-
+| 增加liquibase迁移数据库                    | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/299  |
+| 增加OSS模块支持本地环境                       | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/353  |
+| 扩展模块独立集成flyway                       | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/439  |
+| 扩展模块独立集成go-view大屏看板              | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/445  |
 
 ### 欢迎投稿 项目介绍+项目地址
 
