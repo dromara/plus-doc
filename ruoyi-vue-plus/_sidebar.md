@@ -22,6 +22,10 @@
     * [修改应用路径](/ruoyi-vue-plus/framework/association/update_url.md)
     * [国际化](/ruoyi-vue-plus/framework/association/i18n.md)
   * 基础功能
+    * [系统用户相关](/ruoyi-vue-plus/framework/basic/user.md)
+    * [权限控制](/ruoyi-vue-plus/framework/basic/permissions_control.md)
+    * [导入导出](/ruoyi-vue-plus/framework/basic/export.md)
+    * [参数校验](/ruoyi-vue-plus/framework/basic/param_check.md)
     * [代码生成](/ruoyi-vue-plus/framework/basic/code_generate.md)
     * [分页功能](/ruoyi-vue-plus/framework/basic/page.md)
     * [OSS功能](/ruoyi-vue-plus/framework/basic/oss.md)
