@@ -12,7 +12,6 @@
 | 中城智联（成都）创新科技有限公司       | http://www.zc-zl.com/          | <img src="https://foruda.gitee.com/images/1699841115050735040/0d6893d1_1766278.png" width="300" height="200"> |
 | 浙江海亮股份有限公司       | https://www.hailiangstock.com          | <img src="https://foruda.gitee.com/images/1699841174631804104/fd3466fd_1766278.png" width="300" height="200"> |
 | 河北雄安山禾咨询工程有限公司       | https://shanheqei.club/          | <img src="https://foruda.gitee.com/images/1699855302878416881/6bfdb2d5_1766278.png" width="300" height="200"> |
-
 | 数舵(河北雄安)信息科技有限公司 | http://www.shuduokeji.com  | <img src="https://foruda.gitee.com/images/1698888517162767014/8a2840ff_1766278.png" width="400" height="200"> |
 | 南昌鼎欣科技股份有限公司 | https://www.openzt.com           | <img src="https://foruda.gitee.com/images/1697701810520579719/4da9666e_1766278.png" width="400" height="200"> |
 | 东莞市码载网络科技有限公司 | https://www.codeload.top           | <img src="https://foruda.gitee.com/images/1697618746817506398/57af2eaa_10583761.png" width="400" height="200"> |
