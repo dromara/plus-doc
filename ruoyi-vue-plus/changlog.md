@@ -1,6 +1,97 @@
 # 更新日志
 - - -
 
+## v5.1.1 - 2023-11-14
+
+### 依赖升级
+
+* update springboot 3.1.3 => 3.1.5
+* update springboot 2.7.14 => 2.7.17(扩展服务)
+* update springboot-admin 3.1.5 => 3.1.7
+* update satoken 1.35.0.RC => 1.37.0
+* update mybatis-plus 3.5.3.2 => 3.5.4 适配mp新版本改动
+* update dynamic-ds 4.1.3 => 4.2.0
+* update bouncycastle 1.72 => 1.76
+* update poi 5.2.3 => 5.2.4
+* update redisson 3.23.2 => 3.24.1
+* update hutool 5.8.20 => 5.8.22
+* update lombok 1.18.26 => 1.18.30(适配支持jdk21)
+* update vue-quill 1.1.0 => 1.2.0
+
+### 功能更新
+
+* update 优化 数据权限拦截器优先判断方法是否有效 提高性能减少无用sql解析
+* update 优化 适配 maxkey 新版本
+* update 优化 @Sensitive脱敏增加角色和权限校验 (感谢 盘古给你一斧)
+* update 优化 部门数据权限使用默认兜底方案
+* update 优化 更改默认日志等级为info 避免日志过多(按需开启debug)
+* update 优化 登录策略代码优化(感谢 David Wei)
+* update 优化 补全代码生成 columnList 接口参数注解缺失
+* update 优化 nginx 配置支持 websocket
+* update 优化 notice 新增通知公告发送ws推送
+* update 优化 websocket 模块减少日志输出 增加登录推送
+* update 优化 重构登录策略增加扩展性降低复杂度
+* update 优化 addressUtils 兼容linux系统本地ip
+* update 优化 补全操作日志部门数据
+* update 优化 支持数据库操作在非web环境下切换租户
+* update 优化 排除powerjob无用的依赖 减少打包30M体积
+* update 优化 删除 satoken yml 时间配置 此功能已迁移至客户端管理
+* update 优化 redis 集群模式注释说明
+* update 优化 客户端禁用限制
+* update 优化 登录日志, 在线用户展示信息(增加 客户端, 设备类型)(感谢 MichelleChung)
+* update 优化 限制框架中的fastjson版本
+* update 优化 数据权限 减少二次校验查询
+* update 优化 将部门id存入token避免过度查询redis
+* update 优化 增加租户ID为Null错误日志
+* update 优化 操作日志列表新增IP地址查询
+* update 优化 通过参数键名获取键值接口的返回体(感谢 David Wei)
+* update 优化 为 sys_grant_type 字典增加样式
+* update 优化 代码生成 页面输入框样式
+* update 优化 全业务分页查询增加排序规则避免因where条件导致乱序问题
+* update 优化 登录接口租户id被强制校验问题
+* update 优化 加密模块 支持父类统一使用加密注解(感谢 Tyler Ge)
+* update 优化 将graalvm镜像更新为openjdk镜像 需要的人自行切换即可
+* update 优化 部分使用者乱设权限导致无法获取用户信息 增加权限提示
+* update 优化 表格列的显示与隐藏小组件(感谢 bestrevens)
+* update 优化 增加表单构建不能使用说明
+* update 优化 富文本Editor组件检验图片格式
+* update 优化 操作日志列表新增IP地址查询
+* update 优化 菜单管理类型为按钮状态可选
+* update 优化 用户初始密码从参数配置查询
+* update 优化 通过参数键名获取键值接口的返回体(感谢 David Wei)
+* update 优化 字典标签支持数组和多标签(感谢 抓蛙师)
+
+### 新增功能
+
+* add 新增 websocket 群发功能
+* add 新增 前端接入websocket接收消息(感谢 三个三)
+
+### 问题修复
+
+* fix 修复 oss服务无法连接 导致业务异常问题 查询不应该影响业务
+* fix 修复 租户id为null 无法匹配字符串导致的嵌套key问题
+* fix 修复 部门管理orderNum排序失效问题
+* fix 修复 外链带端口出现的异常
+* fix 修复 普通角色编辑使用内置管理员code越权问题
+* fix 修复 代码生成 是否必填与数据库不匹配问题
+* fix 修复 用户注册接口校验用户名不区分租户问题
+* fix 修复 错误增加组导致的校验不生效问题
+* fix 修复 新增校验主键id问题
+* fix 修复 powerjob 使用 nginx 部署无法访问的问题
+* fix 修复 SysUserMapper 内标签使用错误(不影响使用)
+* fix 修复 新增或编辑 SysOssConfig 数据后 推送到 redis 数据不完整
+* fix 修复 树表生成查询变量使用错误
+* fix 修复 个人信息修改密码接口隐藏新旧密码参数明文(感谢 bleachtred)
+* fix 修复 删除字段后 * update sql 未更新问题
+* fix 修复 三方登录支付宝source与实际支付宝业务code不匹配问题
+* fix 修复 五级路由缓存无效问题
+* fix 修复 内链iframe没有传递参数问题
+* fix 修复 绑定第三方帐号参数“wechar”更正为“wechat” (感谢 scmiot)
+* fix 修复 用户注册缺失 clientid 问题
+* fix 修复 HeaderSearch组件跳转query参数丢失问题
+* fix 修复 自定义字典样式不生效的问题
+* fix 修复 login 页面 loading 未关闭问题
+
 ## v4.8.1 - 2023-09-25
 
 ### 依赖升级

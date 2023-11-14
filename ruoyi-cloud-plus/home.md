@@ -10,10 +10,10 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://gitee.com/dromara/RuoYi-Cloud-Plus/blob/master/LICENSE)
 [![使用IntelliJ IDEA开发维护](https://img.shields.io/badge/IntelliJ%20IDEA-提供支持-blue.svg)](https://www.jetbrains.com/?from=RuoYi-Cloud-Plus)
 <br>
-[![RuoYi-Cloud-Plus](https://img.shields.io/badge/RuoYi_Cloud_Plus-2.1.0-success.svg)](https://gitee.com/dromara/RuoYi-Cloud-Plus)
+[![RuoYi-Cloud-Plus](https://img.shields.io/badge/RuoYi_Cloud_Plus-2.1.1-success.svg)](https://gitee.com/dromara/RuoYi-Cloud-Plus)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.1-blue.svg)]()
 [![JDK-17](https://img.shields.io/badge/JDK-17-green.svg)]()
-[![JDK-19](https://img.shields.io/badge/JDK-19-green.svg)]()
+[![JDK-19](https://img.shields.io/badge/JDK-21-green.svg)]()
 
 > RuoYi-Cloud-Plus `微服务通用权限管理系统` 重写 RuoYi-Cloud 全方位升级(不兼容原框架)
 
@@ -26,7 +26,7 @@
 
 | 功能          | 本框架                                                                                                               | RuoYi                                                                              |
 |-------------|-------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| 前端项目        | 基于vue3-element-admin开源项目重写<br/>Vue3 + TS + ElementPlus                                                            | 基于Vue2/Vue3 + JS                                                                   | 
+| 前端项目        | 采用 Vue3 + TS + ElementPlus 重写                                                                                     | 基于Vue2/Vue3 + JS                                                                   | 
 | 后端项目结构      | 采用插件化 + 扩展包形式 结构解耦 易于扩展                                                                                           | 模块相互注入耦合严重难以扩展                                                                     | 
 | 后端代码风格      | 严格遵守Alibaba规范与项目统一配置的代码格式化                                                                                        | 代码书写与常规结构不同阅读障碍大                                                                   |
 | 分布式注册中心     | 采用 Alibaba Nacos 源码集成便于调试扩展与二次开发 框架还为其增加了各种监控                                                                     | 采用 Alibaba Nacos 自行搭建纯官方版本不可靠                                                      | 
