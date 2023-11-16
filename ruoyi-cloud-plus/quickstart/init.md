@@ -79,3 +79,9 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1678979902433843257/12da2839_1766278.png "屏幕截图")
 
+### 服务启动顺序说明
+
+1. 必须启动基础建设: mysql redis nacos<br>
+2. 可选启动基础建设: minio(影响文件上传) seata(影响分布式事务 默认开启) sentinel(影响熔断限流) monitor(影响监控) powerjob(影响定时任务)<br>
+3. 必须启动应用服务: gateway auth system<br>
+4. 可选启动应用服务: resource(影响资源使用 websocket 文件上传 邮件 短信等) gen(代码生成) job(影响定时任务) demo(影响demo使用)

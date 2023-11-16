@@ -21,7 +21,7 @@
 * redis 5.X 6.X 7.X 由于框架大量使用了redis特性 版本必须 >= 5.X ([win redis 下载地址](https://github.com/zkteco-home/redis-windows))
 * minio 本地文件存储 或 阿里云 腾讯云 七牛云等一切支持S3协议的云存储
 * maven 3.6.3 3.8.X
-* nodejs >= 14
+* nodejs 16 18(18以上未测试 不建议使用)
 * npm 8.X (7.X确认有问题)
 
 ### 搭建视频
@@ -44,16 +44,15 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1688634290787855369/c09c268f_1766278.png "屏幕截图")
 
-**~~多数据库仅支持主应用 扩展应用需自行适配(例如: xxl-job仅支持mysql)~~**
-
 **多数据库支持 5.X 调度中心采用 PowerJob 底层为 JPA 支持所有数据库**
 
-### 应用启动
-应用列表
+### 服务启动顺序说明
+
+1. 必须启动基础建设: mysql redis admin<br>
+2. 可选启动基础建设: minio(影响文件上传) monitor(影响监控) powerjob(影响定时任务)<br>
 
 ![输入图片说明](https://foruda.gitee.com/images/1678976302776168895/7333341c_1766278.png "屏幕截图")
 * `MonitorAdminApplication` 为 Admin监控服务(非必要 可参考对应文档关闭)
-* ~~`XxlJobAdminApplication` 为 任务调度中心服务(非必要 可参考对应文档关闭)~~ (5.X 弃用)
 * `PowerJobServerApplication` 为 任务调度中心服务(非必要 可参考对应文档关闭)
 * `RuoYiApplication` 为 主应用服务
 > 需优先启动 `MonitorAdminApplication` 与 `PowerJobServerApplication` 具体配置方式参考对应文档<br>
