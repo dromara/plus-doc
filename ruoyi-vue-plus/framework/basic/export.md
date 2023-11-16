@@ -4,6 +4,8 @@
 
 在本框架中引入了 `Easy Excel` 依赖（对 `Apache POI`进行了封装以及扩展），可以对数据进行导出操作（即写 Excel）。
 
+[EasyExcel 文档地址](https://easyexcel.opensource.alibaba.com/)
+
 ## 导出功能使用流程说明
 
 ### 步骤一：定义导出实体对象
@@ -17,29 +19,7 @@
     @ExcelProperty(value = "用户序号")
     private Long userId;
 
-    /**
-     * 用户账号
-     */
-    @ExcelProperty(value = "登录名称")
-    private String userName;
-
-    /**
-     * 用户昵称
-     */
-    @ExcelProperty(value = "用户名称")
-    private String nickName;
-
-    /**
-     * 用户邮箱
-     */
-    @ExcelProperty(value = "用户邮箱")
-    private String email;
-
-    /**
-     * 手机号码
-     */
-    @ExcelProperty(value = "手机号码")
-    private String phonenumber;
+    // .......................
 
     /**
      * 用户性别
@@ -178,6 +158,7 @@
         ExcelUtil.exportExcel(list, "测试单表", TestDemoVo.class, true, response);
     } 
 ```
+![输入图片说明](https://foruda.gitee.com/images/1700128921644543994/e8d4704f_1766278.png "屏幕截图")
 
 ### 4：复杂 Excel 导出示例
 `TestExcelController` 提供了几种导出示例，如果需要可以参照相应方法进行导出。
@@ -190,28 +171,7 @@
 
 模板位置：`ruoyi-modules/ruoyi-demo/src/main/resources/excel/`
 
-导出示例代码：
-
-```Java
-    /**
-     * 单列表多数据
-     */
-    @GetMapping("/exportTemplateOne")
-    public void exportTemplateOne(HttpServletResponse response) {
-        Map<String, String> map = new HashMap<>();
-        map.put("title", "单列表多数据");
-        map.put("test1", "数据测试1");
-        map.put("test2", "数据测试2");
-        map.put("test3", "数据测试3");
-        map.put("test4", "数据测试4");
-        map.put("testTest", "666");
-        List<TestObj> list = new ArrayList<>();
-        list.add(new TestObj("单列表测试1", "列表测试1", "列表测试2", "列表测试3", "列表测试4"));
-        list.add(new TestObj("单列表测试2", "列表测试5", "列表测试6", "列表测试7", "列表测试8"));
-        list.add(new TestObj("单列表测试3", "列表测试9", "列表测试10", "列表测试11", "列表测试12"));
-        ExcelUtil.exportTemplate(CollUtil.newArrayList(map, list), "单列表.xlsx", "excel/单列表.xlsx", response);
-    }
-```
+导出示例代码：参考 demo 模块 `TestExcelController` 模板写法请查看 `EasyExcel` 文档
 
 导出结果：
 
@@ -225,43 +185,7 @@
 
 模板位置：`ruoyi-modules/ruoyi-demo/src/main/resources/excel/`
 
-导出示例代码：
-
-```Java
-    /**
-     * 多列表多数据
-     */
-    @GetMapping("/exportTemplateMuliti")
-    public void exportTemplateMuliti(HttpServletResponse response) {
-        Map<String, String> map = new HashMap<>();
-        map.put("title1", "标题1");
-        map.put("title2", "标题2");
-        map.put("title3", "标题3");
-        map.put("title4", "标题4");
-        map.put("author", "Lion Li");
-        List<TestObj1> list1 = new ArrayList<>();
-        list1.add(new TestObj1("list1测试1", "list1测试2", "list1测试3"));
-        list1.add(new TestObj1("list1测试4", "list1测试5", "list1测试6"));
-        list1.add(new TestObj1("list1测试7", "list1测试8", "list1测试9"));
-        List<TestObj1> list2 = new ArrayList<>();
-        list2.add(new TestObj1("list2测试1", "list2测试2", "list2测试3"));
-        list2.add(new TestObj1("list2测试4", "list2测试5", "list2测试6"));
-        List<TestObj1> list3 = new ArrayList<>();
-        list3.add(new TestObj1("list3测试1", "list3测试2", "list3测试3"));
-        List<TestObj1> list4 = new ArrayList<>();
-        list4.add(new TestObj1("list4测试1", "list4测试2", "list4测试3"));
-        list4.add(new TestObj1("list4测试4", "list4测试5", "list4测试6"));
-        list4.add(new TestObj1("list4测试7", "list4测试8", "list4测试9"));
-        list4.add(new TestObj1("list4测试10", "list4测试11", "list4测试12"));
-        Map<String, Object> multiListMap = new HashMap<>();
-        multiListMap.put("map", map);
-        multiListMap.put("data1", list1);
-        multiListMap.put("data2", list2);
-        multiListMap.put("data3", list3);
-        multiListMap.put("data4", list4);
-        ExcelUtil.exportTemplateMultiList(multiListMap, "多列表.xlsx", "excel/多列表.xlsx", response);
-    }
-```
+导出示例代码：参考 demo 模块 `TestExcelController` 模板写法请查看 `EasyExcel` 文档
 
 导出结果：
 
@@ -269,202 +193,13 @@
 
 #### 4.3：导出下拉框
 
-导出示例代码：
+`ExcelDictFormat` 注解指定的字典项默认都会转换成下拉框
 
-```Java
-    /**
-     * 导出下拉框
-     *
-     * @param response /
-     */
-    @GetMapping("/exportWithOptions")
-    public void exportWithOptions(HttpServletResponse response) {
-        exportExcelService.exportWithOptions(response);
-    }
-```
-
-```Java
-    @Override
-    public void exportWithOptions(HttpServletResponse response) {
-        // 创建表格数据，业务中一般通过数据库查询
-        List<ExportDemoVo> excelDataList = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            // 模拟数据库中的一条数据
-            ExportDemoVo everyRowData = new ExportDemoVo();
-            everyRowData.setNickName("用户-" + i);
-            everyRowData.setUserStatus(UserStatus.OK.getCode());
-            everyRowData.setGender("1");
-            everyRowData.setPhoneNumber(String.format("175%08d", i));
-            everyRowData.setEmail(String.format("175%08d", i) + "@163.com");
-            everyRowData.setProvinceId(i);
-            everyRowData.setCityId(i);
-            everyRowData.setAreaId(i);
-            excelDataList.add(everyRowData);
-        }
-
-        // 通过@ExcelIgnoreUnannotated配合@ExcelProperty合理显示需要的列
-        // 并通过@DropDown注解指定下拉值，或者通过创建ExcelOptions来指定下拉框
-        // 使用ExcelOptions时建议指定列index，防止出现下拉列解析不对齐
-
-        // 首先从数据库中查询下拉框内的可选项
-        // 这里模拟查询结果
-        List<DemoCityData> provinceList = getProvinceList(),
-            cityList = getCityList(provinceList),
-            areaList = getAreaList(cityList);
-        int provinceIndex = 5, cityIndex = 6, areaIndex = 7;
-
-        DropDownOptions provinceToCity = DropDownOptions.buildLinkedOptions(
-            provinceList,
-            provinceIndex,
-            cityList,
-            cityIndex,
-            DemoCityData::getId,
-            DemoCityData::getPid,
-            everyOptions -> DropDownOptions.createOptionValue(
-                everyOptions.getName(),
-                everyOptions.getId()
-            )
-        );
-
-        DropDownOptions cityToArea = DropDownOptions.buildLinkedOptions(
-            cityList,
-            cityIndex,
-            areaList,
-            areaIndex,
-            DemoCityData::getId,
-            DemoCityData::getPid,
-            everyOptions -> DropDownOptions.createOptionValue(
-                everyOptions.getName(),
-                everyOptions.getId()
-            )
-        );
-
-        // 把所有的下拉框存储
-        List<DropDownOptions> options = new ArrayList<>();
-        options.add(provinceToCity);
-        options.add(cityToArea);
-
-        // 到此为止所有的下拉框可选项已全部配置完毕
-
-        // 接下来需要将Excel中的展示数据转换为对应的下拉选
-        List<ExportDemoVo> outList = StreamUtils.toList(excelDataList, everyRowData -> {
-            // 只需要处理没有使用@ExcelDictFormat注解的下拉框
-            // 一般来说，可以直接在数据库查询即查询出省市县信息，这里通过模拟操作赋值
-            everyRowData.setProvince(buildOptions(provinceList, everyRowData.getProvinceId()));
-            everyRowData.setCity(buildOptions(cityList, everyRowData.getCityId()));
-            everyRowData.setArea(buildOptions(areaList, everyRowData.getAreaId()));
-            return everyRowData;
-        });
-
-        ExcelUtil.exportExcel(outList, "下拉框示例", ExportDemoVo.class, response, options);
-    }
-```
+自定义导出省市区下拉框示例代码：参考 demo 模块 `TestExcelController`
 
 导出结果：
 
 ![输入图片说明](https://foruda.gitee.com/images/1700125265411678973/7f767719_4959041.png "屏幕截图")
-
-### 5：ExcelUtil 工具类
-
-`ExcelUtil` 工具类中有常用的 Excel 方法。包括直接导出以及模板导出。
-
-#### 直接导出主要方法
-```Java
-    /**
-     * 导出excel
-     *
-     * @param list      导出数据集合
-     * @param sheetName 工作表的名称
-     * @param clazz     实体类
-     * @param merge     是否合并单元格
-     * @param os        输出流
-     */
-    public static <T> void exportExcel(List<T> list, String sheetName, Class<T> clazz, boolean merge,
-                                       OutputStream os, List<DropDownOptions> options) {
-        ExcelWriterSheetBuilder builder = EasyExcel.write(os, clazz)
-            .autoCloseStream(false)
-            // 自动适配
-            .registerWriteHandler(new LongestMatchColumnWidthStyleStrategy())
-            // 大数值自动转换 防止失真
-            .registerConverter(new ExcelBigNumberConvert())
-            .sheet(sheetName);
-        if (merge) {
-            // 合并处理器
-            builder.registerWriteHandler(new CellMergeStrategy(list, true));
-        }
-        // 添加下拉框操作
-        builder.registerWriteHandler(new ExcelDownHandler(options));
-        builder.doWrite(list);
-    }
-```
-
-#### 单表多数据模板导出方法
-```Java
-    /**
-     * 单表多数据模板导出 模板格式为 {.属性}
-     *
-     * @param templatePath 模板路径 resource 目录下的路径包括模板文件名
-     *                     例如: excel/temp.xlsx
-     *                     重点: 模板文件必须放置到启动类对应的 resource 目录下
-     * @param data         模板需要的数据
-     * @param os           输出流
-     */
-    public static void exportTemplate(List<Object> data, String templatePath, OutputStream os) {
-        ClassPathResource templateResource = new ClassPathResource(templatePath);
-        ExcelWriter excelWriter = EasyExcel.write(os)
-            .withTemplate(templateResource.getStream())
-            .autoCloseStream(false)
-            // 大数值自动转换 防止失真
-            .registerConverter(new ExcelBigNumberConvert())
-            .build();
-        WriteSheet writeSheet = EasyExcel.writerSheet().build();
-        if (CollUtil.isEmpty(data)) {
-            throw new IllegalArgumentException("数据为空");
-        }
-        // 单表多数据导出 模板格式为 {.属性}
-        for (Object d : data) {
-            excelWriter.fill(d, writeSheet);
-        }
-        excelWriter.finish();
-    }
-```
-
-#### 多表多数据模板导出方法
-```Java
-    /**
-     * 多表多数据模板导出 模板格式为 {key.属性}
-     *
-     * @param templatePath 模板路径 resource 目录下的路径包括模板文件名
-     *                     例如: excel/temp.xlsx
-     *                     重点: 模板文件必须放置到启动类对应的 resource 目录下
-     * @param data         模板需要的数据
-     * @param os           输出流
-     */
-    public static void exportTemplateMultiList(Map<String, Object> data, String templatePath, OutputStream os) {
-        ClassPathResource templateResource = new ClassPathResource(templatePath);
-        ExcelWriter excelWriter = EasyExcel.write(os)
-            .withTemplate(templateResource.getStream())
-            .autoCloseStream(false)
-            // 大数值自动转换 防止失真
-            .registerConverter(new ExcelBigNumberConvert())
-            .build();
-        WriteSheet writeSheet = EasyExcel.writerSheet().build();
-        if (CollUtil.isEmpty(data)) {
-            throw new IllegalArgumentException("数据为空");
-        }
-        for (Map.Entry<String, Object> map : data.entrySet()) {
-            // 设置列表后续还有数据
-            FillConfig fillConfig = FillConfig.builder().forceNewRow(Boolean.TRUE).build();
-            if (map.getValue() instanceof Collection) {
-                // 多表导出必须使用 FillWrapper
-                excelWriter.fill(new FillWrapper(map.getKey(), (Collection<?>) map.getValue()), fillConfig, writeSheet);
-            } else {
-                excelWriter.fill(map.getValue(), writeSheet);
-            }
-        }
-        excelWriter.finish();
-    }
-```
 
 ## Easy Excel 常用注解
 
