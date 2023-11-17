@@ -24,7 +24,8 @@
   * 基础功能
     * [系统用户相关](/ruoyi-cloud-plus/framework/basic/user.md)
     * [权限控制](/ruoyi-cloud-plus/framework/basic/permissions_control.md)
-    * [导入导出](/ruoyi-cloud-plus/framework/basic/export.md)
+    * [导出功能](/ruoyi-cloud-plus/framework/basic/export.md)
+    * [导入功能](/ruoyi-cloud-plus/framework/basic/import.md)
     * [参数校验](/ruoyi-cloud-plus/framework/basic/param_check.md)
     * [代码生成](/ruoyi-cloud-plus/framework/basic/code_generate.md)
     * [分页功能](/ruoyi-cloud-plus/framework/basic/page.md)
