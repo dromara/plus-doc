@@ -1,4 +1,6 @@
 <!-- _sidebar.md -->
+- **特别赞助**
+- [![输入图片说明](https://foruda.gitee.com/images/1700187453544179968/7342304a_1766278.png "2023-11-17=>2026-11-17")](https://gitee.com/dromara/MaxKey)
 
 * **简介**
   * [项目简介](/ruoyi-vue-plus/home.md)
