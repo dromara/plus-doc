@@ -11,6 +11,10 @@
 
 ## 第三方授权配置
 
+### 申请三方应用(以gitee为例)
+
+![输入图片说明](https://foruda.gitee.com/images/1700641775779304627/1cf1b56f_1766278.png "屏幕截图")
+
 ### 更改后端配置 `application-dev.yml`
 
 ![输入图片说明](https://foruda.gitee.com/images/1690936741844431943/580f8998_4959041.png "屏幕截图")
