@@ -8,6 +8,7 @@
 ## 特别赞助
 
 <a href="https://gitee.com/dromara/MaxKey"><img src="https://foruda.gitee.com/images/1700187453544179968/7342304a_1766278.png" width="400px" height="100px"></a>
+如何成为赞助商 加群联系作者详谈
 
 ## 代码地址
 
