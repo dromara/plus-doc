@@ -43,7 +43,8 @@
     * [邮件功能](/ruoyi-cloud-plus/framework/extend/mail.md)
     * [防重幂等](/ruoyi-cloud-plus/framework/extend/idempotent.md)
     * [数据脱敏](/ruoyi-cloud-plus/framework/extend/sensitive.md)
-    * [数据加密](/ruoyi-cloud-plus/framework/extend/encrypt.md)
+    * [API加解密](/ruoyi-cloud-plus/framework/extend/api_encrypt.md)
+    * [数据加解密](/ruoyi-cloud-plus/framework/extend/encrypt.md)
     * [翻译功能](/ruoyi-cloud-plus/framework/extend/translation.md)
     * [WebSocket功能](/ruoyi-cloud-plus/framework/extend/websocket.md)
   * 功能说明
