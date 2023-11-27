@@ -1,6 +1,49 @@
 # 更新日志
 - - -
 
+## v1.8.2 - 2023-11-27
+
+### 依赖升级
+
+* update springboot 2.7.16 => 2.7.18 升级到2.X最终版本(官方停更)
+* update mybatis-plus 3.5.3.2 => 3.5.4
+* update satoken 1.36.0 => 1.37.0
+* update hutool 5.8.20 => 5.8.22
+* update aws-java-sdk-s3 1.12.400 => 1.12.540
+* update vue-quill 1.1.0 => 1.2.0
+
+### 功能更新
+
+* update 优化 页面关于权限标识符说明
+* update 优化 数据权限拦截器优先判断方法是否有效 提高性能减少无用sql解析
+* update 优化 部门数据权限使用默认兜底方案
+* update 优化 补全代码生成 columnList 接口参数注解缺失
+* update 优化 AddressUtils 兼容linux系统本地ip
+* update 优化 操作日志 部门信息完善
+* update 优化 数据权限 减少二次校验查询
+* update 修改 获取用户token和后端不一致的问题 (感谢 bestrevens)
+* update 优化 vue3 版本用户初始密码从字典查询
+* update 优化 富文本Editor组件检验图片格式
+* update 优化 操作日志列表新增IP地址查询
+* update 优化 全局数据存储用户编号
+* update 优化 菜单管理类型为按钮状态可选
+
+### 问题修复
+
+* fix 修复 OssFactory 并发多创建实例问题
+* fix 修复 demo页面字段编写错误
+* fix 修复 数据权限优化后 update delete 报null问题
+* fix 修复 五级路由缓存无效问题
+* fix 修复 oss服务无法连接
+* fix 修复 内链iframe没有传递参数问题
+* fix 修复 外链带端口出现的异常
+* fix 修复 普通角色编辑使用内置管理员code越权问题
+* fix 修复 seata XA模式缺失druid工具问题
+* fix 修复 代码生成 是否必填与数据库不匹配问题
+* fix 修复 富文本上传接口地址错误
+* fix 修复 HeaderSearch组件跳转query参数丢失问题
+* fix 修复树结构代码生成新增方法赋值错误
+
 ## v2.1.1 - 2023-11-14
 
 ### 依赖升级
