@@ -161,8 +161,6 @@ StpUtil.checkRoleAnd("system:user:list", "system:user:query");
 
 具体参考类：`org.dromara.common.satoken.core.service.SaPermissionImpl`
 
-## 忽略权限校验
-请参考文档：[接口放行](/ruoyi-vue-plus/framework/basic/interface_release.md#接口放行)
 
 ## API 加密校验
 ### API 加密注解 `@ApiEncrypt`
