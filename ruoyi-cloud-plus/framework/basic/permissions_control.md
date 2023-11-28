@@ -156,6 +156,19 @@ StpUtil.checkRoleAnd("system:user:list", "system:user:query");
 ```
 如果验证未通过，则抛出异常: `NotRoleException`
 
+## 角色权限双重 `OR` 校验
+除了分开校验以外，权限和角色也可以进行组合，表示备选校验。
+
+简单举个例子：
+
+假设某个 API 的权限码为 `system:user:list`，角色 `admin` 可以调用，则可以这样写：
+
+```Java
+@SaCheckPermission(value = "system:user:list", orRole = "admin")
+```
+
+以上权限只需要满足任意一项即可。更多写法可以参考 `Sa-Token` [官方文档](https://sa-token.cc/doc.html#/use/at-check?id=_4%e3%80%81%e8%a7%92%e8%89%b2%e6%9d%83%e9%99%90%e5%8f%8c%e9%87%8d-or%e6%a0%a1%e9%aa%8c)。
+
 ## 当前用户的所有权限
 本系统中实现了 `StpInterface` 接口，可以对用户的权限以及角色进行管理，并且可以根据不同的用户类型进行设置。
 
@@ -163,23 +176,3 @@ StpUtil.checkRoleAnd("system:user:list", "system:user:query");
 
 ## 忽略权限校验
 请参考文档：[网关路由与放行](/ruoyi-cloud-plus/framework/basic/router_release?id=网关路由与放行)
-
-## API 加密校验
-### API 加密注解 `@ApiEncrypt`
-1. 对于标注了 `@ApiEncrypt` 注解的接口，请求参数都必须进行加密。
-2. 注解的参数 `response` 为响应加密标识，默认 `false` 不加密，为 `true` 表示响应加密。
-3. 加密解密逻辑由过滤器实现，详情可参考 `org.dromara.common.encrypt.filter.CryptoFilter`。
-
-### API 加密配置
-`application-common.yml`
-
-![输入图片说明](https://foruda.gitee.com/images/1701133628809355269/8979704a_4959041.png "屏幕截图")
-
-`.env.development` / `.env.production`
-
-![输入图片说明](https://foruda.gitee.com/images/1701131922417984949/7f91d943_4959041.png "屏幕截图")
-
-> 注：
-> 1. 注意修改 Nacos 配置。
-> 2. 公私钥与前端配置文件互为配对，如果需要更换请一同更换。
-> 3. 后端公钥对应前端私钥；后端私钥对应前端公钥。
