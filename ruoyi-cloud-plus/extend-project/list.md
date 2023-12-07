@@ -16,6 +16,7 @@
 | 增加OSS模块支持本地环境                       | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/353  |
 | 扩展模块独立集成flyway                       | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/439  |
 | 扩展模块独立集成go-view大屏看板              | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/445  |
+| 基于AmazonS3协议的分片上传                   | https://gitee.com/dromara/RuoYi-Cloud-Plus/pulls/130 |
 
 ### 欢迎投稿 项目介绍+项目地址
 
