@@ -10,7 +10,7 @@
   * [1.X项目初始化](/ruoyi-cloud-plus/quickstart/1.Xinit.md)
   * [idea环境配置](/ruoyi-cloud-plus/quickstart/idea_environment.md)
   * [应用部署](/ruoyi-cloud-plus/quickstart/deploy.md)
-  * [Seata服务搭建](/ruoyi-cloud-plus/quickstart/seata.md)
+  * [扩展项目](/ruoyi-cloud-plus/quickstart/extend_project.md)
   * [搭建PowerJob调度中心](/ruoyi-cloud-plus/quickstart/power_job_init.md)
 * **框架功能**
   * [项目结构](/ruoyi-cloud-plus/framework/tree.md)
@@ -63,5 +63,3 @@
   * [Prometheus+Grafana搭建](/ruoyi-cloud-plus/extend-function/prometheus_grafana.md)
   * [Sharding-Proxy搭建分库分表](/ruoyi-cloud-plus/extend-function/shardingproxy.md)
   * [对接MaxKey单点登录](/ruoyi-cloud-plus/extend-function/maxkey.md)
-* **扩展项目**
-  * [扩展项目](/ruoyi-cloud-plus/extend-project/list.md)

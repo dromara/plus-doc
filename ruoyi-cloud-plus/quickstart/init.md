@@ -79,6 +79,12 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1678979902433843257/12da2839_1766278.png "屏幕截图")
 
+### 使用内置 `ruoyi-seata-server` 服务 从这开始
+
+执行 `ry-seata.sql` 文件 初始化服务端数据库<br>
+修改 `nacos` 内的 `seata-server.properties` 的数据库地址<br>
+启动 `ruoyi-seata-server` 服务即可
+
 ### 服务启动顺序说明
 
 1. 必须启动基础建设: mysql redis nacos<br>

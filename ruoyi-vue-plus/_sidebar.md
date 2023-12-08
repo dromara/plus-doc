@@ -14,6 +14,7 @@
   * [(废弃)搭建XXLJob调度中心](/ruoyi-vue-plus/quickstart/xxl_job_init.md)
   * [idea环境配置](/ruoyi-vue-plus/quickstart/idea_environment.md)
   * [应用部署](/ruoyi-vue-plus/quickstart/deploy.md)
+  * [扩展项目](/ruoyi-vue-plus/quickstart/extend_project.md)
 * **框架功能**
   * [项目结构](/ruoyi-vue-plus/framework/tree.md)
   * [软件架构图](/ruoyi-vue-plus/framework/architecture_diagram.md)
@@ -54,5 +55,3 @@
     * [单元测试](/ruoyi-vue-plus/framework/explain/test.md)
     * [主键使用说明](/ruoyi-vue-plus/framework/explain/key.md)
     * [关于多表查询](/ruoyi-vue-plus/framework/explain/about_join.md)
-* **扩展项目**
-  * [扩展项目](/ruoyi-vue-plus/extend-project/list.md)
