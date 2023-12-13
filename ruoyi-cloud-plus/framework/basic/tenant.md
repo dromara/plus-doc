@@ -18,7 +18,7 @@
 4. 切换租户（仅超级管理员可操作）
 
 ## 多租户配置
-`application.yml`<br>
+`application-common.yml`<br>
 
 > 开关 `enable` 节点不用废话。 <br>
 > 如果不需要过滤租户的表可在 `excludes` 节点下添加。
