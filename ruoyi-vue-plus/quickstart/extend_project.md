@@ -32,6 +32,7 @@
 | 基于vue-next-admin的vue3+ts前端     | https://gitee.com/thiszhc/RuoYi-Vue3-UI                                   |
 | ant-design-vue3版本              | https://gitee.com/Double_AutoEE/AutoEE/tree/autoee-ui-for-ruoyi-vue-plus/ |
 | 集成GoView版本                     | https://gitee.com/kdwqjwgqxx/RuoYi-Vue-Plus-GoView                        |
+| mybatis-flex版本                 | https://gitee.com/dataprince/ruoyi-flex                                   |
 | blog博客系统                       | https://gitee.com/kalashok-pan/zhi-blog-plus                              |
 | tdengine时序数据库扩展                | https://gitee.com/zhangbg/ruoyi-plus-tdengine                             |
 | Activiti扩展                     | https://gitee.com/sgs98/RuoYi-Vue-Plus-Activiti                           |
