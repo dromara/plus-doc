@@ -26,6 +26,7 @@
 | 微服务扩展                          | https://gitee.com/dromara/RuoYi-Cloud-Plus                                |
 | 单体fast扩展                       | https://gitee.com/dromara/RuoYi-Vue-Plus/tree/fast/                       |
 | Plus学习笔记                       | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-vue-plus/home     |
+| 基于uniapp+TmUI从0开发 支持H5/小程序/安卓  | https://gitee.com/dapppp/ruoyi-plus-miniapp                               |
 | 基于RuoYi-App框架二次修改使用Uniapp+Vue3 | https://gitee.com/wangying110166/ruo-yi-uni-app-plus                      |
 | 基于RuoYi-App框架对接Plus后端          | https://gitee.com/FnTop/RuoYi-App-Plus                                    |
 | 基于vben(ant-design-vue)前端项目     | https://gitee.com/dapppp/ruoyi-plus-vben                                  |
