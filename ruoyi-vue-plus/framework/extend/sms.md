@@ -5,15 +5,15 @@
 
 ### 版本: >= v5.1.0
 
-已完成 sms4j 项目整合 文档地址: https://wind.kim/doc/start
+已完成 sms4j 项目整合 文档地址: https://sms4j.com/doc3
 
-配置方式 参考文档增加对应配置
+配置方式 具体厂商配置扩展 可以查看sms4j文档
 
-![输入图片说明](https://foruda.gitee.com/images/1686277861395956329/fce973a4_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1705573035997239848/2ca8512d_1766278.png "屏幕截图")
 
 使用方式 参考文档各种写法 下方为 demo 模块提供示例
 
-![输入图片说明](https://foruda.gitee.com/images/1686277920639176137/c6d0cab2_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1705573001447394180/2bd726d0_1766278.png "屏幕截图")
 
 ### 版本: v4.2.0 提供短信模块
 
