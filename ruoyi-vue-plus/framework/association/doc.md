@@ -54,8 +54,9 @@
 数据源URL格式 `http://后端ip:端口/v3/api-docs/组名`<br>
 项目内所需:<br>
 `http://localhost:8080/v3/api-docs/1.演示模块` <br>
-`http://localhost:8080/v3/api-docs/2.系统模块` <br>
-`http://localhost:8080/v3/api-docs/3.代码生成模块` <br>
+`http://localhost:8080/v3/api-docs/2.通用模块` <br>
+`http://localhost:8080/v3/api-docs/3.系统模块` <br>
+`http://localhost:8080/v3/api-docs/4.代码生成模块` <br>
 也可不分组统一导入: `http://localhost:8080/v3/api-docs` <br>
 
 ![输入图片说明](https://foruda.gitee.com/images/1678976514385097727/05c7e0a6_1766278.png "屏幕截图")
