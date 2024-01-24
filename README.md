@@ -66,6 +66,6 @@
 
 社区仓库地址: [dromara开源社区](https://gitee.com/organizations/dromara/projects)
 
-![输入图片说明](https://foruda.gitee.com/images/1684491451276639442/d0e30270_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1706071866226295002/68cffcf6_1766278.png "屏幕截图")
 
 
