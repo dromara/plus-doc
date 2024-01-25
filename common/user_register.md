@@ -9,6 +9,7 @@
 |-------------------|:-------------------------------|---------------------------------------------------------------------------------------------------------------|
 | 中国联通(长春分公司)       | http://www.10010.com           | <img src="https://foruda.gitee.com/images/1679554727740431371/bd179d0f_1766278.png" width="300" height="200"> |
 | 中国电信(湖南分公司)       | http://www.189.cn/hn/          | <img src="https://foruda.gitee.com/images/1699838764871886313/61b44b7d_1766278.png" width="300" height="200"> |
+| 上海非定义旅游服务有限公司       | http://www.anonymity.love/          | <img src="https://foruda.gitee.com/images/1706165274431234456/f4be93d3_1766278.png" width="300" height="200"> |
 | 重庆威爱云科技有限公司       | https://www.51vive.com          | <img src="https://foruda.gitee.com/images/1700460635019084607/f073724d_1766278.png" width="300" height="200"> |
 | 中城智联（成都）创新科技有限公司       | http://www.zc-zl.com/          | <img src="https://foruda.gitee.com/images/1699841115050735040/0d6893d1_1766278.png" width="300" height="200"> |
 | 浙江海亮股份有限公司       | https://www.hailiangstock.com          | <img src="https://foruda.gitee.com/images/1699841174631804104/fd3466fd_1766278.png" width="300" height="200"> |
