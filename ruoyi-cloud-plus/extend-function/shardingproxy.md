@@ -7,9 +7,9 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1688014028842337522/cd26026a_1766278.png "屏幕截图")
 
-## 首先在 mysql 创建两个库
+## 首先在 MySQL 创建两个库
 
-创建两个库 `data-center_0` `data-center_1` 分别执行如何sql
+创建两个库 `data-center_0` `data-center_1` 分别执行如下SQL
 
 ```sql
 CREATE TABLE `t_order_0` (
