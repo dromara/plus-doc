@@ -19,9 +19,10 @@
 * postgres 13 14
 * redis 5.X 6.X 7.X 由于框架大量使用了redis特性 版本必须 >= 5.X ([win redis 下载地址](https://github.com/zkteco-home/redis-windows))
 * minio 本地文件存储 或 阿里云 腾讯云 七牛云等一切支持S3协议的云存储
-* maven 3.6.3 3.8.X
-* nodejs >= 14
-* npm 6.X 8.X (7.X确认有问题)
+* maven >= 3.8.X
+* nodejs 18(18以上未测试 不建议使用)
+* npm 8.X (7.X确认有问题)
+* idea 2022 2024 (一定不要使用2023后果自负)
 * nacos >= 2.X(框架1.3.0内置nacos)
 * sentinel 框架内置
 * seata 框架内置
