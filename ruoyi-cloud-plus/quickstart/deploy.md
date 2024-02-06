@@ -2,7 +2,7 @@
 - - -
 ## 版本 >= 1.3.0
 
-### 请优先阅读 [idea环境配置](idea_environment.md)
+### 请优先阅读 [idea环境配置](/ruoyi-cloud-plus/quickstart/idea_environment.md)
 
 ## 手动部署
 
