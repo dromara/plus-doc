@@ -57,7 +57,7 @@
 * `PowerJobServerApplication` 为 任务调度中心服务(非必要 可参考对应文档关闭)
 * `RuoYiApplication` 为 主应用服务
 > 需优先启动 `MonitorAdminApplication` 与 `PowerJobServerApplication` 具体配置方式参考对应文档<br>
-> 最后启动 主服务 `RuoYiApplication`
+> 最后启动 主服务 `DromaraApplication`
 
 ### 主服务配置方式
 
