@@ -8,7 +8,7 @@
 
 ## 2.在包上右键选择 refactor -> rename 选择 All Directories
 ![输入图片说明](https://foruda.gitee.com/images/1683276891079076405/79808b22_1766278.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1683276881727653847/7e6b7414_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1708491697128844860/1e87ad39_1766278.png "屏幕截图")
 
 **因为dromara组织下有很多依赖导致idea无法识别完整包名**
 <br>
