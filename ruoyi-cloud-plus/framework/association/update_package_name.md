@@ -11,9 +11,11 @@
 ![输入图片说明](https://foruda.gitee.com/images/1683276881727653847/7e6b7414_1766278.png "屏幕截图")
 
 **因为dromara组织下有很多依赖导致idea无法识别完整包名**
+<br>
 ![输入图片说明](https://foruda.gitee.com/images/1708490576909691001/692e5b37_1766278.png "屏幕截图")
 
 **需要先将dromara修改为 例如: ruoyi 然后重复上述步骤 这样就可以整包修改了**
+<br>
 ![输入图片说明](https://foruda.gitee.com/images/1708490906933084793/ff104cd7_1766278.png "屏幕截图")
 
 ## 3.使用IDEA全局替换 org.dromara 替换为 com.xxx
