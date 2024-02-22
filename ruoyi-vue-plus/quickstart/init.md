@@ -55,7 +55,7 @@
 ![输入图片说明](https://foruda.gitee.com/images/1678976302776168895/7333341c_1766278.png "屏幕截图")
 * `MonitorAdminApplication` 为 Admin监控服务(非必要 可参考对应文档关闭)
 * `PowerJobServerApplication` 为 任务调度中心服务(非必要 可参考对应文档关闭)
-* `RuoYiApplication` 为 主应用服务
+* `DromaraApplication` 为 主应用服务
 > 需优先启动 `MonitorAdminApplication` 与 `PowerJobServerApplication` 具体配置方式参考对应文档<br>
 > 最后启动 主服务 `DromaraApplication`
 
