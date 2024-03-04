@@ -13,7 +13,7 @@
 
 `.env.development` / `.env.production`
 
-![输入图片说明](https://foruda.gitee.com/images/1701131922417984949/7f91d943_4959041.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1709533252413969800/1d0dff25_1766278.png "屏幕截图")
 
 > 注：
 > 1. 公私钥与前端配置文件互为配对，如果需要更换请一同更换。
