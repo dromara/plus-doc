@@ -49,6 +49,11 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1678978378697093134/785517f3_1766278.png "屏幕截图")
 
+### MinIO 使用 https访问站点
+
+**注意：S3 API 签名计算算法不支持托管 MinIO Server API 的代理方案**
+
+[ minio https 配置方式](https://blog.csdn.net/Michelle_Zhong/article/details/126484358)
 
 ### 切换OSS
 
