@@ -33,3 +33,5 @@
 | 基于RuoYi-App框架对接Plus后端          | https://gitee.com/FnTop/RuoYi-App-Plus                                  |
 | 基于vben(ant-design-vue)前端项目     | https://gitee.com/dapppp/ruoyi-plus-vben                                |
 | 基于vue-next-admin的vue3+ts前端     | https://gitee.com/thiszhc/RuoYi-Vue3-UI                                 |
+| MybatisFlex版本     | https://gitee.com/yhan219/ruoyi-cloud-flex                                 |
+
