@@ -51,3 +51,4 @@
 | 多租户扩展                          | https://gitee.com/KricYi/RuoYi-Vue-Plus                                   |
 | 代码生成改造 支持主子表                   | https://gitee.com/min290/houhou.git                                       |
 | 在线教育后台管理                       | https://gitee.com/niruichen/ruo-yi-vue-plus                               |
+| weblog博客系统                     | https://gitee.com/fu-zhanshuai/fzshuai-weblog                               |
