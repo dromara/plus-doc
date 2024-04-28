@@ -48,6 +48,7 @@
 | 铭创科技有限公司          | https://www.mcck.cn/           | <img src="https://foruda.gitee.com/images/1693967206668467582/8c234a6d_1766278.png" width="200" height="100"> |
 | 南昌漫库书店有限公司        |                                | <img src="https://foruda.gitee.com/images/1687656369793887183/ce1a33f6_1766278.png" width="200" height="100"> |
 | 广西文韬智能科技有限公司      |                                | <img src="https://foruda.gitee.com/images/1678976034543683491/8d8a1ebe_1766278.png" width="200" height="100"> |
+| 武汉忆秋科技有限公司 |                                      |
 | 济南千惠网络科技有限公司      |                                |
 | 江苏泛联科技有限公司        |                                |
 | 沈阳市果冻网络信息科技有限责任公司 |                                |
