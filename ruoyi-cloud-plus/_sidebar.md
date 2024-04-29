@@ -14,7 +14,8 @@
   * [idea环境配置](/ruoyi-cloud-plus/quickstart/idea_environment.md)
   * [应用部署](/ruoyi-cloud-plus/quickstart/deploy.md)
   * [扩展项目](/ruoyi-cloud-plus/quickstart/extend_project.md)
-  * [搭建PowerJob调度中心](/ruoyi-cloud-plus/quickstart/power_job_init.md)
+  * [搭建SnailJob调度中心](/ruoyi-cloud-plus/quickstart/snail_job_init.md)
+  * [(废弃)搭建PowerJob调度中心](/ruoyi-cloud-plus/quickstart/power_job_init.md)
 * **框架功能**
   * [项目结构](/ruoyi-cloud-plus/framework/tree.md)
   * [软件架构图](/ruoyi-cloud-plus/framework/architecture_diagram.md)
