@@ -62,9 +62,9 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1678976302776168895/7333341c_1766278.png "屏幕截图")
 * `MonitorAdminApplication` 为 Admin监控服务(非必要 可参考对应文档关闭 [搭建Admin监控](/ruoyi-vue-plus/quickstart/admin_init.md))
-* `PowerJobServerApplication` 为 任务调度中心服务(非必要 可参考对应文档关闭 [搭建调度中心](/ruoyi-vue-plus/quickstart/power_job_init.md))
+* `EasyRetryServerApplication` 为 任务调度中心服务(非必要 可参考对应文档关闭 [搭建调度中心](/ruoyi-vue-plus/quickstart/snail_job_init.md))
 * `DromaraApplication` 为 主应用服务
-> 需优先启动 `MonitorAdminApplication` 与 `PowerJobServerApplication` 具体配置方式参考对应文档<br>
+> 需优先启动 `MonitorAdminApplication` 与 `EasyRetryServerApplication` 具体配置方式参考对应文档<br>
 > 最后启动 主服务 `DromaraApplication`<br>
 > 工作流相关初始化使用 [工作流初始化](/ruoyi-vue-plus/quickstart/worker_init.md)
 
