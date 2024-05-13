@@ -27,7 +27,6 @@
 | 项目介绍                           | 项目地址                                                                    |
 |--------------------------------|-------------------------------------------------------------------------|
 | 分布式集群扩展                        | https://gitee.com/dromara/RuoYi-Vue-Plus                                |
-| 单体fast扩展                       | https://gitee.com/dromara/RuoYi-Vue-Plus/tree/fast/                     |
 | Plus学习笔记(常规功能)                 | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-vue-plus/home   |
 | Plus学习笔记(微服务组件)                | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-cloud-plus/home |
 | 基于uniapp+TmUI从0开发 支持H5/小程序/安卓  | https://gitee.com/dapppp/ruoyi-plus-miniapp                             |

@@ -26,14 +26,12 @@
 | 项目介绍                           | 项目地址                                                                      |
 |--------------------------------|---------------------------------------------------------------------------|
 | 微服务扩展                          | https://gitee.com/dromara/RuoYi-Cloud-Plus                                |
-| 单体fast扩展                       | https://gitee.com/dromara/RuoYi-Vue-Plus/tree/fast/                       |
 | Plus学习笔记                       | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-vue-plus/home     |
 | 基于uniapp+TmUI从0开发 支持H5/小程序/安卓  | https://gitee.com/dapppp/ruoyi-plus-miniapp                               |
 | 基于RuoYi-App框架二次修改使用Uniapp+Vue3 | https://gitee.com/wangying110166/ruo-yi-uni-app-plus                      |
 | 基于RuoYi-App框架对接Plus后端          | https://gitee.com/FnTop/RuoYi-App-Plus                                    |
 | 基于vben(ant-design-vue)前端项目     | https://gitee.com/dapppp/ruoyi-plus-vben                                  |
 | 基于vue-next-admin的vue3+ts前端     | https://gitee.com/thiszhc/RuoYi-Vue3-UI                                   |
-| ant-design-vue3版本              | https://gitee.com/Double_AutoEE/AutoEE/tree/autoee-ui-for-ruoyi-vue-plus/ |
 | 集成GoView版本                     | https://gitee.com/kdwqjwgqxx/RuoYi-Vue-Plus-GoView                        |
 | mybatis-flex版本                 | https://gitee.com/dataprince/ruoyi-flex                                   |
 | blog博客系统                       | https://gitee.com/kalashok-pan/zhi-blog-plus                              |
@@ -42,13 +40,4 @@
 | flowable扩展                     | https://gitee.com/sgs98/RuoYi-Vue-Plus-Flowable                           |
 | flowable扩展                     | https://gitee.com/KonBAI-Q/ruoyi-flowable-plus                            |
 | mybatis-flex版本                 | https://gitee.com/yhan219/ruoyi-vue-flex                                  |
-| security版本                     | https://gitee.com/gzyy/RuoYi-Vue-Plust                                    |
-| Oracle扩展                       | https://gitee.com/phanes/RuoYi-Vue-Plus-Oracle                            |
-| Oracle扩展                       | https://gitee.com/zj_Gitttttttte/ruoyi-vue-plus-oracle                    |
-| Postgresql扩展                   | https://gitee.com/p0mp0k0/RuoYi-Vue-Plus-Postgresql                       |
-| 多租户改造                          | https://gitee.com/victer/ruoyi-vue-tenant                                 |
-| 小程序扩展(附带B站视频)                  | https://gitee.com/bkywksj/bilibili_citylife_admin                         |
-| 多租户扩展                          | https://gitee.com/KricYi/RuoYi-Vue-Plus                                   |
-| 代码生成改造 支持主子表                   | https://gitee.com/min290/houhou.git                                       |
-| 在线教育后台管理                       | https://gitee.com/niruichen/ruo-yi-vue-plus                               |
 | weblog博客系统                     | https://gitee.com/fu-zhanshuai/fzshuai-weblog                               |
