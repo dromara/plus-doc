@@ -40,6 +40,17 @@ TenantHelper.ignore(() -> { 业务代码 });
 Class result = TenantHelper.ignore(() -> { return 业务代码 });
 ```
 
+## 动态切换租户
+
+**仅适用于特殊需求业务(例如: 创建租户时, 对该租户操作一些数据, 或者需要去其他租户查一些数据等) 禁止乱用后果自负**
+
+```
+# 无返回值
+TenantHelper.dynamic(租户id, () -> { 业务代码 });
+# 有返回值
+Class result = TenantHelper.dynamic(租户id, () -> { return 业务代码 });
+```
+
 ## 登录界面
 
 ![输入图片说明](https://foruda.gitee.com/images/1680173982933030545/bca146d7_4959041.png "屏幕截图")
