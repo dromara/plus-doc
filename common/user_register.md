@@ -9,6 +9,7 @@
 |-------------------|:-------------------------------|---------------------------------------------------------------------------------------------------------------|
 | 中国联通(长春分公司)       | http://www.10010.com           | <img src="https://foruda.gitee.com/images/1679554727740431371/bd179d0f_1766278.png" width="300" height="200"> |
 | 中国电信(湖南分公司)       | http://www.189.cn/hn/          | <img src="https://foruda.gitee.com/images/1699838764871886313/61b44b7d_1766278.png" width="300" height="200"> |
+| 宁波三品软件科技有限公司   | http://nbsanpin.com/         | <img src="https://foruda.gitee.com/images/1715845257022437822/1a096edc_14415359.png" width="400" height="200"> |
 | 北京御一科技信息技术有限公司 | https://www.yudoctor.com | <img src="https://foruda.gitee.com/images/1715157943995574211/09aa2229_1766278.png" width="400" height="200"> |
 | 成都卡恩特医疗科技有限公司 | http://www.scknot.com | <img src="https://foruda.gitee.com/images/1711091474880818044/96ddef90_1766278.png" width="400" height="200"> |
 | 无锡科艾思科技有限公司 | https://www.kyoeis.com | <img src="https://foruda.gitee.com/images/1710929131545545232/a87f838e_1766278.png" width="400" height="200"> |
