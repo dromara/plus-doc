@@ -41,30 +41,19 @@
 
 请按照以下顺序依次导入 默认为 `mysql` 其他数据库需导入对应的sql文件
 
-![输入图片说明](https://foruda.gitee.com/images/1688634217677295748/f9919efd_1766278.png "屏幕截图")
-
-工作流sql导入
-
-![输入图片说明](https://foruda.gitee.com/images/1714211018405279764/013abc6d_5363069.png "屏幕截图")
-
-版本更新
-
-![输入图片说明](https://foruda.gitee.com/images/1688634290787855369/c09c268f_1766278.png "屏幕截图")
-
-
-
-**多数据库支持 5.X 调度中心采用 PowerJob 底层为 JPA 支持所有数据库**
+![输入图片说明](https://foruda.gitee.com/images/1716175336356465213/362fe8f9_1766278.png "屏幕截图")
 
 ### 服务启动顺序说明
 
 1. 必须启动基础建设: mysql redis admin<br>
-2. 可选启动基础建设: minio(影响文件上传) monitor(影响监控) powerjob(影响定时任务)<br>
+2. 可选启动基础建设: minio(影响文件上传) monitor(影响监控) snailjob(影响定时任务)<br>
 
-![输入图片说明](https://foruda.gitee.com/images/1678976302776168895/7333341c_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1716175484919688429/8b9a79b7_1766278.png "屏幕截图")
+
 * `MonitorAdminApplication` 为 Admin监控服务(非必要 可参考对应文档关闭 [搭建Admin监控](/ruoyi-vue-plus/quickstart/admin_init.md))
-* `EasyRetryServerApplication` 为 任务调度中心服务(非必要 可参考对应文档关闭 [搭建调度中心](/ruoyi-vue-plus/quickstart/snail_job_init.md))
+* `SnailJobServerApplication` 为 任务调度中心服务(非必要 可参考对应文档关闭 [搭建调度中心](/ruoyi-vue-plus/quickstart/snail_job_init.md))
 * `DromaraApplication` 为 主应用服务
-> 需优先启动 `MonitorAdminApplication` 与 `EasyRetryServerApplication` 具体配置方式参考对应文档<br>
+> 需优先启动 `MonitorAdminApplication` 与 `SnailJobServerApplication` 具体配置方式参考对应文档<br>
 > 最后启动 主服务 `DromaraApplication`<br>
 > 工作流相关初始化使用 [工作流初始化](/ruoyi-vue-plus/quickstart/worker_init.md)
 

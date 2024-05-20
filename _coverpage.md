@@ -10,8 +10,8 @@
 [![GitHub](https://img.shields.io/github/stars/dromara/RuoYi-Vue-Plus.svg?style=social&label=Stars)](https://github.com/dromara/RuoYi-Vue-Plus)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://gitee.com/dromara/RuoYi-Vue-Plus/blob/master/LICENSE)
 <br>
-[![RuoYi-Vue-Plus](https://img.shields.io/badge/RuoYi_Vue_Plus-5.1.2-success.svg)](https://gitee.com/dromara/RuoYi-Vue-Plus)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.1-blue.svg)]()
+[![RuoYi-Vue-Plus](https://img.shields.io/badge/RuoYi_Vue_Plus-5.2.0-success.svg)](https://gitee.com/dromara/RuoYi-Vue-Plus)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2-blue.svg)]()
 
 </div>
 <div>
@@ -34,6 +34,6 @@
 > 
 > 组件化 模块化 轻耦合 高扩展 针对企业痛点 业界一流技术栈
 
-Copyright © 2018-2023 疯狂的狮子Li All Rights Reserved.
+Copyright © 2018-2024 疯狂的狮子Li All Rights Reserved.
 
 [开始使用 Let's Go](/README.md)

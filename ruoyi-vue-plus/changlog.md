@@ -1,6 +1,103 @@
 # 更新日志
 - - -
 
+## v5.2.0 - 2024-05-20
+
+### 重大改动
+
+* 集成 flowable 增加工作流相关功能(感谢 May)
+* 集成 snailjob 移除 powerjob(投诉的人太多使用成本太高)(感谢 dhb52)
+* 升级 aws s3 升级到 2.X 性能大幅提升
+* 优化 数据权限 数据加密 使用预扫描mapper注解提升代码性能(感谢 老马)
+* 新增 caffeine 减少将近90%的redis查询提高性能
+
+### 依赖升级
+
+* update springboot 3.1.7 => 3.2.5 支持虚拟线程
+* update springboot-admin 3.1.8 => 3.2.3
+* update mybatis-plus 3.5.4 => 3.5.6 适配更改代码
+* update springdoc 2.2.0 => 2.5.0
+* update easyexcel 3.3.3 => 3.3.4
+* update redisson 3.24.3 => 3.29.0
+* update lombok 1.18.30 => 1.18.32
+* update sms4j 2.2.0 => 3.2.1 支持自定义配置key 可用于多厂商多租户等
+* update satoken 1.37.0 -> 1.38.0
+* update hutool 5.8.22 => 5.8.26
+* update mapstruct-plus 1.3.5 => 1.3.6
+* update lock4j 2.2.5 => 2.2.7
+* update dynamic-ds 4.2.0 => 4.3.0
+
+### 功能更新
+
+* update 优化 代码生成注释，删除无用引入(感谢 AprilWind)
+* update 优化 代码生成 el-radio 标签过期属性
+* update 优化 异常处理器自动配置
+* update 优化 文件下载使用对流下载降低内存使用(感谢 PhoenixL)
+* update 优化 去除gc日志参数(有需要自己加)
+* update 优化 拆分异常处理器
+* update 优化 常规web异常状态码
+* update 优化 设置静态资源路径防止所有请求都可以访问静态资源
+* update 优化 redis 对Long值的存储类型不同问题
+* update 优化 去除加密请求类型限制
+* update 优化 mp多租户插件注入逻辑
+* update 优化 RedisUtils 支持忽略租户
+* update 优化 更新ip地址xdb文件
+* update 优化 验证码背景色改为浅灰色
+* update 优化 mybatis依赖设置为可选依赖 避免出现不应该注入的情况
+* update 优化 GET 方法响应体支持加密
+* update 优化 excel插件合并策略 去除被合并单元格的非首行内容(感谢 司猫子)
+* update 优化 下拉选接口数据权限
+* update 优化 OssFactory 获取实例锁性能
+* update 优化 使用翻译注解简化用户查询 调整用户查询逻辑
+* update 优化 框架整体提高查询性能
+* update 优化 将p6spy配置文件统一放置到 common-mybatis 插件包内
+
+### 新增功能
+
+* add 新增 分布式锁Lock4j异常拦截器
+* add 新增 个人中心-在线设备管理
+* add 新增 岗位编码与部门编码并将岗位调整到部门下(感谢 AprilWind)
+* add 新增 BaseMapperPlus提供可选是否抛异常selectVoOne方法(感谢 秋辞未寒)
+* add 新增 用户、部门、角色、岗位 下拉选接口与代码实现优化
+* add 增加 StringUtils.isVirtual 方法
+* add 增加 JustAuth 整合 TopIam 单点登录
+
+### 问题修复
+
+* fix 修复 三方账号可以绑定多平台账号问题
+* fix 修复 主建错别字(感谢 good)
+* fix 修复 兼容redis5.0出现的问题
+* fix 修复 部分浏览器无法获取加密响应头问题
+* fix 修复 用户未设置部门 登录报错问题
+* fix 修复 excel 表达式字典 下拉框导出格式错误
+* fix 修复 提升锁的作用域 并采用双重校验锁(感谢 fanc)
+* fix 修复 用户登录查询部门缓存无法获取租户id问题
+* fix 修复 关闭租户功能 三方登录报错问题
+
+
+### 前端改动
+
+* update element-plus 2.7.2
+* update vite 5.2.10
+* update vue 3.4.25
+* update vue-router 4.3.2
+* update nodejs 升级到最低 18.18.0
+* update 优化 跟密码相关的默认前端关闭防重功能
+* update 优化 点击左边菜单时页面空白或者刷新整个页面的问题
+* update 优化 el-select 与 el-input 全局样式
+* update 优化 首页打开topNav不展开菜单问题
+* update 优化 支持全局开启或关闭接口加密功能
+* update 优化 密码校验策略增加非法字符限制
+* update 优化 图片上传组件增加压缩功能支持 可自行开关(感谢 fengheguai)
+* update 优化 request请求类判断请求头方式
+* update 优化 更改客户端状态接口 使用clientId传参
+* update 优化 ws开关改为常开(vite5修复了崩溃bug)
+* fix 修复 移动端下 无法展开菜单问题
+* fix 修复 面板因为min width原因收缩不全
+* fix 修复 文件预览大写后缀不展示的问题(感谢 北桥)
+* fix 修复 i18n无感刷新问题
+* fix 修复 websocket 非index页面刷新无法重连问题
+
 ## v5.1.2 - 2023-12-22
 
 ### 依赖升级
