@@ -9,6 +9,7 @@
 |-------------------|:-------------------------------|---------------------------------------------------------------------------------------------------------------|
 | 中国联通(长春分公司)       | http://www.10010.com           | <img src="https://foruda.gitee.com/images/1679554727740431371/bd179d0f_1766278.png" width="300" height="200"> |
 | 中国电信(湖南分公司)       | http://www.189.cn/hn/          | <img src="https://foruda.gitee.com/images/1699838764871886313/61b44b7d_1766278.png" width="300" height="200"> |
+| 广州六六七七科技有限公司   | https://artiversehub.ai/         | <img src="https://foruda.gitee.com/images/1716976454631958575/44abbb05_1766278.png" width="300" height="200"> |
 | 宁波三品软件科技有限公司   | http://nbsanpin.com/         | <img src="https://foruda.gitee.com/images/1715845257022437822/1a096edc_14415359.png" width="300" height="200"> |
 | 北京御一科技信息技术有限公司 | https://www.yudoctor.com | <img src="https://foruda.gitee.com/images/1715157943995574211/09aa2229_1766278.png" width="400" height="200"> |
 | 成都卡恩特医疗科技有限公司 | http://www.scknot.com | <img src="https://foruda.gitee.com/images/1711091474880818044/96ddef90_1766278.png" width="400" height="200"> |
@@ -51,6 +52,7 @@
 | 营口鼎瑞网络科技有限公司 |                                  | <img src="https://foruda.gitee.com/images/1715836865319520119/5dc34a5f_8693506.png" width="400" height="200"> |
 | 南昌漫库书店有限公司        |                                | <img src="https://foruda.gitee.com/images/1687656369793887183/ce1a33f6_1766278.png" width="200" height="100"> |
 | 广西文韬智能科技有限公司      |                                | <img src="https://foruda.gitee.com/images/1678976034543683491/8d8a1ebe_1766278.png" width="200" height="100"> |
+| 曲沃亿分科技中心        |                                |
 | 南京杰度信息技术有限公司 |                                |
 | 武汉忆秋科技有限公司 |                                      |
 | 济南千惠网络科技有限公司      |                                |
