@@ -29,3 +29,7 @@ headers: {
 ```
 
 ![输入图片说明](https://foruda.gitee.com/images/1701137141916998346/5e839bbe_4959041.png "屏幕截图")
+
+## 4.关于请求响应参数加解密说明
+
+如何加解密请求响应参数看这里 -> [关于请求响应参数解密](/questions/api_encrypt.md)
