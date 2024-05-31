@@ -14,18 +14,18 @@
 **graalvm 是oracle旗下的高性能jdk 下载地址: https://github.com/graalvm/graalvm-ce-builds/releases**
 
 * openjdk-17/21 或 graalvm-community-jdk-17/21版本
-* mysql 5.7 8.0 (5.6未适配可能会有问题)
-* oracle 11g 12c
-* postgres 13 14
+* mysql 5.7 8.0 (其他版本未测试 如其他版本没问题 可以告知咱们)
+* oracle 11g 12c (其他版本未测试 如其他版本没问题 可以告知咱们)
+* postgres 13 14 (其他版本未测试 如其他版本没问题 可以告知咱们)
 * redis 5.X 6.X 7.X 由于框架大量使用了redis特性 版本必须 >= 5.X ([win redis 下载地址](https://github.com/zkteco-home/redis-windows))
 * minio 本地文件存储 或 阿里云 腾讯云 七牛云等一切支持S3协议的云存储
 * maven >= 3.8.X
-* nodejs 18(18以上未测试 不建议使用)
-* npm 8.X (7.X确认有问题)
+* nodejs 18.18 (其他版本未测试 如其他版本没问题 可以告知咱们)
+* npm >= 8.X (7.X确认有问题)
 * idea 2022 2024 (一定不要使用2023后果自负 bug太多影响项目开发)
-* nacos >= 2.X(框架1.3.0内置nacos)
-* sentinel 框架内置
-* seata 框架内置
+* nacos >= 2.X(框架已经内置 采用nacos官方jar包)
+* sentinel 框架内置(采用sentinel官方jar包)
+* seata 框架内置(采用seata官方jar包)
 
 ### 需勾选 maven 对应环境
 
@@ -39,9 +39,7 @@
 ### sql导入
 将sql导入到与sql文件名对应的数据库(不要放到一个库下)<br>
 
-![输入图片说明](https://foruda.gitee.com/images/1688634719622374062/d06c7e4d_1766278.png "屏幕截图")
-
-![输入图片说明](https://foruda.gitee.com/images/1688634855207008877/2d9f535f_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1717122730708924506/7f3aaecf_1766278.png "屏幕截图")
 
 ### 使用内置 `ruoyi-naocs` 服务 从这开始
 
