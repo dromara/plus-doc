@@ -41,3 +41,4 @@
 | flowable扩展                     | https://gitee.com/KonBAI-Q/ruoyi-flowable-plus                            |
 | mybatis-flex版本                 | https://gitee.com/yhan219/ruoyi-vue-flex                                  |
 | weblog博客系统                     | https://gitee.com/fu-zhanshuai/fzshuai-weblog                               |
+| Annlcc博客                     | https://gitee.com/ahcode/ann-blog-plus                               |
