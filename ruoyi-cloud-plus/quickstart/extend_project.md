@@ -17,7 +17,7 @@
 | 扩展模块独立集成flyway                      | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/439   |
 | 扩展模块独立集成go-view大屏看板                 | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/445   |
 | 基于AmazonS3协议的分片上传                   | https://gitee.com/dromara/RuoYi-Cloud-Plus/pulls/130 |
-| 扩展forest http客户端 声明式http请求          | https://gitee.com/dromara/RuoYi-Cloud-Plus/pulls/146 |
+| 扩展forest http客户端 声明式http请求 二次封装像工具类 | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/547 |
 | 增加短链接生成工具                           | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/515   |
 | 新增oss预签名上传工具组合使用异步客户端分片             | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/522   |
 
