@@ -1,6 +1,158 @@
 # 更新日志
 - - -
 
+## v2.2.0 - 2024-06-06
+
+### 重大更新
+
+* [重大更新] 使用 caffeine 重构 PlusSaTokenDao 层实现 减少将近90%的redis查询提高性能
+* [重大更新] 新增 PlusCacheWrapper 装饰器 为 SpringCache 增加本地缓存减少redis查询提高性能
+* [重大更新] 升级 awsS3 到2.X版本 支持异步与自动分片上传下载(感谢 AprilWind)
+* [重大更新] 新增 flowable 工作流功能(感谢 May)
+* [重大更新] 新增 snailjob 调度中心 移除 powerjob (投诉的人太多) (感谢 dhb52)
+* [重大更新] 重构 将spring-cloud-stream改为普通的mq依赖用法(感谢 Xbhog)
+
+
+### 依赖升级
+
+* update springboot 3.1.7 => 3.2.6 支持虚拟线程
+* update springboot-admin 3.1.8 => 3.2.3
+* update springdoc 2.2.0 => 2.5.0
+* update redisson 3.24.3 => 3.29.0 支持虚拟线程
+* update hutool 5.8.22 => 5.8.26
+* update dynamic-ds 4.2.0 => 4.3.0
+* update mybatis-plus 3.5.4 => 3.5.6 修复与boot代码冲突问题
+* update lock4j 2.2.5 => 2.2.7 消除启动警告
+* update sms4j 2.2.0 => 3.2.1 支持自定义配置key 可用于多厂商多租户等
+* update mapstruct-plus 1.3.5 => 1.3.6
+* update easyexcel 3.3.3 => 3.3.4
+* update lombok 1.18.30 => 1.18.32
+* update satoken 1.37.0 -> 1.38.0
+* update aws-oss 1.12.600 => 2.25.15
+
+### 功能更新
+
+* update 优化 临时解决 spring 启动报 warn 问题
+* update 优化 移除表单构建菜单(没有可用组件 用处不大以后再考虑)
+* update 优化 修改用户信息接口(感谢 AprilWind)
+* update 优化 切换动态租户 默认线程内切换(如需全局 手动传参)
+* update 优化 适配最新前端代码生成模板
+* update 优化 代码生成 el-radio 标签过期属性
+* update 优化 文件下载(使用对流传递 降低内存使用量)(感谢 秋辞未寒)
+* update 优化 去除gc日志参数(有需要自己加)
+* update 优化 拆分异常处理器
+* update 优化 常规web异常状态码
+* update 优化 设置静态资源路径防止所有请求都可以访问静态资源
+* update 优化 代码生成表导入 排除工作流相关表
+* update 优化 redis 对Long值的存储类型不同问题
+* update 优化 去除加密请求类型限制
+* update 优化 mp多租户插件注入逻辑
+* update 优化 移除删表语句 用户自行处理
+* update 优化 RedisUtils 支持忽略租户
+* update 更新 ip地址 xdb文件
+* update 优化 新增修改菜单权限字符校验
+* update 优化 验证码背景色改为浅灰色
+* update 优化 更新 mybatis 多包扫描配置
+* update 优化 RateLimiter 注解使用体验(感谢 ly-chn)
+* update 优化 GET 方法响应体支持加密
+* update 优化 excel 单元格合并可以基于注解选择需要依赖哪些字段(感谢 司猫子)
+* update 优化 OssFactory 获取实例锁性能(感谢 fanc)
+* update 优化 登录消息 支持集群发送
+* update 优化 数据权限 使用预扫描mapper注解提升代码性能
+* update 优化 数据加密 使用预扫描实体类提升代码性能(感谢 老马)
+* update 优化 Async 针对虚拟线程配置 与其他注意事项注释
+* update 优化 框架整体sql提高查询性能
+* update 优化 将p6spy配置文件统一放置到 common-mybatis 插件包内
+* update 优化 使用翻译注解简化用户查询 调整用户查询逻辑
+
+
+### 新增功能
+
+* add 新增 SMS异常处理器(感谢 AprilWind)
+* add 新增 在线设备管理(个人中心)(感谢 AprilWind)
+* add 新增 岗位编码与部门编码 并将岗位放到部门下(感谢 秋辞未寒)
+* add 新增 分布式锁Lock4j异常拦截(感谢 AprilWind)
+* add 新增 BaseMapperPlus提供一组可选是否抛出异常的selectVoOne方法(感谢 秋辞未寒)
+* add 新增 用户、部门、角色、岗位 下拉选接口与代码实现优化
+* add 新增 JustAuth 整合 TopIam 单点登录(感谢 马铃薯头)
+* add 新增 StringUtils.isVirtual 方法
+* add 新增 正则工具类 字符串提取 字符串校验
+
+### 问题修复
+
+* fix 修复 oss未使用租户 拼接租户id null问题
+* fix 修复 用户昵称修改后未清除对应缓存问题
+* fix 修复 文件上传图片预览问题
+* fix 修复 三方账号可以被同一个用户多次绑定问题
+* fix 修复 兼容redis5.0出现的问题
+* fix 修复 字典键值可重复配置问题
+* fix 修复 部分浏览器无法获取加密响应头问题
+* fix 修复 用户未设置部门 登录报错问题
+* fix 修复 全局异常处理器 空指针null问题
+* fix 修复 excel 表达式字典 下拉框导出格式错误
+* fix 修复 InjectionMetaObjectHandler 已存在数据依旧会获取用户信息报异常问题
+* fix 修复 关闭租户功能 三方登录报错问题
+* fix 修复 部门树排序问题
+* fix 修复 CryptoFilter 代码逻辑问题
+
+### 前端改动
+
+* update 升级 element vite 版本 最低nodejs版本提升到18.18.0
+* update 优化 更改客户端状态接口 使用clientId传参
+* update 优化 ws开关改为常开(vite5修复了崩溃bug)
+* update 优化 移除cjs
+* update 优化 对Volar支持
+* update 优化 富文本组件，修复两个组件上传图片位置错乱问题
+* update 优化 request请求类判断请求头方式
+* update 优化 密码校验策略增加非法字符限制
+* update 优化 支持全局开启或关闭接口加密功能
+* update 优化 暗黑模式，增加vxe的暗黑模式
+* update 优化 首页打开topNav不展开菜单问题
+* update 优化 el-select 与 el-input 全局样式
+* update 优化 跟密码相关的默认前端关闭防重功能
+* add 新增 社交登录整合 TopIam
+* add 新增 图片上传组件增加压缩功能支持，可自行开关
+* add 新增 vxe-table依赖支持
+* add 新增 全局用户选择组件
+* add 新增 工作流相关页面与组件
+* add 新增 使用bpmnjs流程预览
+* add 新增 在线登录设备管理(感谢 AprilWind)
+* add 新增 用户选择角色时 可搜索功能(感谢 追梦稻草人Li)
+* fix 修复 登录失效，重新登录丢失参数问题(感谢 爱宇阳)
+* fix 修复 websocket 非index页面刷新无法重连问题
+* fix 修复 全局属性找不到的问题(感谢 ahaos)
+* fix 修复 vue 类型识别问题
+* fix 修复 富文本编辑器 单页面多实例图片混乱问题
+* fix 修复 i18n无感刷新问题
+* fix 修复 文件预览大写后缀不展示的问题(感谢 北桥)
+* fix 修复 面板因为min width原因收缩不全
+* fix 修复 移动端下 无法展开菜单问题
+* fix 修复 菜单搜索下方出现白色区域
+* fix 修复 el-tag标签类型不一致问题
+* fix 修复 角色必填*号
+
+### 微服务修改
+
+* update springcloud 2022.0.4 => 2023.0.2
+* update springcloud-alibaba 2022.0.0.0 => 2023.0.1.0
+* update dubbo 3.2.7 => 3.2.11
+* update easy-es 2.0.0-beta4 => 2.0.0 正式版
+* update nacos 2.2.1 => 2.3.2 默认开启nacos服务端授权认证 (感谢 OldDriver9527)
+* update rocketmq 4.9.4 => 5.2.0 docker镜像升级
+* update kafka 3.2.0 => 3.6.2 docker镜像升级
+* update rabbitmq 3.10.6 => 3.13.3 docker镜像升级
+* update sentinel 1.8.6 => 1.8.8
+* update 优化 调整配置文件语法
+* update 优化 使用spring工具自定义dubbo ip获取方法(针对多网卡ip获取不正确问题)
+* update 优化 common-dubbo 删除无用依赖
+* update 优化 去除重复的扫描器 @EnableDubbo 会自行扫描包
+* update 优化 加密组件 mp依赖改为可选
+* update 优化 mybatis依赖设置为可选依赖 避免出现不应该注入的情况
+* fix 修复 sentinel-dashboard的pom引入logaback冲突问题
+* fix 修复 nacos 不兼容 logback 1.4 新版本问题
+* fix 修复 开启数据库加密 auth服务报错问题
+* fix 修复 gateway sentinel 限流报错问题(临时方案) https://github.com/alibaba/Sentinel/issues/3298
+
 ## v2.1.2 - 2023-12-22
 
 ### 依赖升级
