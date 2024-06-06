@@ -31,10 +31,11 @@
 
 1.如果需要指定单独 SQL 不开启过滤，可在对应的 Mapper 接口添加如下忽略注解：
 ```
-@InterceptorIgnore(tenantLine = "true")
+@InterceptorIgnore(tenantLine = "true", dataPermission = "false")
 ```
+**此处注意事项 使用此注解如果需要开启数据权限 dataPermission = "false" 必须添加 mp的注解默认是忽略数据权限的 会导致数据权限失效**
 
-2.如果需要在业务层忽略多租户，可调用以下方法：
+2.如果需要在业务层忽略多租户，可调用以下方法(推荐使用)：
 ```
 # 无返回值
 TenantHelper.ignore(() -> { 业务代码 });
