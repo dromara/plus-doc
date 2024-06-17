@@ -90,7 +90,7 @@ docker-compose up -d ruoyi-monitor-admin ruoyi-xxl-job-admin ruoyi-server1 ruoyi
 
 5.X
 ```shell
-docker-compose up -d ruoyi-monitor-admin ruoyi-powerjob-server ruoyi-server1 ruoyi-server2
+docker-compose up -d ruoyi-monitor-admin ruoyi-snailjob-server ruoyi-server1 ruoyi-server2
 ```
 
 ### docker其他操作(idea的docker插件 推荐使用)
