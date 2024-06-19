@@ -1,7 +1,7 @@
 # 更新日志
 - - -
 
-## v5.2.0 - 2024-05-20
+## v5.2.0 - 2024-06-20
 
 ### 重大改动
 
@@ -13,22 +13,27 @@
 
 ### 依赖升级
 
-* update springboot 3.1.7 => 3.2.5 支持虚拟线程
+* update springboot 3.1.7 => 3.2.6 支持虚拟线程
 * update springboot-admin 3.1.8 => 3.2.3
-* update mybatis-plus 3.5.4 => 3.5.6 适配更改代码
+* update mybatis-plus 3.5.4 => 3.5.7 适配更改代码
 * update springdoc 2.2.0 => 2.5.0
 * update easyexcel 3.3.3 => 3.3.4
-* update redisson 3.24.3 => 3.29.0
+* update redisson 3.24.3 => 3.31.0
 * update lombok 1.18.30 => 1.18.32
 * update sms4j 2.2.0 => 3.2.1 支持自定义配置key 可用于多厂商多租户等
 * update satoken 1.37.0 -> 1.38.0
 * update hutool 5.8.22 => 5.8.26
 * update mapstruct-plus 1.3.5 => 1.3.6
 * update lock4j 2.2.5 => 2.2.7
-* update dynamic-ds 4.2.0 => 4.3.0
+* update dynamic-ds 4.2.0 => 4.3.1
 
 ### 功能更新
 
+* update 优化 三方登录不同域名问题 采用新方案
+* update 优化 获取aop代理的方式 减少与其他使用aop的功能冲突的概率
+* update 优化 token无效时关闭ws连接(感谢 AprilWind)
+* update 优化 移除表单构建菜单(没有可用组件 用处不大以后再考虑)
+* update 优化 切换动态租户 默认线程内切换(如需全局 手动传参)
 * update 优化 代码生成注释，删除无用引入(感谢 AprilWind)
 * update 优化 代码生成 el-radio 标签过期属性
 * update 优化 异常处理器自动配置
@@ -64,6 +69,10 @@
 
 ### 问题修复
 
+* fix 修复 websocket clientid 参数不走mvc拦截器 无法生效问题
+* fix 修复 oss未使用租户 拼接租户id null问题
+* fix 修复 用户昵称修改后未清除对应缓存问题(感谢 zhuweitung)
+* fix 修复 图片预览问题(感谢 AprilWind)
 * fix 修复 三方账号可以绑定多平台账号问题
 * fix 修复 主建错别字(感谢 good)
 * fix 修复 兼容redis5.0出现的问题
@@ -77,7 +86,7 @@
 
 ### 前端改动
 
-* update element-plus 2.7.2
+* update element-plus 2.7.5
 * update vite 5.2.10
 * update vue 3.4.25
 * update vue-router 4.3.2
