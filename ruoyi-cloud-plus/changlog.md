@@ -11,16 +11,16 @@
 * [重大更新] 新增 flowable 工作流功能(感谢 May)
 * [重大更新] 新增 snailjob 调度中心 移除 powerjob (投诉的人太多) (感谢 dhb52)
 * [重大更新] 重构 将spring-cloud-stream改为普通的mq依赖用法(感谢 Xbhog)
-
+* [重大更新] 新增 ruoyi-common-bus 消息总线组件 基于MQ跨服务投递事件消息
 
 ### 依赖升级
 
-* update springboot 3.1.7 => 3.2.6 支持虚拟线程
+* update springboot 3.1.7 => 3.2.7 支持虚拟线程
 * update springboot-admin 3.1.8 => 3.2.3
 * update springdoc 2.2.0 => 2.5.0
-* update redisson 3.24.3 => 3.29.0 支持虚拟线程
+* update redisson 3.24.3 => 3.31.0 支持虚拟线程
 * update hutool 5.8.22 => 5.8.26
-* update dynamic-ds 4.2.0 => 4.3.0
+* update dynamic-ds 4.2.0 => 4.3.1
 * update mybatis-plus 3.5.4 => 3.5.6 修复与boot代码冲突问题
 * update lock4j 2.2.5 => 2.2.7 消除启动警告
 * update sms4j 2.2.0 => 3.2.1 支持自定义配置key 可用于多厂商多租户等
@@ -32,6 +32,10 @@
 
 ### 功能更新
 
+* update 优化 三方登录不同域名问题 采用新方案
+* update 优化 获取aop代理的方式 减少与其他使用aop的功能冲突的概率
+* update 优化 token无效时关闭ws连接(感谢 AprilWind)
+* update 优化 切换动态租户 默认线程内切换(如需全局 手动传参)
 * update 优化 临时解决 spring 启动报 warn 问题
 * update 优化 移除表单构建菜单(没有可用组件 用处不大以后再考虑)
 * update 优化 修改用户信息接口(感谢 AprilWind)
