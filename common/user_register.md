@@ -53,6 +53,7 @@
 | 营口鼎瑞网络科技有限公司 |                                  | <img src="https://foruda.gitee.com/images/1715836865319520119/5dc34a5f_8693506.png" width="400" height="200"> |
 | 南昌漫库书店有限公司        |                                | <img src="https://foruda.gitee.com/images/1687656369793887183/ce1a33f6_1766278.png" width="200" height="100"> |
 | 广西文韬智能科技有限公司      |                                | <img src="https://foruda.gitee.com/images/1678976034543683491/8d8a1ebe_1766278.png" width="200" height="100"> |
+| 湖南智才伯乐数据科技有限公司 |                            |
 | 德州商储超市有限公司    |                                |
 | 曲沃亿分科技中心        |                                |
 | 南京杰度信息技术有限公司 |                                |
