@@ -66,16 +66,20 @@
 
 参照已有策略实现类实现自定义参数校验登录方法逻辑。<br>
 
-![输入图片说明](https://foruda.gitee.com/images/1690973133723883893/2e72df49_4959041.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1718951146945578143/789c80e4_1766278.png "屏幕截图")
 
 **注意修改 `@Service` 名称保证规范性**
 
-![输入图片说明](https://foruda.gitee.com/images/1690973250687158482/964e47e7_4959041.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1718951179571300385/8db730b9_1766278.png "屏幕截图")
 
 `LoginBody` 校验参数（可自定义）<br>
 
-![输入图片说明](https://foruda.gitee.com/images/1690973017092618009/7b2af9ab_4959041.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1718951237123374392/f7840db2_1766278.png "屏幕截图")
+
+例如 扩展小程序登录参数 只需要继承 `LoginBody <br>
+
+![输入图片说明](https://foruda.gitee.com/images/1718951283931895761/e6348be5_1766278.png "屏幕截图")`
 
 校验分组（可自定义）<br>
 
-![输入图片说明](https://foruda.gitee.com/images/1690973039038361511/8a1248bb_4959041.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1718951343601334215/8ef404b4_1766278.png "屏幕截图")
