@@ -3,7 +3,7 @@
 
 ### 注意事项
 
-设置 RabbitMQ 配置 `application-common.yml` 配置文件 (可使用其他例如 kafka 详见 ruoyi-common-bus 模块)
+设置 RabbitMQ 配置 `application-common.yml` 配置文件 (可使用其他例如 kafka、rocketmq 详见 ruoyi-common-bus 模块)
 
 此功能用于跨服务同步流程与业务状态 MQ安装方式可参考文档扩展功能
 
