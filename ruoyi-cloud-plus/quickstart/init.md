@@ -9,11 +9,13 @@
 ### 项目必备环境
 > 推荐使用 `docker` 安装 项目内置 `docker` 编排文件
 
-**注意: 需要使用 `openjdk` 或者 `graalvm` 运行程序 禁止使用 `oraclejdk`(由于spring的bug导致打包运行会报错)**
+**注意: 禁止使用 `oraclejdk`(由于spring的bug导致打包运行会报错)**
 
-**graalvm 是oracle旗下的高性能jdk 下载地址: https://github.com/graalvm/graalvm-ce-builds/releases**
+**Spring官方推荐使用JDK https://bell-sw.com/pages/downloads/**
 
-* openjdk-17/21 或 graalvm-community-jdk-17/21版本
+![输入图片说明](https://foruda.gitee.com/images/1720080025744223375/0213a652_1766278.png "屏幕截图")
+
+* openjdk-17/21 或 graalvm-community-jdk-17/21 [下载地址](https://github.com/graalvm/graalvm-ce-builds/releases) 版本
 * mysql 5.7 8.0 (其他版本未测试 如其他版本没问题 可以告知咱们)
 * oracle 11g 12c (其他版本未测试 如其他版本没问题 可以告知咱们)
 * postgres 13 14 (其他版本未测试 如其他版本没问题 可以告知咱们)
