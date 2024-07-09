@@ -1,6 +1,42 @@
 # 更新日志
 - - -
 
+## v5.2.1 - 2024-07-09
+
+### 功能更新
+
+* update 优化 更改prod环境 snailjob状态 默认启用
+* update 优化 替换过期方法
+* update 优化 租户列表接口 避免登录之后列表被域名过滤
+* update 优化 获取用户账户方法 LoginHelper#getUsername(感谢 AprilWind)
+* update 优化 用户ID查询角色列表代码实现(感谢 AprilWind)
+* update 优化 大数据量下join卡顿问题 使用子查询提高性能
+* update 优化 修改路由name命名规则 防止重复路由覆盖问题(感谢 玲娜贝er)
+* update 优化 修改 snailjob 默认端口 避免与系统内置端口冲突问题
+* update 优化 isTenantAdmin 空校验
+* update 优化 webscoket 配置与异常拦截
+* update 优化 更新 redis 密码策略(密码必填 升级需注意)
+* update 优化 更新使用 Spring 官方推荐 JDK
+* update 优化 StreamUtils 抽取 findFirst findAny 方法
+* update 优化 工作流相关代码方法
+
+### 问题修复
+
+* fix 修复 postgres flowable sql 缺失字段问题
+* fix 修复 新版上传未设置acl问题
+* fix 修复 get路径特殊规则 导致 actuator 泄漏问题 [issue#4f9ceb0a](https://gitee.com/dromara/RuoYi-Vue-Plus/commit/4f9ceb0a8057284a0d9d69da58df630d8bc2e84f)
+* fix 修复 pg数据库 用户查询报错问题
+* fix 修复 isLogin 方法抛异常无法正常返回值问题
+
+### 前端改动
+
+* update 优化 工作流选人改为懒加载窗口
+* update 优化 路由name重复检查
+* update 优化 eslint 语法
+* update 优化 动态创建组件实例时, 设置路由name为组件名 解决缓存问题
+* fix 修复 由于没有await 导致执行顺序不可控
+* fix 修复 富文本编辑器 添加之后内容未清理问题
+
 ## v5.2.0 - 2024-06-20
 
 ### 重大改动

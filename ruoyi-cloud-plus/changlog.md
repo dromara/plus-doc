@@ -1,7 +1,7 @@
 # 更新日志
 - - -
 
-## v2.2.0 - 2024-06-06
+## v2.2.0 - 2024-07-09
 
 ### 重大更新
 
@@ -15,13 +15,13 @@
 
 ### 依赖升级
 
-* update springboot 3.1.7 => 3.2.7 支持虚拟线程
+* update springboot 3.1.7 => 3.2.6 支持虚拟线程
 * update springboot-admin 3.1.8 => 3.2.3
 * update springdoc 2.2.0 => 2.5.0
-* update redisson 3.24.3 => 3.31.0 支持虚拟线程
+* update redisson 3.24.3 => 3.29.0 支持虚拟线程
 * update hutool 5.8.22 => 5.8.26
-* update dynamic-ds 4.2.0 => 4.3.1
-* update mybatis-plus 3.5.4 => 3.5.6 修复与boot代码冲突问题
+* update dynamic-ds 4.2.0 => 4.3.0
+* update mybatis-plus 3.5.4 => 3.5.7 修复与boot代码冲突问题
 * update lock4j 2.2.5 => 2.2.7 消除启动警告
 * update sms4j 2.2.0 => 3.2.1 支持自定义配置key 可用于多厂商多租户等
 * update mapstruct-plus 1.3.5 => 1.3.6
@@ -32,10 +32,17 @@
 
 ### 功能更新
 
-* update 优化 三方登录不同域名问题 采用新方案
+* update 优化 StreamUtils 抽取 findFirst findAny 方法
+* update 优化 更新使用 Spring 官方推荐 JDK
+* update 优化 webscoket 配置与异常拦截
+* update 优化 isTenantAdmin 空校验
+* update 优化 修改路由name命名规则(感谢 玲娜贝er)
+* update 优化 大数据量下join卡顿问题 使用子查询提高性能
+* update 优化 用户ID查询角色列表(感谢 AprilWind)
+* update 优化 获取用户账户(感谢 AprilWind)
+* update 优化 租户列表接口 避免登录之后列表被域名过滤
+* update 优化 三方登录不同域名获取不到租户id问题
 * update 优化 获取aop代理的方式 减少与其他使用aop的功能冲突的概率
-* update 优化 token无效时关闭ws连接(感谢 AprilWind)
-* update 优化 切换动态租户 默认线程内切换(如需全局 手动传参)
 * update 优化 临时解决 spring 启动报 warn 问题
 * update 优化 移除表单构建菜单(没有可用组件 用处不大以后再考虑)
 * update 优化 修改用户信息接口(感谢 AprilWind)
@@ -84,6 +91,9 @@
 
 ### 问题修复
 
+* fix 修复 isLogin 方法抛异常无法正常返回值问题
+* fix 修复 spring路径规则 导致 actuator 被特殊方式访问问题
+* fix 修复token无效时关闭ws(感谢 AprilWind)
 * fix 修复 oss未使用租户 拼接租户id null问题
 * fix 修复 用户昵称修改后未清除对应缓存问题
 * fix 修复 文件上传图片预览问题
@@ -133,19 +143,22 @@
 * fix 修复 移动端下 无法展开菜单问题
 * fix 修复 菜单搜索下方出现白色区域
 * fix 修复 el-tag标签类型不一致问题
-* fix 修复 角色必填*号
+* fix 修复 角色必填*号
 
 ### 微服务修改
 
 * update springcloud 2022.0.4 => 2023.0.2
 * update springcloud-alibaba 2022.0.0.0 => 2023.0.1.0
-* update dubbo 3.2.7 => 3.2.11
+* update dubbo 3.2.7 => 3.2.14
 * update easy-es 2.0.0-beta4 => 2.0.0 正式版
 * update nacos 2.2.1 => 2.3.2 默认开启nacos服务端授权认证 (感谢 OldDriver9527)
 * update rocketmq 4.9.4 => 5.2.0 docker镜像升级
 * update kafka 3.2.0 => 3.6.2 docker镜像升级
 * update rabbitmq 3.10.6 => 3.13.3 docker镜像升级
 * update sentinel 1.8.6 => 1.8.8
+* update skywalking 9.3.0 => 9.7.0
+* update skywalking-agent 8.16.0 => 9.2.0
+* update 优化 dubbo 使用 redis 作为元数据中心管理 支持过期时间 避免过期数据堆积 解放nacos存储空间
 * update 优化 调整配置文件语法
 * update 优化 使用spring工具自定义dubbo ip获取方法(针对多网卡ip获取不正确问题)
 * update 优化 common-dubbo 删除无用依赖
@@ -156,6 +169,7 @@
 * fix 修复 nacos 不兼容 logback 1.4 新版本问题
 * fix 修复 开启数据库加密 auth服务报错问题
 * fix 修复 gateway sentinel 限流报错问题(临时方案) https://github.com/alibaba/Sentinel/issues/3298
+
 
 ## v2.1.2 - 2023-12-22
 
