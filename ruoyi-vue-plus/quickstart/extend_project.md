@@ -19,7 +19,8 @@
 | 扩展forest http客户端 声明式http请求 二次封装像工具类 | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/547 |
 | 增加短链接生成工具                           | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/515   |
 | 新增oss预签名上传工具组合使用异步客户端分片             | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/522   |
-| 新增规则引擎LiteFlow，SQL持久化接入，支持可视化页面    | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/552 |
+| 新增规则引擎LiteFlow，SQL持久化接入，支持可视化页面     | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/552 |
+| 一键部署到私有Nexus仓库                             | https://gitee.com/dromara/RuoYi-Cloud-Plus/pulls/181 |
 
 ### 项目介绍+项目地址 欢迎投稿
 
