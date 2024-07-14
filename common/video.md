@@ -15,6 +15,10 @@
 
 课程简介: https://www.bilibili.com/video/BV16j411D7BX/
 <br>
+试看课程: https://www.bilibili.com/video/BV1uS411P7JD/
+<br>
+试看课程: https://www.bilibili.com/video/BV1vLbNeuESn/
+<br>
 试看课程: https://www.bilibili.com/video/BV1xV4y127KM/
 <br>
 课程总结: https://www.bilibili.com/video/BV1734y1g7fk/
@@ -23,7 +27,7 @@
 ## 购买方式
 
 **小本生意 用心录制 拒绝砍价 已更新到 236 集 课程完结**<br>
-> 课程咨询或购买请联系<br>
+> 课程咨询或购买请联系 价格598<br>
 > QQ:  906670865 (疯狂的狮子Li)<br>
 > QQ:  770492966 (抓蛙师)
 
