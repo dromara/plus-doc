@@ -41,7 +41,8 @@
 
 ### sql导入
 
-请按照以下顺序依次导入 默认为 `mysql` 其他数据库需导入对应的sql文件
+请按照以下顺序依次导入 默认为 `mysql` 其他数据库需导入对应的sql文件<br>
+如需使用其他数据库 看这里 => [多数据库数据源](../framework/extend/dynamic_datasource.md)<br>
 
 ![输入图片说明](https://foruda.gitee.com/images/1716175336356465213/362fe8f9_1766278.png "屏幕截图")
 
