@@ -38,6 +38,7 @@
 | mybatis-flex版本                 | https://gitee.com/dataprince/ruoyi-flex                                   |
 | blog博客系统                       | https://gitee.com/kalashok-pan/zhi-blog-plus                              |
 | tdengine时序数据库扩展                | https://gitee.com/zhangbg/ruoyi-plus-tdengine                             |
+| 重构项目结构(参考springboot源码)    | https://gitee.com/denghuafeng/ruoyi-boot-plus                            |
 | Activiti扩展                     | https://gitee.com/sgs98/RuoYi-Vue-Plus-Activiti                           |
 | flowable扩展                     | https://gitee.com/sgs98/RuoYi-Vue-Plus-Flowable                           |
 | flowable扩展                     | https://gitee.com/KonBAI-Q/ruoyi-flowable-plus                            |
