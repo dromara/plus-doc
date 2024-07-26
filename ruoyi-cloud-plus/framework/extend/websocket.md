@@ -5,6 +5,8 @@
 
 ## 配置说明
 
+配置在 `ruoyi-resource` 目录下
+
 ![输入图片说明](https://foruda.gitee.com/images/1688356273985385949/5e4d1de8_1766278.png "屏幕截图")
 
 * enabled 是否开启此功能

@@ -53,6 +53,7 @@
     * [数据加解密](/ruoyi-vue-plus/framework/extend/encrypt.md)
     * [翻译功能](/ruoyi-vue-plus/framework/extend/translation.md)
     * [WebSocket功能](/ruoyi-vue-plus/framework/extend/websocket.md)
+    * [SSE功能](/ruoyi-vue-plus/framework/extend/sse.md)
     * [Skywalking链路监控](/ruoyi-vue-plus/framework/extend/skywalking.md)
     * [对接MaxKey单点登录](/ruoyi-vue-plus/framework/extend/maxkey.md)
     * [对接TOPIAM单点登录](/ruoyi-vue-plus/framework/extend/topiam.md)
