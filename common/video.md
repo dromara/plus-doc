@@ -21,6 +21,8 @@
 <br>
 试看课程: https://www.bilibili.com/video/BV1xV4y127KM/
 <br>
+试看课程: https://www.bilibili.com/video/BV1W5v8eBEgs/
+<br>
 课程总结: https://www.bilibili.com/video/BV1734y1g7fk/
 <br>
 
