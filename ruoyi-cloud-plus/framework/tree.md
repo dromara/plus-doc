@@ -1,7 +1,7 @@
 # 项目结构
 - - -
 ## 目录结构
-v2.1.0
+v2.2.1
 ~~~
 RuoYi-Cloud-Plus
 ├─ ruoyi-api             // api模块
