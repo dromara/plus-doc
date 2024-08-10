@@ -1,10 +1,10 @@
-# 如何对接国内数据库
+# 如何对接国产数据库
 
 > 1. 框架采用 mybatis-plus 几乎支持大部分市面上的数据库且框架内几乎没有sql语句存在
 <br>
 所以不用担心兼容性问题(顶多就是有一些关键字什么的 对接很简单)
 <br>
-> 2. 国内数据库大多都兼容主流三大数据库 mysql oracle postgresql
+> 2. 国产数据库大多都兼容主流三大数据库 mysql oracle postgresql
 <br>
 例如 达梦兼容oracle 人大金仓兼容mysql oceanbase兼容mysql 等等
 
@@ -35,5 +35,7 @@
 例如 达梦内的`domain`就是关键字 在我们的`SysOssConfig`表内使用`domain`进行自定义的域名存储
 <br>
 我们只需要在`SysOssConfig`实体类的`domain`属性增加一个注解即可解决此问题
+<br>
+**注意: 各种数据库处理关键字的标识符不一样注意替换**
 
 ![输入图片说明](https://foruda.gitee.com/images/1723289232470339283/480d5172_1766278.png "屏幕截图")
