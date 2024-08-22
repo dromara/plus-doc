@@ -111,15 +111,16 @@ npm run build:prod
 重启 `nginx` 服务即可
 
 
-### 更改后端代理路径或者后端ip地址
-更改代理路径(注意: /开头/结尾)
+### 如需更改后端代理路径或者后端ip地址的话往下看
+
+更改`nginx.conf`配置文件代理路径(注意: /开头/结尾)
 
 ![输入图片说明](https://foruda.gitee.com/images/1660185698211067202/屏幕截图.png "屏幕截图.png")
 
-路径对应前端环境文件
+更改前端`.env.环境` 文件内的 `VITE_APP_BASE_API`
 
-![输入图片说明](https://foruda.gitee.com/images/1660185799901071800/屏幕截图.png "屏幕截图.png")
+![输入图片说明](https://foruda.gitee.com/images/1724318035232137124/5d035a09_1766278.png "屏幕截图")
 
-更改后端ip地址
+更改`nginx.conf`配置文件后端ip地址
 
 ![输入图片说明](https://foruda.gitee.com/images/1660185711265558730/屏幕截图.png "屏幕截图.png")
