@@ -1,6 +1,116 @@
 # 更新日志
 - - -
 
+## v2.2.1 - 2024-08-26
+
+### 重大改动
+
+* 增加 ruoyi-common-sse 模块 支持SSE推送 比ws更轻量更稳定的推送
+* 增加 springboot snailjob 等 actuator 账号密码认证 杜绝内外网信息泄漏问题
+* 增加 重构代码生成器 集成anyline开源框架 支持400+种数据库适配
+
+### 依赖升级
+
+* update springboot 3.2.6 => 3.2.9
+* update snailjob 1.0.1 => 1.1.2
+* update mapstruct-plus 1.4.3 => 1.4.4
+* update hutool 5.8.27 => 5.8.31 解决hutool不兼容jakarta问题
+* update anyline 8.7.2-20240808
+* update sms4j 3.2.1 => 3.3.2
+* update redisson 3.31.0 => 3.34.1
+* update mapstruct-plus 1.3.6 => 1.4.3
+* update lombok 1.18.32 => 1.18.34
+* update easyexcel 3.3.4 => 4.0.2
+* update springdoc 2.5.0 => 2.6.0
+* update flowable 7.0.0 => 7.0.1
+
+### cloud内容更新
+
+* update springcloud 2023.0.2 => 2023.0.3
+* update springcloud-alibaba 2023.0.1.0 => 2023.0.1.2
+* update redis 6.2.7 => 6.2.12 解决订阅key报错问题
+* update 优化 seata dockerfile 增加环境变量
+* update 优化 增加日志处理器顺序说明
+* update 优化 使用 seata-server 官方依赖简化seata集成方式
+* update 优化 屏蔽 sentinel 心跳日志
+* update 优化 dubbo元数据注册redis支持timeout(注意时间必须使用数字)
+* update 优化 调整sentinel日志级别 屏蔽心跳日志
+* update 优化 sky-agent 默认开启即使连不上服务端也跟踪配置 (有些人就爱这么用)
+* update 优化 kafka 自动创建 topic 部分人副本数不够报错问题
+* add 增加 nacos sentinel snailjob 健康检查 actuator 账号密码认证
+* fix 修复 dubbo redis元数据中心 获取监听器null问题
+* fix 修复 nacos sentinel seata 不适配新版undertow问题 先换回tomcat
+* fix 修复 依赖漏洞 限制部分依赖版本
+* fix 修复 由于alibaba sentinel 初始化机制变更导致的无法连接问题
+* fix 修复 dubbo 日志输出异常判断错误
+* remove 删除 kafka-streams 所有人都不会用也不学怎么用 删除了事
+
+### 功能更新
+
+* update 优化 去除日志部署环境判断 通过日志级别控制
+* update 优化 忽略租户与忽略数据权限支持嵌套使用(感谢 amadeus5201)
+* update 优化 租户相关controller 增加租户开关配置控制是否注册
+* update 优化 移除 alibaba ttl 与线程池搭配有问题(可传递但无法清除与更新)
+* update 优化 个人中心编辑 忽略数据权限
+* update 优化 兼容部分用户不想给用户分配角色与部门的场景
+* update 优化 租户套餐重名校验
+* update 优化 部门下存在岗位不允许删除
+* update 优化 角色编辑状态未校验问题
+* update 优化 用户脱敏增加编辑权限标识符
+* update 优化 代码生成器 自动适配oss翻译
+* update 优化 临时升级 undertow 版本 解决虚拟线程溢出问题
+* update 优化 支持通过配置文件关闭工作流
+* update 优化 增加mybatis-plus填充器兜底策略
+* update 优化 TenantSpringCacheManager 处理逻辑
+* update 优化 角色权限判断
+* update 优化 增加删除标志位常量优化查询代码
+* update 优化 监控使用独立web依赖
+* update 优化 更多脱敏策略(感谢 hemengji)
+* update 优化 设置nginx sse相关代理参数
+* update 优化 调整默认推送使用SSE
+* update 优化 Monitor监控服务通知分类打印(感谢 AprilWind)
+* update 优化 限流注解 又写key又不是表达式的情况
+* update 优化 WorkflowUtils查询用户信息发送消息未查询邮件和手机号(感谢 yanzy)
+* update 优化 注释掉其他数据库 jdbc 依赖 由用户手动添加
+* update 优化 oracle snailjob 兼容低版本oracle索引名称长度限制
+* update 优化 数据权限支持通过菜单标识符获取数据所有权
+* update 优化 数据权限支持自定义连接符
+* update 优化 TestDemo 删除前校验数据权限
+* update 优化 更换docker镜像底层系统 避免无字体情况
+
+### 问题修复
+
+* fix 修复 三方登录构建去除无用代码
+* fix 修复 多线程对同一个session发送ws消息报错问题
+* fix 修复 依赖漏洞 限制部分依赖版本
+* fix 修复 excel 基于其他字段 合并错误问题
+* fix 修复 一级缓存key未区分租户问题
+* fix 修复 id字符串格式转换错误问题
+* fix 修复 登出无法正确删除对应的租户数据问题
+* fix 修复 登录错误锁定不区分租户问题
+* fix 修复 转换模型缺少分类字段
+* fix 修复 权限标识符处理未设置成功状态问题
+* fix 修复 无法导入 bpmn 类型文件问题
+
+### 前端改动
+
+* update element-plus 2.7.5 => 2.7.8
+* update vue 3.4.25 => 3.4.34
+* update vite 5.2.10 => 5.2.12
+* add 增加 使用 vueuse 编写 sse 推送功能
+* update 优化 使用匹配模式简化预编译配置
+* update 优化 时间搜索组件统一
+* update 优化 oss 配置按钮 使用ossConfig权限标识符与oss权限分离
+* update 优化 类型报错问题
+* update 优化 切换租户后刷新首页
+* update 优化 实现表格行选中切换
+* update 优化 使用 vueuse 重构 websocket 实现
+* update 优化 代码生成器编辑页禁用缓存 防止同步后页面不更新问题
+* update 优化 调整默认推送使用SSE
+* fix 修复 租户套餐导出路径错误问题
+* fix 修复 登出后重新登录 sse推送报错问题
+
+
 ## v2.2.0 - 2024-07-09
 
 ### 重大更新
