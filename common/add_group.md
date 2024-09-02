@@ -24,4 +24,4 @@ VIP群是作者提供的私人服务 不代表着项目收费
 支付后申请加群即可 QQ群号 : **<637757165>**<br>
 
 **加群扫码**<br>
-<img src="https://foruda.gitee.com/images/1664426470791458454/aaa84304_1766278.jpeg" width="300px" height="450px" /><img src="https://foruda.gitee.com/images/1664426481006423852/6ee14bfa_1766278.jpeg" width="300px" height="450px" />
+<img src="https://foruda.gitee.com/images/1725259839682556495/2897bc86_1766278.png" width="300px" height="450px" /><img src="https://foruda.gitee.com/images/1725259806547656944/f870a5c7_1766278.jpeg" width="300px" height="450px" />
