@@ -33,4 +33,6 @@
 >
 ![输入图片说明](https://foruda.gitee.com/images/1688013663152608235/6c5d6a9c_1766278.png "屏幕截图")
 
- 
+### 快速入门
+
+[Snailjob快速入门 基本使用介绍](https://juejin.cn/post/7412955032092442675)
