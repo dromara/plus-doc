@@ -24,7 +24,7 @@
 **需执行 snail_job.sql 默认账号密码 `admin` `admin` 账号在数据库里 可以在页面修改密码**
 <br>
 
-![输入图片说明](https://foruda.gitee.com/images/1714355875395308961/adc21668_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1726801238503062021/a030616f_1766278.png "屏幕截图")
 
 > 在 `ruoyi-extend -> ruoyi-snailjob-server` 模块启动
 >
