@@ -13,7 +13,7 @@
 <a href="http://www.shuduokeji.com"><img src="https://foruda.gitee.com/images/1705569347386939952/3f187980_1766278.jpeg" width="400px" height="100px"></a>
 <a href="https://www.jnpfsoft.com/index.html?from=plus-doc"><img src="https://foruda.gitee.com/images/1711681233267310022/2ffbcff2_1766278.png" width="400px" height="100px"></a>
 <br>
-<a href="https://item.jd.com/13928958.html?from=plus-doc"><img src="https://foruda.gitee.com/images/1723791569938403230/769e98da_1766278.jpeg" width="400px" height="100px"></a>
+<a href="https://item.jd.com/14804836.html?from=plus-doc"><img src="https://foruda.gitee.com/images/1727495530501882313/359433de_1766278.jpeg" width="400px" height="100px"></a>
 
 [如何成为赞助商 加群联系作者详谈](/common/add_group.md)
 
