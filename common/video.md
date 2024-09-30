@@ -14,7 +14,7 @@
 **注意: 视频采用 RuoYi-Vue-Plus 全新版本 5.X 分支讲解!!! (内容为通用技术与版本关联性不大)**<br>
 **内容为框架内所用到的技术与设计原理(打破不知道、不会用、不知应用场景等问题)**
 
-课程简介: https://www.bilibili.com/video/BV16j411D7BX/
+课程简介: https://www.bilibili.com/video/BV12Tx4eVE2Q/
 <br>
 试看课程: https://www.bilibili.com/video/BV1uS411P7JD/
 <br>
@@ -23,8 +23,6 @@
 试看课程: https://www.bilibili.com/video/BV1xV4y127KM/
 <br>
 试看课程: https://www.bilibili.com/video/BV1W5v8eBEgs/
-<br>
-课程总结: https://www.bilibili.com/video/BV1734y1g7fk/
 <br>
 
 ## 购买方式
