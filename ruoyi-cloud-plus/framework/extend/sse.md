@@ -12,6 +12,10 @@
 * enabled 是否开启此功能
 * path 应用路径
 
+**重点: 如关闭ws功能需连同前端ws开关一同关闭 不然前端启动会报错**
+
+![输入图片说明](https://foruda.gitee.com/images/1728971445611402828/06519718_1766278.png "屏幕截图")
+
 ## 使用方法
 
 前端连接方式: `http://后端ip:端口/resource/sse?clientid=import.meta.env.VITE_APP_CLIENT_ID&Authorization=Bearer eyJ0eXAiO......`
