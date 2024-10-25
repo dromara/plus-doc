@@ -1,6 +1,100 @@
 # 更新日志
 - - -
 
+## v2.2.2 - 2024-10-25
+
+### 依赖升级
+
+* update springboot 3.2.9 => 3.2.11
+* update anyline 20240808 => 20241022
+* update sms4j 3.3.2 => 3.3.3
+* update easyexcel 4.0.2 => 4.0.3
+* update redisson 3.34.1 => 3.37.0
+* update mybatis-plus 3.5.7 => 3.5.8
+* update sa-token 1.38.0 => 1.39.0
+* update aws-s3 2.25.15 => 2.28.22
+* update aws-crt 0.29.13 => 0.31.3
+* update mapstruct-plus 1.4.4 => 1.4.5
+
+### cloud内容更新
+
+* update 优化 将ip2region.xdb文件转移到web包下 防止其他项目使用core包打包太大问题
+* update 优化 增加dubbo元数据中心 redis集群配置示例
+* fix 修复 经过加密的请求无法过滤xss问题 将xss实现从gateway移动到common-web解密后过滤
+
+### 功能更新
+
+* update 优化 适配mp新版本 方法名改动
+* update 优化 redis操作 如果无法忽略租户id则全局处理
+* update 优化 sse 异常单独处理 避免出现异常报错问题
+* update 优化 删除掉有问题的方法(使用RedisUtils)
+* update 优化 全局开启xss过滤 提高安全性 与cloud版本保持一致
+* update 优化 去除返回前端的异常信息里包含html标签问题
+* update 优化 查询表名列表增加注释 (感谢 AprilWind)
+* update 优化 判断当前会话是否已经登录
+* update 优化 删除不应该set的属性
+* update 优化 租户状态更改接口严谨性
+* update 优化 postgres适配findInSet写法 提高查询效率
+* update 优化 过滤器初始化写法
+* update 优化 监听器兼容所有demo案例
+* update 优化 操作日志记录DELETE请求参数
+* update 优化 snailjob客户端ip配置说明
+* update 优化 补全 pg 数据类型
+* update 优化 统一sql文件命名方式
+* update 优化 提供生产环境默认组配置
+* update 优化 通过角色ID查询用户逻辑 (感谢 AprilWind)
+* update 优化 查询用户时多余重复判断以及去重 (感谢 AprilWind)
+* update 优化 连接SSE token过期导致的 Servlet异常
+* update 优化 代码生成菜单id匹配写法
+* update 优化 更新sql关键字
+* update 优化 删除多余的引号
+* update 优化 RegexUtils#extractFromString 方法未匹配返回null不返回默认值问题
+* update 优化 oss上传直接从请求头获取文件类型
+* update 优化 代码生成表名判断 使用开头判断避免误判
+* update 优化 excel导入 适配异常结构
+* update 优化 删除okhttp无用版本限制(spring已经限制过了)
+* update 优化 自行开启云存储访问控制ACl策略注释 (感谢 AprilWind)
+* update 优化 admin监控 账号密码 从pom配置文件读取
+* update 优化 操作日志查询代码
+
+### 功能新增
+
+* add 新增 TreeUtil获取节点列表中所有节点的叶子节点 (感谢 AprilWind)
+* add 新增 同步租户字典功能
+
+### 问题修复
+
+* fix 修复 设置流程变量 代码使用错误问题
+* fix 修复 xss过滤器 未过滤url参数问题
+* fix 修复 代码书写错误
+* fix 修复 及其特殊场景下获取 StopWatch 为null问题
+* fix 修复 重新生成租户ID未生效的问题 (感谢 秋辞未寒)
+* fix 修复 oss上传10秒超时，设置默认时间一分钟 (感谢 AprilWind)
+* fix 修复 腾讯云oss不支持高危权限设置ACL (感谢 AprilWind)
+* fix 修复 同步云厂商要求明确配置访问样式（路径样式访问） (感谢 AprilWind)
+* fix 修复 特性情况下自定义验证异常处理器报null问题
+* fix 修复 EncryptorManager 缓存失效问题导致的内存膨胀
+* fix 修复 同一个用户不同token连接不同服务导致发送不到问题(改为全局发送)
+* fix 修复 同步字典存储是未忽略租户
+* fix 修复 部分web异常被CryptoFilter截胡问题
+* fix 修复 postgres sql文件菜单挂载错误 (感谢 Zyyi)
+* fix 修复 代码生成器 postgres 数据库主键类型映射错误问题
+* fix 修复 临时处理 scala库版本漏洞问题
+* fix 修复 工作流的分页查询语句不兼容sqlserver的问题 (感谢 sushuai)
+* fix 修复 commons-io 依赖冲突问题
+* fix 修复 开启子部门 父部门未关联开启问题
+* fix 修复 升级依赖导致的依赖冲突
+
+### 前端改动
+
+* update 优化 流程提交用户id使用字符串提交避免雪花id失真问题
+* add 增加 SSE功能开关 (感谢 陈西瓜i)
+* fix 修复 请假日期选择格式不对问题
+* fix 修复 登录日志excel导出名称错误
+* fix 修复 重新登录无法跳转到过期前页面问题
+* fix 修复 租户套餐导出路径编写错误
+
+
 ## v2.2.1 - 2024-08-26
 
 ### 重大改动
