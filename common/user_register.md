@@ -9,6 +9,7 @@
 |-------------------|:-------------------------------|----------------------------------------------------------------------------------------------------------------|
 | 中国联通(长春分公司)       | http://www.10010.com           | <img src="https://foruda.gitee.com/images/1679554727740431371/bd179d0f_1766278.png" width="300" height="200">  |
 | 中国电信(湖南分公司)       | http://www.189.cn/hn/          | <img src="https://foruda.gitee.com/images/1699838764871886313/61b44b7d_1766278.png" width="300" height="200">  |
+| 河北汉联信息科技有限公司    | https://www.hbzlsoft.com/     | <img src="https://foruda.gitee.com/images/1730078768989999429/7b7346b7_1766278.png" width="400" height="200">  |
 | 南京感知信息技术有限公司    | https://njgzxx.cn/             | <img src="https://foruda.gitee.com/images/1725589695335847776/10bb2088_1766278.png" width="400" height="200">  |
 | 陕西骏景索道运营管理有限公司  | https://www.junjingsuodao.com/    | <img src="https://foruda.gitee.com/images/1724394959451680041/24ac17ff_7408092.png" width="300" height="200">  |
 | 悠码科技有限公司           | https://orise.trytowish.cn/    | <img src="https://foruda.gitee.com/images/1722916054523975884/686ee49e_8929785.png" width="200" height="200">  |
