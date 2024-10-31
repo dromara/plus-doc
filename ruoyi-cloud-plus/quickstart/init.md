@@ -18,15 +18,15 @@
 * openjdk-17/21 或 graalvm-community-jdk-17/21 [下载地址](https://github.com/graalvm/graalvm-ce-builds/releases) 版本
 * mysql 5.7 8.0 (其他版本未测试 如其他版本没问题 可以告知咱们)
 * oracle >= 12c (其他版本未测试 如其他版本没问题 可以告知咱们)
-* postgres 13 14 (其他版本未测试 如其他版本没问题 可以告知咱们)
-* redis 5.X 6.X 7.X 由于框架大量使用了redis特性 版本必须 >= 5.X ([win redis 下载地址](https://github.com/zkteco-home/redis-windows))
+* postgres 13 14 15 (其他版本未测试 如其他版本没问题 可以告知咱们)
+* redis 6.X 7.X 由于框架大量使用了redis特性 版本必须 >= 6.X ([win redis 下载地址](https://github.com/zkteco-home/redis-windows))
 * minio 本地文件存储 或 阿里云 腾讯云 七牛云等一切支持S3协议的云存储
 * maven >= 3.8.X
 * nodejs 18.18 (其他版本未测试 如其他版本没问题 可以告知咱们)
 * npm >= 8.X (7.X确认有问题)
-* nacos >= 2.X(框架已经内置 采用nacos官方jar包)
-* sentinel 框架内置(采用sentinel官方jar包)
-* seata 框架内置(采用seata官方jar包)
+* nacos >= 2.X(建议使用框架内置的 采用nacos官方jar包 做了监控与安全增强)
+* sentinel 框架内置(建议使用框架内置的 采用sentinel官方jar包)
+* seata 框架内置(建议使用框架内置的 采用seata官方jar包)
 * idea 版本避坑指南 看下面:
 * 2023(全系列不要用 bug太多说不过来)
 * 2024.2(maven插件无法刷新依赖)
@@ -56,6 +56,8 @@
 <font size="4">**其余流程同下方步骤一致**</font>
 
 ### 自建 Nacos 从这开始
+
+**注意:使用自建Nacos必须保证版本与框架一致 因为nacos各个版本兼容性不好 建议最好是先用框架自带的**
 
 <font size="4">**Nacos 数据库指向 ry-config 数据库(此处重点: 此数据库为定制数据 未使用此库会无法读取配置)**</font>
 
