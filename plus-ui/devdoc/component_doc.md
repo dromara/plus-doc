@@ -69,9 +69,7 @@
   </div>
 </template>
 
-<script setup lang="ts">import { ref } from 'vue';
-import Editor from '@/components/Editor/index.vue';
-
+<script setup lang="ts">
 const editorContent = ref('<p>初始内容</p>');
 </script>
 ```
@@ -124,7 +122,7 @@ const editorContent = ref('<p>初始内容</p>');
 ```vue
 <template>
   <div>
-    <file-upload
+    <fileUpload
       v-model="fileList"
       :limit="3"
       :file-size="5"
@@ -135,11 +133,6 @@ const editorContent = ref('<p>初始内容</p>');
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import FileUpload from '@/components/FileUpload/index.vue';
-
-const fileList = ref([
-  { name: 'example.pdf', url: 'https://example.com/example.pdf', ossId: '12345' }
-]);
+const fileList = ref([]);
 </script>
 ```
