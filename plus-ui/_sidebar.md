@@ -13,6 +13,7 @@
   * [请求流程](/plus-ui/devdoc/request_process.md)
   * [路由使用](/plus-ui/devdoc/router_use.md)
   * [组件使用](/plus-ui/devdoc/component_use.md)
+  * [组件文档](/plus-ui/devdoc/component_doc.md)
   * [权限使用](/plus-ui/devdoc/permissions_use.md)
   * [页签缓存](/plus-ui/devdoc/page_cache.md)
   * [使用图标](/plus-ui/devdoc/icon_use.md)
