@@ -11,7 +11,7 @@
 <a href="http://ccflow.org/?frm=ryPlus"><img src="https://foruda.gitee.com/images/1704162419429172656/d0521e59_1766278.png" width="400px" height="100px"></a>
 <br>
 <a href="http://www.shuduokeji.com"><img src="https://foruda.gitee.com/images/1705569347386939952/3f187980_1766278.jpeg" width="400px" height="100px"></a>
-<a href="https://www.jnpfsoft.com/index.html?from=plus-doc"><img src="https://foruda.gitee.com/images/1711681233267310022/2ffbcff2_1766278.png" width="400px" height="100px"></a>
+<a href="https://www.jnpfsoft.com/index.html?from=plus-doc"><img src="https://foruda.gitee.com/images/1732520348262343872/558bb03b_1766278.jpeg" width="400px" height="100px"></a>
 <br>
 <a href="https://item.jd.com/14804836.html?from=plus-doc"><img src="https://foruda.gitee.com/images/1727495530501882313/359433de_1766278.jpeg" width="400px" height="100px"></a>
 
