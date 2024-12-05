@@ -43,7 +43,7 @@
 ### sql导入
 
 将sql导入到与sql文件名对应的数据库(不要放到一个库下)<br>
-默认数据库为mysql如需使用其他数据库 看这里 => [多数据库数据源](../framework/extend/dynamic_datasource.md)<br>
+默认数据库为mysql如需使用其他数据库 看这里 => [多数据库数据源](/ruoyi-cloud-plus/framework/extend/dynamic_datasource.md)<br>
 
 ![输入图片说明](https://foruda.gitee.com/images/1717122730708924506/7f3aaecf_1766278.png "屏幕截图")
 
