@@ -57,10 +57,12 @@
 | 易税信息技术有限公司        | https://www.etax.top           | <img src="https://foruda.gitee.com/images/1678975950137235651/211a63c4_1766278.png" width="200" height="100">  |
 | 广西华景城建筑设计有限公司     | http://www.hjcadc.com          | <img src="https://foruda.gitee.com/images/1678975955216975234/e83c8c6e_1766278.png" width="200" height="100">  |
 | 铭创科技有限公司          | https://www.mcck.cn/           | <img src="https://foruda.gitee.com/images/1693967206668467582/8c234a6d_1766278.png" width="200" height="100">  |
+| 深圳好有家科技有限公司      |                                 | <img src="https://foruda.gitee.com/images/1733307995438867437/35a646b4_12954586.png" width="200" height="200"> |
 | 西安鼎慧网络科技有限公司      |                                | <img src="https://foruda.gitee.com/images/1721271356660437424/b85c5754_8776295.jpeg" width="400" height="200"> |
 | 营口鼎瑞网络科技有限公司      |                                | <img src="https://foruda.gitee.com/images/1715836865319520119/5dc34a5f_8693506.png" width="400" height="200">  |
 | 南昌漫库书店有限公司        |                                | <img src="https://foruda.gitee.com/images/1687656369793887183/ce1a33f6_1766278.png" width="200" height="100">  |
 | 广西文韬智能科技有限公司      |                                | <img src="https://foruda.gitee.com/images/1678976034543683491/8d8a1ebe_1766278.png" width="200" height="100">  |
+| 北京三木正阳科技有限公司      |                                |
 | 山东泰开检测有限公司        |                                 |
 | 山东智月信息科技有限公司    |                                 |
 | 山东中导物联网科技有限公司    |                                 |
