@@ -17,6 +17,9 @@
 | 一键部署到私有Nexus仓库                  | https://gitee.com/dromara/RuoYi-Cloud-Plus/pulls/181 |
 | 服务状态监控发送邮件钉钉等                   | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/568 |
 | 登录验证支持2FA验证                     | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/578 |
+| 接入tianai行为验证码                   | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/609 |
+| 新增谷歌开发并开源的图像文字识别引擎        | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/611  |
+| 新增deploy流水线部署脚本                 | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/606   |
 | sentinel持久化nacos动态更改                | https://gitee.com/dromara/RuoYi-Cloud-Plus/pulls/37  |
 
 ### 欢迎投稿 项目介绍+项目地址
