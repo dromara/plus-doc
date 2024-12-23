@@ -14,7 +14,7 @@
 <a href="https://www.jnpfsoft.com/index.html?from=plus-doc"><img src="https://foruda.gitee.com/images/1732520348262343872/558bb03b_1766278.jpeg" width="400px" height="100px"></a>
 <br>
 <a href="https://item.jd.com/14804836.html?from=plus-doc"><img src="https://foruda.gitee.com/images/1727495530501882313/359433de_1766278.jpeg" width="400px" height="100px"></a>
-<a href="https://www.73app.cn/"><img src="https://foruda.gitee.com/images/1734758652465589542/441507e4_1766278.jpeg" width="400px" height="100px"></a>
+<a href="https://www.73app.cn/"><img src="https://foruda.gitee.com/images/1734934058599480904/75ec6220_1766278.jpeg" width="400px" height="100px"></a>
 
 [如何成为赞助商 加群联系作者详谈](/common/add_group.md)
 
