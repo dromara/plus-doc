@@ -65,6 +65,8 @@ Class result = DataPermissionHelper.ignore(() -> { return 业务代码 });
 > 有自定义实现方法 最终执行的mapper不是这个方法 所以无法生效
 >
 > 解决方案: 一直往下点 找到最终的执行mapper重写即可
+>
+> 注意: 最新版本2.3.0以上已经解决这个问题无需重写底层最终方法
 
 ![输入图片说明](https://foruda.gitee.com/images/1678978692558777291/78b0a3dd_1766278.png "屏幕截图")
 
