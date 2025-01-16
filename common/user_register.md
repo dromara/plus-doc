@@ -11,7 +11,7 @@
 | 中国电信(湖南分公司)       | http://www.189.cn/hn/          | <img src="https://foruda.gitee.com/images/1699838764871886313/61b44b7d_1766278.png" width="300" height="200">  |
 | 中国电信(玉林分公司)       | https://gx.189.cn/             | <img src="https://foruda.gitee.com/images/1699838764871886313/61b44b7d_1766278.png" width="300" height="200">  |
 | 秦皇岛市妇幼保健院         | http://www.qhdfy.com.cn        | <img src="https://foruda.gitee.com/images/1734013994730458083/b9fbb43d_1766278.png" width="200" height="200">  |
-| 济南数达网络科技有限公司     | https://sdwl.dbnltd.cn/        | <img src="https://foruda.gitee.com/images/1732504330837383598/a90b5be3_4898222.png" width="300" height="200">  |
+| 济南数达网络科技有限公司      | https://sdwl.dbnltd.cn/        | <img src="https://foruda.gitee.com/images/1732504330837383598/a90b5be3_4898222.png" width="300" height="200">  |
 | 河北汉联信息科技有限公司      | https://www.hbzlsoft.com/      | <img src="https://foruda.gitee.com/images/1730078768989999429/7b7346b7_1766278.png" width="400" height="200">  |
 | 南京感知信息技术有限公司      | https://njgzxx.cn/             | <img src="https://foruda.gitee.com/images/1725589695335847776/10bb2088_1766278.png" width="400" height="200">  |
 | 陕西骏景索道运营管理有限公司    | https://www.junjingsuodao.com/ | <img src="https://foruda.gitee.com/images/1724394959451680041/24ac17ff_7408092.png" width="300" height="200">  |
@@ -58,16 +58,18 @@
 | 易税信息技术有限公司        | https://www.etax.top           | <img src="https://foruda.gitee.com/images/1678975950137235651/211a63c4_1766278.png" width="200" height="100">  |
 | 广西华景城建筑设计有限公司     | http://www.hjcadc.com          | <img src="https://foruda.gitee.com/images/1678975955216975234/e83c8c6e_1766278.png" width="200" height="100">  |
 | 铭创科技有限公司          | https://www.mcck.cn/           | <img src="https://foruda.gitee.com/images/1693967206668467582/8c234a6d_1766278.png" width="200" height="100">  |
-| 深圳好有家科技有限公司      |                                 | <img src="https://foruda.gitee.com/images/1733307995438867437/35a646b4_12954586.png" width="200" height="200"> |
+| 深圳好有家科技有限公司       |                                | <img src="https://foruda.gitee.com/images/1733307995438867437/35a646b4_12954586.png" width="200" height="200"> |
 | 西安鼎慧网络科技有限公司      |                                | <img src="https://foruda.gitee.com/images/1721271356660437424/b85c5754_8776295.jpeg" width="400" height="200"> |
 | 营口鼎瑞网络科技有限公司      |                                | <img src="https://foruda.gitee.com/images/1715836865319520119/5dc34a5f_8693506.png" width="400" height="200">  |
 | 南昌漫库书店有限公司        |                                | <img src="https://foruda.gitee.com/images/1687656369793887183/ce1a33f6_1766278.png" width="200" height="100">  |
 | 广西文韬智能科技有限公司      |                                | <img src="https://foruda.gitee.com/images/1678976034543683491/8d8a1ebe_1766278.png" width="200" height="100">  |
-| 佛山市禅城区万向竹荫科技工作室 |                                |
+| 中国船舶集团有限公司第七一〇研究所 |                                |
+| 武汉雍泽科技有限公司        |                                |
+| 佛山市禅城区万向竹荫科技工作室   |                                |
 | 北京三木正阳科技有限公司      |                                |
-| 山东泰开检测有限公司        |                                 |
-| 山东智月信息科技有限公司    |                                 |
-| 山东中导物联网科技有限公司    |                                 |
+| 山东泰开检测有限公司        |                                |
+| 山东智月信息科技有限公司      |                                |
+| 山东中导物联网科技有限公司     |                                |
 | 宁波广盈物流科技有限公司      |                                |
 | 贵州亿瑞祺科技有限公司       |                                |
 | 贵州新绿视界环保科技有限公司    |                                |
