@@ -79,16 +79,16 @@ https://warm-flow.dromara.org/
 
 8.新流程需要编写代码的地方(重点!!!!)
 
-> 前端需要编写业务的表单页面 与 各个节点的表单页面(不需要节点表单可以不写)
-> 具体书写方式参考 框架自带的 `leaveEdit.vue` 请假页面 根据业务逻辑修改表单内容即可
+> 前端需要编写业务的表单页面 与 各个节点的表单页面(不需要节点表单可以不写)<br>
+> 具体书写方式参考 框架自带的 `leaveEdit.vue` 请假页面 根据业务逻辑修改表单内容即可<br>
 
 ![输入图片说明](https://foruda.gitee.com/images/1737530863662464931/15dabdd0_1766278.png "屏幕截图")
 
-这里说明 框架目前只支持自定义编写表单使用 因为自定义编写业务表单可以最大程度的适配各种复杂的业务
-动态表单 适用于简单业务(warm-flow官方后续会增加此功能) 表单能力与数据交互能力均有限 目前不支持
+这里说明 框架目前只支持自定义编写表单使用 因为自定义编写业务表单可以最大程度的适配各种复杂的业务<br>
+动态表单 适用于简单业务(warm-flow官方后续会增加此功能) 表单能力与数据交互能力均有限 目前不支持<br>
 
-> 后端需要编写除业务代码的curd之外 针对工作流需要编写三个监听器
-> 参考自带请假流程 `TestLeaveServiceImpl` 实现类最下方三个监听器
+> 后端需要编写除业务代码的curd之外 针对工作流需要编写三个监听器<br>
+> 参考自带请假流程 `TestLeaveServiceImpl` 实现类最下方三个监听器<br>
 
 
 ![输入图片说明](https://foruda.gitee.com/images/1737531090579752181/b23c7411_1766278.png "屏幕截图")
@@ -97,17 +97,17 @@ https://warm-flow.dromara.org/
 
 ![输入图片说明](https://foruda.gitee.com/images/1737531104539008756/f1a43a7f_1766278.png "屏幕截图")
 
-`processHandler` 总体流程监听器(例如: 撤销，退回，作废，终止，已完成等) 用于更新业务与流程之间的一些数据和状态
-`processTaskHandler` 执行办理任务监听器 通常用于任务发起监听更新任务状态
-`processDeleteHandler` 流程删除监听器 用于监听流程被删除 同步删除业务数据
+`processHandler` 总体流程监听器(例如: 撤销，退回，作废，终止，已完成等) 用于更新业务与流程之间的一些数据和状态<br>
+`processTaskHandler` 执行办理任务监听器 通常用于任务发起监听更新任务状态<br>
+`processDeleteHandler` 流程删除监听器 用于监听流程被删除 同步删除业务数据<br>
 
-书写方式参考demo写法即可 注解表达式为spel语法
-`@EventListener(condition = "#processEvent.flowCode=='业务code'")`
+书写方式参考demo写法即可 注解表达式为spel语法<br>
+`@EventListener(condition = "#processEvent.flowCode=='业务code'")`<br>
 
 9.后端API使用 查看 `common-core` 模块 通用接口 `WorkflowService`
 
 ![输入图片说明](https://foruda.gitee.com/images/1737531677878180377/85899f22_1766278.png "屏幕截图")
 
-内部包含很多使用api 例如发起流程 审批流程 设置流程变量 获取流程变量等功能
-用于其他业务模块与工作流模块进行业务和数据交互 禁止其他业务模块导入工作流模块这种恶劣的使用方式!!
+内部包含很多使用api 例如发起流程 审批流程 设置流程变量 获取流程变量等功能<br>
+用于其他业务模块与工作流模块进行业务和数据交互 禁止其他业务模块导入工作流模块这种恶劣的使用方式!!<br>
 
