@@ -14,7 +14,7 @@ https://warm-flow.dromara.org/
 
 ![输入图片说明](https://foruda.gitee.com/images/1737528580662433426/278d3b8c_1766278.png "屏幕截图")
 
-2.启动项目找到流程定义通过**部署流程文件**将bpmn文件夹下**模型.zip**上传
+2.启动项目找到流程定义通过`部署流程文件`将`leave`文件夹下JSON文件上传
 
 ![输入图片说明](https://foruda.gitee.com/images/1737528975450787044/2b48929f_1766278.png "屏幕截图")
 
