@@ -11,12 +11,9 @@
 * **快速开始**
   * [项目初始化](/ruoyi-vue-plus/quickstart/init.md)
   * [5.X新功能介绍](/ruoyi-vue-plus/quickstart/5.Xnew.md)
-  * [4.X项目初始化](/ruoyi-vue-plus/quickstart/4.Xinit.md)
   * [工作流初始化](/ruoyi-vue-plus/quickstart/worker_init.md)
   * [搭建Admin监控](/ruoyi-vue-plus/quickstart/admin_init.md)
   * [搭建SnailJob调度中心](/ruoyi-vue-plus/quickstart/snail_job_init.md)
-  * [(废弃)搭建PowerJob调度中心](/ruoyi-vue-plus/quickstart/power_job_init.md)
-  * [(废弃)搭建XXLJob调度中心](/ruoyi-vue-plus/quickstart/xxl_job_init.md)
   * [idea环境配置](/ruoyi-vue-plus/quickstart/idea_environment.md)
   * [应用部署](/ruoyi-vue-plus/quickstart/deploy.md)
   * [扩展项目](/ruoyi-vue-plus/quickstart/extend_project.md)
