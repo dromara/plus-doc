@@ -62,7 +62,8 @@ https://warm-flow.dromara.org/
 ![输入图片说明](https://foruda.gitee.com/images/1737530221135678481/832e3b1e_1766278.png "屏幕截图")
 
 设计器节点参数均支持spel表达式 可使用表达式调用bean方法例如 `#{deptService.getLeader()}` <br>
-或者 `#{办理人变量}` 书写办理人变量占位符 使用API工具动态注入办理人的id等用法 更多用法请参考warmflow官方文档
+或者 `${办理人变量}` 书写办理人变量占位符 使用API工具动态注入办理人的id等用法 更多用法请参考warmflow官方文档<br>
+https://warm-flow.dromara.org/master/advanced/variableStategy.html
 
 ![输入图片说明](https://foruda.gitee.com/images/1737530283534208575/28bc3ce2_1766278.png "屏幕截图")
 
