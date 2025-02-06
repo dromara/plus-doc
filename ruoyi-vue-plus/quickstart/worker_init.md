@@ -68,12 +68,18 @@ https://warm-flow.dromara.org/master/advanced/variableStategy.html
 ```java
 // 简单案例参考 请按实际业务为准
 // #{@deptService.getLeader()}
+// #{@deptService.getLeader1(#handler1)}
 @Service
 // @Service("ssssss") // 重命名成自己喜欢的名字 方便书写查找 #{@ssssss.getLeader()}
 public class DeptService {
     
     // 获取部门领导
     public String getLeader() {
+        return "1";
+    }
+
+    // 获取其他流程变量当参数
+    public String getLeader1(String handler1) {
         return "1";
     }
     
