@@ -65,6 +65,20 @@ https://warm-flow.dromara.org/
 或者 `${办理人变量}` 书写办理人变量占位符 使用API工具动态注入办理人的id等用法 更多用法请参考warmflow官方文档<br>
 https://warm-flow.dromara.org/master/advanced/variableStategy.html
 
+```java
+// 简单案例参考 请按实际业务为准
+// #{deptService.getLeader()}
+@Service
+public class DeptService {
+    
+    // 获取部门领导
+    public String getLeader() {
+        return "1";
+    }
+    
+}
+```
+
 ![输入图片说明](https://foruda.gitee.com/images/1737530283534208575/28bc3ce2_1766278.png "屏幕截图")
 
 ![输入图片说明](https://foruda.gitee.com/images/1737530405595713291/588d498f_1766278.png "屏幕截图")
