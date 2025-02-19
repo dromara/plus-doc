@@ -118,12 +118,12 @@ public class DeptService {
 
 ![输入图片说明](https://foruda.gitee.com/images/1737531090579752181/b23c7411_1766278.png "屏幕截图")
 
-![输入图片说明](https://foruda.gitee.com/images/1737531098083304417/374ffd2d_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1739929643523598196/af5301da_1766278.png "屏幕截图")
 
 ![输入图片说明](https://foruda.gitee.com/images/1737531104539008756/f1a43a7f_1766278.png "屏幕截图")
 
-`processHandler` 总体流程监听器(例如: 撤销，退回，作废，终止，已完成等) 用于更新业务与流程之间的一些数据和状态<br>
-`processTaskHandler` 执行办理任务监听器 通常用于任务发起监听更新任务状态<br>
+`processHandler` 总体流程监听(例如: 草稿，撤销，退回，作废，终止，已完成，单任务完成等) 用于更新业务与流程/任务之间的一些数据和状态<br>
+`processTaskHandler` 执行任务创建监听 通常用于任务发起监听更新任务状态<br>
 `processDeleteHandler` 流程删除监听器 用于监听流程被删除 同步删除业务数据<br>
 
 书写方式参考demo写法即可 注解表达式为spel语法<br>
