@@ -130,7 +130,6 @@
 * update element-plus 2.7.8 => 2.8.8
 * update eslint 升级v9版本(感谢 玲娜贝er)
 * update vue-i18n 10.0.5
-
 * update 优化 parseTime 提示报错问题
 * update 优化 国际化 变量提示
 * update 优化 重写工作流相关页面
@@ -158,7 +157,6 @@
 * update 优化 字典缓存使用Map代替Array更高效(感谢 月夜)
 * update 优化 校检文件名是否包含特殊字符
 * update 优化 getTenantList 接口动态决定是否传token
-
 * fix 修复 切换租户 tabs过多导致卡住问题
 * fix 修复 用户管理界面修改按钮权限字符串错误(感谢 QianRj)
 * fix 修复 oss配置页 展示配置key 隐藏主键id
