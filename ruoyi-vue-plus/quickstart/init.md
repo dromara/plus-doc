@@ -15,7 +15,7 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1720080025744223375/0213a652_1766278.png "屏幕截图")
 
-* openjdk-17/21 或 graalvm-community-jdk-17/21 [下载地址](https://github.com/graalvm/graalvm-ce-builds/releases) 版本
+* openjdk-17/21 [JDK下载地址](https://bell-sw.com/pages/downloads/) 或 graalvm-community-jdk-17/21 [graalvm下载地址](https://github.com/graalvm/graalvm-ce-builds/releases) 版本
 * mysql 5.7 8.0 (其他版本未测试 如其他版本没问题 可以告知咱们)
 * oracle >= 12c (其他版本未测试 如其他版本没问题 可以告知咱们)
 * postgres 13 14 15 (其他版本未测试 如其他版本没问题 可以告知咱们)
