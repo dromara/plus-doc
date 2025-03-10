@@ -10,6 +10,7 @@
 | 中国联通(长春分公司)       | http://www.10010.com           | <img src="https://foruda.gitee.com/images/1679554727740431371/bd179d0f_1766278.png" width="300" height="200">  |
 | 中国电信(湖南分公司)       | http://www.189.cn/hn/          | <img src="https://foruda.gitee.com/images/1699838764871886313/61b44b7d_1766278.png" width="300" height="200">  |
 | 中国电信(玉林分公司)       | https://gx.189.cn/             | <img src="https://foruda.gitee.com/images/1699838764871886313/61b44b7d_1766278.png" width="300" height="200">  |
+| 成都智农慧民科技有限公司       | https://www.znhmkj.com        | <img src="https://foruda.gitee.com/images/1741570358597386843/546b5b2d_1766278.png" width="400" height="200">   |
 | 嘉兴模捷作科技有限公司       | http://www.mjiezuo.com/        | <img src="https://foruda.gitee.com/images/1739954534546846175/e5929ecd_113069.png" width="400" height="200">   |
 | 湖南电科智程科技发展有限公司    | http://www.dk-zhgd.cn/         | <img src="https://foruda.gitee.com/images/1738996028067838392/014f9467_1766278.png" width="400" height="200">  |
 | 重庆汇德明序科技发展有限公司    | http://www.chinahdmx.com/      | <img src="https://foruda.gitee.com/images/1738898904326907804/223d1b56_1766278.png" width="400" height="200">  |
