@@ -21,6 +21,8 @@
 | 新增谷歌开发并开源的图像文字识别引擎        | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/611  |
 | 新增deploy流水线部署脚本                 | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/606   |
 | 增加渐变色选择器 动态设置侧边栏背景颜色     | https://gitee.com/JavaLionLi/plus-ui/pulls/174        |
+| 增加ipv6支持                          | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/651    |
+| 新增条形码工具类                       | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/649    |
 
 ### 项目介绍+项目地址 欢迎投稿
 
