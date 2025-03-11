@@ -22,10 +22,9 @@ https://warm-flow.dromara.org/
 
 3.导入JSON文件后将会出现以下列表
 
-![输入图片说明](https://foruda.gitee.com/images/1737529038122612127/39d6cb06_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1741684556837623157/cb8b3779_1766278.png "屏幕截图")
 
-
-4.新增一条请假申请，提交后将会得到如下信息
+4.将一个流程点击`发布流程`之后 新增一条请假申请，提交后将会得到如下信息
 
 ![输入图片说明](https://foruda.gitee.com/images/1737529198433551084/1e961d02_1766278.png "屏幕截图")
 
