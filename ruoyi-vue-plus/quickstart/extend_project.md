@@ -27,19 +27,20 @@
 ### 项目介绍+项目地址 欢迎投稿
 
 
-| 项目介绍                           | 项目地址                                                                      |
-|--------------------------------|---------------------------------------------------------------------------|
-| 微服务扩展                          | https://gitee.com/dromara/RuoYi-Cloud-Plus                                |
-| Plus学习笔记                       | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-vue-plus/home     |
-| 基于RuoYi-App框架二次修改使用Uniapp+Vue3 | https://gitee.com/wangying110166/ruo-yi-uni-app-plus                      |
-| 基于RuoYi-App框架对接Plus后端          | https://gitee.com/FnTop/RuoYi-App-Plus                                    |
-| 基于vben(ant-design-vue)前端项目     | https://gitee.com/dapppp/ruoyi-plus-vben                                  |
-| 集成GoView版本                     | https://gitee.com/kdwqjwgqxx/RuoYi-Vue-Plus-GoView                        |
-| mybatis-flex版本                 | https://gitee.com/dataprince/ruoyi-flex                                   |
-| blog博客系统                       | https://gitee.com/kalashok-pan/zhi-blog-plus                              |
-| tdengine时序数据库扩展                | https://gitee.com/zhangbg/ruoyi-plus-tdengine                             |
-| Activiti扩展                     | https://gitee.com/sgs98/RuoYi-Vue-Plus-Activiti                           |
-| flowable扩展                     | https://gitee.com/sgs98/RuoYi-Vue-Plus-Flowable                           |
-| flowable扩展                     | https://gitee.com/KonBAI-Q/ruoyi-flowable-plus                            |
-| mybatis-flex版本                 | https://gitee.com/yhan219/ruoyi-vue-flex                                  |
-| weblog博客系统                     | https://gitee.com/fu-zhanshuai/fzshuai-weblog                               |
+| 项目介绍                           | 项目地址                                                                  |
+|--------------------------------|-----------------------------------------------------------------------|
+| 微服务扩展                          | https://gitee.com/dromara/RuoYi-Cloud-Plus                            |
+| Plus学习笔记                       | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-vue-plus/home |
+| 基于ruoyi-plus实现AI聊天和绘画功能        | https://github.com/ageerle/ruoyi-ai                                   |
+| 基于RuoYi-App框架二次修改使用Uniapp+Vue3 | https://gitee.com/wangying110166/ruo-yi-uni-app-plus                  |
+| 基于RuoYi-App框架对接Plus后端          | https://gitee.com/FnTop/RuoYi-App-Plus                                |
+| 基于vben(ant-design-vue)前端项目     | https://gitee.com/dapppp/ruoyi-plus-vben                              |
+| 集成GoView版本                     | https://gitee.com/kdwqjwgqxx/RuoYi-Vue-Plus-GoView                    |
+| mybatis-flex版本                 | https://gitee.com/dataprince/ruoyi-flex                               |
+| blog博客系统                       | https://gitee.com/kalashok-pan/zhi-blog-plus                          |
+| tdengine时序数据库扩展                | https://gitee.com/zhangbg/ruoyi-plus-tdengine                         |
+| Activiti扩展                     | https://gitee.com/sgs98/RuoYi-Vue-Plus-Activiti                       |
+| flowable扩展                     | https://gitee.com/sgs98/RuoYi-Vue-Plus-Flowable                       |
+| flowable扩展                     | https://gitee.com/KonBAI-Q/ruoyi-flowable-plus                        |
+| mybatis-flex版本                 | https://gitee.com/yhan219/ruoyi-vue-flex                              |
+| weblog博客系统                     | https://gitee.com/fu-zhanshuai/fzshuai-weblog                         |
