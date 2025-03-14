@@ -48,7 +48,7 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1717122730708924506/7f3aaecf_1766278.png "屏幕截图")
 
-### 使用内置 `ruoyi-naocs` 服务 从这开始
+### 使用内置 `ruoyi-nacos` 服务 从这开始
 
 > 更改 ruoyi-nacos 数据库地址
 
