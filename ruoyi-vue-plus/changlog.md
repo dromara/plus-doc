@@ -1,6 +1,105 @@
 # 更新日志
 - - -
 
+## v5.3.1 - 2025-03-27
+
+### 依赖升级
+
+* update springboot 3.4.1 => 3.4.4
+* update springdoc 2.8.3 => 2.8.5
+* update satoken 1.39.0 => 1.40.0
+* update redisson 3.43.0 => 3.45.1
+* update springboot-admin 3.4.1 => 3.4.2 修复重新登录404问题
+* update warm-flow 1.6.6 => 1.6.8
+* update mybatis-plus 3.5.10 => 3.5.11
+* update snailjob 1.3.0 => 1.4.0
+* update springboot-admin 3.4.2 => 3.4.5
+* update sms4j 3.3.3 => 3.3.4
+
+### 功能更新
+
+* update 优化 nginx开启静态资源压缩 增加静态文件传输效率
+* update 优化 根部门祖级列表常量和备注，以避免歧义(感谢 秋辞未寒)
+* update 优化 部门下岗位名称重复(感谢 AprilWind)
+* update 优化 ProcessTaskEvent 改名为 ProcessCreateTaskEvent 避免错误理解
+* update 优化 租户表企业名与部门表长度保持一致 防止长度不一致报错
+* update 优化 删除无用配置类
+* update 优化 工作流设计器获取任务执行人查询正常状态
+* update 优化 流程设计器-节点扩展属性注释(感谢 AprilWind)
+* update 优化 根据字典类型查询信息增加一级缓存(感谢 AprilWind)
+* update 优化 校验框架配置类加载顺序，确保优先于默认的验证配置(感谢 AprilWind)
+* update 优化 sys_oss 表增加扩展字段 ext1
+* update 优化 调整获取下一节点，增加用户分页查询参数
+* update 优化 text 设置默认值某些版本可能有问题 改为默认null
+* update 优化 重构将 WorkflowUtils 工具类改为 FlwCommonService 更通用的业务处理
+* update 优化 getLoginUser 方法 支持返回多种类型登陆实体
+* update 优化 权限标识符支持通配符 '*'
+* update 优化 将s3 crt客户端替换为Netty客户端 节约17M打包大小
+* update 优化 函数注释以准确描述SSE会话(感谢 洛小风)
+* update 优化 获取节点扩展属性 简化节点编码(感谢 AprilWind)
+* update 优化 工作流办理人标识符解析(感谢 AprilWind)
+* update 优化 修改oss枚举包名与其他模块统一
+* update 优化 打包默认跳过测试 减少心智难度
+* update 优化 简化 SysTaskAssigneeServiceImpl 代码实现
+* update 优化 excel导出 下拉框支持顺序
+* update 优化 兼容老版本数据权限用户写法
+* update 优化 统一用户密码校验长度
+
+### 功能新增
+
+* add 增加 工作流按钮权限相关配置与代码(感谢 May)
+* add 增加 获取节点数据接口(感谢 May)
+* add 增加 工作流案例流程支持动态设置下一节点审批人(感谢 May)
+
+### 问题修复
+
+* fix 修复 sse关闭 用户id或token为空报错问题
+* fix 修复 splitTo 转换后的list包含null问题
+* fix 修复 结束监听器 flowParam 可能为null问题
+* fix 修复 Caffeine缓存未清空导致的部门创建显示延迟问题(感谢 QianRj)
+* fix 修复 oracle 表别名不能写as关键字
+* fix 修复 oracle 新建租户工作流部分报错问题
+* fix 修复 oracle 同步字典报错问题
+* fix 修复 获取下一环节排他网关出现条件错误(感谢 May)
+* fix 修复 关闭验证码后 限流注解仍然生效问题
+* fix 修复 pg数据库 强类型转换报错(感谢 guo83551218)
+* fix 修复 跨域未设置请求头问题(cloud版本不需要 vue版本需要)
+* fix 修复 excel模板导出数据被覆盖的问题
+
+### 前端改动
+
+* update vueuse 11.3 => 12.7
+* update 优化 调整客户端管理 label长度
+* update 优化 删除已经没有实际作用的依赖
+* update 优化 更改版权信息2025
+* update 优化 升级部分依赖，优化eslint语法以及scss语法
+* update 优化 文件上传增加禁用按钮 增加文件类型
+* update 优化 优化前端树结构拼接性能
+* update 优化 前端处理路由函数代码
+* update 优化 顶部菜单搜索栏为多层级显示
+* update 优化 标注node与npm版本
+* update 优化 上传组件添加accept属性(感谢 can)
+* update 优化 vite-plugin-svg-icons插件为vite-plugin-svg-icons-ng 以修复依赖警告、安全漏洞警告(感谢 yangxu52)
+* update 优化 增加自动导入函数
+* update 优化 调整选人警告
+* update 优化 标准化tsconfig postcss配置，并修改错误的$schema(感谢 yangxu52)
+* update 优化 代码 统一store用法
+* update 优化 统一流程定义编码，增加流程分类标识(感谢 AprilWind)
+* update 优化 树组件如果不存在属性 则做兼容
+* update 优化 登录与注册页面表头从配置文件内导入
+* update 优化 findPathNum 方法 更高效
+* update 优化 删除无用组件
+* add 增加 弹窗选人(感谢 May)
+* add 增加 设置下一审批人(感谢 May)
+* add 增加 示例 调整提交组件(感谢 May)
+* fix 修复 消息弹框内容过长不换行(感谢 zst_2001)
+* fix 修复 路由守卫白名单通配符正则覆盖问题(感谢 QianRj)
+* fix 修复【表单路径】prop错误(感谢 JiaoYue)
+* fix 修复 代码生成 下拉框选项没法清空问题
+* fix 修复 el-dropdown-item 标签无法使用 v-has-permi自定义标签 问题
+* fix 修复 图片组件变量错误
+* fix 修复 漏洞扫描出现yui2.9.0版本无关紧要的漏洞 (感谢 dxldxl)
+
 ## v5.3.0 - 2025-01-24
 
 ### 重大更新
