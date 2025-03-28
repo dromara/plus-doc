@@ -1,6 +1,271 @@
 # 更新日志
 - - -
 
+## v2.3.0 - 2025-03-28
+
+### 重大更新
+
+* 重构数据权限实现逻辑 支持任意mapper方法标注注解 无需再找真实mapper标注
+* 重写工作流模块 接入warm-flow工作流 移除flowable工作流(过于复杂 用不明白的人太多)
+
+### 依赖升级
+
+* update springboot 3.2.11 => 3.4.4
+* update springboot-admin 3.2.3 => 3.4.5 修复重新登录404问题
+* update mybatis-plus 3.5.8 => 3.5.11
+* update snailjob 1.1.2 => 1.4.0(感谢 dhb52)
+* update springdoc 2.6.0 => 2.8.5
+* update redisson 3.37.0 => 3.45.1
+* update justauth 1.16.6 => 1.16.7 支持多种登录方式 不限于三方登录
+* update mybatis-plus 3.5.9 => 3.5.10
+* update hutool 5.8.31 => 5.8.35
+* update mapstruct-plus 1.4.5 => 1.4.6
+* update lombok 1.18.34 => 1.18.36
+* update anyline 20241022 => 20250101
+* update satoken 1.39.0 => 1.40.0
+* update sms4j 3.3.3 => 3.3.4
+
+### cloud内容更新
+
+* update springcloud 2023.0.3 => 2024.0.0
+* update seata 1.7.1 => 2.3.0
+* update nacos 2.3.2 => 2.5.1 升级数据库需要重新执行
+* update dubbo 3.2.14 => 3.3.4 支持虚拟线程
+* update easy-es 2.0.0 => 2.1.0 同时支持ES 7.X与8.X
+* update skywalking-agent 9.2.0 => 9.3.0 解决undertow兼容性报错问题
+
+* update 优化 使用Dubbo常量替换DUBBO_IP_TO_REGISTRY硬编码 (感谢 花伤情犹在)
+* update 优化 新版本seata连接不上会报错 默认改为不启用 有需要自行开启
+* update 优化 将nacos-server改为jar包内嵌集成 减少工程代码量
+* update 优化 将sentinel-server改为jar包内嵌集成 减少工程代码量
+* update 优化 增加seata-server打包配置
+* update 优化 将各种脚本文件统一放到script目录下
+* update 优化 dubbo线程池支持jdk21开启虚拟线程
+* update 优化 工作流监听器消费切换动态切换租户(mq投递租户丢失)
+* update 优化 将web相关的过滤器改为使用WebFilter接口实现
+* update 优化 增加 rpc 异常拦截器
+* update 优化 接口文档服务路径从gateway转发的请求头获取
+* update 优化 prometheus sd发现 兼容携带context-path的服务
+* update 优化 nacos prometheus 认证访问
+* update 优化 prometheus http sd发现支持配置账号密码鉴权
+
+* fix 修复 nacos 过滤器正则错误
+* fix 修复 dubbo 官方 redis 插件 代码错误 ttl单位使用错误
+* fix 修复 easy-es 升级后注解包迁移问题
+* fix 修复 RemoteTaskAssigneeVo$TaskHandler 序列化问题 (感谢 李中原)
+* fix 修复 nacos seata sentinel 低版本tomcat相关漏洞
+* fix 修复 rocketmq 发送tag消息书写错误
+* fix 修复 easy-es 关闭开关之后初始化报错
+* fix 修复 WebFluxUtils 遍历ByteBuffer会遇到body不完整 (感谢java9)
+* fix 修复 sentinel 配置被内置文件覆盖问题
+* fix 修复 gateway 不存在 mp 依赖导致方法报错问题
+
+### 功能更新
+
+* update 优化 查询oss图片url接口改为query标识符
+* update 优化 绑定三方与解绑三方校验token是否存在
+* update 优化 OSS私有桶的临时URL获取方法(感谢 秋辞未寒)
+* update 优化 ws模块替换session的时候关闭session连接
+* update 优化 数据权限 判断当前注解不满足模板则跳过
+* update 优化 使用request存储动态租户 避免单请求多次查询redis获取
+* update 优化 修改部门信息增加事务(感谢 AprilWind)
+* update 优化 增加菜单选择拓展参数(感谢 玲娜贝er)
+* update 优化 jdk21环境开启虚拟线程时的定时任务池(感谢 秋辞未寒)
+* update 优化 sse 如果获取token列表为空 删除userid对应的存储
+* update 优化 数据权限处理器 增加默认值处理 针对于表达式变量与注解不对应或者表达式变量为null的情况
+* update 优化 增加mybatis-plus一键开启/关闭逻辑删除功能
+* update 优化 修改日志时间展示颜色(感谢 疯狂的牛子Li)
+* update 适配 TOPIAM 2.0 单点登录(感谢 马铃薯头)
+* update 优化 完善微信小程序登录接口逻辑
+* update 优化 重构DateUtils工具类 更加实用
+* update 优化 为部门角色岗位用户增加一些常用查询方法
+* update 优化 登录用户增加岗位数据
+* update 优化 去除部门查询状态校验 改为前端过滤 便于查看禁用部门下的其他数据
+* update 优化 部门树增加禁用标志位
+* update 优化 workflow 模块增加接口文档生成功能
+* update 优化 代码生成 增加buildQueryWrapper默认排序规则
+* update 优化 代码生成 创建更新时间被覆盖问题
+* update 优化 代码生成排序问题(感谢 AprilWind)
+* update 优化 在线用户查询 优先查询租户下数据 减少数据量
+* update 优化 租户域名使用忽略大小写匹配
+* update 优化 代码生成器 将数据库字段默认转为小写 避免某些数据库大写出现的问题
+* update 优化 有界队列销毁方式 应该使用特殊销毁方法
+* update 优化 redis序列化 支持更快的apache二进制跨语言序列化方案
+* update 优化 增加默认数据权限 "部门及以下或本人数据权限" 选项
+* update 优化 代码生成器 pg数据库 主键获取不精确问题
+* update 优化 个人中心强退设备接口路径
+* update 优化 补充客户端工具类注释(感谢 AprilWind)
+* update 优化 补充Undertow自定义配置信息注释(感谢 AprilWind)
+* update 优化 拦截爬虫跟踪等垃圾请求
+* update 优化 将Log记录异常长度改为5000
+* update 优化 xss包装器 Parameter 处理 兼容某些容器不允许改参数的情况
+* update 优化 支持脱敏传多角色多权限标识
+* update 优化 使用ObjectUtils新增方法封装代码
+* update 优化 数据权限查询增加缓存
+* update 优化 代码生成器数字类别判断
+* update 优化 逻辑删除状态改为1 避免误解
+* update 重构 将UserConstants改为SystemConstants 统一常量使用 降低使用难度避免误解
+* update 优化 封装部门基于父id查询方法
+* update 优化 不传用户id不校验数据权限
+* update 优化 部门树多基点展示问题 支持相同名称节点并排展示
+* update 优化 去除OSS桶检测 桶不存在自然会报错无需额外检测
+* update 优化 限流注解增加固定清理时间
+* update 优化 sys_social表 租户id增加默认值
+* update 优化 jackson 过期方法
+* update 优化 多租户插件初始化流程
+* update 优化 去除GenUtils设置createby逻辑 统一走自动注入设置
+* update 优化 替换RedisUtils中的废弃方法getKeysStreamByPattern及trySetRate(感谢 Lucien_Lu)
+* update 优化 删除桶自动创建代码逻辑(云厂商限制不允许操作桶)
+* update 优化 角色清理在线用户代码逻辑
+* update 优化 nginx开启静态资源压缩 增加静态文件传输效率
+* update 优化 根部门祖级列表常量和备注，以避免歧义(感谢 秋辞未寒)
+* update 优化 部门下岗位名称重复(感谢 AprilWind)
+* update 优化 租户表企业名与部门表长度保持一致 防止长度不一致报错
+* update 优化 删除无用配置类
+* update 优化 工作流设计器获取任务执行人查询正常状态
+* update 优化 流程设计器-节点扩展属性注释(感谢 AprilWind)
+* update 优化 根据字典类型查询信息增加一级缓存(感谢 AprilWind)
+* update 优化 校验框架配置类加载顺序，确保优先于默认的验证配置(感谢 AprilWind)
+* update 优化 sys_oss 表增加扩展字段 ext1
+* update 优化 text 设置默认值某些版本可能有问题 改为默认null
+* update 优化 getLoginUser 方法 支持返回多种类型登陆实体
+* update 优化 权限标识符支持通配符 '*'
+* update 优化 将s3 crt客户端替换为Netty客户端 节约17M打包大小
+* update 优化 工作流办理人标识符解析(感谢 AprilWind)
+* update 优化 修改oss枚举包名与其他模块统一
+* update 优化 打包默认跳过测试 减少心智难度
+* update 优化 excel导出 下拉框支持顺序
+* update 优化 统一用户密码校验长度
+
+### 功能新增
+
+* add 新增 导出模板必填、备注注解实现(感谢 liyang)
+* add 新增 基于Redisson的发号器工具(感谢 秋辞未寒)
+* add 新增 validation支持枚举校验(感谢 秋辞未寒)
+* add 新增 validation支持枚举校验(感谢 秋辞未寒)
+* add 新增 对象工具类(感谢 秋辞未寒)
+* add 增加 邮件多附件demo
+* add 增加 工作流按钮权限相关配置与代码(感谢 May)
+* add 增加 获取节点数据接口(感谢 May)
+* add 增加 工作流案例流程支持动态设置下一节点审批人(感谢 May)
+
+### 问题修复
+
+* fix 修复 文件下载 设置content-length无效问题
+* fix 修复 satoken dao层获取timeout为秒导致丢失毫秒进度问题(临时修复 等satoken官方解决)
+* fix 修复 postgresql的表元数据没有创建时间这个东西(好奇葩) 只能new Date代替
+* fix 修复 数据权限 多角色多注解包含忽略权限标识符逻辑不正确问题
+* fix 修复 未开启sse 找不到bean问题
+* fix 修复 数据权限导致的个人中心的修改头像和修改密码接口错误(感谢 QianRj)
+* fix 修复 部门数据权限缓存错误(感谢 QianRj)
+* fix 修复 三方授权工具部分网站授权缺失参数问题
+* fix 修复 代码生成 表名中间带有特殊字符被过滤问题 改为开头过滤
+* fix 修复 字段长度超出数据库限制问题
+* fix 修复 过滤器正则错误
+* fix 修复 monitor 设置 context-path 导致退出重新登录404问题
+* fix 修复 数据权限多角色与权限标识符共用导致的问题 https://gitee.com/dromara/RuoYi-Vue-Plus/issues/IB4CS4
+* fix 修复 排除websocket包内包含的tomcat依赖(导致一些问题)
+* fix 修复 PageQuery 转json报错问题
+* fix 修复 sse 关闭接口无法断连问题
+* fix 修复 PlusSmsDao#clean 方法书写错误
+* fix 修复 excel级联下拉框数据错误(感谢 Emil.Zhang)
+* fix 修复 某些模块不存在 mp 依赖导致方法报错问题
+* fix 修复 新版本mp默认使用最新 sqlserver 语法导致代码生成分页报错问题
+* fix 修复 OssClient 回滚错误修改
+* fix 修复 注册日志记录状态错误
+* fix 修复 sse关闭 用户id或token为空报错问题
+* fix 修复 splitTo 转换后的list包含null问题
+* fix 修复 结束监听器 flowParam 可能为null问题
+* fix 修复 Caffeine缓存未清空导致的部门创建显示延迟问题(感谢 QianRj)
+* fix 修复 oracle 表别名不能写as关键字
+* fix 修复 oracle 新建租户工作流部分报错问题
+* fix 修复 oracle 同步字典报错问题
+* fix 修复 关闭验证码后 限流注解仍然生效问题
+* fix 修复 pg数据库 强类型转换报错(感谢 guo83551218)
+* fix 修复 加密响应设置多余请求头问题
+* fix 修复 excel模板导出数据被覆盖的问题
+
+### 前端改动
+
+* update typescript 5.4.5 => 5.7.2
+* update vite 5.2.12 => 5.4.11
+* update vue 3.4.34 => 3.5.13
+* update element-plus 2.7.8 => 2.8.8
+* update eslint 升级v9版本(感谢 玲娜贝er)
+* update vue-i18n 10.0.5
+* update vueuse 11.3 => 12.7
+* update 优化 parseTime 提示报错问题
+* update 优化 国际化 变量提示
+* update 优化 重写工作流相关页面
+* update 优化 主题色在深色模式下显示亮度(感谢 LiuHao)
+* update 优化 hasRoles 方法增加超管判断
+* update 优化 用户页面 增加导入到处权限标识
+* update 优化 TopNav内链菜单点击没有高亮
+* update 优化 新增编辑用户 过滤禁用的部门
+* update 优化 白名单增加正则匹配示例
+* update 优化 白名单支持对通配符路径匹配
+* update 优化 i18n $t方法支持ts类型提示(感谢 玲娜贝er)
+* update 优化 登录页多语言按钮样式
+* update 优化 补充登录页与注册页的国际化内容并添加切换语言按钮(感谢 QianRj)
+* update 优化 eslint升级v9版本 & 更新一些不符合校验规则的代码(感谢 玲娜贝er)
+* update 优化 全代码规范化处理
+* update 优化 代码生成导入下拉框默认值处理
+* update 优化 菜单面包屑导航支持多层级显示
+* update 优化 参数键值更换为多行文本
+* update 优化 增加默认数据权限 "部门及以下或本人数据权限" 选项
+* update 优化 permission loadView避免整个modules循环 允许view中间有views文件夹(感谢 admin_lijinfu)
+* update 优化 个人中心强退设备接口路径
+* update 优化 直接从@/lang/*.ts后缀的i18n文件中读取各国语言包信息(感谢 QianRj)
+* update 优化 将同步字典功能迁移到租户管理内
+* update 优化 重构操作日志详情样式(感谢 玲娜贝er)
+* update 优化 字典缓存使用Map代替Array更高效(感谢 月夜)
+* update 优化 校检文件名是否包含特殊字符
+* update 优化 getTenantList 接口动态决定是否传token
+* update 优化 调整客户端管理 label长度
+* update 优化 删除已经没有实际作用的依赖
+* update 优化 更改版权信息2025
+* update 优化 升级部分依赖，优化eslint语法以及scss语法
+* update 优化 文件上传增加禁用按钮 增加文件类型
+* update 优化 优化前端树结构拼接性能
+* update 优化 前端处理路由函数代码
+* update 优化 顶部菜单搜索栏为多层级显示
+* update 优化 标注node与npm版本
+* update 优化 上传组件添加accept属性(感谢 can)
+* update 优化 vite-plugin-svg-icons插件为vite-plugin-svg-icons-ng 以修复依赖警告、安全漏洞警告(感谢 yangxu52)
+* update 优化 增加自动导入函数
+* update 优化 调整选人警告
+* update 优化 标准化tsconfig postcss配置，并修改错误的$schema(感谢 yangxu52)
+* update 优化 代码 统一store用法
+* update 优化 统一流程定义编码，增加流程分类标识(感谢 AprilWind)
+* update 优化 树组件如果不存在属性 则做兼容
+* update 优化 登录与注册页面表头从配置文件内导入
+* update 优化 findPathNum 方法 更高效
+* update 优化 删除无用组件
+* add 增加 弹窗选人(感谢 May)
+* add 增加 设置下一审批人(感谢 May)
+* add 增加 示例 调整提交组件(感谢 May)
+* fix 修复 消息弹框内容过长不换行(感谢 zst_2001)
+* fix 修复 路由守卫白名单通配符正则覆盖问题(感谢 QianRj)
+* fix 修复【表单路径】prop错误(感谢 JiaoYue)
+* fix 修复 代码生成 下拉框选项没法清空问题
+* fix 修复 el-dropdown-item 标签无法使用 v-has-permi自定义标签 问题
+* fix 修复 图片组件变量错误
+* fix 修复 漏洞扫描出现yui2.9.0版本无关紧要的漏洞 (感谢 dxldxl)
+* fix 修复 切换租户 tabs过多导致卡住问题
+* fix 修复 用户管理界面修改按钮权限字符串错误(感谢 QianRj)
+* fix 修复 oss配置页 展示配置key 隐藏主键id
+* fix 修复 页面api过期警告
+* fix 修复 代码生成列表加载问题你
+* fix 修复 修复默认关闭Tags-Views时，内链页面打不开
+* fix 修复 用户选择组件 id类型不统一问题
+* fix 修复 代码生成 编辑之后查两遍列表的问题
+* fix 修复 登录无redirect参数404问题
+* fix 修复 monitor 设置 context-path 导致退出重新登录404问题
+* fix 修复 手动登出与token过期登出跳转行为不一致问题
+* fix 修复 关闭sse功能 登出还是会发送sse关闭请求导致报错问题
+* fix 修复 内嵌页面数据缓存导致与外部页面不一致问题
+
+
 ## v2.2.2 - 2024-10-25
 
 ### 依赖升级
