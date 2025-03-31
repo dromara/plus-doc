@@ -9,7 +9,7 @@
 * update springdoc 2.8.3 => 2.8.5
 * update satoken 1.39.0 => 1.40.0
 * update redisson 3.43.0 => 3.45.1
-* update springboot-admin 3.4.1 => 3.4.2 修复重新登录404问题
+* update springboot-admin 3.4.1 => 3.4.5 修复重新登录404问题
 * update warm-flow 1.6.6 => 1.6.8
 * update mybatis-plus 3.5.10 => 3.5.11
 * update snailjob 1.3.0 => 1.4.0
