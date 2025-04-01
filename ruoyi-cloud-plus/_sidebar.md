@@ -1,11 +1,8 @@
 <!-- _sidebar.md -->
-- **特别赞助**
-- [![输入图片说明](https://foruda.gitee.com/images/1700187453544179968/7342304a_1766278.png "2023-11-17=>2026-11-17")](https://gitee.com/dromara/MaxKey)
-- [![输入图片说明](https://foruda.gitee.com/images/1704162419429172656/d0521e59_1766278.png "2024-01-02=>2028-01-02")](http://ccflow.org/?frm=ryPlus)
-- [![输入图片说明](https://foruda.gitee.com/images/1732520348262343872/558bb03b_1766278.jpeg "2024-03-29=>2025-03-29")](https://www.jnpfsoft.com/index.html?from=plus-doc)
-- [![输入图片说明](https://foruda.gitee.com/images/1705569347386939952/3f187980_1766278.jpeg "2025-02-06=>2026-02-06")](http://www.shuduokeji.com)
-
-
+- **满三年大力赞助**
+- <a href="https://gitee.com/dromara/MaxKey"><img src="https://foruda.gitee.com/images/1700187453544179968/7342304a_1766278.png" width="280px" height="60px"></a>
+- <a href="http://ccflow.org/?frm=ryPlus"><img src="https://foruda.gitee.com/images/1704162419429172656/d0521e59_1766278.png" width="280px" height="60px"></a>
+- <a href="https://www.mall4j.com/cn/?statId=11"><img src="https://foruda.gitee.com/images/1743474993201566779/5e4e7a2e_1766278.jpeg" width="280px" height="60px"></a>
 
 * **简介**
   * [项目简介](/ruoyi-cloud-plus/home.md)
