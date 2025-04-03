@@ -2,7 +2,7 @@
 - **满三年大力赞助**
 - <a href="https://gitee.com/dromara/MaxKey"><img src="https://foruda.gitee.com/images/1700187453544179968/7342304a_1766278.png" width="280px" height="60px"></a>
 - <a href="http://ccflow.org/?frm=ryPlus"><img src="https://foruda.gitee.com/images/1704162419429172656/d0521e59_1766278.png" width="280px" height="60px"></a>
-- <a href="https://www.mall4j.com/cn/?statId=11"><img src="https://foruda.gitee.com/images/1743474993201566779/5e4e7a2e_1766278.jpeg" width="280px" height="60px"></a>
+- <a href="https://www.mall4j.com/cn/?statId=11"><img src="https://foruda.gitee.com/images/1743644193997673060/beabd304_1766278.jpeg" width="280px" height="60px"></a>
 
 * **常见问题**
   * [如何对接国产数据库](/questions/domestic_databases.md)
