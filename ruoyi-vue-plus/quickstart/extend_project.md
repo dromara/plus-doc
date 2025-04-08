@@ -5,24 +5,24 @@
 |---------------------------------|------------------------------------------------------|
 | 使用富文本wangeditor5替换Quill         | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/213   |
 | 集成screw数据库文档功能模块                | https://gitee.com/dromara/RuoYi-Cloud-Plus/pulls/42  |
-| Excel导入模板增加批注支持                 | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/222   |
 | 增加liquibase迁移数据库                | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/299   |
 | 增加OSS模块支持本地环境                   | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/353   |
 | 扩展模块独立集成flyway                  | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/439   |
 | 扩展模块独立集成go-view大屏看板             | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/445   |
-| 扩展forest http客户端                | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/547 |
+| 扩展forest http客户端                | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/547   |
 | 增加短链接生成工具                       | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/515   |
 | 新增oss预签名分片上传                    | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/605   |
-| 新增规则引擎LiteFlow，SQL持久化接入，支持可视化页面 | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/552 |
+| 新增规则引擎LiteFlow，SQL持久化接入，支持可视化页面 | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/552   |
 | 一键部署到私有Nexus仓库                  | https://gitee.com/dromara/RuoYi-Cloud-Plus/pulls/181 |
-| 服务状态监控发送邮件钉钉等                   | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/568 |
-| 登录验证支持2FA验证                     | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/578 |
- | 接入tianai行为验证码                   | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/609 |
-| 新增谷歌开发并开源的图像文字识别引擎        | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/611  |
+| 服务状态监控发送邮件钉钉等                   | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/568   |
+| 登录验证支持2FA验证                     | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/578   |
+| 接入tianai行为验证码                   | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/609   |
+| 新增谷歌开发并开源的图像文字识别引擎              | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/611   |
 | 新增deploy流水线部署脚本                 | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/606   |
-| 增加渐变色选择器 动态设置侧边栏背景颜色     | https://gitee.com/JavaLionLi/plus-ui/pulls/174        |
-| 增加ipv6支持                          | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/651    |
-| 新增条形码工具类                       | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/649    |
+| 增加渐变色选择器 动态设置侧边栏背景颜色            | https://gitee.com/JavaLionLi/plus-ui/pulls/174       |
+| 增加ipv6支持                        | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/651   |
+| 新增条形码工具类                        | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/649   |
+| 侧边栏搜索框设计                        | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/667   |
 
 ### 项目介绍+项目地址 欢迎投稿
 
