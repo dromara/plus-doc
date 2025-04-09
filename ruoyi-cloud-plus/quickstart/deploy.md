@@ -8,9 +8,9 @@
 
 在服务器安装 `mysql` `redis` `nginx` `minio` 等其他组件
 
-将项目内 `docker/` 文件夹下的文件内容 放到对应的组件内<br>
-例如: 将项目内 `docker/nginx/nginx.conf` 配置文件 复制到 `nginx` 配置内<br>
-将项目内 `docker/redis/redis.conf` 配置文件 复制到 `redis` 配置内<br>
+将项目内 `script/docker/` 文件夹下的文件内容 放到对应的组件内<br>
+例如: 将项目内 `script/docker/nginx/nginx.conf` 配置文件 复制到 `nginx` 配置内<br>
+将项目内 `script/docker/redis/redis.conf` 配置文件 复制到 `redis` 配置内<br>
 
 并修改相关参数如 `前端页面存放位置` `后端Ip地址` 等使其生效
 
