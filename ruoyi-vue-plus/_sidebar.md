@@ -44,6 +44,7 @@
     * [短信模块](/ruoyi-vue-plus/framework/extend/sms.md)
     * [邮件功能](/ruoyi-vue-plus/framework/extend/mail.md)
     * [防重幂等](/ruoyi-vue-plus/framework/extend/idempotent.md)
+    * [缓存使用](/ruoyi-vue-plus/framework/extend/cache.md)
     * [数据脱敏](/ruoyi-vue-plus/framework/extend/sensitive.md)
     * [API加解密](/ruoyi-vue-plus/framework/extend/api_encrypt.md)
     * [数据加解密](/ruoyi-vue-plus/framework/extend/encrypt.md)

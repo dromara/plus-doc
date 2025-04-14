@@ -46,6 +46,7 @@
     * [短信模块](/ruoyi-cloud-plus/framework/extend/sms.md)
     * [邮件功能](/ruoyi-cloud-plus/framework/extend/mail.md)
     * [防重幂等](/ruoyi-cloud-plus/framework/extend/idempotent.md)
+    * [缓存使用](/ruoyi-cloud-plus/framework/extend/cache.md)
     * [数据脱敏](/ruoyi-cloud-plus/framework/extend/sensitive.md)
     * [API加解密](/ruoyi-cloud-plus/framework/extend/api_encrypt.md)
     * [数据加解密](/ruoyi-cloud-plus/framework/extend/encrypt.md)
