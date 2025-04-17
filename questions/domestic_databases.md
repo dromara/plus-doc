@@ -42,6 +42,5 @@
 
 6.人大金仓注意事项 由于此数据库系统表与业务表不隔离(恶心) 表 `sys_user`冲突
 
-解决方案 将表名 `sys_user` 改为 `sys_user_info`
-
-代码实体类 `SysUser` 上的数据库表名注解也改为 `sys_user_info` 即可
+解决方案1 将表名 `sys_user` 改为 `sys_user_info` 代码实体类 `SysUser` 上的数据库表名注解也改为 `sys_user_info` 即可
+解决方案2 修改连接串配置 jdbc:kingbase8://localhost:54321/test?currentSchema=ry-cloud,sys,sys_catalog,pg_catalog
