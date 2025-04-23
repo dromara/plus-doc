@@ -70,7 +70,7 @@
 ![输入图片说明](https://foruda.gitee.com/images/1744168940308110551/e7db3755_1766278.png "屏幕截图")
 ![输入图片说明](https://foruda.gitee.com/images/1745219186853035794/1205aaee_1766278.png "屏幕截图")
 ![输入图片说明](https://foruda.gitee.com/images/1727604735857228532/88e87b74_1766278.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1727604748670851766/e098301b_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1745395851543665086/4aeb4124_1766278.png "屏幕截图")
 
 ## 学员观后感
 
