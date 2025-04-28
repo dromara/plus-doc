@@ -21,7 +21,7 @@
 * `namespace` 作用域(不同作用域相互隔离请勿填错)
 
 ### 启用调度中心
-**需执行 snail_job.sql 默认账号密码 `admin` `admin` 账号在数据库里 可以在页面修改密码**
+**需执行 ry_job.sql 默认账号 `admin` 默认密码 `admin` 账号在数据库里 可以在页面修改密码**
 <br>
 
 ![输入图片说明](https://foruda.gitee.com/images/1726801238503062021/a030616f_1766278.png "屏幕截图")
