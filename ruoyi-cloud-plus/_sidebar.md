@@ -9,7 +9,6 @@
   * [更新日志](/ruoyi-cloud-plus/changlog.md)
 * **快速开始**
   * [项目初始化](/ruoyi-cloud-plus/quickstart/init.md)
-  * [1.X项目初始化](/ruoyi-cloud-plus/quickstart/1.Xinit.md)
   * [工作流初始化](/ruoyi-cloud-plus/quickstart/worker_init.md)
   * [idea环境配置](/ruoyi-cloud-plus/quickstart/idea_environment.md)
   * [应用部署](/ruoyi-cloud-plus/quickstart/deploy.md)
