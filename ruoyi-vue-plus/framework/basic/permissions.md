@@ -131,13 +131,21 @@ Class result = DataPermissionHelper.ignore(() -> { return 业务代码 });
 ### mybatis-plus 原生方法 增加数据权限过滤
 
 > 首先查看需要重写的方法源码 重点`方法源码` `方法源码` `方法源码`<br>
-> 例如重写 `selectPage` 方法<br>
+> 例如重写 `selectList` 方法<br>
 
-![输入图片说明](https://foruda.gitee.com/images/1678978757955000897/8315695c_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1747206845637615373/91475df0_1766278.png "屏幕截图")
 
 > 复制源码到自己的 `Mapper` 并增加数据权限注解 注意左边出现重写图标 即为重写成功<br>
 
-![输入图片说明](https://foruda.gitee.com/images/1678978763224011694/bbea25a1_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1747206853261986716/57cb72fe_1766278.png "屏幕截图")
+
+> 注意: 带`default`关键字的方法属于内部实现方法重写方式略有不同
+
+![输入图片说明](https://foruda.gitee.com/images/1747206949691266178/7763e0b0_1766278.png "屏幕截图")
+
+> 重写之后
+
+![输入图片说明](https://foruda.gitee.com/images/1747206957957632611/e3d353ed_1766278.png "屏幕截图")
 
 ### 支持类标注
 
