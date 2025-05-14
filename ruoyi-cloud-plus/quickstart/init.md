@@ -19,7 +19,7 @@
 * mysql 5.7 8.0 (其他版本未测试 如其他版本没问题 可以告知咱们)
 * oracle >= 12c (其他版本未测试 如其他版本没问题 可以告知咱们)
 * postgres 13 14 15 (其他版本未测试 如其他版本没问题 可以告知咱们)
-* redis 6.X 7.X 由于框架大量使用了redis特性 版本必须 >= 6.X ([win redis 下载地址](https://github.com/zkteco-home/redis-windows))
+* redis 6.X 7.X(禁止使用7.4版本) 由于框架大量使用了redis特性 版本必须 >= 6.X ([win redis 下载地址](https://github.com/zkteco-home/redis-windows))
 * minio 本地文件存储 或 阿里云 腾讯云 七牛云等一切支持S3协议的云存储
 * maven >= 3.8.X
 * nodejs 18.18 (其他版本未测试 如其他版本没问题 可以告知咱们)
