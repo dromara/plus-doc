@@ -32,6 +32,7 @@
 | 微服务扩展                                         | https://gitee.com/dromara/RuoYi-Cloud-Plus                              |
 | Plus学习笔记(常规功能)                                | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-vue-plus/home   |
 | Plus学习笔记(微服务组件)                               | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-cloud-plus/home |
+| 基于RuoYi-Vue-Plus删除多租户与工作流                     | https://gitee.com/ColorDreams/RuoYi-Vue-Plus-Single                     |
 | 基于RuoYi-Vue-Plus实现的Flutter客户端(支持安卓/ios/win等等) | https://gitee.com/sunlunchang/ruoyi-plus-flutter                        |
 | 基于RuoYi-Vue-Plus的开源ERP系统                      | https://gitee.com/haitang-lab/HaiTang-erp                               |
 | 基于ruoyi-plus实现AI聊天和绘画功能                       | https://github.com/ageerle/ruoyi-ai                                     |
