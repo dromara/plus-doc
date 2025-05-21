@@ -24,6 +24,7 @@
 | 新增条形码工具类                        | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/649   |
 | 侧边栏搜索框设计                        | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/667   |
 | Redis扩展主从模式 哨兵模式 云托管模式          | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/682   |
+| 工作流增加动态表单                       | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/679   |
 
 ### 项目介绍+项目地址 欢迎投稿
 
