@@ -1,6 +1,140 @@
 # 更新日志
 - - -
 
+## v2.4.0 - 2025-05-29
+
+### 新增成员项目
+
+* 基于soybean前端 ruoyi-plus-soybean https://gitee.com/xlsea/ruoyi-plus-soybean
+* 删除多租户与工作流后端 RuoYi-Vue-Plus-Single https://gitee.com/ColorDreams/RuoYi-Vue-Plus-Single
+
+### cloud改动
+
+* update 优化 重构 ruoyi-common-dict 改为为 ruoyi-common-service-impl 定位变更为通用service实现模块
+* update 优化 更新 RabbitMQ 优化发送和消费手动确认机制(感谢 鞠聪)
+* fix 修复 dubbo redis 元数据中心 报错找不到元数据问题 官方插件代码实现类有问题
+* fix 修复 新建租户未复制工作流相关数据问题
+* fix 修复 临时处理satoken对dubbo内部调用的情况考虑不周 导致无法获取上下文都bug
+
+### 依赖升级
+
+* update springboot 3.4.4 => 3.4.6
+* update mybatis-plus 3.5.11 => 3.5.12
+* update springboot-admin 3.4.5 => 3.4.7
+* update warm-flow 1.6.8 => 1.7.2(感谢 May)
+* update EasyExcel 升级原作者 FastExcel 1.2.0(感谢 这夏天依然平凡)
+* update snailjob 1.4.0 => 1.5.0(感谢 AprilWind)
+* update springdoc 2.8.5 => 2.8.8
+* update bouncycastle 1.76 => 1.80
+* update mapstruct-plus 1.4.6 => 1.4.8
+* update docker mysql建议版本升级到8.0.42
+* update docker redis建议版本升级到7.2.8
+* update docker minio建议版本升级到RELEASE.2025-05-24T17-08-30Z
+* update satoken 1.40.0 => 1.42.0 适配所有升级项(改动较多)
+> satoken改动如下:<br>
+> SaLoginModel -> SaLoginParameter<br>
+> device -> deviceType satoken<br>
+> BCrypt -> hutool BCrypt(satoken不维护了)<br>
+> SaTokenDao -> SaTokenDaoBySessionFollowObject(satoken做了重构封装)<br>
+> sse 适配新satoken版本拦截器变化
+
+### 功能更新
+
+* update 优化 删除退回任务bo关于驳回的节点的非空校验(感谢 晓华)
+* update 优化 权限获取 增加用户登录了但是查询的loginId是别人的场景
+* update 优化 调整流程监听(感谢 May)
+* update 优化 代码生成ServiceImpl层增加日志注解(感谢 AprilWind)
+* update 优化 新增发号器工具类方法(感谢 AprilWind)
+* update 优化 nginx代理snail-job websocket参数 解决部署到服务器后 查看日志会显示ws连接失败(感谢 qxy)
+* update 优化 动态路由迁移到菜单管理
+* update 优化 统一请假日期字段格式处理(感谢 AprilWind)
+* update 优化 工作流创建事件 将状态交给业务方处理
+* update 优化 JustAuth的钉钉和微信第三方登录使用最新实现类(感谢 AprilWind)
+* update 优化 工作流自定义条件注解注释(感谢 AprilWind)
+* update 优化 工作流模块下一个节点指定办理人、角色和部门转具体用户、抄送人和消息推送，改到通过全局分派监听器和完成监听器处理
+* update 优化 假分页方法(感谢 AprilWind)
+* update 优化 重构办理人接口(感谢 AprilWind)
+* update 优化 调整获取申请人节点接口(感谢 May)
+* update 优化 调整流程撤销 删除无用代码(感谢 May)
+* update 优化 EncryptUtils加解密注释(感谢 AprilWind)
+* update 优化 docker-compose编排增加snailjob端口防止集群冲突
+* update 优化 多租户忽略表判断支持忽略大小写
+* update 优化 直接从ClassPath加载ip2region数据库文件(感谢 秋辞未寒)
+* update 优化 查询系统菜单列表新增菜单类型与父级ID查询条件(感谢 马铃薯头)
+* update 优化 放开申请人附件与抄送限制 附件改为按钮权限控制(感谢 May)
+* update 优化 获取地址支持IPv6判断而不是抛异常(感谢 秋辞未寒)
+* update 优化 日期与字符串工具类(感谢 AprilWind)
+* update 优化 枚举类型注释(感谢 AprilWind)
+* update 优化 返回任务指派的列表增加时间查询条件(感谢 AprilWind)
+* update 优化 getNextNodeList 只获取中间节点用于审批 过滤其他无用节点
+* update 优化 缓存注解支持关闭本地缓存
+* update 优化 实体类统一使用包装类型
+* update 优化 Mybatis异常处理器(感谢 AprilWind)
+* update 优化 工作流用户查询构建(感谢 May)
+* update 优化 工作流权限按钮获取，若需要扩展更多按钮权限，只需在 sources 中新增对应的枚举类或字典类型(感谢 AprilWind)
+* update 优化 统一流程demo 权限人分隔符
+* update 优化 工作流获取流程变量(感谢 AprilWind)
+* update 优化 统一工作流FlowParams构造方式为建造者模式 提升代码可读性(感谢 AprilWind)
+* update 优化 调整监听器事件参数代码
+* update 优化 工作流流程监听增加节点信息(感谢 AprilWind)
+* update 优化 工作流办理人权限处理器(感谢 AprilWind)
+* update 优化 Dockerfile 构建文件新增暴露 snail job 客户端端口 用于定时任务调度中心通信(感谢 Binary)
+* update 优化 使用 record 简化vo代码
+* update 优化 FlwNodeExtServiceImpl 代码实现
+* update 优化 sse 删除之后 手动触发完成 防止内存泄漏
+* update 优化 支持excel方法抛出json异常
+
+### 功能新增
+
+* add 新增 工作流api审批简化方法
+* add 新增 批量级联删除菜单接口(感谢 马铃薯头)
+* add 新增 自定义字典值校验器(感谢 AprilWind)
+* add 新增 对接 gitea 三方单点登录(感谢 lcry)
+* add 新增 自定义 Date 类型反序列化处理器（支持多种格式）(感谢 AprilWind)
+* add 新增 请求体读取异常处理(感谢 AprilWind)
+* add 新增 一大堆snailjob的demo案例(感谢 老马)
+
+### 问题修复
+
+* fix 修复 解决通过loginId查询角色和菜单权限 而非当前用户时 报错问题
+* fix 修复 退回申请人无法发送消息问题(感谢 songgaoshuai)
+* fix 修复 查询办理人错误使用(感谢 AprilWind)
+* fix 修复 snailjob http basic验证判断错误
+* fix 修复 excel 合并单元格在导出在最后一行无法合并时 之前的数据合并失效问题(感谢 马铃薯头)
+* fix 修复 临时解决sa-token使用秒 redis是毫秒导致1秒的精度问题 手动补偿(等satoken官方修复)
+* fix 修复 选择弹窗会签人员后 会签审批出现每个任务的审批人都是选择的多人(感谢 May)
+* fix 修复 在线用户设置过期时间与客户端不同步问题
+* fix 修复 excel模板导出多个字段下拉值超过100个异常 采用多个sheet的方案解决(感谢 velenooo)
+
+### 前端改动
+
+* update element-plus 2.9.8
+* update pinia 3.0.2
+* update vue-router 4.5.0
+* update vue-types 6.0.0
+* update vxe-table 4.13.7
+* update sass 1.87.0
+* update typescript 5.8.3
+* update vite 6.3.2
+* add 新增 工作流流程预览 使用logicflow前端渲染(感谢 May)
+* add 新增 批量级联删除菜单接口(感谢 马铃薯头)
+* update 优化 添加页签图标显示开关功能
+* update 优化 表格增加border(感谢 May)
+* update 优化 动态路由迁移到菜单管理
+* update 优化 审批按钮 封装成公共组件(感谢 May)
+* update 优化 执行eslint:fix优化代码
+* update 优化 修改navbar中消息图标样式与同行元素保持一致(感谢 愿丶)
+* update 更新 readme 增加新成员项目
+* update 优化 工作流分类与流程设计新增联动(感谢 MoMyles)
+* update 优化 增加oss站点与域名 默认前缀避免填错
+* update 优化 登出之后清理tabs
+* update 优化 角色禁用不允许分配
+* update 优化 删除无用组件
+* fix 修复 请假时间 时间组件没法和rule规则联动问题(ele的bug手动设置必填)
+* fix 修复 请假提交未取消按钮loading问题
+* fix 修复 前端download方法响应json异常问题
+
+
 ## v2.3.0 - 2025-03-28
 
 ### 重大更新
