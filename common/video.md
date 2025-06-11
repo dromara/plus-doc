@@ -31,6 +31,8 @@ warm-flow 工作流作者亲自录制
 <br>
 试看课程: https://www.bilibili.com/video/BV1DPY6eMEpu/
 <br>
+课程完结: https://www.bilibili.com/video/BV1vwM3zFEhd/
+<br>
 
 ## 购买方式
 
