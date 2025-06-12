@@ -10,6 +10,7 @@
 | 中国联通(长春分公司)       | http://www.10010.com             | <img src="https://foruda.gitee.com/images/1679554727740431371/bd179d0f_1766278.png" width="300" height="200">  |
 | 中国电信(湖南分公司)       | http://www.189.cn/hn/            | <img src="https://foruda.gitee.com/images/1699838764871886313/61b44b7d_1766278.png" width="300" height="200">  |
 | 中国电信(玉林分公司)       | https://gx.189.cn/               | <img src="https://foruda.gitee.com/images/1699838764871886313/61b44b7d_1766278.png" width="300" height="200">  |
+| 湖南星纬信息科技有限公司      | http://www.hnxingwei.com         | <img src="https://foruda.gitee.com/images/1749694997917152394/1bb2323a_443479.jpeg" width="400" height="200">  |
 | 南京锐爵电子科技有限公司      | http://njregal.com               | <img src="https://foruda.gitee.com/images/1749007395554649079/a56e9a8b_692709.png" width="400" height="200">   |
 | 广东足迹鞋业有限公司        | https://www.dr-kong.com          | <img src="https://foruda.gitee.com/images/1747709357441116373/04f25f91_2096289.png" width="400" height="200">  |
 | 四处创梦无界限信息技术有限公司   | http://www.sichuanchuangmeng.cn/ | <img src="https://foruda.gitee.com/images/1746675508035017538/e9938c06_1737868.png" width="400" height="200">  |
