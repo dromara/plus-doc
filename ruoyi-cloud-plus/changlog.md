@@ -29,7 +29,7 @@
 * update mapstruct-plus 1.4.6 => 1.4.8
 * update docker mysql建议版本升级到8.0.42
 * update docker redis建议版本升级到7.2.8
-* update docker minio建议版本升级到RELEASE.2025-05-24T17-08-30Z
+* update docker minio建议版本升级到RELEASE.2025-04-22T22-12-26Z
 * update satoken 1.40.0 => 1.42.0 适配所有升级项(改动较多)
 > satoken改动如下:<br>
 > SaLoginModel -> SaLoginParameter<br>
