@@ -9,6 +9,8 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1718728432072816698/47eadbb1_1766278.png "屏幕截图")
 
+用到工作流的其他业务服务需要增加 `ruoyi-common-bus` 模块 用于和工作流服务同步业务数据
+
 
 ## Warm-Flow 官方文档
 
