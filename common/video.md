@@ -89,6 +89,5 @@ warm-flow 工作流作者亲自录制
 | ![输入图片说明](https://foruda.gitee.com/images/1691386089186649583/98ac8b7c_1766278.png "屏幕截图")  | ![输入图片说明](https://foruda.gitee.com/images/1691386108722171132/b937b23a_1766278.jpeg "屏幕截图") |
 | ![输入图片说明](https://foruda.gitee.com/images/1695714607596127461/513b6893_1766278.png "屏幕截图")  | ![输入图片说明](https://foruda.gitee.com/images/1692804549604261480/09ef12f6_1766278.png "屏幕截图")  |
 | ![输入图片说明](https://foruda.gitee.com/images/1692804541482477905/578e5448_1766278.png "屏幕截图")  | ![输入图片说明](https://foruda.gitee.com/images/1695714614517941469/cac681fb_1766278.png "屏幕截图")  |
-| ![输入图片说明](https://foruda.gitee.com/images/1698225407961714462/4d271901_1766278.png "屏幕截图")  | ![输入图片说明](https://foruda.gitee.com/images/1698225416488201339/30572e7f_1766278.png "屏幕截图")  |
 | ![输入图片说明](https://foruda.gitee.com/images/1698807198508085566/16c37a1b_1766278.png "屏幕截图")  | ![输入图片说明](https://foruda.gitee.com/images/1698807208125772586/ceed632e_1766278.png "屏幕截图")  |
 | ![输入图片说明](https://foruda.gitee.com/images/1698807214013013096/ad3bc016_1766278.png "屏幕截图")  | ![输入图片说明](https://foruda.gitee.com/images/1698807221010472627/72b10901_1766278.png "屏幕截图")  | 
