@@ -1,6 +1,86 @@
 # 更新日志
 - - -
 
+## v2.4.1 - 2025-07-01
+
+### cloud版本修改
+
+* update spring-cloud-alibaba 2023.0.1.2 => 2023.0.3.3
+*  dubbo 3.3.4 => 3.3.5
+* update easy-es 2.1.0 => 3.0.0
+* update seata-server 2.3.0 => 2.4.0 (注意此版本改动较多 升级需要严格根据提交记录处理)
+* update 优化 从工作流api模块去除bus依赖 由使用者主动增加依赖
+* update 优化dubbo调用跟satoken无关的场景会报错无上下文问题(升级satoken 1.44.0 也可以解决)
+
+### 依赖升级
+
+* update spring-boot 3.4.6 => 3.4.7
+* update satoken 1.42.0 => 1.44.0
+* update hutool 5.8.35 => 5.8.38
+* update redisson 3.45.1 => 3.50.0(注意此版本废弃了队列相关api 后续会删除)
+* update anyline 8.7.2-20250101 => 8.7.2-20250603
+* update maven-jar-plugin 3.2.2 => 3.4.2
+* update maven-war-plugin 3.2.2 => 3.4.0
+* update maven-compiler-plugin 3.11.0 => 3.14.0
+* update maven-surefire-plugin 3.1.2 => 3.5.3
+* update warm-flow 1.7.3 => 1.7.4 支持流程图悬浮窗(感谢 AprilWind)
+
+### 功能更新
+
+* update 优化 使用新版数据权限写法重写mp自带的方法(感谢 AprilWind)
+* update 优化 框架业务各种代码写法(感谢 AprilWind)
+* update 优化 Redis缓存监控接口 手动归还连接给连接池 提高效率
+* update 优化 流程查询以及多根节点构建树结构(感谢 AprilWind)
+* update 优化 构建多根节点的树结构（支持多个顶级节点）(感谢 AprilWind)
+* update 优化 全局日期格式转换配置 提升日期参数解析兼容性
+* update 优化 sse 超时时间设置为一天 避免连接之后直接关闭浏览器导致连接停滞
+* update 优化 去除自动注入日志警告改为默认值 避免一大堆人去定时任务搞什么登录
+* update 优化 工作流的流程图提示信息(感谢 AprilWind)
+* update 优化 加密模块 解密拦截器 将参数一起解密了 防止参数被多次加密不正常
+* update 优化 工作流设计器获取任务执行人默认正常状态(感谢 AprilWind)
+* update 优化 工作流，跳过以 $ 或 # 开头的内置变量表达式解析(感谢 AprilWind)
+* update 优化 去除snailjob的jvm参数 默认不限制
+* update 优化 去除正则校验 无用配置导致问题
+* update 优化 默认部门不允许删除(感谢 AprilWind)
+* update 优化 根部门不允许删除以及办理人权限名称回显(感谢 AprilWind)
+* update 优化 租户套餐菜单查询过滤掉 租户管理相关菜单
+* update 优化 忽略租户表判断改为精确匹配
+* update 优化 将debian换为更新更契合的rockylinux(centos作者写的稳定) 升级jdk版本避免漏洞
+* update 优化 给测试用户增加菜单权限(可不更新)
+* update 优化 PermissionService 无实现类也可以启动服务
+
+### 功能删除
+
+* remove QueueUtils 与相关代码标记过期(redisson 新版本已经将队列功能标记删除 一些技术问题无法解决 建议搭建MQ使用)
+
+### 问题修复
+
+* fix 修复 菜单内包含正则导致个别数据库解析异常404问题 删除菜单内(\\d+)正则校验
+* fix 修复 excel 备注与必填注解指定下标位置问题 去除下标跟随主要注解顺序
+* fix 修复 excel 导出单元格样式覆盖问题
+* fix 修复 删除错误的注解导致前端时间不显示问题
+* fix 修复 sqlserver 字段长度错误
+* fix 修复 办理任务时未传参数 导致执行任务无法获取到任务参数的问题(感谢 红藕香残玉簟秋)
+* fix 修复 snailjob的oracle.sql书写错误
+* fix 修复 satoken异步调用需要手动传递上下文
+* fix 修复 justauth 官方代码bug
+* fix 修复 demo数据需要传递 version 字段才能启用乐观锁(感谢 dhb52)
+* fix 修复 地址解析工具类报错#ICBHUQ(感谢 秋辞未寒)
+* fix 修复 流程数据重复更新 状态被覆盖 无法完成流程问题
+* fix 修复 监听器 flowParams 为null报错问题
+
+### 前端修改
+
+* update 优化 访问流程图页面缓存问题 参数增加时间戳解决
+* update 优化 删除demo页面后端不存在的搜索条件
+* update 优化 删除菜单管理展开折叠按钮 菜单数据量大的情况下 展开会导致页面卡顿问题(在懒加载数据的清空下这个功能不推荐使用了)
+* update 优化 菜单页面渲染方式 改为懒加载避免数据过长卡住
+* update 优化 租户套餐菜单查询过滤掉 租户管理相关菜单
+* fix 修复 从无缓存页面切换到有缓存页面 缓存失效问题
+* fix 修复 提交组件变量名使用错误
+* fix 修复 父组件中UserSelect回调处理逻辑 解决取消选择后参数未正确处理的问题(感谢 imlam)
+
+
 ## v2.4.0 - 2025-05-29
 
 ### 新增成员项目
