@@ -26,6 +26,7 @@
     * [修改应用路径](/ruoyi-vue-plus/framework/association/update_url.md)
     * [国际化](/ruoyi-vue-plus/framework/association/i18n.md)
   * 基础功能
+    * [数据库表设计](/ruoyi-vue-plus/framework/basic/database.md)
     * [系统用户相关](/ruoyi-vue-plus/framework/basic/user.md)
     * [权限控制](/ruoyi-vue-plus/framework/basic/permissions_control.md)
     * [导出功能](/ruoyi-vue-plus/framework/basic/export.md)

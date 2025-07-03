@@ -27,6 +27,7 @@
     * [多团队开发](/ruoyi-cloud-plus/framework/association/collaboration.md)
     * [内网鉴权](/ruoyi-cloud-plus/framework/association/inner_authentication.md)
   * 基础功能
+    * [数据库表设计](/ruoyi-cloud-plus/framework/basic/database.md)
     * [系统用户相关](/ruoyi-cloud-plus/framework/basic/user.md)
     * [权限控制](/ruoyi-cloud-plus/framework/basic/permissions_control.md)
     * [导出功能](/ruoyi-cloud-plus/framework/basic/export.md)
