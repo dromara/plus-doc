@@ -36,6 +36,6 @@
 > 
 > 组件化 模块化 轻耦合 高扩展 针对企业痛点 业界一流技术栈
 
-Copyright © 2018-2024 疯狂的狮子Li All Rights Reserved.
+Copyright © 2018-2025 疯狂的狮子Li All Rights Reserved.
 
 [开始使用 Let's Go](/README.md)
