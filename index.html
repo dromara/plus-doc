@@ -33,6 +33,14 @@
         repo: 'https://gitee.com/JavaLionLi',
         // 侧边栏支持，默认加载的是项目根目录下的_sidebar.md文件
         loadSidebar: true,
+        alias: {
+            '/plus-ui/.*/_sidebar.md': '/plus-ui/_sidebar.md',
+            '/questions/.*/_sidebar.md': '/questions/_sidebar.md',
+            '/ruoyi-cloud-plus/.*/_sidebar.md': '/ruoyi-cloud-plus/_sidebar.md',
+            '/ruoyi-vue-plus/.*/_sidebar.md': '/ruoyi-vue-plus/_sidebar.md',
+            '/.*/_navbar.md': '/_navbar.md',
+            '/.*/_sidebar.md': '/_sidebar.md'
+        },
         // 导航栏支持，默认加载的是项目根目录下的_navbar.md文件
         loadNavbar: true,
         // 封面支持，默认加载的是项目根目录下的_coverpage.md文件
@@ -49,7 +57,6 @@
         auto2top: true,
         // 首页只展示封面（默认为false，与README.md进行拼接）
         onlyCover: true,
-        relativePath: true,
         search: {
             maxAge: 86400000,// 过期时间，单位毫秒，默认一天
             paths: 'auto',// 注意：仅适用于 paths: 'auto' 模式
