@@ -117,7 +117,7 @@ public class DeptService {
 
 ![输入图片说明](https://foruda.gitee.com/images/1737531090579752181/b23c7411_1766278.png "屏幕截图")
 
-![输入图片说明](https://foruda.gitee.com/images/1739929643523598196/af5301da_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1752716138166254804/35e6a965_1766278.png "屏幕截图")
 
 ![输入图片说明](https://foruda.gitee.com/images/1737531104539008756/f1a43a7f_1766278.png "屏幕截图")
 
