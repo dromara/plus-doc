@@ -106,7 +106,13 @@ public class DeptService {
 > 前端需要编写业务的表单页面 与 各个节点的表单页面(不需要节点表单可以不写)<br>
 > 具体书写方式参考 框架自带的 `leaveEdit.vue` 请假页面 根据业务逻辑修改表单内容即可<br>
 
-![输入图片说明](https://foruda.gitee.com/images/1737530863662464931/15dabdd0_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1752734965749669664/5e17d167_1766278.png "屏幕截图")
+
+![输入图片说明](https://foruda.gitee.com/images/1752734994157820408/8aaf8da7_1766278.png "屏幕截图")
+
+![输入图片说明](https://foruda.gitee.com/images/1752735194401620299/483d8be3_1766278.png "屏幕截图")
+
+![输入图片说明](https://foruda.gitee.com/images/1752735101502377412/0dc57f2d_1766278.png "屏幕截图")
 
 这里说明 框架目前只支持自定义编写表单使用 因为自定义编写业务表单可以最大程度的适配各种复杂的业务<br>
 动态表单 适用于简单业务(warm-flow官方后续会增加此功能) 表单能力与数据交互能力均有限 目前不支持<br>
