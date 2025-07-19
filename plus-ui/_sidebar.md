@@ -3,6 +3,7 @@
 - <a href="https://gitee.com/dromara/MaxKey"><img src="https://foruda.gitee.com/images/1700187453544179968/7342304a_1766278.png" width="280px" height="60px"></a>
 - <a href="http://ccflow.org/?frm=ryPlus"><img src="https://foruda.gitee.com/images/1704162419429172656/d0521e59_1766278.png" width="280px" height="60px"></a>
 - <a href="https://www.mall4j.com/cn/?statId=11"><img src="https://foruda.gitee.com/images/1743644193997673060/beabd304_1766278.jpeg" width="280px" height="60px"></a>
+- <a href="https://gitee.com/aizuda/flowlong"><img src="https://foruda.gitee.com/images/1752939345569324939/b9c50209_1766278.png" width="280px" height="60px"></a>
 
 * **简介**
   * [项目简介](/plus-ui/home.md)
