@@ -15,7 +15,7 @@
   * [unable to read meta-data for class xxx](/questions/read_metadata.md)
   * [不支持ST请求](/questions/st_not_support.md)
   * [如何指定dubbo注册ip](/questions/dubbo_ip.md)
-  * [Sentinel页面404问题](/questions/sentinel_404.md)
+  * [为什么删除sentinel](/questions/sentinel_404.md)
   * [无法读取nacos配置](/questions/nacos_read_fail.md)
   * [接口文档对接knife4j](/questions/kinfe4j.md)
   * [关于HTTPS配置](/questions/https_config.md)
