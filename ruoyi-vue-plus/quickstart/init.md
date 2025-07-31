@@ -11,8 +11,6 @@
 
 **注意: 禁止使用 `oraclejdk`(由于spring的bug导致打包运行会报错)**
 
-**Spring官方推荐使用JDK https://bell-sw.com/pages/downloads/**
-
 ![输入图片说明](https://foruda.gitee.com/images/1720080025744223375/0213a652_1766278.png "屏幕截图")
 
 * Spring官方推荐使用OpenJDK-17/21 [JDK下载地址](https://bell-sw.com/pages/downloads/)
