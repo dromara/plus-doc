@@ -15,6 +15,7 @@
 <a href="https://item.jd.com/14804836.html?from=plus-doc"><img src="https://foruda.gitee.com/images/1727495530501882313/359433de_1766278.jpeg" width="300px" height="85px" alt="2024-08-16=>2026-08-16"></a>
 <a href="https://www.73app.cn/"><img src="https://foruda.gitee.com/images/1734934058599480904/75ec6220_1766278.jpeg" width="300px" height="85px" alt="2024-12-23=>2025-12-23"></a>
 <br>
+<a href="https://www.bilibili.com/video/BV1YrtMzvEaT/"><img src="https://foruda.gitee.com/images/1754445885979577012/6cd137d6_1766278.png" width="300px" height="85px" alt="2025-08-06=>2026-08-06"></a>
 <a href="https://www.mall4j.com/cn/?statId=11"><img src="https://foruda.gitee.com/images/1743644208082533114/9a07e94d_1766278.jpeg" width="300px" height="85px" alt="2025-04-01=>2028-04-01"></a>
 <a href="https://gitee.com/aizuda/flowlong"><img src="https://foruda.gitee.com/images/1752939352445508921/19889586_1766278.png" width="300px" height="85px" alt="2025-07-19=>2028-07-19"></a>
 
