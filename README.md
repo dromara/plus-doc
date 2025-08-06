@@ -19,7 +19,7 @@
 <a href="https://www.mall4j.com/cn/?statId=11"><img src="https://foruda.gitee.com/images/1743644208082533114/9a07e94d_1766278.jpeg" width="300px" height="85px" alt="2025-04-01=>2028-04-01"></a>
 <a href="https://gitee.com/aizuda/flowlong"><img src="https://foruda.gitee.com/images/1752939352445508921/19889586_1766278.png" width="300px" height="85px" alt="2025-07-19=>2028-07-19"></a>
 
-[如何成为赞助商 加群联系作者详谈](/common/add_group.md)
+[如何成为赞助商 加群联系作者详谈 每日PV2500-3000 IP1700-2500](/common/add_group.md)
 
 ## 代码地址
 
