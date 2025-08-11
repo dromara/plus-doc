@@ -25,6 +25,7 @@
 | 侧边栏搜索框设计                        | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/667   |
 | Redis扩展主从模式 哨兵模式 云托管模式          | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/682   |
 | 工作流增加动态表单                       | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/679   |
+| 重写翻译插件 增加批处理等                   | https://gitee.com/dromara/RuoYi-Cloud-Plus/pulls/231 |
 
 ### 项目介绍+项目地址 欢迎投稿
 
