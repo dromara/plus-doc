@@ -35,7 +35,7 @@
 
 ### 步骤二：配置前端请求头信息
 
-需要在全局请求头 header 中增加 cientid <br>
+需要在全局请求头 header 中增加 clientid <br>
 确保客户端所有请求都携带此id 可参考项目 `request.ts`
 
 ![输入图片说明](https://foruda.gitee.com/images/1690965768235114596/980b88d2_4959041.png "屏幕截图")
