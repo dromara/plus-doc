@@ -3,7 +3,7 @@
 
 # 安装 MaxKey 应用服务
 
-参考 MaxKey 官方文档安装 [MaxKey安装部署](http://www.maxkey.top/doc/docs/intro/)
+参考 MaxKey 官方文档安装 [MaxKey安装部署](https://www.maxkey.top/doc/docs/overview/intro)
 
 # 配置应用 OAuth2.0 认证注册
 
