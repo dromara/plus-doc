@@ -1,6 +1,181 @@
 # 更新日志
 - - -
 
+## v2.5.0 - 2025-09-22
+
+### 重大更新
+
+* [重大更新] 新增 工作流扩展spel表达式表 与 流程属性扩展表(可直接选择spel内置表达式使用)
+* [重大更新] 新增 启动流程并办理第一个任务接口 (感谢 may)
+* [重大更新] 新增 下一节点执行人是当前任务处理人自动审批 (感谢 may)
+* [重大更新] 重构用户 角色 部门 菜单的数据权限设计逻辑更符合实际业务场景与优化查询写法提高效率
+
+### 依赖升级
+
+* update springboot 3.4.7 => 3.5.6
+* update springboot-admin 3.4.7 => 3.5.3
+* update springdoc 2.8.8 => 2.8.13
+* update snailjob 1.6.0 => 1.8.0
+* update work-flow 1.6.8 => 1.8.1 (感谢 AprilWind)
+* update mybatis-plus 3.5.12 => 3.5.14
+* update mapstruct-plus 1.4.8 => 1.5.0
+* update sms4j 3.3.4 => 3.3.5
+* update hutool 5.8.38 => 5.8.40 默认支持了验证码不生成负数
+* update fastexcel 1.2.0 => 1.3.0
+* update redisson 3.50.0 => 3.51.0
+* update lombok 1.18.36 => 1.18.38
+
+### 功能优化
+
+* update 优化 历史日志文件增加压缩 (感谢 (感谢 lau)
+* update 优化 更新ip2region.xdb文件
+* update 优化 生成模板前端增加* fixed (感谢 (感谢 lau)
+* update 优化 添加节点悬浮提示配置开关 (感谢 AprilWind)
+* update 优化 SysMenu 的 selectObjs 查询 (感谢 AprilWind)
+* update 优化 全局日期格式转换逻辑 (感谢 AprilWind)
+* update 优化 岗位页面查询权限问题
+* update 优化 支持子菜单配置默认激活的父菜单activeMenu
+* update 优化 Excel写出包装器添加泛型用于限定write入参类型 (感谢 秋辞未寒)
+* update 优化 Stream流工具类 (感谢 秋辞未寒)
+* update 优化 支持后端监听器解析节点扩展数据到流程变量(按钮权限 抄送人 扩展变量)
+* update 优化 支持前端返回节点扩展数据(按钮权限 抄送人 扩展变量)
+* update 优化 解析扩展属性 JSON 构建 Node 扩展属性对象，增强代码可读性 (感谢 AprilWind)
+* update 优化 添加抄送设置和变量枚举，优化扩展节点配置逻辑 (感谢 AprilWind)
+* update 优化 流程实例业务扩展的保存和删除逻辑，增强代码可读性 (感谢 AprilWind)
+* update 优化 Excel单元格合并处理器代码逻辑分支 (感谢 秋辞未寒)
+* update 优化 对三方授权 redirectUri 回调地址进行url编码
+* update 优化 代码生成模板空格对齐 (感谢 Lapwing)
+* update 优化 移除不必要的流程状态颜色配置 (感谢 AprilWind)
+* update 优化 注册功能同步优化 验证码校验逻辑 DoubleH* 2025/8/15 16:29
+* update 优化 验证码校验逻辑
+* update 优化 工作流后台发起或审批可以手动设置办理人
+* update 优化 数据库类型获取和判断逻辑，增强代码可读性 (感谢 AprilWind)
+* update 优化 Excel单元格合并代码逻辑，明确处理类职责 (感谢 秋辞未寒)
+* update 优化 OSS文件下载代码 (感谢 秋辞未寒)
+* update 优化 改用发布订阅的方式替代阻塞流，优化大文件下载时的内存占用 (感谢 秋辞未寒)
+* update 优化 删除监控无用配置代码(升级之后不需要了)
+* update 优化 由spring自己初始化线程池
+* update 优化 避免每个字段都进行ExcelIgnoreUnannotated.class判断
+* update 优化 发布流程定义抛出异常 (感谢 AprilWind)
+* update 优化 新增支持占位符格式的 ServiceException 构造方法 (感谢 AprilWind)
+* update 优化 办理人权限设置列表 (感谢 AprilWind)
+* update 优化 setCacheObject 简化写法
+* update 优化 全局替换为 Convert.toStr 优化 null 字符串处理 (感谢 AprilWind)
+* update 优化 isLogin 判断逻辑
+* update 优化 PlusSaTokenDao 删除key同步删除本地缓存
+* update 优化 springboot 3.5 新特性与过期代码
+* update 优化 数据权限注解切点逻辑，使切点逻辑更清晰 (感谢 秋辞未寒)
+* update 优化 把数据权限注解全部交给AOP处理，使用自定义动态方法匹配器匹配注解 (感谢 秋辞未寒)
+* update 优化 调整自动审批代码逻辑
+* update 优化 getBackTaskNode 获取驳回节点接口 如果是委派直接返回当前节点 不允许驳回到其他节点
+* update 优化 调整上传超时时间
+* update 优化 getInfo 接口忽略数据权限
+* update 优化 对登录也租户列表接口进行限流 防止盗刷
+* update 优化 增加工作流后端发起流程 demo案例
+* update 优化 支持在监听器设置流程变量
+* update 优化 菜单权限查询
+* update 优化 日志脱敏支持List参数
+* update 优化 判断流程是否已结束 (感谢 AprilWind)
+* update 优化 任务创建监听器 使用下一个节点的任务数据
+* update 优化 工作流任务创建监听器 传递流程参数
+* update 优化 监控使用springSecurity新语法
+* update 优化 流程分类新增修改 (感谢 AprilWind)
+* update 优化 SpEL表达式回显查询条件 (感谢 AprilWind)
+* update 优化 sse 登录校验 避免大量报错
+* update 优化 字典同步逻辑代码并添加注释 (感谢 秋辞未寒)
+* update 优化 SpEL表达式回显名称 (感谢 AprilWind)
+* update 优化 补充工作流动态启用注解 (感谢 AprilWind)
+* update 优化 接口防重和加锁 (感谢 AprilWind)
+* update 优化 校验角色是否有数据权限 (感谢 AprilWind)
+* update 优化 发号器工具类便利性优化 (感谢 秋辞未寒)
+* update 优化 新增角色信息 (感谢 AprilWind)
+* update 优化 新增用户岗位信息判空逻辑 (感谢 AprilWind)
+* update 优化 增加岗位修改校验
+* update 优化 增加oss扩展contentType存储
+* update 优化 文件上传附件扩展字段对象 (感谢 AprilWind)
+* update 优化 保存文件的大小，方便前端进行分片下载 (感谢 AprilWind)
+* update 优化 流程图按审批人分组去重 (感谢 AprilWind)
+* update 优化 获取流程记录 (感谢 AprilWind)
+* update 优化 工作流待办任务查询 (感谢 AprilWind)
+* update 优化 StreamUtils使用以及岗位删除优化 (感谢 AprilWind)
+
+### 功能新增
+
+* add 新增 Excel工具类支持更灵活的自定义导出方式，以便用户分批处理导出数据 (感谢 秋辞未寒)
+* add 新增 请假表 申请编号字段sql
+* add 新增 催办接口调整消息发送 (感谢 songgaoshuai)
+* add 新增 修改流程变量接口 (感谢 songgaoshuai)
+
+### 问题修复
+
+* fix 修复 自定义sql在pg数据库类型异常问题
+* fix 修复 解决工作流通知messageType参数判空逻辑错误的问题 (感谢 Rogue杨)
+* fix 修复 json模块配置 默认覆盖了spring module 配置问题 改为让spring自动加载注册
+* fix 修复 判断错误导致新增报错问题
+* fix 修复 菜单与部门 未做角色状态判断
+* fix 修复 时间解析类异常问题
+* fix 修复 校验租户账号余额 查询语句错误
+* fix 修复 流程重新提交报错问题
+* fix 修复 excel未注解字段导致列合并错位的问题 (感谢 chengliejian)
+* fix 修复 撤销终止等操作 都变成退回的问题
+* fix 修复 snailjob 未判断配置空的情况
+* fix 修复 解决委托、转办时nextTasks为空导致空指针的问题 (感谢 Rogue杨)
+* fix 修复 个人中心数据被脱敏问题
+* fix 修复 权限为null导致报错问题
+* fix 修复 监听器变量使用错误
+* fix 修复 已完成的实例删除失败 (感谢 may)
+* fix 修复 oracle数据库无法使用不等于语法问题
+* fix 修复 退回后审批记录申请人错误 #ICMEJ1 (感谢 may)
+* fix 修复 设计器画线驳回驳回到申请人后状态未修改 (感谢 may)
+* fix 修复 代码生成 setIsRequired 标志写反
+* fix 修复 satokenDao 无法更新已存在数据的ttl问题
+* fix 修复 密码校验误删字段 (感谢 AprilWind)
+* fix 修复 错误修改导致页面逻辑错误
+* fix 修复 数据权限字段编辑错误
+* fix 修复 漏洞 CVE-2025-6925
+
+### cloud版本修改
+
+* [重大改动] 删除sentinel所有相关功能(为什么删除 查看文档详细说明)
+  https://plus-doc.dromara.org/#/questions/sentinel_404
+* update rocketmq-client 2.3.0 => 2.3.4
+* update seata-server 2.4.0 => 2.5.0
+* update 优化 将dubbo redis集群配置移动到common配置文件里便于修改
+* fix 修复 seata-server 缺少依赖问题
+* fix 修复 easy-es 启动报错问题
+
+### 前端修改
+
+* update 优化 调整菜单栏收起时的样式 (感谢 lau)
+* update 优化 岗位页面查询权限问题
+* update 优化 支持前端返回节点扩展数据(按钮权限 抄送人 扩展变量)
+* update 代码 生成预览增加高亮 (感谢 lau)
+* update 优化 tag和菜单栏样式调整，增加圆角和缩进 (感谢 lau)
+* update 优化 收起菜单时从展开列表中移除对应菜单 (感谢 lau)
+* update 优化 transition enter
+* update 优化 getBackTaskNode 获取驳回节点接口 如果是委派直接返回当前节点 不允许驳回到其他节点
+* update 优化 增加请求流程后端发起demo案例
+* update 优化 将请假申请流程选择框直接放到表单内 减少弹窗
+* update 优化 删除后端已经不存在的接口
+* update 优化 roleOptions 去重处理
+* update 优化 sse重试改为5次 避免掉线频繁连接
+* update 优化 流程表达式页面
+* update 优化 用户编辑页面展示逻辑
+* add 新增 升级warmflow 1.8 钉钉设计器 (感谢 may)
+* add 新增 流程spel表达式相关菜单 (感谢 Michelle.Chung)
+* fix 修复 选择审批人选择组件没有回显的问题 (感谢 lau)
+* fix 修复 菜单栏有二级菜单和无二级菜单缩进不一致的问题 (感谢 lau)
+* fix 修复 路由参数缓存导致分页错误
+* fix 修复 初始化用户选择组件 数据为空导致的问题
+* fix 修复 手机号校验的正则表达式错误 (感谢 ymj666)
+* fix 修复 流程实例页面deleteHisByInstanceIds函数未定义导致流程实例界面无法正常渲染 (感谢 midsumor)
+* fix 修复 菜单查询没有正确显示顶级菜单的问题 (感谢 lau)
+* fix 修复 修改暗黑模式样式无法覆盖element默认样式的问题 (感谢 lau)
+* fix 修复 流程表达式页面权限标识符错误
+* fix 修复 提交流程报错 loading未关闭问题
+* fix 修复 菜单级联删除添加按钮权限 (感谢 有梦的人)
+
+
 ## v2.4.1 - 2025-07-01
 
 ### cloud版本修改
