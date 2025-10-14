@@ -14,5 +14,10 @@
 VIP群是作者提供的私人服务 不代表着项目收费
 
 两种途径:
-1. 购买官方视频进群 [官方视频](/common/video.md)
-2. ~~扫描下方二维码付款进群(无视频)~~(满员了 精力有限暂时不再扩充)
+1. 购买官方视频进群(技术支持 + 官方视频教程) [官方视频](/common/video.md)
+2. 扫描下方二维码付款进群(技术支持 无视频教程)
+
+支付后申请加群即可 QQ群号 : **<637757165>**<br>
+
+**加群扫码**<br>
+<img src="https://foruda.gitee.com/images/1760426266240183145/1fee50ff_1766278.jpeg" width="300px" height="450px" /><img src="https://foruda.gitee.com/images/1760426283127065390/98a9aca6_1766278.jpeg" width="300px" height="450px" />
