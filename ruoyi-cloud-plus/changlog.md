@@ -1,6 +1,64 @@
 # 更新日志
 - - -
 
+## v2.5.1 - 2025-10-28
+
+### 依赖升级
+
+* update springboot 3.5.6 => 3.5.7
+* update springboot-admin 3.5.3 => 3.5.5 修复登录白屏问题
+* update warm-flow 1.8.1 =>  1.8.2
+
+### 功能优化
+
+* update 优化 客户端管理新增客户端key唯一校验逻辑(感谢 马铃薯头)
+* update 优化 SSE 心跳检测逻辑，增强连接管理与异常处理(感谢 AprilWind)
+* update 优化 sse 心跳定时器执行方式心跳检测写法(感谢 草編的戒指礻)
+* update 优化 添加菜单可见性和状态字段到菜单树(感谢 AprilWind)
+* update 优化 nginx 配置，增强性能与安全性(感谢 AprilWind)
+* update 优化 拦截sse超时异常 不需要额外处理
+* update 优化 删除Threads类 已经不需要了
+* update 优化 增强 Mybatis 异常处理，添加根因查找功能(感谢 AprilWind)
+* update 优化 satoken 异常信息 强制返回json格式
+* update 优化 工作流常量使用(感谢 AprilWind)
+* update 优化 修改遗漏的常量替换(感谢 友杰)
+* update 优化 添加 JSON 格式校验注解及实现(感谢 AprilWind)
+* update 优化 更新流程案例json文件
+* update 优化 后端发起流程增加扩展表对象
+* update 优化 忽略压缩后的日志文件 *.log.gz(感谢 AprilWind)
+* update 优化 隐藏 nginx 版本号以增强安全性(感谢 AprilWind)
+
+### 功能新增
+
+* add 增加 同步租户参数配置功能
+
+### 问题修复
+
+* fix 修复 全局处理器不生效问题 根据官方issue改为特殊写法(不理解为什么 https://github.com/apache/fesod/issues/648)
+* fix 修复 查询任务扩展数据不存在导致的空报错
+* fix 修复 mybatis内报token异常无法正常返回前端信息
+* fix 修复 三方授权 钉钉回调地址未进行url编码问题 由全局编码改为单独编码 避免其他三方调用重复编码
+* fix 修复 修复查询pg类型问题
+* fix 修复 翻译时异常导致json序列化结构体不符合预期
+* fix 修复 orderby属性书写重复问题
+
+### cloud版本修改
+
+* update springcloud-alibaba 2023.0.3.3 => 2023.0.3.4
+* fix 修复 seata 表字段长度可能会不够问题
+* fix 修复 降级方法缺失问题
+
+### 前端修改
+
+* update 页面中的标题都从配置项获取(感谢 Lau)
+* update 挂载全局属性改为操作vue模块(感谢 Lau)
+* update 优化 禁止选择动态表单(无此功能)
+* update 升级unocss版本, 解决 nodejs lts 22 版本兼容问题(感谢 JackyTang)
+* add 增加 同步租户参数配置功能
+* fix 修复 前端变量名错误
+* fix 修复 按钮权限不设置导致的问题
+
+
 ## v2.5.0 - 2025-09-22
 
 ### 重大更新
