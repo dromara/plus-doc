@@ -10,6 +10,7 @@
 | 中国联通(长春分公司)       | http://www.10010.com             | <img src="https://foruda.gitee.com/images/1679554727740431371/bd179d0f_1766278.png" width="300" height="200">  |
 | 中国电信(湖南分公司)       | http://www.189.cn/hn/            | <img src="https://foruda.gitee.com/images/1699838764871886313/61b44b7d_1766278.png" width="300" height="200">  |
 | 中国电信(玉林分公司)       | https://gx.189.cn/               | <img src="https://foruda.gitee.com/images/1699838764871886313/61b44b7d_1766278.png" width="300" height="200">  |
+| 东莞市若云科技有限公司       | http://www.ryrise.cn/            | <img src="https://foruda.gitee.com/images/1762220369278939485/1dabc2ab_1766278.png" width="300" height="200">  |
 | 沈阳市勘察测绘研究院有限公司    | https://www.024gis.com/          | <img src="https://foruda.gitee.com/images/1762220249412216086/b90a1ebb_1766278.png" width="400" height="200">  |
 | 江苏圣旺科技有限公司        | https://swkj.vip/                | <img src="https://foruda.gitee.com/images/1757388852335721430/6258ee2d_1766278.png" width="400" height="200">  |
 | 雷博士智能科技(上海)有限公司   | http://www.labsys.sh.cn/         | <img src="https://foruda.gitee.com/images/1750812610427019581/e98fc24e_693218.png" width="400" height="200">   |
