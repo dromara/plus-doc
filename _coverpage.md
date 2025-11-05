@@ -38,4 +38,4 @@
 
 Copyright © 2018-2025 疯狂的狮子Li All Rights Reserved.
 
-[开始使用 Let's Go](/README.md)
+[开始使用 Let's Go](/_readme)

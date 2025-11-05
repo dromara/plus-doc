@@ -6,7 +6,7 @@
 - <a href="https://gitee.com/aizuda/flowlong"><img src="https://foruda.gitee.com/images/1752939345569324939/b9c50209_1766278.png" width="280px" height="60px"></a>
 
 - **开始**
-  - [框架介绍](/README.md)
+  - [框架介绍](/_readme)
   - [演示系统](/common/demo_system.md)
   - [官方视频教程](/common/video.md)
   - [粉丝专栏](/common/column.md)

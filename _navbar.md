@@ -1,6 +1,6 @@
 <!-- _navbar.md -->
 
-* [文档导航](/README.md)
+* [文档导航](/_readme)
 * [Vue版本](/ruoyi-vue-plus/home.md)
 * [Cloud版本](/ruoyi-cloud-plus/home.md)
 * [前端文档](/plus-ui/home.md)
