@@ -28,6 +28,7 @@
 | 重写翻译插件 增加批处理等                   | https://gitee.com/dromara/RuoYi-Cloud-Plus/pulls/231 |
 | sa-token-jwt支持使用rs256生成token    | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/760   |
 | 集成 nextdoc4j 以支持文档管理            | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/793   |
+| 富文本编辑器支持只读模式                    | https://gitee.com/JavaLionLi/plus-ui/pulls/250       |
 
 ### 项目介绍+项目地址 欢迎投稿
 
