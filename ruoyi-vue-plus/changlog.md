@@ -1,6 +1,103 @@
 # 更新日志
 - - -
 
+## v5.5.2 - 2025-12-23
+
+### 依赖升级
+
+* update springboot 3.5.7 => 3.5.9
+* update springdoc 2.8.13 => 2.8.14
+* update redisson 3.51.0 => 3.52.0
+* update fury 更名为 fory 0.9.0 => 0.13.1
+* update warm-flow 1.8.3 => 1.8.4
+* update snailjob 1.8.0 => 1.9.0
+* update ip2region 2.7.0 => 3.3.1 (感谢 秋辞未寒)
+* update anyline 8.7.2-20250603 => 8.7.3-20251210
+
+### 功能优化
+
+* update 优化 增强单元格合并处理逻辑 (感谢 dr5hx)
+* update 优化 增加高安全脱敏方法 灵活脱敏方法 (感谢 AprilWind)
+* update 优化 工作流构建流程参数 (感谢 AprilWind)
+* update 优化 代码生成字典类型字段新增更新验证策略 (感谢 马铃薯头)
+* update 优化 测试单表和测试树表增加搜索条件 (感谢 AprilWind)
+* update 优化 删除无用配置类代码
+* update 优化 我的待办时间展示 (感谢 AprilWind)
+* update 优化 IP地址行政区域助手类重命名以匹配其工具类的功能定位 (感谢 秋辞未寒 AprilWind)
+* update 优化 添加 IdGeneratorUtil 工具类替代主键生成 支持多种 ID 生成方式 (感谢 AprilWind)
+* update 优化 任务执行监听器 传递任务的相关数据 不传递实例相关数据了(避免并行节点覆盖问题)
+* update 优化 加签判断逻辑
+* update 优化 文件上传增加文件内容长度校验
+* update 优化 日志脱敏改用JsonNode处理提高效率
+* update 优化 接口访问日志 排除敏感参数输出
+* update 优化 修改 ossclient 并发配置
+* update 优化 任务处理增加Lock4j锁支持 (感谢 AprilWind)
+* update 优化 增加SpEL表达式解析异常处理 (感谢 AprilWind)
+* update 优化 工作流服务中的异常处理 (感谢 AprilWind)
+* update 优化 增加SpEL表达式解析异常处理 (感谢 AprilWind)
+* update 优化 代码生成中的Lock4j锁 (感谢 AprilWind)
+* update 优化 我的任务查询条件 (感谢 AprilWind)
+* update 优化 增加脱敏工具类支持灵活配置可见长度和掩码长度 (感谢 AprilWind)
+* update 优化 参数配置服务 增加多种配置获取方法，支持不同类型的配置解析 (感谢 AprilWind)
+* update 优化 增加流程定义发布检查，确保流程在执行前已发布 (感谢 AprilWind)
+* update 优化 消息发送逻辑，增加异常处理并记录未处理的消息类型 (感谢 AprilWind)
+* update 优化 pg 字段类型适配
+* update 优化 将特殊方法改为私有禁止不懂的用户乱用
+* update 优化 删除业务ID的方法，支持字符串类型的业务ID (感谢 AprilWind)
+* update 优化 上传请求的预签名URL (感谢 Jack)
+* update 优化 FlwSpelController类注释补全 (感谢 王志龙)
+* update 优化 Excel模版动态数据下拉 (感谢 Angus 秋辞未寒)
+
+### 问题修复
+
+* fix 修复 创建租户同步工作流数据 在没有流程定义的情况下不会复制流程类别的问题
+* fix 修复 listenerVariable.getVariable() 获取null问题
+* fix 修复 form_path 输入空字符串导致的问题
+* fix 修复 工作流类别 顶节点父级可以被修改导致无法加载的问题
+* fix 修复 微软三方对接参数缺失
+* fix 修复 获取可驳回节点重复问题 (感谢 搬砖的小庄)
+* fix 修复 excel 导出多 sheet 合并单元格失效问题 (感谢 马铃薯头)
+* fix 修复 本地文件上传 无法获取文件长度问题
+* fix 修复 jsonParam 参数可能为空问题
+* fix 修复 排他网关执行后，驳回选到未执行的网关 (感谢 May)
+* fix 修复 指定选人审批后 再次驳回到指定选人环节后 全部人能看到待办问题 (感谢 May)
+* fix 修复 pg更新sql书写错误
+* fix 修复 申请人提交可直接结束流程 (感谢 May)
+* fix 修复 warmflow 的官方sql书写不正确问题
+* fix 修复 CompleteTaskDTO中getVariables()中variables == null 时的返回值问题 (感谢 Tyler Ge)
+
+### cloud版本修改
+
+* update spring-cloud 2025.0.0 => 2025.0.1
+* update spring-cloud-alibaba 2023.0.3.4 => 2025.0.0.0
+* update dubbo 3.3.5 => 3.3.6
+* update kafka docker镜像升级 使用apache官方镜像 3.6.2 => 3.9.1
+* update 增加 SysDictTypeVoConvert remote调用dictTypeVo类转换mapper
+
+### 前端修改
+
+* update vue 3.5.13 => 3.5.22
+* update vite 6.3.2 => 6.4.1
+* update vue-router 4.5.0 => 4.6.3
+* update vueuse 13.1.0 => 13.9.0
+* update axios 1.8.4 => 1.13.1
+* update element-plus 2.9.8 => 2.11.7
+* update highlight.js 11.9.0 => 11.11.1
+* update jsencrypt 3.3.2 => 3.5.4
+* update pinia 3.0.2 => 3.0.3
+* update vxe-table 4.13.7 => 4.17.7
+* update eslint 9.21.0 => 9.39.1
+* update sass 1.87.0 => 1.93.3
+* update typescript 5.8.3 => 5.9.3
+* update ......等等一大堆其他小依赖升级
+* update 优化 增加隐藏子菜单激活路由选项编辑功能
+* update 优化 验证码错误时清空输入框 (感谢 beginner)
+* update 优化 添加开发者工具保护功能 防止调试
+* update 优化 字典组件值宽松匹配
+* update 优化 更改方法命名避免误会
+* fix 修复 附件按钮权限不生效
+
+
 ## v5.5.1 - 2025-10-28
 
 ### 依赖升级
