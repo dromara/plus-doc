@@ -9,7 +9,7 @@
 * update springdoc 2.8.13 => 2.8.14
 * update redisson 3.51.0 => 3.52.0
 * update fury 更名为 fory 0.9.0 => 0.13.1
-* update warm-flow 1.8.3 => 1.8.4
+* update warm-flow 1.8.2 => 1.8.4
 * update snailjob 1.8.0 => 1.9.0
 * update ip2region 2.7.0 => 3.3.1 (感谢 秋辞未寒)
 * update anyline 8.7.2-20250603 => 8.7.3-20251210
