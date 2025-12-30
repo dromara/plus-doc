@@ -76,7 +76,7 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1718951237123374392/f7840db2_1766278.png "屏幕截图")
 
-例如 扩展小程序登录参数 只需要继承 `LoginBody <br>
+例如 扩展小程序登录参数 只需要继承 `LoginBody` <br>
 
 ![输入图片说明](https://foruda.gitee.com/images/1718951283931895761/e6348be5_1766278.png "屏幕截图")`
 
