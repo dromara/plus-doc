@@ -85,6 +85,7 @@
 | 营口鼎瑞网络科技有限公司      |                                  | <img src="https://foruda.gitee.com/images/1715836865319520119/5dc34a5f_8693506.png" width="400" height="200">  |
 | 南昌漫库书店有限公司        |                                  | <img src="https://foruda.gitee.com/images/1687656369793887183/ce1a33f6_1766278.png" width="200" height="100">  |
 | 广西文韬智能科技有限公司      |                                  | <img src="https://foruda.gitee.com/images/1678976034543683491/8d8a1ebe_1766278.png" width="200" height="100">  |
+| 哈尔滨奇安科技有限公司       |                                  |                                                                                                                |
 | 武汉众归科技有限公司        |                                  |                                                                                                                |
 | 四川新仑科技有限公司        |                                  |                                                                                                                |
 | 广州蓝杉工贸有限公司        |                                  |                                                                                                                |
