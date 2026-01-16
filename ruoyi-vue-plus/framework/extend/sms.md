@@ -5,7 +5,7 @@
 
 ### 版本: >= v5.1.0
 
-已完成 sms4j 项目整合 文档地址: https://sms4j.com/doc3
+已完成 sms4j 项目整合 文档地址: https://sms4j.com/doc3/
 
 配置方式 具体厂商配置扩展 可以查看sms4j文档
 
