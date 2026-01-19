@@ -9,7 +9,7 @@
 
 <a href="https://gitee.com/dromara/MaxKey"><img src="https://foruda.gitee.com/images/1700187453544179968/7342304a_1766278.png" width="300px" height="85px" alt="2023-11-17=>2026-11-17"></a>
 <a href="http://ccflow.org/?frm=ryPlus"><img src="https://foruda.gitee.com/images/1704162419429172656/d0521e59_1766278.png" width="300px" height="85px" alt="2024-01-02=>2028-01-02"></a>
-<a href="http://www.shuduokeji.com"><img src="https://foruda.gitee.com/images/1705569347386939952/3f187980_1766278.jpeg" width="300px" height="85px" alt="2025-02-06=>2026-02-06"></a>
+<a href="https://www.shuduokeji.com"><img src="https://foruda.gitee.com/images/1705569347386939952/3f187980_1766278.jpeg" width="300px" height="85px" alt="2026-02-06=>2027-02-06"></a>
 <br>
 <a href="https://www.jnpfsoft.com/index.html?from=plus-doc"><img src="https://foruda.gitee.com/images/1732520348262343872/558bb03b_1766278.jpeg" width="300px" height="85px" alt="2025-03-29=>2026-03-29"></a>
 <a href="https://topiam.cn?from=plus-doc"><img src="https://foruda.gitee.com/images/1765071755540415213/3236e57d_1766278.png" width="300px" height="85px" alt="2025-12-07=>2028-12-07"></a>
