@@ -19,10 +19,6 @@ jar包部署后端服务 打包命令如下
 mvn clean install -D maven.test.skip=true -P prod
 ```
 
-字体文件需要安装到系统内(系统如何安装字体可以百度) 不安装工作流展示会乱码
-
-![输入图片说明](https://foruda.gitee.com/images/1742975420470404603/55997137_1766278.png "屏幕截图")
-
 前端参考下方前端部署章节
 
 
