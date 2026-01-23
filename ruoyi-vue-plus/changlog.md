@@ -1,6 +1,44 @@
 # 更新日志
 - - -
 
+## v5.5.3 - 2026-01-23
+
+### 依赖升级
+
+update springboot 3.5.9 => 3.5.10
+update springdoc 2.8.14 => 2.8.15
+update mybatis-plus 3.5.14 => 3.5.16
+update hutool 5.8.40 => 5.8.43
+update spring-boot-admin 3.5.5 => 3.5.6
+update ip2region version to 3.3.2 (感谢 ColorDreams)
+
+### 功能优化
+
+update 优化 oss 依赖注释说明 (感谢 Coast)
+update 优化 自行实现更漂亮的验证码图案
+update 优化 兼容path大写开头搜索
+update 优化 大家都认可用"账"统一改为账
+update 优化 添加菜单路由地址和名称的校验规则
+update 优化 删除已经过期的配置类
+update 优化 oss日志侦听器打印级别 (感谢 AprilWind)
+update 优化 翻译实现类逻辑
+update 优化 增加 HandlerMethodValidationException 参数校验异常连接
+
+### 问题修复
+
+fix 修复 文案错误 (感谢 羡民Coding)
+fix 修复 判断条件写反问题
+fix 修复 websocket 多线程下IO阻塞的问题 (感谢 miracle-bean)
+fix 修复 临时修复Ip2Region InputStream读取函数导致的OOM问题 (感谢 ColorDreams)
+
+### 前端修改
+
+update 优化 修改前端推荐的node版本号
+fix 修复 角色删除按钮权限标识符不正确问题
+fix 修复 authBinding 代码漏改问题
+fix 修复 一个奇奇怪怪的问题(特殊芯片电脑可复现 https://gitee.com/dromara/RuoYi-Vue-Plus/issues/IBTNM1)
+
+
 ## v5.5.2 - 2025-12-23
 
 ### 依赖升级
