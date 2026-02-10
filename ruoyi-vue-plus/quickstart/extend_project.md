@@ -30,6 +30,7 @@
 | 集成 nextdoc4j 以支持文档管理            | https://gitee.com/dromara/RuoYi-Vue-Plus/pulls/793   |
 | 富文本编辑器支持只读模式                    | https://gitee.com/JavaLionLi/plus-ui/pulls/250       |
 | 新增表格通用组件、搜索通用组件                 | https://gitee.com/JavaLionLi/plus-ui/pulls/253       |
+| 基于element-plus二次封装通用表格、搜索组件     | https://gitee.com/JavaLionLi/plus-ui/pulls/259       |
 
 
 ### 项目介绍+项目地址 欢迎投稿
