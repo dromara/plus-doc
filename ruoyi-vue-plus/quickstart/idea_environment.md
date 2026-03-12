@@ -1,14 +1,29 @@
-# idea环境配置
+﻿# IntelliJ IDEA 环境配置
 - - -
-## 配置项目编码
+
+## 配置建议
+
+- 建议使用官方推荐的 IDEA 版本（见项目初始化页）
+- 推荐统一使用 UTF-8 编码
+- 编译内存不足可能导致“找不到类”等构建问题
+
+## 1. 配置项目编码
+
 ![输入图片说明](https://foruda.gitee.com/images/1662107706295343419/e27065a9_1766278.png "屏幕截图")
 
-## 编译内存(重点注意事项 一旦内存不够会出现各种编译报错 找不到类等等问题)
+## 2. 配置编译内存
+
+示例：可根据机器配置适当提升 `-Xms/-Xmx`。  
+内存不足会导致编译异常或运行不稳定。
+
 ![输入图片说明](https://foruda.gitee.com/images/1764139559795286358/197fd546_1766278.png "屏幕截图")
 
-## 配置运行看板
+## 3. 配置运行看板
+
 ![输入图片说明](https://foruda.gitee.com/images/1662108673306567278/8af97b47_1766278.png "屏幕截图")
-### 配置spring与docker看板
+
+### 3.1 配置 Spring 与 Docker 看板
+
 ![输入图片说明](https://foruda.gitee.com/images/1662111392476935892/6b6760fb_1766278.png "屏幕截图")
 
 ![输入图片说明](https://foruda.gitee.com/images/1662108865191892425/3c045999_1766278.png "屏幕截图")
@@ -17,37 +32,45 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1662108894122798039/6a53a38c_1766278.png "屏幕截图")
 
-## 配置服务器SSH连接
-进入 `Settings -> Tools -> SSH Configurations` 点击加号创建SSH连接配置<br>
-填写 服务器IP 用户名 密码 端口号 点击 Test Connection 测试连接
+## 4. 配置服务器 SSH 连接
+
+进入 `Settings -> Tools -> SSH Configurations`，点击加号创建 SSH 配置。  
+填写服务器地址、用户名、认证方式并测试连接。
+
+示例配置（请替换为真实信息）：
+
+| 项目   | 示例             |
+|------|----------------|
+| Host | 192.168.1.10   |
+| Port | 22             |
+| User | root           |
+| Auth | Password / Key |
 
 ![输入图片说明](https://foruda.gitee.com/images/1662107776533098115/bd78467b_1766278.png "屏幕截图")
 
-使用Terminal 工具 点击箭头找到上方创建的SSH连接配置<br>
-选择即可进入SSH连接界面 在这里可以对服务器进行命令操作
+使用 `Terminal` 工具，选择已创建的 SSH 配置即可进入远程终端。
 
 ![输入图片说明](https://foruda.gitee.com/images/1662108010120640495/c70f9f9a_1766278.png "屏幕截图")
 
-## 配置服务器FTP连接
-进入 `Settings -> Build-> Deployment` 点击加号 选择SFTP 创建 FTP 连接配置<br>
-选择之前创建好的SSH配置 点击 Test Connection 测试连接
+## 5. 配置服务器 SFTP 连接
+
+进入 `Settings -> Build -> Deployment`，点击加号选择 SFTP，创建连接。  
+选择前面创建的 SSH 配置并测试连接。
 
 ![输入图片说明](https://foruda.gitee.com/images/1662107899553257979/e2eeb7fd_1766278.png "屏幕截图")
 
-在IDEA上方工具栏 找到 `Tools -> Deployment -> Browse Remote Host` 打开远程界面<br>
-点击箭头找到我们上方配置的SFTP连接配置 即可连接到服务器的文件目录
+在 IDEA 顶部菜单选择 `Tools -> Deployment -> Browse Remote Host` 打开远程目录窗口。  
+切换到上方创建的 SFTP 配置即可浏览服务器文件。
 
 ![输入图片说明](https://foruda.gitee.com/images/1662107974682787233/b8a601fd_1766278.png "屏幕截图")
 
-## 配置Docker连接
-### 可操作远程docker与构建上传docker镜像(代替原来maven docker插件)
-tcp连接需要开放服务器2375端口<br>
-ssh需要使用上方的SSH连接配置<br>
-建议使用SSH连接
+## 6. 配置 Docker 连接
+
+支持远程 Docker 操作与镜像构建。推荐使用 SSH 方式连接。  
+如果使用 TCP 方式，需要在服务器开放 `2375` 端口。
 
 ![输入图片说明](https://foruda.gitee.com/images/1662108188005932060/75872bf8_1766278.png "屏幕截图")
 
-配置好之后 在运行窗口会多出一个Docker图标 双击即可连接远程docker<br>
-可以查看容器实时日志 启动 重启 停止 等操作
+配置完成后运行窗口将出现 Docker 图标，可查看容器日志并执行启停等操作。
 
 ![输入图片说明](https://foruda.gitee.com/images/1662108250902891875/b82d022b_1766278.png "屏幕截图")

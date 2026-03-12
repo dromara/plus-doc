@@ -1,4 +1,4 @@
-# 关于请求响应参数解密
+﻿# 关于请求响应参数解密
 ---
 ## 1：前端加密请求
 
@@ -61,16 +61,16 @@ String decryptBody = EncryptUtils.decryptByAes(requestBody, aesPassword);
 }
 ```
 
-|参数名|说明|
-|---|---|
-|tenantId| 租户id |
-|username| 用户名 |
-|password| 密码 |
-|rememberMe| 记住密码 |
-|uuid| - |
-|code| 验证码结果 |
-|clientId| 客户端id（表 sys_client） |
-|grantType| 授权类型（表 sys_client） |
+| 参数名        | 说明                  |
+|------------|---------------------|
+| tenantId   | 租户id                |
+| username   | 用户名                 |
+| password   | 密码                  |
+| rememberMe | 记住密码                |
+| uuid       | -                   |
+| code       | 验证码结果               |
+| clientId   | 客户端id（表 sys_client） |
+| grantType  | 授权类型（表 sys_client）  |
 
 ## 2：后端加密响应
 
@@ -137,12 +137,12 @@ String decryptBody = EncryptUtils.decryptByAes(responseBody, aesPassword);
 }
 ```
 
-|参数名|说明|
-|---|---|
-|scope| 令牌权限 |
-|openid| 用户 openid |
-|access_token| 授权令牌 |
-|refresh_token| 刷新令牌 |
-|expire_in| 授权令牌 access_token 的有效期 |
-|refresh_expire_in| 刷新令牌 refresh_token 的有效期 |
-|clientId| 客户端id（表 sys_client） |
+| 参数名               | 说明                      |
+|-------------------|-------------------------|
+| scope             | 令牌权限                    |
+| openid            | 用户 openid               |
+| access_token      | 授权令牌                    |
+| refresh_token     | 刷新令牌                    |
+| expire_in         | 授权令牌 access_token 的有效期  |
+| refresh_expire_in | 刷新令牌 refresh_token 的有效期 |
+| clientId          | 客户端id（表 sys_client）     |

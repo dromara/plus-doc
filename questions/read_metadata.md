@@ -1,8 +1,9 @@
-# unable to read meta-data for class xxx
+﻿# unable to read meta-data for class xxx
 - - -
-## 问题原因
 
-此问题由改包名导致框架内组件 spring 的 spi 配置文件包名被改乱套
+## 常见原因
+
+修改包名后，组件的 Spring SPI 配置文件未同步更新，导致类路径失效。
 
 ## 解决方案
 

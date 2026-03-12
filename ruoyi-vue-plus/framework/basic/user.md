@@ -1,85 +1,78 @@
-# 系统用户相关
+﻿# 系统用户相关
 - - -
 
-> 框架采用sa-token控制权限 并对sa-token的api做了一定的业务封装<br>
+## 功能概览
 
-## 用户登录
+- 基于 `Sa-Token` 实现认证与权限控制
+- 框架对 Sa-Token API 做了业务封装
+- 登录数据来源不限制，只需构建 `LoginUser`
 
-> 参考自带多种登录实现 不限制用户数据来源 只需要构建 LoginUser 即可完成登录<br>
-> 例如: `同表不同类型` `不同表` `同表+扩展表`<br>
+## 登录与 Token
 
-![输入图片说明](https://foruda.gitee.com/images/1699590555824776931/63d493fc_1766278.png "屏幕截图")
+完成登录后会返回 token，前端需在请求头携带：
 
-## 获取用户信息
+`Authorization: Bearer token`
 
-> 完成登录后会生成登录token返回给前端 前端需要再请求头携带token 后端方可获取到对应的用户信息
+后端获取当前登录用户：
 
-请求头传递格式: `Authorization: Bearer token`
-
-后端获取用户信息: 
 ```java
 LoginUser user = LoginHelper.getLoginUser();
 ```
 
-## 获取用户信息(基于token)
+基于 token 获取用户信息：
+
 ```java
 LoginUser user = LoginHelper.getLoginUser(token);
 ```
 
-## 获取登录用户id
+## 常用 API
+
 ```java
+// 获取登录用户 ID
 Long userId = LoginHelper.getUserId();
-```
 
-## 获取登录用户账户名
-```java
+// 获取登录用户账号
 String username = LoginHelper.getUsername();
-```
 
-## 获取登录用户所属租户id
-```java
+// 获取登录用户租户 ID
 String tenantId = LoginHelper.getTenantId();
-```
 
-## 获取登录用户所属部门id
-```java
+// 获取登录用户部门 ID
 Long deptId = LoginHelper.getDeptId();
-```
 
-## 获取登录用户类型
-```java
+// 获取登录用户类型
 UserType userType = LoginHelper.getUserType();
 ```
 
-## 获取登录用户其他扩展属性
+## 扩展属性
+
+获取扩展属性：
+
 ```java
 Object obj = LoginHelper.getExtra(key);
 ```
 
-## 设置登录用户其他扩展属性
-
-参考登录设置 `clientId` 属性
+设置扩展属性示例（如登录时设置 `clientId`）：
 
 ![输入图片说明](https://foruda.gitee.com/images/1699591164562734430/42730add_1766278.png "屏幕截图")
 
-## 判断用户是否为超级管理员
+## 权限判断
+
+是否为超级管理员：
 
 ```java
-// 判断当前登录用户
 boolean b = LoginHelper.isSuperAdmin();
-// 判断用户基于id
 boolean b = LoginHelper.isSuperAdmin(userId);
 ```
 
-## 判断用户是否为租户管理员
+是否为租户管理员：
 
 ```java
-// 判断当前登录用户
 boolean b = LoginHelper.isTenantAdmin();
-// 判断用户基于角色组
+// 示例：基于角色组判断
 boolean b = LoginHelper.isSuperAdmin(rolePermission);
 ```
 
-## 其他更多操作
-[Sa-Token 官方文档 - 登录认证](https://sa-token.cc/doc.html#/use/login-auth)
+## 参考文档
 
+更多登录认证相关能力请参考：[Sa-Token 官方文档 - 登录认证](https://sa-token.cc/doc.html#/use/login-auth)

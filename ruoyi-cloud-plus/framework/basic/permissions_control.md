@@ -1,4 +1,4 @@
-# 权限控制
+﻿# 权限控制
 - - -
 
 本文采用 `Sa-Token` 框架实现权限控制。[官方文档传送门](https://sa-token.cc/doc.html#/)

@@ -1,6 +1,7 @@
-# 为什么删除sentinel
+﻿# 为什么删除 Sentinel
 - - -
-## 原因
+
+## 移除原因
 
 * 社区已经超过一年不更新代码 社区冰点issue无人回复
 * 代码与最新技术栈偏离太大(不适配boot3与jdk17)
@@ -11,11 +12,10 @@
 
 ## 替代方案
 
-使用框架自带的限流注解 对业务做限流即可
+使用框架自带的限流注解对业务接口进行限流。
 
-## 依旧想使用sentinel怎么办
+## 仍需使用 Sentinel
 
-根据代码提交记录反向操作即可
+可参考历史提交恢复相关模块：
 
-https://gitee.com/dromara/RuoYi-Cloud-Plus/commit/e0f68ef605128dde61a0c1566d9c2e5771387dca
-
+`https://gitee.com/dromara/RuoYi-Cloud-Plus/commit/e0f68ef605128dde61a0c1566d9c2e5771387dca`

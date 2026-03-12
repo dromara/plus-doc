@@ -1,4 +1,4 @@
-# nacos 报错 The Raft Group [naming_instance_metadata]
+﻿# Nacos 报错 The Raft Group [naming_instance_metadata]
 - - -
 ## Nacos 服务下线报错问题
 
@@ -7,8 +7,9 @@
 Nacos 服务管理 > 服务列表 > 详情 > 下线 报错
 
 
+## 问题现象
 
-报错详情：
+在 Nacos 服务管理中下线实例时报错：
 
 ```
 caused: errCode: 500, errMsg: do metadata operation failed ;caused: com.alibaba.nacos.consistency.exception.ConsistencyException: The Raft Group [naming_instance_metadata] did not find the Leader node;caused: The Raft Group [naming_instance_metadata] did not find the Leader node;

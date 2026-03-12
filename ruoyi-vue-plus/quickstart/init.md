@@ -1,76 +1,88 @@
-# 5.X项目初始化
+﻿# 5.X项目初始化
 - - -
-### 项目分支说明
 
-`5.X` 主分支 5.X版本 稳定发布分支<br>
-`dev` 开发分支 代码随时更新 不推荐使用 经测试后会发布到主分支<br>
-`future/*` 新功能预览分支<br>
+## 分支选择
 
-### 项目必备环境
-> 推荐使用 `docker` 安装 项目内置 `docker` 编排文件
+| 分支       | 用途   | 说明             |
+|----------|------|----------------|
+| 5.X      | 稳定发布 | 推荐生产与学习        |
+| dev      | 开发分支 | 代码随时更新，不建议直接使用 |
+| future/* | 预览分支 | 新功能预览，稳定性不保证   |
 
-**注意: 禁止使用 `oraclejdk`(由于spring的bug导致打包运行会报错)**
+## 运行环境清单
+> 推荐使用 `Docker` 安装，项目内置编排文件。
+
+**注意：禁止使用 `OracleJDK`（已知会导致 Spring 打包/运行异常）**
 
 ![输入图片说明](https://foruda.gitee.com/images/1720080025744223375/0213a652_1766278.png "屏幕截图")
 
-* Spring官方推荐使用OpenJDK-17/21 [JDK下载地址](https://bell-sw.com/pages/downloads/)
-* mysql 5.7 8.0 (其他版本未测试 如其他版本没问题 可以告知咱们)
-* oracle >= 12c (其他版本未测试 如其他版本没问题 可以告知咱们)
-* postgres 13 14 15 (其他版本未测试 如其他版本没问题 可以告知咱们)
-* sqlserver 2017 2019 (其他版本未测试 如其他版本没问题 可以告知咱们)
-* redis >= 6.X 由于框架大量使用了redis特性 版本必须 >= 6.X ([win redis 下载地址](https://github.com/zkteco-home/redis-windows))
-* minio(RustFS可用于替换minio 比较新需谨慎使用) 本地存储或阿里/腾讯/七牛云等一切支持S3协议的云存储
-* (注意 minio最后一个可用版本2025-04-22T22-12-26Z 再往上功能被阉割)
-* maven >= 3.8.X
-* nodejs >= 20.15 (其他版本未测试 如其他版本没问题 可以告知咱们)
-* npm >= 8.X (7.X确认有问题)
-* idea 版本避坑指南 看下面:
-* 2023(全系列不要用 bug太多说不过来) 
-* 2024.1/2024.2(maven插件无法刷新依赖)
-* 2025.1/2025.2(有一些bug不建议使用)
-* 目前推荐使用 2024.3(jdk17) 2025.3(jdk21-25) 
+| 组件            | 版本建议         | 说明                     |
+|---------------|--------------|------------------------|
+| JDK           | 17 / 21      | 推荐 OpenJDK（如 BellSoft） |
+| MySQL         | 5.7 / 8.0    | 其他版本未测试，可反馈            |
+| Oracle        | >= 12c       | 其他版本未测试，可反馈            |
+| PostgreSQL    | 13 / 14 / 15 | 其他版本未测试，可反馈            |
+| SQL Server    | 2017 / 2019  | 其他版本未测试，可反馈            |
+| Redis         | >= 6.x       | 框架大量使用新特性              |
+| MinIO         | 按需           | 可用 RustFS 替代（新方案需谨慎）   |
+| Maven         | >= 3.8.x     | 构建工具                   |
+| Node.js       | >= 20.15     | 其他版本未测试，可反馈            |
+| npm           | >= 8.x       | 7.x 已确认存在问题            |
+| IntelliJ IDEA | 见下方          | 有版本避坑说明                |
 
-### 搭建视频
+
+## IntelliJ IDEA 版本建议
+
+- 2023 全系列不推荐（问题较多）
+- 2024.1 / 2024.2：Maven 插件无法刷新依赖
+- 2025.1 / 2025.2：存在已知问题
+- 推荐使用：2024.3（JDK17）或 2025.3（JDK21-25）
+
+## 搭建视频
 
 [RuoYi-Vue-Plus 5.0 搭建与运行](https://www.bilibili.com/video/BV1Fg4y137JK/)
 
-### 勾选maven对应环境
+## 初始化步骤
+
+### 1. 勾选 Maven 对应环境
 ![输入图片说明](https://foruda.gitee.com/images/1678976284045210056/a2f28d33_1766278.png "屏幕截图")
 
-### 默认 `JDK17` 如有变动 需更改以下配置
+### 2. 确认 JDK 版本与配置
+默认使用 `JDK17`，如需变更请同步修改项目配置。
 
 ![输入图片说明](https://foruda.gitee.com/images/1678941027820943505/c688e01e_1766278.png "屏幕截图")
 ![输入图片说明](https://foruda.gitee.com/images/1678941120518807034/4d56fcc9_1766278.png "屏幕截图")
 
-### sql导入
-
-请按照以下顺序依次导入 默认为 `mysql` 其他数据库需导入对应的sql文件<br>
-如需使用其他数据库 看这里 => [多数据库数据源](/ruoyi-vue-plus/framework/extend/dynamic_datasource.md)<br>
+### 3. 导入数据库 SQL
+请按顺序依次导入，默认使用 `MySQL`。  
+如需使用其他数据库，请参考 [多数据库数据源](/ruoyi-vue-plus/framework/extend/dynamic_datasource.md)。
 
 ![输入图片说明](https://foruda.gitee.com/images/1726304546467780078/b78cabd4_1766278.png "屏幕截图")
 
-### 服务启动顺序说明
+### 4. 配置主服务
+在已勾选的环境配置文件中填写数据库与 Redis 配置。
 
-1. 必须启动基础建设: mysql redis admin<br>
-2. 可选启动基础建设: minio(影响文件上传) monitor(影响监控) snailjob(影响定时任务)<br>
+![输入图片说明](https://foruda.gitee.com/images/1678941357316005626/70559736_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1678941405169571070/0d06a955_1766278.png "屏幕截图")
+
+其他数据库配置可按系统自带模板进行调整。
+
+![输入图片说明](https://foruda.gitee.com/images/1678941444707120259/b274592a_1766278.png "屏幕截图")
+
+### 5. 启动顺序与建议
+
+必启基础服务：`MySQL`、`Redis`、`Admin`  
+可选基础服务：`MinIO`（文件上传）、`Monitor`（监控）、`SnailJob`（定时任务）
 
 ![输入图片说明](https://foruda.gitee.com/images/1716175484919688429/8b9a79b7_1766278.png "屏幕截图")
 
-* `MonitorAdminApplication` 为 Admin监控服务(非必要 可参考对应文档关闭 [搭建Admin监控](/ruoyi-vue-plus/quickstart/admin_init.md))
-* `SnailJobServerApplication` 为 任务调度中心服务(非必要 可参考对应文档关闭 [搭建调度中心](/ruoyi-vue-plus/quickstart/snail_job_init.md))
-* `DromaraApplication` 为 主应用服务
-> 需优先启动 `MonitorAdminApplication` 与 `SnailJobServerApplication` 具体配置方式参考对应文档<br>
-> 最后启动 主服务 `DromaraApplication`<br>
-> 工作流相关初始化使用 [工作流初始化](/ruoyi-vue-plus/quickstart/worker_init.md)
+- `MonitorAdminApplication`：Admin 监控服务  
+- `SnailJobServerApplication`：任务调度中心服务  
+- `DromaraApplication`：主应用服务
 
-### 主服务配置方式
+> 建议先启动 `MonitorAdminApplication` 与 `SnailJobServerApplication`，最后启动 `DromaraApplication`。  
+> 工作流相关初始化请参考 [工作流初始化](/ruoyi-vue-plus/quickstart/worker_init.md)。
 
-在勾选对应环境的配置文件内 填写 mysql 与 redis 配置信息
+## 示例：最小化启动
 
-![输入图片说明](https://foruda.gitee.com/images/1678941357316005626/70559736_1766278.png "屏幕截图")
-
-![输入图片说明](https://foruda.gitee.com/images/1678941405169571070/0d06a955_1766278.png "屏幕截图")
-
-其他数据库配置 按照系统自带的配置更改即可
-
-![输入图片说明](https://foruda.gitee.com/images/1678941444707120259/b274592a_1766278.png "屏幕截图")
+仅体验基础功能时，可先启动 `MySQL`、`Redis` 与 `DromaraApplication`，其余服务按需再补充。

@@ -14,16 +14,16 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1717038201634120005/e02882d3_4959041.png "屏幕截图")
 
-|参数名|说明|
-|---|---|
-|tenantId| 租户id |
-|username| 用户名 |
-|password| 密码 |
-|rememberMe| 记住密码 |
-|uuid| - |
-|code| 验证码结果 |
-|clientId| 客户端id（表 sys_client） |
-|grantType| 授权类型（表 sys_client） |
+| 参数名        | 说明                  |
+|------------|---------------------|
+| tenantId   | 租户id                |
+| username   | 用户名                 |
+| password   | 密码                  |
+| rememberMe | 记住密码                |
+| uuid       | -                   |
+| code       | 验证码结果               |
+| clientId   | 客户端id（表 sys_client） |
+| grantType  | 授权类型（表 sys_client）  |
 
 ## 3：使用接口文档调试
 

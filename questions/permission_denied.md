@@ -1,15 +1,21 @@
-# Redis 报错 Permission denied
+﻿# Redis 报错 Permission denied
 - - -
-### 此报错为无权限
 
-需确保 redis 数据存储文件夹具有写权限
+## 常见原因
 
-```shell
+Redis 数据目录无写权限，RDB 或 AOF 无法落盘。
+
+
+## 解决方案
+
+1. 确认数据目录有写权限。
+2. 在容器环境中授权挂载目录。
+
+```bash
 chmod 777 /docker/redis/data
 ```
 
-没有写权限无法对数据进行存储
 
-### 关于RDB报错 `/etc` 无权限问题
+## 补充建议
 
-增加redis密码校验 无密码导致配置不安全
+建议设置 Redis 密码（`requirepass`）并最小化文件夹权限范围。

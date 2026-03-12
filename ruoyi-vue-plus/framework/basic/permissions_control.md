@@ -1,4 +1,4 @@
-# 权限控制
+﻿# 权限控制
 - - -
 
 本文采用 `Sa-Token` 框架实现权限控制。[官方文档传送门](https://sa-token.cc/doc.html#/)
@@ -8,7 +8,7 @@
 
 通常情况下，一个 API 对应一个权限码，如果用户具备当前 API 的权限码，即代表有能力访问该 API。
 
-### 1：权限标识
+### 1. 权限标识
 在本系统中，每一个菜单功能都有对应的权限标识，可以在菜单管理中进行设置。
 
 > 注：
@@ -18,9 +18,9 @@
 ![输入图片说明](https://foruda.gitee.com/images/1701086497939145368/133fb327_4959041.png "屏幕截图")
 
 
-### 2：校验方法
-#### 2.1：使用 `@SaCheckPermission` 注解进行校验
-`@SaCheckPermission` 注解是由 `Sa-Token` 框架提供的角色校验注解，可以标注在方法上或类上。
+### 2. 校验方法
+#### 2.1 使用 `@SaCheckPermission` 注解校验
+`@SaCheckPermission` 注解是由 `Sa-Token` 框架提供的权限校验注解，可以标注在方法上或类上。
 
 - 单个权限校验：
 
@@ -52,7 +52,7 @@
 )
 ```
 
-#### 2.2：使用 `StpUtil` 工具类校验
+#### 2.2 使用 `StpUtil` 工具类校验
 `StpUtil` 工具类是由 `Sa-Token` 框架提供的权限工具类，提供了常用的校验方法。
 
 - 判断当前用户是否拥有某个权限（返回 `boolean`）：
@@ -85,15 +85,15 @@ StpUtil.checkPermissionAnd("system:user:list", "system:user:query");
 ## 角色校验
 角色校验指的是校验用户是否拥有某个指定角色。
 
-### 1：权限标识
+### 1. 角色标识
 在本系统中，每个角色都拥有唯一的权限字符。
 
 除了超级管理员角色外，其他角色的权限字符可以通过角色管理进行设置。
 
 ![输入图片说明](https://foruda.gitee.com/images/1701085080527279823/3255961d_4959041.png "屏幕截图")
 
-### 2：校验方法
-#### 2.1：使用 `@SaCheckRole` 注解校验
+### 2. 校验方法
+#### 2.1 使用 `@SaCheckRole` 注解校验
 `@SaCheckRole` 注解是由 `Sa-Token` 框架提供的角色校验注解，可以标注在方法上或类上。
 
 - 单个角色校验
@@ -126,7 +126,7 @@ StpUtil.checkPermissionAnd("system:user:list", "system:user:query");
 )
 ```
 
-#### 2.2：使用 `StpUtil` 工具类校验
+#### 2.2 使用 `StpUtil` 工具类校验
 `StpUtil` 工具类是由 `Sa-Token` 框架提供的权限工具类，提供了常用的校验方法。
 
 - 判断当前用户是否拥有某个角色（返回 `boolean`）：
@@ -135,24 +135,24 @@ StpUtil.checkPermissionAnd("system:user:list", "system:user:query");
 StpUtil.hasRole("superadmin")
 ```
 
-- 单个权限校验：
+- 单个角色校验：
 
 ```Java
-StpUtil.checkRole("system:user:list");
+StpUtil.checkRole("admin");
 ```
 如果验证未通过，则抛出异常: `NotRoleException`
 
-- 多个权限校验（或模式，满足任意一个角色即可）：
+- 多个角色校验（或模式，满足任意一个角色即可）：
 
 ```Java
-StpUtil.checkRoleOr("system:user:list", "system:user:query");
+StpUtil.checkRoleOr("superadmin", "admin");
 ```
 如果验证未通过，则抛出异常: `NotRoleException`
 
-- 多个权限校验（与模式，必须满足所有角色）：
+- 多个角色校验（与模式，必须满足所有角色）：
 
 ```Java
-StpUtil.checkRoleAnd("system:user:list", "system:user:query");
+StpUtil.checkRoleAnd("superadmin", "admin");
 ```
 如果验证未通过，则抛出异常: `NotRoleException`
 

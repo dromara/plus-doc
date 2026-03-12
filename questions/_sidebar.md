@@ -29,6 +29,4 @@
   * [Redis 报错 Permission denied](/questions/permission_denied.md)
   * [导入excel实体类为空](/questions/import_excel.md)
   * [Lombok注解爆红](/questions/lombok.md)
-  * [如何使用Tomcat](/questions/use_tomcat.md)
   * [如何使用druid连接池](/questions/use_druid.md)
-  * [vue与boot整合部署](/questions/deploy_vue.md)

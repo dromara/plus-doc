@@ -1,10 +1,8 @@
-# 对接前声明
+﻿# Knife4j 对接说明
 
 经常有小伙伴希望可以对接 knife4j
 
-那么这里将介绍如何使用 框架生成的 openapi 对接 knife4j
-
-# 如何对接
+## 前置说明
 
 **重点声明: 本框架生成标准openapi结构 如对接后遇到不好用等问题 皆与本框架无关**
 
@@ -18,7 +16,7 @@ knife4j 本身提供了独立的文档中间件 可以零成本的介入 openapi
 
 ![输入图片说明](https://foruda.gitee.com/images/1685953873117929554/22dce56e_1766278.png "屏幕截图")
 
-vue版本对接配置如下: 
+## Vue 版本示例
 
 ```yml
 knife4j:
@@ -37,7 +35,8 @@ knife4j:
         location: /v3/api-docs/3.代码生成模块
 ```
 
-cloud版本对接配置如下: 
+
+## Cloud 版本示例
 
 ```yml
 knife4j:
