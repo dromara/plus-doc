@@ -6,6 +6,8 @@
 - <a href="https://gitee.com/aizuda/flowlong"><img src="https://foruda.gitee.com/images/1752939345569324939/b9c50209_1766278.png" width="260px" height="55px"></a>
 - <a href="https://topiam.cn?from=plus-doc"><img src="https://foruda.gitee.com/images/1765071755540415213/3236e57d_1766278.png" width="260px" height="55px"></a>
 
+* **简介**
+  * [项目简介](/plus-ui/home.md)
 * **开发文档**
   * [通用方法](/plus-ui/common_func.md)
   * [开发规范](/plus-ui/dev_norm.md)
