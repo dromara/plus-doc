@@ -54,7 +54,7 @@ mvn clean package -D maven.test.skip=true -P prod
 
 ### 1. 安装 Docker 与 Compose
 
-参考：
+请优先阅读 [idea环境配置](https://gitee.com/dromara/RuoYi-Cloud-Plus/wikis/pages?sort_id=5985190&doc_id=2056143)
 
 - [docker安装](https://lionli.blog.csdn.net/article/details/83153029)
 - [docker-compose安装](https://lionli.blog.csdn.net/article/details/111220320)

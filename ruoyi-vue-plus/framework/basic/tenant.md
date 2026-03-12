@@ -43,13 +43,13 @@
 ## 忽略租户
 
 1.如果需要指定单独 SQL 不开启过滤，可在对应的 Mapper 接口添加如下忽略注解：
-```java
+```
 @InterceptorIgnore(tenantLine = "true", dataPermission = "false")
 ```
-**注意：** 使用该注解时如果仍需开启数据权限，请显式设置 `dataPermission = "false"`。MyBatis-Plus 默认会忽略数据权限，未显式设置可能导致数据权限失效。
+**此处注意事项 使用此注解如果需要开启数据权限 dataPermission = "false" 必须添加 mp的注解默认是忽略数据权限的 会导致数据权限失效**
 
 2.如果需要在业务层忽略多租户，可调用以下方法(推荐使用)：
-```java
+```
 # 无返回值
 TenantHelper.ignore(() -> { 业务代码 });
 # 有返回值
@@ -58,10 +58,9 @@ Class result = TenantHelper.ignore(() -> { return 业务代码 });
 
 ## 动态切换租户
 
-**仅适用于特殊需求业务(例如：创建租户时初始化数据，或跨租户读取必要数据)**  
-不建议滥用，避免引入越权与数据串租风险。
+**仅适用于特殊需求业务(例如: 创建租户时, 对该租户操作一些数据, 或者需要去其他租户查一些数据等) 禁止乱用后果自负**
 
-```java
+```
 # 无返回值
 TenantHelper.dynamic(租户id, () -> { 业务代码 });
 # 有返回值
