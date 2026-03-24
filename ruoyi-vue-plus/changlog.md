@@ -1,6 +1,55 @@
 # 更新日志
 - - -
 
+## v5.6.0 - 2026-03-24
+
+### 依赖升级
+
+* update springboot 3.5.11 => 3.5.12
+* update bcpkix-jdk18on 1.80 => 1.83
+* update ip2region 3.3.2 => 3.3.4
+* update minio 升级pgsty开源社区fork重新维护的最新版 RELEASE.2026-02-14T12-00-00Z
+
+### 功能优化
+
+* update 优化 使用release指令代替source和target指令进行编译构建
+* update 优化 增加工作流短信发送案例
+* update 优化 消除编译相关提醒
+* update 优化 区分系统监控与流程监控菜单地址 避免冲突
+* update 优化 增强接口描述 可在apifox接口描述中看到权限标识符与角色(感谢 AprilWind 感谢 nextdoc4j)
+* update 优化 增加调整转办等消息提示
+* update 优化 代码增加空判断与其他性能优化
+* update 优化 增加工作流接口权限标识符(感谢 may)
+* update 优化 调整流程撤销如果非发起人或管理员不可以撤销
+
+### 问题修复
+
+* fix 修复 演示案例导入 VO 缺失 AutoMapper 注解导致导入数据功能转换失败的问题(感谢 清酒)
+* fix 修复 undertow 新版本无法上传大文件问题
+* fix 修复 移除超级管理员角色后新增角色分配校验，避免无角色分配时报错
+* fix 修复 jackson createContextual 用法不标准导致可能出现的并发问题(https://gitee.com/dromara/RuoYi-Cloud-Plus/issues/IFAM5Z)
+* fix 修复 excel结尾出现空白格导致合并策略异常问题
+* fix 修复 CVE-2026-2819 工作流接口通过业务id可以越级删除问题(感谢 may)
+
+### 前端修改
+
+* update vueuse 13.9.0 => 14.2.1
+* update echarts 5.6.0 => 6.0.0
+* update element-plus 2.11.7 => 2.13.5
+* update vue 3.5.22 => 3.5.30
+* update vue-router 4.6.3 => 5.0.3
+* update sass 1.93.3 => 1.98.0
+* update vite 6.4.1 => 7.3.1
+* add 新增 支持顶部导航菜单
+* update 优化 增加工作流菜单权限标识符
+* update 优化 字典类型属性提醒说明
+* update 优化 整体页面样式 更圆滑
+* update 优化 字典管理改为左右卡片式
+* update 优化 删除debug保护工具性能问题严重 容易导致浏览器卡死
+* update 优化 将富文本编辑器改为base64存储图片 图片访问权限随文章访问权限走 不走oss存储了
+* fix 修复 富文本 无需列表无效问题
+
+
 ## v5.5.3 - 2026-01-23
 
 ### 依赖升级
