@@ -22,6 +22,111 @@
     <meta charset="UTF-8">
     <!-- 默认主题 -->
     <link rel="stylesheet" href="static/css/vue.css">
+    <style>
+        .app-nav.app-nav--with-search {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1rem;
+            left: auto;
+            right: 60px;
+            margin: 18px 0 0;
+            z-index: 30;
+        }
+
+        .app-nav.app-nav--with-search .nav-search-slot {
+            position: relative;
+            flex: 0 1 340px;
+            min-width: 280px;
+        }
+
+        .app-nav.app-nav--with-search > ul {
+            flex: 0 0 auto;
+        }
+
+        .app-nav.app-nav--with-search .search {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .app-nav.app-nav--with-search .search .input-wrap {
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 999px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        .app-nav.app-nav--with-search .search input {
+            background: transparent;
+            padding: 0.7rem 0;
+        }
+
+        .app-nav.app-nav--with-search .search .clear-button {
+            width: 28px;
+            flex: 0 0 28px;
+        }
+
+        .app-nav.app-nav--with-search .search .results-panel {
+            position: absolute;
+            top: calc(100% + 12px);
+            left: 0;
+            right: 0;
+            max-height: min(70vh, 560px);
+            overflow-y: auto;
+            padding: 8px 16px;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+        }
+
+        .app-nav.app-nav--with-search .search h2 {
+            font-size: 16px;
+        }
+
+        .sidebar-sponsor-section {
+            padding: 0 15px 12px;
+        }
+
+        .sidebar-sponsor-title {
+            margin: 6px 0 10px;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+
+        .sidebar-sponsors {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sidebar-sponsor {
+            display: block;
+            line-height: 0;
+        }
+
+        .sidebar-sponsor-note {
+            margin-top: 8px;
+            color: #7a869a;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .app-nav.app-nav--with-search {
+                right: 25px;
+            }
+
+            .app-nav.app-nav--with-search .nav-search-slot {
+                flex-basis: 300px;
+                min-width: 240px;
+            }
+        }
+    </style>
 </head>
 <body>
 <div id="app"></div>
@@ -76,6 +181,176 @@
 <script src="static/js/zoom-image.min.js"></script>
 <!-- 搜索功能支持 -->
 <script src="static/js/search.min.js"></script>
+<script>
+    (function() {
+        var layoutTimer;
+        var cachedSearchBox;
+        var sponsorTimer;
+        var sidebarSponsors = [
+            {
+                href: 'https://gitee.com/dromara/MaxKey',
+                image: 'https://foruda.gitee.com/images/1700187453544179968/7342304a_1766278.png'
+            },
+            {
+                href: 'http://ccflow.org/?frm=ryPlus',
+                image: 'https://foruda.gitee.com/images/1704162419429172656/d0521e59_1766278.png'
+            },
+            {
+                href: 'https://www.mall4j.com/cn/?statId=11',
+                image: 'https://foruda.gitee.com/images/1743644193997673060/beabd304_1766278.jpeg'
+            },
+            {
+                href: 'https://gitee.com/aizuda/flowlong',
+                image: 'https://foruda.gitee.com/images/1752939345569324939/b9c50209_1766278.png'
+            },
+            {
+                href: 'https://topiam.cn?from=plus-doc',
+                image: 'https://foruda.gitee.com/images/1765071755540415213/3236e57d_1766278.png'
+            }
+        ];
+
+        function restoreSidebarSearch(searchBox, aside) {
+            if (!searchBox || !aside || !aside.parentNode) {
+                return;
+            }
+
+            if (searchBox.parentNode !== aside.parentNode || searchBox.nextElementSibling !== aside) {
+                aside.parentNode.insertBefore(searchBox, aside);
+            }
+        }
+
+        function placeSearchInNavbar() {
+            var searchBox = document.querySelector('div.search') || cachedSearchBox;
+            var aside = document.querySelector('aside.sidebar');
+            var nav = document.querySelector('nav.app-nav');
+            var sourceList;
+
+            if (!searchBox || !aside) {
+                return;
+            }
+            cachedSearchBox = searchBox;
+
+            if (!nav || window.innerWidth <= 768) {
+                restoreSidebarSearch(searchBox, aside);
+                return;
+            }
+
+            var existingSlot = nav.querySelector('.nav-search-slot');
+            if (existingSlot) {
+                nav.classList.add('app-nav--with-search');
+                if (searchBox.parentNode !== existingSlot) {
+                    existingSlot.appendChild(searchBox);
+                }
+                return;
+            }
+
+            for (var i = 0; i < nav.children.length; i++) {
+                if (nav.children[i].tagName === 'UL') {
+                    sourceList = nav.children[i];
+                    break;
+                }
+            }
+            if (!sourceList) {
+                return;
+            }
+
+            var searchSlot = document.createElement('div');
+            searchSlot.className = 'nav-search-slot';
+            searchSlot.appendChild(searchBox);
+            nav.insertBefore(searchSlot, sourceList);
+            nav.classList.add('app-nav--with-search');
+        }
+
+        function scheduleSearchLayout() {
+            window.clearTimeout(layoutTimer);
+            layoutTimer = window.setTimeout(placeSearchInNavbar, 0);
+        }
+
+        function shuffle(items) {
+            for (var i = items.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = items[i];
+                items[i] = items[j];
+                items[j] = temp;
+            }
+            return items;
+        }
+
+        function renderSidebarSponsors() {
+            var sidebarNav = document.querySelector('.sidebar .sidebar-nav');
+            var existingSection;
+            var firstChild;
+            var section;
+            var title;
+            var sponsorList;
+            var note;
+
+            if (!sidebarNav || !sidebarSponsors.length) {
+                return;
+            }
+
+            existingSection = sidebarNav.querySelector('.sidebar-sponsor-section');
+            if (existingSection) {
+                existingSection.parentNode.removeChild(existingSection);
+            }
+
+            firstChild = sidebarNav.firstElementChild;
+            if (!firstChild) {
+                return;
+            }
+
+            section = document.createElement('div');
+            section.className = 'sidebar-sponsor-section';
+
+            title = document.createElement('div');
+            title.className = 'sidebar-sponsor-title';
+            title.textContent = '满三年大力赞助';
+
+            sponsorList = document.createElement('div');
+            sponsorList.className = 'sidebar-sponsors';
+
+            shuffle(sidebarSponsors.slice()).slice(0, 3).forEach(function(item) {
+                var link = document.createElement('a');
+                var image = document.createElement('img');
+
+                link.className = 'sidebar-sponsor';
+                link.href = item.href;
+
+                image.src = item.image;
+                image.width = 260;
+                image.height = 70;
+
+                link.appendChild(image);
+                sponsorList.appendChild(link);
+            });
+
+            section.appendChild(title);
+            section.appendChild(sponsorList);
+
+            note = document.createElement('div');
+            note.className = 'sidebar-sponsor-note';
+            note.textContent = '以上广告位随机展示 3 个';
+            section.appendChild(note);
+
+            sidebarNav.insertBefore(section, firstChild);
+        }
+
+        function scheduleSidebarSponsors() {
+            window.clearTimeout(sponsorTimer);
+            sponsorTimer = window.setTimeout(renderSidebarSponsors, 0);
+        }
+
+        window.addEventListener('resize', scheduleSearchLayout);
+        window.$docsify.plugins = [].concat(window.$docsify.plugins || [], function(hook) {
+            hook.mounted(scheduleSearchLayout);
+            hook.mounted(scheduleSidebarSponsors);
+            hook.doneEach(scheduleSearchLayout);
+            hook.doneEach(scheduleSidebarSponsors);
+            hook.ready(scheduleSearchLayout);
+            hook.ready(scheduleSidebarSponsors);
+        });
+    })();
+</script>
 <!--在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码-->
 <script src="static/js/docsify-copy-code.min.js"></script>
 
