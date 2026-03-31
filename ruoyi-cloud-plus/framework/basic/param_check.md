@@ -31,6 +31,11 @@ public R<Void> add(@Validated @RequestBody SysUserBo user) {
 }
 ```
 
+补充说明：
+- 类上加 `@Validated` 适合统一开启方法参数校验
+- 参数上加 `@Validated` 适合只校验当前请求体
+- 代码生成器默认也会在新增、修改、查询等场景生成对应校验写法
+
 2. 在对象字段上添加校验注解
 
 ```java
@@ -69,6 +74,8 @@ ValidatorUtils.validate(object);
 // 按分组校验（可传多个分组）
 ValidatorUtils.validate(object, group);
 ```
+
+这种方式更适合非 Controller 场景，例如定时任务、消息消费、组装对象后的二次校验。
 
 ## 扩展用法
 
@@ -110,6 +117,13 @@ private String userName;
 3. 在字段注解中设置分组
 
 ![输入图片说明](https://foruda.gitee.com/images/1700049205699437759/96babbd6_4959041.png "屏幕截图")
+
+框架中常见分组：
+- `AddGroup`：新增
+- `EditGroup`：修改
+- `QueryGroup`：查询条件校验
+
+如果某个字段只在新增时必填，不应直接写成无分组 `@NotBlank`，否则修改接口也会被一并限制。
 
 ## 附录：常用校验注解
 

@@ -1,4 +1,4 @@
-﻿# 防重幂等
+# 防重幂等
 - - -
 
 ## 功能说明
@@ -25,3 +25,20 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1678979236772683145/9fa27e5b_1766278.png "屏幕截图")
 ![输入图片说明](https://foruda.gitee.com/images/1678979240831458322/8e1fac4b_1766278.png "屏幕截图")
+
+补充说明：
+
+- `@RepeatSubmit` 目前支持 `interval`、`timeUnit`、`message` 三个参数。
+- 默认间隔是 `5000ms`，并且框架限制最小间隔不能小于 `1` 秒。
+- `message` 支持国际化编码写法，例如 `{repeat.submit.message}`。
+
+```java
+@RepeatSubmit(interval = 2, timeUnit = TimeUnit.SECONDS, message = "{repeat.submit.message}")
+```
+
+实现说明：
+
+- 防重 key 来自 `请求URI + token + 请求参数摘要`，最终存储在 Redis 中。
+- 接口执行成功后会保留锁直到超时时间结束，确保有效时间内不能再次提交。
+- 如果业务返回失败结果或抛出异常，框架会提前释放锁，避免误伤后续重试。
+- `MultipartFile`、`HttpServletRequest`、`HttpServletResponse`、`BindingResult` 等对象会被自动过滤，不参与参数摘要计算。

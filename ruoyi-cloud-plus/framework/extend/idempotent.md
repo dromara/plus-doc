@@ -1,4 +1,4 @@
-﻿# 防重幂等
+# 防重幂等
 - - -
 
 ## 功能说明
@@ -25,3 +25,19 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1678979236772683145/9fa27e5b_1766278.png "屏幕截图")
 ![输入图片说明](https://foruda.gitee.com/images/1678979240831458322/8e1fac4b_1766278.png "屏幕截图")
+
+补充说明：
+
+- Cloud 版本使用的也是公共幂等组件，注解参数、Redis 防重逻辑、成功/失败释放策略与 Vue 版本一致。
+- `@RepeatSubmit` 支持 `interval`、`timeUnit`、`message`，默认间隔 `5000ms`，最小不能小于 `1` 秒。
+- `message` 同样支持国际化编码写法，例如 `{repeat.submit.message}`。
+
+```java
+@RepeatSubmit(interval = 2, timeUnit = TimeUnit.SECONDS, message = "{repeat.submit.message}")
+```
+
+实现说明：
+
+- 防重 key 由 `请求URI + token + 请求参数摘要` 组成并存入 Redis。
+- 接口成功返回时会保留限制直到超时；失败或异常会立即释放，便于用户重试。
+- 具体使用细节可直接参考 [Vue 版本说明](/ruoyi-vue-plus/framework/extend/idempotent.md)。

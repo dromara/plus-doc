@@ -1,4 +1,4 @@
-﻿# 多数据源
+# 多数据源
 - - -
 
 ## 默认数据库与依赖
@@ -6,6 +6,11 @@
 框架默认使用 `MySQL`。如需使用其他数据库，请在 `ruoyi-common-mybatis` 模块的 `pom.xml` 中增加对应 JDBC 依赖。
 
 ![输入图片说明](https://foruda.gitee.com/images/1721098535176969987/d42870ca_1766278.png "屏幕截图")
+
+补充说明：
+
+- Cloud 版本的多数据源配置通常放在 Nacos 的 `datasource.yml`。
+- 当前默认示例中常见的数据源 key 包括 `system-master`、`gen`、`job`、`workflow`。
 
 ## 多数据源事务
 
@@ -35,6 +40,12 @@
 数据源加载顺序：`方法 > 类 > 默认`
 
 ![输入图片说明](https://foruda.gitee.com/images/1678979069737596299/abe8ae7f_1766278.png "屏幕截图")
+
+补充说明：
+
+- 使用方式与 Vue 版本一致，仍然是通过 `@DS("数据源名")` 或 SpEL 表达式切换。
+- 生成器模块同样使用了 `@DS("#dataName")` 这类动态数据源写法。
+- Cloud 版本只是在配置落点和默认数据源命名上与 Vue 版本不同，可直接参考 [Vue 版本多数据源说明](/ruoyi-vue-plus/framework/extend/dynamic_datasource.md)。
 
 ## 配置示例
 

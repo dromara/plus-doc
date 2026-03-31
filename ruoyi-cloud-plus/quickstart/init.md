@@ -88,6 +88,15 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1678979881888833924/7e6a191f_1766278.png "屏幕截图")
 
+常见需要导入到 Nacos 的配置文件位于 `script/config/nacos`，至少应确认这些文件已经存在并内容正确：
+
+- `application-common.yml`
+- `datasource.yml`
+- `ruoyi-gateway.yml` 或 `ruoyi-gateway-mvc.yml`
+- `ruoyi-auth.yml`
+- `ruoyi-system.yml`
+- 按需启用时再导入 `ruoyi-resource.yml`、`ruoyi-workflow.yml`、`ruoyi-gen.yml`、`ruoyi-job.yml`、`ruoyi-snailjob-server.yml`
+
 ### 5. 修改 Nacos 自定义配置
 
 **忠告: 微服务配置相当复杂 请勿在不懂原理的情况下乱改**<br>

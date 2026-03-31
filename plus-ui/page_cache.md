@@ -2,46 +2,57 @@
 
 - - -
 
-框架的页签缓存机制是利用 Vue 的 `<keep-alive>` 组件来实现的。`<keep-alive>` 是 Vue 提供的一个抽象组件，用于缓存不活动的组件实例，而不是每次切换时都销毁它们。这样，当用户切换回之前访问过的标签页时，可以避免重新渲染，从而提高应用的性能。
-以下是如何在这个框架中实现页签缓存的步骤：
-1. **路由和组件命名一致**：
-   - 路由配置和对应的视图组件必须有一个相同的 `name` 属性。这是因为 `<keep-alive>` 默认是根据组件的 `name` 来决定哪些组件需要被缓存的。
-2. **路由配置**：
-   - 在路由配置中，每个路由对象都有一个 `name` 属性，这个属性对应于其视图组件的 `name`。
-   ```typescript
-   {
-     path: 'config',
-     component: () => import('@/views/system/config/index'),
-     name: 'Config',
-     meta: { title: '参数设置', icon: 'edit' }
-   }
-   ```
-3. **视图组件**：
-   - 视图组件也必须有一个 `name` 属性，且其值必须与路由配置中的 `name` 属性相同。
-   ```typescript
-   // system/config/index.vue
-   export default {
-     name: 'Config'
-   }
-   ```
-4. **使用 `<keep-alive>`**：
-   - 在应用的根组件或路由视图组件中，使用 `<keep-alive>` 包裹 `<router-view>`，如下所示：
-   ```html
-   <template>
-     <keep-alive>
-       <router-view></router-view>
-     </keep-alive>
-   </template>
-   ```
-5. **配置页签缓存**：
-   - 根据提示，系统管理-菜单管理中可以配置菜单页签是否缓存。这意味着框架可能允许管理员通过配置来决定哪些页签应该被缓存。
-6. **动态缓存**：
-   - 如果需要更细粒度的控制，可以使用 `<keep-alive>` 的 `include` 或 `exclude` 属性来动态指定哪些组件应该被缓存。
-   ```html
-   <keep-alive :include="cachedViews">
-     <router-view></router-view>
-   </keep-alive>
-   ```
-   在这个例子中，`cachedViews` 是一个包含所有应该被缓存的组件名称的数组。
-总结来说，页签缓存机制依赖于 Vue 的 `<keep-alive>` 组件，通过确保路由和组件的 `name` 属性一致，以及通过配置来控制哪些页签应该被缓存。这种方法可以提高用户体验，减少不必要的页面加载时间。<br>
+框架的页签缓存机制基于 Vue 的 `<keep-alive>` 实现。当前项目并不是简单地把整个 `<router-view>` 缓存，而是通过 `tagsViewStore.cachedViews` 动态控制哪些页面进入缓存列表。<br>
 > 具体实现可阅读源码：`src/layout/components/AppMain.vue`
+
+### 1. 缓存的核心条件
+
+- 路由必须有唯一且非空的 `name`，否则页签缓存、刷新、关闭等行为都容易异常。
+- 页面组件名必须和路由 `name` 保持一致，当前项目推荐写法是 `<script setup name="Config" lang="ts">`。
+- 路由 `meta.noCache` 为 `true` 时，不会进入缓存列表。
+
+```typescript
+{
+  path: 'config',
+  component: () => import('@/views/system/config/index.vue'),
+  name: 'Config',
+  meta: { title: '参数设置', noCache: false }
+}
+```
+
+```vue
+<script setup name="Config" lang="ts">
+// ...
+</script>
+```
+
+### 2. 项目中的实际缓存方式
+
+当前项目在 `AppMain.vue` 中使用的是下面这种模式：
+
+```vue
+<router-view v-slot="{ Component, route }">
+  <keep-alive :include="tagsViewStore.cachedViews">
+    <component :is="Component" v-if="!route.meta.link" :key="route.path" />
+  </keep-alive>
+</router-view>
+```
+
+补充说明：
+
+- `cachedViews` 由 `src/store/modules/tagsView.ts` 维护。
+- 页面首次进入并生成页签后，才会被加入缓存列表。
+- 关闭页签、关闭左右页签、关闭其他页签时，会同步删除对应缓存。
+- 固定页签 `affix` 只能固定标签，不代表一定缓存，是否缓存仍取决于 `noCache`。
+
+### 3. 菜单缓存配置
+
+- 后端菜单管理里可以配置“是否缓存”，最终会影响前端动态路由的 `meta.noCache`。
+- 如果菜单设置为不缓存，即使页面组件名称正确，也不会进入 `<keep-alive>`。
+- 页面调试时如果发现“切走再回来数据丢失”，先检查菜单缓存配置、路由 `name`、组件 `name` 这三处是否一致。
+
+### 4. 常见注意事项
+
+- 路由 `name` 重复，会导致不同页面共用同一份缓存，表现通常是页面内容串页。
+- 不要再使用旧版 Vue2 的 `export default { name: 'xxx' }` 作为本文示例理解当前项目，当前项目主流写法是 `script setup + name`。
+- 带 `meta.link` 的外链页面走的是 `iframeViews` 逻辑，不属于普通 `keep-alive` 缓存。

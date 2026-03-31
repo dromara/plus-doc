@@ -1,7 +1,7 @@
 ﻿# 导入功能
 - - -
 
-框架基于 `Apache Fesod(原EasyExcel)`（对 `Apache POI` 的封装与扩展）实现 Excel 导出。
+框架基于 `Apache Fesod(原EasyExcel)`（对 `Apache POI` 的封装与扩展）实现 Excel 导入。
 
 [Apache Fesod 文档地址](https://fesod.apache.org/)
 
@@ -39,6 +39,7 @@ private String status;
 - `value` 为表头字段名，`converter` 为转换器
 - `@ExcelDictFormat` 为自定义注解，与字典转换器配合使用
 - **对象禁止使用链式注解 `@Accessors(chain = true)`，否则可能找不到 setter**
+- 建议导入对象单独定义，不要直接复用数据库实体或返回给前端的 `Vo`
 
 ### 2. 编写导入接口
 
@@ -57,6 +58,11 @@ public R<Void> importData(@RequestPart("file") MultipartFile file, boolean updat
     return R.ok(result.getAnalysis());
 }
 ```
+
+补充说明：
+- `updateSupport` 这类参数通常用于控制“导入时是否允许更新已存在数据”
+- 导入接口建议保留独立权限标识，例如 `system:user:import`
+- 如果前端走默认 `plus-ui` 上传组件，接口通常需要使用 `multipart/form-data`
 
 ## 框架工具说明
 
@@ -113,6 +119,8 @@ private String userStatus;
 - `SysUserImportListener`：用户导入监听器
 - `ExportDemoListener`：处理带下拉框的导入
 
+一般业务导入逻辑都建议放在监听器里分批处理，而不是在 Controller 里直接逐行写入。
+
 ## 常用注解
 
 | 类型  | 注解名称                    | 使用举例                                                        | 说明                         |
@@ -143,9 +151,12 @@ private String userStatus;
 2. 显式使用构造函数（避免空指针）
 3. 实现 `invoke` 与 `getExcelResult` 处理结果
 
+如果导入量较大，建议在监听器中做分批落库、错误收集和结果汇总，避免一次性全部堆在内存里。
+
 ![输入图片说明](https://foruda.gitee.com/images/1700184652693497753/09333dac_4959041.png "屏幕截图")
 ![输入图片说明](https://foruda.gitee.com/images/1700184759075616584/cf05b0ed_4959041.png "屏幕截图")
 
 ## 更多功能
 
-更多导出能力请参考 [Apache Fesod 官方文档](https://fesod.apache.org/)。
+更多导入能力请参考 [Apache Fesod 官方文档](https://fesod.apache.org/)。
+

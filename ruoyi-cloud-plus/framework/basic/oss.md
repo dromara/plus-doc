@@ -13,6 +13,12 @@
 参考 `SysOssService.upload` 的用法。  
 使用 `OssFactory.instance()` 获取当前启用的 `OssClient` 实例，执行上传并保存返回结果到业务表。
 
+补充说明：
+- `OssFactory.instance()` 获取当前默认启用的 OSS 配置
+- `OssFactory.instance("configKey")` 可显式指定某一套配置
+- 如果系统开启了多租户，框架会按“租户 + 配置键”区分 OSS 客户端实例，避免不同租户相同 `configKey` 相互覆盖
+- Cloud 版本的 OSS 业务通常落在资源模块，但调用方式与 Vue 版本一致
+
 ![输入图片说明](https://foruda.gitee.com/images/1678978345529639839/d350ec0b_1766278.png "屏幕截图")
 
 ## 功能配置
@@ -55,6 +61,8 @@
 
 在配置列表中点击 `状态` 启用即可（一次仅能启用一个默认配置）。  
 也可使用 `OssFactory.instance("configKey")` 指定配置。
+
+如果你的业务要区分“图片、附件、私有文件”等不同存储策略，优先通过多套 OSS 配置切换，不建议在一套配置里混放所有场景。
 
 ![输入图片说明](https://foruda.gitee.com/images/1678978383700118702/7f3fa0c5_1766278.png "屏幕截图")
 
@@ -102,6 +110,8 @@ OssClient client = OssFactory.instance("image");
 ![输入图片说明](https://foruda.gitee.com/images/1678978429692592556/0231d778_1766278.png "屏幕截图")
 
 也可在 `参数设置` 中将 `OSS预览列表资源` 设为 `false` 统一关闭预览：
+
+对应参数键：`sys.oss.previewListResource`
 
 ![输入图片说明](https://foruda.gitee.com/images/1678978433769403801/7d480e76_1766278.png "屏幕截图")
 

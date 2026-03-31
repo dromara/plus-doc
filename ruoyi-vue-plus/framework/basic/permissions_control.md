@@ -14,6 +14,7 @@
 > 注：
 > 1. 前后端的权限标识要保持一致。
 > 2. 权限标识可以使用通配符`*`。
+> 3. 前端按钮显隐可配合 `v-has-permi` / `v-has-roles` 使用，但这只是界面控制，不能替代后端接口鉴权。
 
 ![输入图片说明](https://foruda.gitee.com/images/1701086497939145368/133fb327_4959041.png "屏幕截图")
 
@@ -173,6 +174,8 @@ StpUtil.checkRoleAnd("superadmin", "admin");
 本系统中实现了 `StpInterface` 接口，可以对用户的权限以及角色进行管理，并且可以根据不同的用户类型进行设置。
 
 具体参考类：`org.dromara.common.satoken.core.service.SaPermissionImpl`
+
+前端按钮控制默认也是基于当前登录用户返回的 `permissions`、`roles` 集合做判断。
 
 ## 忽略权限校验
 请参考文档：[接口放行](/ruoyi-vue-plus/framework/basic/interface_release?id=接口放行)

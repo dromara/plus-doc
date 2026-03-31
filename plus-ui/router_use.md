@@ -23,7 +23,7 @@ permissions: ['a:a:a', 'b:b:b']      // 访问路由的菜单权限
  
 meta: {
   title: 'title' // 设置该路由在侧边栏和面包屑中展示的名字
-  icon: 'svg-name' // 设置该路由的图标，支持 svg-class，也支持 el-icon-x element-ui 的 icon
+  icon: 'svg-name' // 设置该路由图标，通常对应 src/assets/icons/svg 下的图标名
   noCache: true // 如果设置为true，则不会被 <keep-alive> 缓存(默认 false)
   breadcrumb: false //  如果设置为false，则不会在breadcrumb面包屑中显示(默认 true)
   affix: true // 如果设置为true，它则会固定在tags-view中(默认 false)
@@ -42,32 +42,35 @@ meta: {
   redirect: 'noRedirect',
   hidden: false,
   alwaysShow: true,
-  meta: { title: '系统管理', icon : "system" },
-  children: [{
-    path: 'index',
-    component: (resolve) => require(['@/views/index'], resolve),
-    name: 'Test',
-    meta: {
-      title: '测试管理',
-      icon: 'user'
+  meta: { title: '系统管理', icon: 'system' },
+  children: [
+    {
+      path: 'index',
+      component: () => import('@/views/system/user/index.vue'),
+      name: 'Test',
+      meta: {
+        title: '测试管理',
+        icon: 'user'
+      }
     }
-  }]
+  ]
 }
 ```
 **外链示例**
 ```json
 {
   path: 'http://ruoyi.vip',
-  meta: { title: '若依官网', icon : "guide" }
+  meta: { title: '若依官网', icon: 'guide' }
 }
 ```
 ### 静态路由
-代表那些不需要动态判断权限的路由，如登录页、404、等通用页面，在`@/router/index.ts`配置对应的公共路由。
+代表那些不需要动态判断权限的路由，如登录页、404、重定向页、个人中心等通用页面，在 `@/src/router/index.ts` 的 `constantRoutes` 中维护。
 ### 动态路由
-代表那些需要根据用户动态判断权限并通过addRoutes动态添加的页面，在`@/store/modules/permission.ts`加载后端接口路由配置。
+代表那些需要根据用户动态判断权限并动态加载的页面，通常由后端菜单返回后在权限模块中转换成前端路由。
 > **提示**
 > * 动态路由可以在系统管理-菜单管理进行新增和修改操作，前端加载会自动请求接口获取菜单信息并转换成前端对应的路由。
-> * 动态路由在生产环境下会默认使用路由懒加载，实现方式参考loadView方法的判断。
+> * 当前项目基于 `Vite`，页面组件通常使用 `() => import('...')` 方式懒加载。
+> * 路由历史模式使用 `createWebHistory(import.meta.env.VITE_APP_CONTEXT_PATH)`，如果项目部署在二级目录，必须同步调整 `VITE_APP_CONTEXT_PATH`。
 ### 常用方法
 想要跳转到不同的页面，使用`router.push`方法
 ```Typescript

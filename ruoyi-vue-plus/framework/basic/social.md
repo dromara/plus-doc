@@ -23,6 +23,8 @@
 
 编辑 `application-dev.yml`，配置 AppId/Secret 与回调地址。
 
+`justauth.address` 需要填写前端对外可访问地址，回调地址会拼成 `${justauth.address}/social-callback?source=xxx`。
+
 ![输入图片说明](https://foruda.gitee.com/images/1690936741844431943/580f8998_4959041.png "屏幕截图")
 
 **注意：内网地址无法回调，请使用公网可访问地址。**
@@ -32,6 +34,8 @@
 ### 3. 修改前端配置
 
 编辑 `login.vue` 中的第三方登录入口配置。
+
+如果使用默认 `plus-ui`，前端已经内置 `/social-callback` 路由与回调页面，主要确认图标入口与后端平台配置保持一致。
 
 ![输入图片说明](https://foruda.gitee.com/images/1690937306197173754/5c1ece29_4959041.png "屏幕截图")
 

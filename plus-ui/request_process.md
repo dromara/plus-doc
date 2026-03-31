@@ -6,7 +6,7 @@
 
 1. UI 组件交互操作；
 2. 调用统一管理的 api service 请求函数；
-3. 使用封装的 request.js 发送请求；
+3. 使用封装的 `request.ts` 发送请求；
 4. 获取服务端返回；
 5. 更新 data；
 
@@ -30,16 +30,24 @@ api/
   ...
 ```
 > **提示**  
-> 其中`@/src/utils/request.ts`是基于 axios 的封装，便于统一处理 POST，GET 等请求参数，请求头，以及错误提示信息等。 它封装了全局request拦截器、response拦截器、统一的错误处理、统一做了超时处理、baseURL设置等。
+> 其中`@/src/utils/request.ts`是基于 axios 的封装，便于统一处理 `GET`、`POST` 等请求参数、请求头、错误提示和下载能力。  
+> 当前项目实际已经封装了：统一 `baseURL`、Token 注入、语言头透传、重复提交拦截、接口加解密、登录过期重定向、二进制下载等逻辑。
+
+### 当前项目默认配置
+
+- 默认 `baseURL` 读取自 `import.meta.env.VITE_APP_BASE_API`
+- 默认请求头会附带 `Authorization` 与 `clientid`
+- 当前前端项目使用的是 `Vite + TypeScript`，不是旧版 `Vue CLI`
+- 本地开发代理默认将 `VITE_APP_BASE_API` 转发到 `http://localhost:8080`
+- `RuoYi-Vue-Plus` 与 `RuoYi-Cloud-Plus` 共用这一套请求封装，Cloud 版差异主要在于 `8080` 一般对应网关
 
 ### 请求示例
 ```typescript
 // @/api/system/user/index.ts
 import request from '@/utils/request';
-import { AxiosPromise } from 'axios';
 import { UserQuery, UserVO } from './types';
 
-export const listUser = (query: UserQuery): AxiosPromise<UserVO[]> => {
+export const listUser = (query: UserQuery) => {
   return request({
     url: '/system/user/list',
     method: 'get',
@@ -54,12 +62,23 @@ const res = await api.listUser(proxy?.addDateRange(queryParams.value, dateRange.
 > **提示**  
 > 如果有不同的`baseURL`，直接通过覆盖的方式，让它具有不同的`baseURL`。
 > ```typescript
-> export const listUser = (query: UserQuery): AxiosPromise<UserVO[]> => {
+> export const listUser = (query: UserQuery) => {
 >   return request({
 >     url: '/system/user/list',
 >     method: 'get',
 >     params: query,
->     baseURL: process.env.BASE_API
+>     baseURL: import.meta.env.VITE_APP_BASE_API
 >   });
 > };
 > ```
+
+### 常用请求头约定
+
+- `isToken: false`：本次请求不携带登录 Token
+- `repeatSubmit: false`：关闭重复提交校验
+- `isEncrypt: 'true'`：对当前请求体启用前端加密
+
+### 下载接口说明
+
+项目内统一下载方法位于 `@/src/utils/request.ts` 的 `download` 方法，适合导出 Excel、压缩包等二进制文件。  
+如果后端返回的是业务错误而不是文件流，前端会自动转文本解析并提示错误信息。

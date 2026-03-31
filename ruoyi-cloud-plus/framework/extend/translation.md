@@ -1,4 +1,4 @@
-﻿# 翻译功能
+# 翻译功能
 - - -
 
 ## 版本
@@ -20,6 +20,11 @@
 `@TranslationType`：标注在实现类上，与 `@Translation` 的 `type` 一致，用于实现翻译逻辑。
 
 ![输入图片说明](https://foruda.gitee.com/images/1675575648043199227/d04b3e21_1766278.png "屏幕截图")
+
+补充说明：
+
+- Cloud 版本与 Vue 版本共用同一套翻译组件。
+- 使用目的同样是把 ID、code 等原始值在返回前翻译为适合展示的字段。
 
 ## 使用说明
 
@@ -49,3 +54,8 @@
 实现 `TranslationInterface` 并标注 `@TranslationType`，可参考框架默认实现。
 
 ![输入图片说明](https://foruda.gitee.com/images/1676735454308997001/cfcf3590_1766278.png "屏幕截图")
+
+补充说明：
+
+- 使用方式与 Vue 版本一致，可直接参考 [Vue 版本翻译功能说明](/ruoyi-vue-plus/framework/extend/translation.md)。
+- Cloud 场景下如果翻译逻辑涉及远程服务，更应优先做好缓存，否则接口放大后性能损耗会更明显。

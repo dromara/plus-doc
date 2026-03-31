@@ -14,13 +14,14 @@
 > 注：
 > 1. 前后端的权限标识要保持一致。
 > 2. 权限标识可以使用通配符`*`。
+> 3. 前端按钮显隐可配合 `v-has-permi` / `v-has-roles` 使用，但这只是界面控制，不能替代后端接口鉴权。
 
 ![输入图片说明](https://foruda.gitee.com/images/1701086497939145368/133fb327_4959041.png "屏幕截图")
 
 
 ### 2：校验方法
 #### 2.1：使用 `@SaCheckPermission` 注解进行校验
-`@SaCheckPermission` 注解是由 `Sa-Token` 框架提供的角色校验注解，可以标注在方法上或类上。
+`@SaCheckPermission` 注解是由 `Sa-Token` 框架提供的权限校验注解，可以标注在方法上或类上。
 
 - 单个权限校验：
 
@@ -85,7 +86,7 @@ StpUtil.checkPermissionAnd("system:user:list", "system:user:query");
 ## 角色校验
 角色校验指的是校验用户是否拥有某个指定角色。
 
-### 1：权限标识
+### 1：角色标识
 在本系统中，每个角色都拥有唯一的权限字符。
 
 除了超级管理员角色外，其他角色的权限字符可以通过角色管理进行设置。
@@ -135,24 +136,24 @@ StpUtil.checkPermissionAnd("system:user:list", "system:user:query");
 StpUtil.hasRole("superadmin")
 ```
 
-- 单个权限校验：
+- 单个角色校验：
 
 ```Java
-StpUtil.checkRole("system:user:list");
+StpUtil.checkRole("admin");
 ```
 如果验证未通过，则抛出异常: `NotRoleException`
 
-- 多个权限校验（或模式，满足任意一个角色即可）：
+- 多个角色校验（或模式，满足任意一个角色即可）：
 
 ```Java
-StpUtil.checkRoleOr("system:user:list", "system:user:query");
+StpUtil.checkRoleOr("superadmin", "admin");
 ```
 如果验证未通过，则抛出异常: `NotRoleException`
 
-- 多个权限校验（与模式，必须满足所有角色）：
+- 多个角色校验（与模式，必须满足所有角色）：
 
 ```Java
-StpUtil.checkRoleAnd("system:user:list", "system:user:query");
+StpUtil.checkRoleAnd("superadmin", "admin");
 ```
 如果验证未通过，则抛出异常: `NotRoleException`
 
@@ -173,6 +174,8 @@ StpUtil.checkRoleAnd("system:user:list", "system:user:query");
 本系统中实现了 `StpInterface` 接口，可以对用户的权限以及角色进行管理，并且可以根据不同的用户类型进行设置。
 
 具体参考类：`org.dromara.common.satoken.core.service.SaPermissionImpl`
+
+前端按钮控制默认也是基于当前登录用户返回的 `permissions`、`roles` 集合做判断。
 
 ## 忽略权限校验
 请参考文档：[网关路由与放行](/ruoyi-cloud-plus/framework/basic/router_release?id=网关路由与放行)

@@ -7,6 +7,17 @@
 const { sys_normal_disable } = toRefs<any>(proxy?.useDict('sys_normal_disable'));
 ```
 
+也可以一次获取多个字典：
+
+```typescript
+const { sys_normal_disable, sys_user_sex } = toRefs<any>(proxy?.useDict('sys_normal_disable', 'sys_user_sex'));
+```
+
+补充说明：
+- `useDict` 已经挂载到全局 `proxy` 上
+- 首次获取会请求后端字典接口，之后会走 Pinia 字典缓存
+- 返回的每项数据通常包含 `label`、`value`、`elTagType`、`elTagClass`
+
 ### Form中以`select`形式使用
 
 ``` html
@@ -34,6 +45,8 @@ const { sys_normal_disable } = toRefs<any>(proxy?.useDict('sys_normal_disable'))
 
 组件详情参考 `src/components/DictTag/index.vue`
 
+`dict-tag` 适合表格、详情页这类只读展示场景，可自动带出字典标签样式。
+
 ### Form中以`radio`形式使用
 
 ``` html
@@ -43,4 +56,8 @@ const { sys_normal_disable } = toRefs<any>(proxy?.useDict('sys_normal_disable'))
     </el-radio>
 </el-radio-group>
 ```
+
+补充说明：
+- 如果后端返回值是字符串，表单组件里的 `value` 也建议保持字符串类型
+- 字典值和表单默认值类型不一致时，最常见的问题就是“回显不出来”
 

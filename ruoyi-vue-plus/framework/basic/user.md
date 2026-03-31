@@ -13,6 +13,15 @@
 
 `Authorization: Bearer token`
 
+前端项目默认还会同时携带：
+
+`clientid: 前端配置的客户端ID`
+
+补充说明：
+- `plus-ui` 默认会把 `Authorization` 和 `clientid` 一起放到请求头
+- 后端登录时会把 `clientid` 写入 token 扩展信息，并校验“请求头里的 `clientid`”是否和“token 里的 `clientid`”一致
+- 如果你新增了新的终端或客户端，前端 `VITE_APP_CLIENT_ID` 需要和后端客户端配置保持一致，否则容易出现“客户端ID与Token不匹配”
+
 后端获取当前登录用户：
 
 ```java
@@ -55,6 +64,15 @@ Object obj = LoginHelper.getExtra(key);
 设置扩展属性示例（如登录时设置 `clientId`）：
 
 ![输入图片说明](https://foruda.gitee.com/images/1699591164562734430/42730add_1766278.png "屏幕截图")
+
+框架默认已经把常见登录上下文放进 token 扩展信息，例如：
+- `tenantId`
+- `userId`
+- `userName`
+- `deptId`
+- `deptName`
+- `deptCategory`
+- `clientid`
 
 ## 权限判断
 

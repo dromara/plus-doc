@@ -1,11 +1,17 @@
 # 组件使用
 - - -
 
-vue 注册组件的两种方式
-在 `@/components` 下创建的.vue文件自动为全局组件，可直接在任意位置使用。
+项目主要有两种组件使用方式：自动导入使用、手动导入使用。
+
+补充说明：
+- 项目已经通过 `unplugin-vue-components` 自动导入 `Element Plus` 组件
+- `@/components` 下的业务组件是否能直接使用，取决于当前是否被自动扫描或是否手动引入
+- 不确定时，优先显式 `import`，可读性更强，也更方便排查类型问题
 
 ### 局部注册
-在对应页使用`components`注册组件。
+
+`script setup` 中直接导入后即可在模板使用：
+
 ```typescript
 <script setup lang=ts>
 import ComponentA from './ComponentA.vue'
@@ -17,7 +23,8 @@ import ComponentA from './ComponentA.vue'
 ```
 
 ### 全局注册
-我们可以使用[ Vue 应用实例](https://cn.vuejs.org/guide/essentials/application.html)的 `.component()` 方法，让组件在当前 Vue 应用中全局可用。
+可以使用 [Vue 应用实例](https://cn.vuejs.org/guide/essentials/application.html) 的 `.component()` 方法全局注册组件。
+
 ```typescript
 import { createApp } from 'vue'
 
@@ -45,11 +52,19 @@ app
   .component('ComponentB', ComponentB)
   .component('ComponentC', ComponentC)
 ```
-全局注册的组件可以在此应用的任意组件的模板中使用：
+
+项目中的常见现状：
+- `Element Plus` 组件通常无需手写注册
+- `@element-plus/icons-vue` 图标已在启动时全局注册
+- 业务组件如 `SvgIcon`、`Pagination`、`DictTag` 等，使用前建议先确认项目中是否已有自动导入或统一导出约定
+
+全局注册后的组件可以在任意模板中直接使用：
+
 ```Typescript
 // 这在当前应用的任意组件中都可用
 <ComponentA/>
 <ComponentB/>
 <ComponentC/>
 ```
-所有的子组件也可以使用全局注册的组件，这意味着这三个组件也都可以在彼此内部使用。
+
+所有子组件也都可以继续使用这些全局组件。

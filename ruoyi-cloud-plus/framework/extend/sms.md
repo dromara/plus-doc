@@ -1,4 +1,4 @@
-﻿# 短信模块
+# 短信模块
 - - -
 
 ## 版本与配置
@@ -14,6 +14,12 @@
 使用方式可参考 demo 模块示例：
 
 ![输入图片说明](https://foruda.gitee.com/images/1705573001447394180/2bd726d0_1766278.png "屏幕截图")
+
+补充说明：
+
+- Cloud 版本短信配置通常放在 Nacos 的 `ruoyi-resource.yml` 中。
+- 当前资源服务已经提供 `/resource/sms/code` 接口，内部会把验证码写入 Redis，再通过 `SmsFactory` 发送短信。
+- 发送具体使用哪个通道，取决于 `SmsFactory.getSmsBlend("配置key")` 中的配置 key。
 
 ### 版本 1.2.0（SPI 方式）
 
@@ -42,6 +48,11 @@
 功能采用“模板模式”动态加载厂商模板，注入 `SmsTemplate` 即可使用。
 
 ![输入图片说明](https://foruda.gitee.com/images/1678979168699323982/e9301e84_1766278.png "屏幕截图")
+
+补充说明：
+
+- Cloud 实际项目里更建议参考资源服务 `SysSmsController` 的实现，以及 `ruoyi-example/ruoyi-demo` 中的短信演示接口。
+- 功能思路与 Vue 版本一致，可结合 [Vue 版本短信模块说明](/ruoyi-vue-plus/framework/extend/sms.md) 一起看。
 
 ## 重点须知
 

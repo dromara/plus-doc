@@ -7,6 +7,14 @@
 
 在配置文件中填写放行路径。
 
+常见配置位置：`ruoyi-admin/src/main/resources/application.yml` 的 `security.excludes`。
+
+适用场景：
+- 固定的公共接口或静态资源路径
+- 不需要登录态参与的长期稳定路径
+
+如果只是单个 Controller/方法放行，通常更推荐下面的 `@SaIgnore`，粒度更细，也更不容易误放大范围。
+
 ![输入图片说明](https://foruda.gitee.com/images/1678979039071447990/8b272aba_1766278.png "屏幕截图")
 
 ### 方式二：注解放行（推荐）
@@ -18,12 +26,19 @@
 
 示例：`/get/{userId}` 会解析成 `/get/*`
 
+补充说明：
+- 标注在类上时，表示整个 Controller 下的方法都放行
+- 标注在方法上时，只放行当前接口，更适合临时验证码、回调通知这类接口
+- Cloud 版本的服务内部同样支持 `@SaIgnore`，但如果接口是从网关对外暴露，还需要额外配置网关白名单，详见 Cloud 版“网关路由与放行”
+
 ![输入图片说明](https://foruda.gitee.com/images/1666595109409104199/5b7d75c7_1766278.png "屏幕截图")
 
 ## 注意事项
 
 放行后接口无需 token 即可访问。  
 但无法获取用户信息，也不会进行鉴权。
+
+如果接口逻辑仍依赖 `LoginHelper.getLoginUser()`、`LoginHelper.getUserId()` 等登录信息，放行后通常会拿不到有效用户上下文。
 
 ## 建议处理
 

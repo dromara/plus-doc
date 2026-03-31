@@ -13,6 +13,15 @@
 
 `Authorization: Bearer token`
 
+前端项目默认还会同时携带：
+
+`clientid: 前端配置的客户端ID`
+
+补充说明：
+- Cloud 与 Vue 使用的是同一套 `LoginHelper` 思路，日常取用户信息、判断超管/租户管理员的写法一致
+- 前端 `clientid` 需要和认证中心的客户端配置保持一致，否则网关或服务侧会判定 token 与客户端不匹配
+- 如果是 `plus-ui` 默认工程，请同步检查 `VITE_APP_CLIENT_ID`
+
 后端获取当前登录用户：
 
 ```java
@@ -55,6 +64,8 @@ Object obj = LoginHelper.getExtra(key);
 设置扩展属性示例（如登录时设置 `clientId`）：
 
 ![输入图片说明](https://foruda.gitee.com/images/1699591164562734430/42730add_1766278.png "屏幕截图")
+
+框架默认已经把常见登录上下文写入 token 扩展信息，例如 `tenantId`、`userId`、`userName`、`deptId`、`deptName`、`deptCategory`、`clientid`。
 
 ## 权限判断
 

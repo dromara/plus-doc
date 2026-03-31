@@ -38,6 +38,7 @@ private String status;
 - 使用 `@ExcelProperty` 标注需要导出的字段
 - `value` 为表头字段名，`converter` 为转换器
 - `@ExcelDictFormat` 为自定义注解，与字典转换器配合使用
+- 建议导出对象单独定义，不要直接把数据库实体原样暴露到 Excel
 
 ### 2. 编写导出接口
 
@@ -51,6 +52,11 @@ public void export(SysUserBo user, HttpServletResponse response) {
     ExcelUtil.exportExcel(listVo, "用户数据", SysUserExportVo.class, response);
 }
 ```
+
+补充说明：
+- 常见做法是 `Vo -> ExportVo` 再导出，这样便于控制列顺序、字段脱敏和字典转换
+- 导出接口通常是直接写 `HttpServletResponse` 输出流，因此方法返回值一般不再包装成 `R<?>`
+- 前端按钮权限通常会对应 `xxx:export`
 
 ## 框架工具说明
 
@@ -130,6 +136,8 @@ ExcelUtil.exportExcel(list, "测试单表", TestDemoVo.class, true, response);
 - 导出下拉框（`ExcelDictFormat` 默认下拉）
 
 模板位置：`ruoyi-modules/ruoyi-demo/src/main/resources/excel/`
+
+这些模板更适合作为结构示例参考，复杂业务仍建议按自己的导出字段和样式重新整理。
 
 ![输入图片说明](https://foruda.gitee.com/images/1700124852002972562/d9f57a8c_4959041.png "屏幕截图")
 ![输入图片说明](https://foruda.gitee.com/images/1700124885532359879/0d011d05_4959041.png "屏幕截图")
