@@ -11,6 +11,7 @@
 | 中国电信(湖南分公司)       | http://www.189.cn/hn/            | <img src="https://foruda.gitee.com/images/1699838764871886313/61b44b7d_1766278.png" width="300" height="200">  |
 | 中国电信(玉林分公司)       | https://gx.189.cn/               | <img src="https://foruda.gitee.com/images/1699838764871886313/61b44b7d_1766278.png" width="300" height="200">  |
 | 中国船舶科学研究中心        | http://www.cssrc.com.cn/         | <img src="https://foruda.gitee.com/images/1763085490044930149/ad786a9b_8666166.png" width="300" height="200">  |
+| 常州明景物联传感有限公司      | http://www.minking.cc/           | <img src="https://foruda.gitee.com/images/1775119873852547804/7d3d9e80_11751054.png" width="400" height="200"> |
 | 四川子禾精筑软件有限公司      | http://www.zhjzrj.com            | <img src="https://foruda.gitee.com/images/1762481391200307008/79491af3_10578649.png" width="300" height="200"> |
 | 东莞市若云科技有限公司       | http://www.ryrise.cn/            | <img src="https://foruda.gitee.com/images/1762220369278939485/1dabc2ab_1766278.png" width="300" height="200">  |
 | 沈阳市勘察测绘研究院有限公司    | https://www.024gis.com/          | <img src="https://foruda.gitee.com/images/1762220249412216086/b90a1ebb_1766278.png" width="400" height="200">  |
