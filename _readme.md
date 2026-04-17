@@ -17,6 +17,7 @@
 <br>
 <a href="https://gitee.com/aizuda/flowlong"><img src="https://foruda.gitee.com/images/1752939352445508921/19889586_1766278.png" width="300px" height="85px" alt="2025-07-19=>2028-07-19"></a>
 <a href="https://blog.csdn.net/leoisaking/article/details/157911968"><img src="https://foruda.gitee.com/images/1770956996221923210/f45243c8_1766278.jpg" width="300px" height="85px" alt="2026-02-13=>2027-02-13"></a>
+<a href="https://aicodelink.top/register?aff=pHeG"><img src="https://foruda.gitee.com/images/1776404022458773988/1cbad8e4_1766278.png" width="300px" height="85px" alt="2026-04-17=>2027-04-17"></a>
 
 [如何成为赞助商 加群联系作者详谈 每日PV2500-3000 IP1700-2500](/common/add_group.md)
 
