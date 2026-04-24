@@ -1,6 +1,41 @@
 # 更新日志
 - - -
 
+## v5.6.1 - 2026-04-24
+
+### 依赖升级
+
+* update springboot 3.5.12 => 3.5.14
+* update ip2region 3.3.4 => 3.3.7
+* update snailjob 1.9.0 => 1.10.0
+
+### 功能优化
+
+* update 优化 全局异常拦截器 不返回具体的异常内容到前端页面 避免信息泄漏问题
+* update 优化 截断token 避免日志输出具体token内容 防止盗用隐患
+* update 优化 RepeatSubmitAspect.KEY_CACHE 清理不彻底
+* update 优化 已办任务列表去除抄送任务
+
+### 问题修复
+
+* fix 修复 netty 对虚拟线程适配有问题 导致长时间使用 redisson 卡死问题
+* fix 修复 AUTO_PASS 变量取值错误
+* fix 修复 代码生成 主库生成其他不同数据源sql模板错误问题
+* fix 修复 ExcelBigNumberConvert 导入没法转换数据问题
+* fix 修复 部门vo子部门属性使用错误
+* fix 修复 下拉数据字符大于255报错问题
+* fix 修复 更新sql字段内容错误
+
+### 前端修改
+
+* update vite 7.3.2 修复漏洞问题
+* update 将富文本编辑器重新改为oss存储(大家还是希望用oss)
+* update 布局设置增加 页面圆角大小 控制器 可以根据喜好自行设置页面圆角样式
+* update 优化 调整页面画风 不要过于生硬圆滑
+* fix 修复 插件冲突导致样式一直重复加载问题
+* fix 修复 搜索弹窗样式错误
+
+
 ## v5.6.0 - 2026-03-24
 
 ### 依赖升级
