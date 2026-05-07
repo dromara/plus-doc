@@ -29,7 +29,7 @@
 |------------|:-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
 | 🔥 分布式集群框架 | RuoYi-Vue-Plus   | - [Gitee](https://gitee.com/dromara/RuoYi-Vue-Plus)<br> - [GitHub](https://github.com/dromara/RuoYi-Vue-Plus)<br> - [GitCode](https://gitcode.com/dromara/RuoYi-Vue-Plus)      | 重写RuoYi-Vue全方位升级(不兼容原框架)   |
 | 🔥 微服务框架   | RuoYi-Cloud-Plus | - [Gitee](https://gitee.com/dromara/RuoYi-Cloud-Plus)<br>- [GitHub](https://github.com/dromara/RuoYi-Cloud-Plus)<br> - [GitCode](https://gitcode.com/dromara/RuoYi-Cloud-Plus) | 重写RuoYi-Cloud全方位升级(不兼容原框架) |
-| 🔥 统一前端项目  | plus-ui          | - [Gitee](https://gitee.com/JavaLionLi/plus-ui)<br>- [GitHub](https://github.com/JavaLionLi/plus-ui)<br> - [GitCode](https://gitcode.com/dromara/plus-ui)                      | Vue与Cloud项目通用前端            |
+| 🔥 统一前端项目  | plus-ui          | - [Gitee](https://gitee.com/JavaLionLi/plus-ui)<br>- [GitHub](https://github.com/CrazyLionCat/plus-ui)<br> - [GitCode](https://gitcode.com/dromara/plus-ui)                      | Vue与Cloud项目通用前端            |
 | 🔥 统一文档项目  | plus-doc         | - [Gitee](https://gitee.com/dromara/plus-doc)<br>- [GitHub](https://github.com/dromara/plus-doc)                                                                               | 通用文档                       |
 
 
