@@ -4,7 +4,7 @@
 <div style="display: flex; align-content:center; justify-content: center;">
 <div style="margin-right: 200px;">
 <div style="font-weight: bold; font-size: 40px;">RuoYi-Vue-Plus</div>
-<div style="font-weight: bold; font-size: 40px;margin-bottom: 25px;">多租户权限管理系统</div>
+<div style="font-weight: bold; font-size: 40px;margin-bottom: 25px;">通用权限管理系统</div>
 
 [![码云Gitee](https://gitee.com/dromara/RuoYi-Vue-Plus/badge/star.svg?theme=blue)](https://gitee.com/dromara/RuoYi-Vue-Plus)
 [![GitHub](https://img.shields.io/github/stars/dromara/RuoYi-Vue-Plus.svg?label=Github%20Stars)](https://github.com/dromara/RuoYi-Vue-Plus)
@@ -38,4 +38,4 @@
 
 Copyright © 2018-2026 疯狂的狮子Li All Rights Reserved.
 
-[开始使用 Let's Go](/_readme)
+[开始使用 Let's Go](/6.X/_readme.md)

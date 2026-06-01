@@ -1,5 +1,6 @@
 # 无法读取nacos配置
 - - -
+
 ### 检查 `group` 与 `namespace` 是否一致
 
 如果未使用框架自带 `ry-config.sql` 文件进行配置 会导致 `namespace` 不一致 无法查询配置

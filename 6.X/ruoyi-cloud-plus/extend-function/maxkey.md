@@ -31,7 +31,7 @@
 
 补充说明：
 
-- Cloud 版本的第三方登录配置统一维护在 `script/config/nacos/ruoyi-auth.yml` 的 `justauth.type.maxkey` 节点。
+- 第三方登录配置统一维护在 `script/config/nacos/ruoyi-auth.yml` 的 `justauth.type.maxkey` 节点。
 - 其中 `justauth.address` 表示前端对外访问地址，生产环境必须改成真实域名。
 - 前端页面本身无需额外单独适配 MaxKey 协议，只要后端 JustAuth 配置正确即可走统一的社交登录回调流程。
-- 如果功能和 Vue 版本一致的地方，可直接参考 [Vue 版本 MaxKey 对接说明](/ruoyi-vue-plus/framework/extend/maxkey.md)。
+- 默认前端已经提供统一社交登录回调页，后端配置和前端入口保持一致即可。

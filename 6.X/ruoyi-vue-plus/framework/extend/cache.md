@@ -1,52 +1,106 @@
-# 缓存说明
+# 缓存
 - - -
 
-## Redis 操作
+## 模块位置
 
-框架基于 `Redisson` 操作 Redis，提供 `RedisUtils` 工具类。  
-如需原生能力，可通过 `RedisUtils.getClient()` 获取 Redisson 客户端。
+缓存能力由公共 Redis 模块提供：
 
-补充说明：
+```text
+ruoyi-common/ruoyi-common-redis
+```
 
-- 当前 Redis 与 Redisson 的基础配置位于各环境配置文件中。
-- 需要直接操作字符串、集合、分布式锁等原生 Redis 能力时，优先使用 `RedisUtils`。
+核心类：
 
-## 多级缓存注解
+```text
+utils/RedisUtils.java
+utils/CacheUtils.java
+manager/PlusSpringCacheManager.java
+manager/CaffeineCacheDecorator.java
+config/RedisConfig.java
+config/CacheConfig.java
+```
 
-框架基于 Spring Cache，使用 **Caffeine + Redis** 实现多级缓存。  
-注解示例可参考 demo 中 `RedisCacheController`。
+缓存名常量位于：
 
-`CacheNames` 中定义了 key 规则：
+```text
+ruoyi-common/ruoyi-common-core/src/main/java/org/dromara/common/core/constant/CacheNames.java
+```
 
-`cacheNames#ttl#maxIdleTime#maxSize#local`
+## RedisUtils
 
-参数说明：
+`RedisUtils` 是直接操作 Redis 的工具类，底层使用 Redisson：
 
-- `ttl`：过期时间，`0` 表示不过期
-- `maxIdleTime`：最大空闲时间（LRU 清理），`0` 表示不检测
-- `maxSize`：组最大长度（LRU 清理），`0` 表示无限长
-- `local`：是否启用本地缓存，`1` 开启，`0` 关闭
+```java
+RedisUtils.setCacheObject("demo:key", value, Duration.ofMinutes(10));
+DemoVo vo = RedisUtils.getCacheObject("demo:key");
+RedisUtils.deleteObject("demo:key");
+```
+
+如需 Redisson 原生能力：
+
+```java
+RedissonClient client = RedisUtils.getClient();
+```
+
+## Spring Cache
+
+项目使用自定义 `PlusSpringCacheManager`，基于 Redisson 实现 Spring Cache，并可叠加 Caffeine 本地缓存。
+
+常用注解：
+
+```java
+@Cacheable(cacheNames = CacheNames.SYS_CONFIG, key = "#configKey")
+public String selectConfigByKey(String configKey) {
+    return mapper.selectConfig(configKey);
+}
+
+@CacheEvict(cacheNames = CacheNames.SYS_CONFIG, key = "#configKey")
+public void clearConfig(String configKey) {
+}
+```
+
+## 缓存名格式
+
+`CacheNames` 约定格式：
+
+```text
+cacheNames#ttl#maxIdleTime#maxSize#local
+```
+
+参数含义：
+
+| 参数 | 说明 |
+| --- | --- |
+| `ttl` | 过期时间，`0` 表示不过期 |
+| `maxIdleTime` | 最大空闲时间，`0` 表示不检测 |
+| `maxSize` | 缓存组最大长度，`0` 表示无限长 |
+| `local` | 是否启用本地缓存，`1` 开启，`0` 关闭 |
 
 示例：
 
-- `test#60s`
-- `test#0#60s`
-- `test#0#1m#1000`
-- `test#1h#0#500`
-- `test#1h#0#500#0`
+```text
+demo#60s
+demo#0#60s
+demo#0#1m#1000
+demo#1h#0#500
+demo#1h#0#500#0
+```
 
-**注意：相同缓存的 key 必须一致，禁止同一缓存使用不同参数。**
+## CacheUtils
 
-补充说明：
+`CacheUtils` 用于操作 Spring Cache 管理的缓存：
 
-- `local=1` 时表示开启本地缓存，一般是 `Caffeine + Redis` 两级缓存。
-- `local=0` 时表示只使用远程缓存。
-- 同一缓存组如果参数写法不统一，最终会造成缓存行为不一致，排查起来很麻烦。
+```java
+CacheUtils.put(CacheNames.SYS_CONFIG, "key", value);
+Object value = CacheUtils.get(CacheNames.SYS_CONFIG, "key");
+CacheUtils.evict(CacheNames.SYS_CONFIG, "key");
+```
 
-## CacheUtils 工具类
+它适合和 `@Cacheable`、`@CacheEvict` 使用同一套缓存名，不建议替代 `RedisUtils` 做通用 Redis 操作。
 
-`CacheUtils` 用于与 Spring Cache 注解联动，不建议当作 Redis 工具类单独使用。
+## 使用注意
 
-补充说明：
-
-- 如果某个业务已经用 `@Cacheable`、`@CachePut`、`@CacheEvict` 管理缓存，手动清理时也尽量配套使用 `CacheUtils`，避免跳过多级缓存体系只删了 Redis 没删本地缓存。
+- 同一个缓存名不要在不同位置使用不同参数。
+- 启用本地缓存后，要注意缓存淘汰时机。
+- 大对象、高频写对象不建议直接放入 Spring Cache。
+- 通用 Redis 读写优先使用 `RedisUtils`，Spring Cache 联动场景使用 `CacheUtils`。

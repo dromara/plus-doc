@@ -19,26 +19,74 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1678979231862359032/34f030c5_1766278.png "屏幕截图")
 
-## 使用方法
+## 模块位置
 
-在 Controller 上标注 `@RepeatSubmit`：
+防重提交由公共 Redis 模块提供：
 
-![输入图片说明](https://foruda.gitee.com/images/1678979236772683145/9fa27e5b_1766278.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1678979240831458322/8e1fac4b_1766278.png "屏幕截图")
+```text
+ruoyi-common/ruoyi-common-redis
+```
 
-补充说明：
+核心类：
 
-- `@RepeatSubmit` 目前支持 `interval`、`timeUnit`、`message` 三个参数。
-- 默认间隔是 `5000ms`，并且框架限制最小间隔不能小于 `1` 秒。
-- `message` 支持国际化编码写法，例如 `{repeat.submit.message}`。
+```text
+annotation/RepeatSubmit.java
+aspectj/RepeatSubmitAspect.java
+config/IdempotentConfig.java
+utils/RedisUtils.java
+```
+
+防重状态存储在 Redis 中。
+
+## 使用方式
+
+在 Controller 方法上标注 `@RepeatSubmit`：
+
+```java
+@RepeatSubmit
+@PostMapping
+public R<Void> add(@Validated @RequestBody DemoBo bo) {
+    return toAjax(demoService.insertByBo(bo));
+}
+```
+
+指定间隔和提示：
 
 ```java
 @RepeatSubmit(interval = 2, timeUnit = TimeUnit.SECONDS, message = "{repeat.submit.message}")
+@PostMapping
+public R<Void> submit(@RequestBody DemoBo bo) {
+    return R.ok();
+}
 ```
 
-实现说明：
+注解参数：
 
-- 防重 key 来自 `请求URI + token + 请求参数摘要`，最终存储在 Redis 中。
-- 接口执行成功后会保留锁直到超时时间结束，确保有效时间内不能再次提交。
-- 如果业务返回失败结果或抛出异常，框架会提前释放锁，避免误伤后续重试。
-- `MultipartFile`、`HttpServletRequest`、`HttpServletResponse`、`BindingResult` 等对象会被自动过滤，不参与参数摘要计算。
+| 参数 | 默认值 | 说明 |
+| --- | --- | --- |
+| `interval` | `5000` | 防重间隔 |
+| `timeUnit` | `MILLISECONDS` | 时间单位 |
+| `message` | `{repeat.submit.message}` | 重复提交提示，支持国际化编码 |
+
+## 判定规则
+
+`RepeatSubmitAspect` 会构建 Redis key：
+
+```text
+repeat_submit:{请求URI}:{token}:{请求参数摘要}
+```
+
+同一个用户在同一个接口提交相同参数，且 Redis key 未过期时，会抛出重复提交异常。
+
+处理结果：
+
+- 第一次提交成功写入 Redis，并设置过期时间。
+- 接口成功返回时保留 key，直到超时自动释放。
+- 接口抛异常时会删除 key，允许用户修正后重试。
+
+## 使用注意
+
+- `interval` 转换为毫秒后不能小于 `1000`。
+- 防重只解决短时间重复点击、重复请求，不等同于业务幂等。
+- 支付、订单、回调等强幂等场景仍应使用业务唯一键、状态机或数据库唯一约束。
+- 只对经过 Spring AOP 代理的方法生效。

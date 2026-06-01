@@ -1,97 +1,106 @@
-﻿# 代码生成
+# 代码生成
 - - -
 
-## 功能概览
+## 模块位置
 
-- 支持多数据源切换
-- 生成后端 CRUD 与前端页面
-- 支持树表与多种字段类型
-- 支持预览与同步
+单体项目的代码生成模块：
 
-## 数据源配置
+```text
+ruoyi-modules/ruoyi-gen
+```
 
-![输入图片说明](https://foruda.gitee.com/images/1678976867341325193/a2be0608_1766278.png "屏幕截图")
+核心入口：
 
-- `>= 4.1.0`：支持多种数据库，可在生成页切换
-- `>= 5.2.2`：支持 100+ 数据库，添加对应驱动即可使用
+```text
+controller/GenController.java
+service/GenTableServiceImpl.java
+resources/vm
+```
 
-补充说明：
-- 想让生成结果更贴近框架默认风格，表字段尽量沿用 `create_by`、`create_time`、`update_by`、`update_time`、`tenant_id`、`del_flag`、`version` 这些标准命名
-- 这些字段会被生成器识别，在列表、查询、新增、编辑等场景自动做基础排除或处理
+控制器路径为：
 
-![输入图片说明](https://foruda.gitee.com/images/1678976876081856486/4ef4841c_1766278.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1722396530340741054/3914eb72_1766278.png "屏幕截图")
+```text
+/tool/gen
+```
+
+## 接口路径
+
+常用接口：
+
+```text
+GET    /tool/gen/list
+GET    /tool/gen/{tableId}
+GET    /tool/gen/db/list
+GET    /tool/gen/column/{tableId}
+POST   /tool/gen/importTable
+PUT    /tool/gen
+DELETE /tool/gen/{tableIds}
+GET    /tool/gen/preview/{tableId}
+GET    /tool/gen/download/{tableId}
+GET    /tool/gen/synchDb/{tableId}
+GET    /tool/gen/batchGenCode
+GET    /tool/gen/getDataNames
+```
+
+导入表时会传入：
+
+```text
+tables   表名，多个用逗号分隔
+dataName 数据源名称
+```
+
+`GenTableServiceImpl` 通过 `@DS("#dataName")` 切换到目标库读取表结构，并把 `dataName` 写入 `gen_table`。
 
 ## 使用步骤
 
-### 1. 导入数据表
+1. 在 `application-*.yml` 的 `spring.datasource.dynamic.datasource` 中确认目标数据源存在。
+2. 进入 `系统工具 -> 代码生成`。
+3. 点击导入，选择数据源和数据表。
+4. 编辑“基本信息、字段信息、生成信息”。
+5. 预览代码，确认包名、模块名、业务名、权限标识和前端路径。
+6. 下载代码或复制到项目中。
+7. 表结构变化后使用“同步”重新读取字段。
 
-点击“导入”会加载当前数据库的所有表，选择后确认。
+## 字段规则
 
-![输入图片说明](https://foruda.gitee.com/images/1678976880393939803/3ecf1dcc_1766278.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1678976885370716109/4834faa5_1766278.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1678976891856866728/853420d9_1766278.png "屏幕截图")
+建议业务表沿用框架标准字段：
 
-### 2. 编辑生成配置
+```text
+create_by
+create_time
+update_by
+update_time
+del_flag
+version
+```
 
-点击表格中的“编辑”按钮进入生成配置。
+生成器会根据字段配置决定：
 
-建议先把“基本信息、字段信息、生成信息”一次性确认好，再做预览；后面虽然可以同步字段，但业务语义类配置仍建议人工复核。
+| 配置 | 影响范围 |
+| --- | --- |
+| 插入 / 编辑 | BO 校验和前端表单 |
+| 列表 | VO 和列表列 |
+| 查询 | 查询条件和搜索区域 |
+| 查询方式 | 等值、模糊、范围等查询表达式 |
+| 必填 | 后端校验和前端必填 |
+| 显示类型 | 输入框、下拉框、日期、上传等组件 |
+| 字典类型 | 字典回显和选项加载 |
 
-![输入图片说明](https://foruda.gitee.com/images/1678976899111822310/aeaa33f9_1766278.png "屏幕截图")
+## 树表
 
-![输入图片说明](https://foruda.gitee.com/images/1678976903345795925/4326f6ee_1766278.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1678976908897387614/4cdf939b_1766278.png "屏幕截图")
+选择树表模板时必须正确配置：
 
-### 3. 字段生成规则
+```text
+treeCode        当前节点主键字段
+treeParentCode  父节点字段
+treeName        节点展示字段
+```
 
-![输入图片说明](https://foruda.gitee.com/images/1678976913809284051/24da09b0_1766278.png "屏幕截图")
+字段选错会导致前端层级、展开和回显异常。
 
-- `插入` / `编辑`：影响 BO 类与前端新增/编辑页面字段
-- `列表`：影响 VO 类与前端列表展示
-- `查询`：影响查询条件与前端搜索框
-- `查询方式`：影响查询类型
-- `必填`：影响 BO 类校验与页面必填
-- `显示类型`：影响前端组件类型
-- `字典类型`：影响字典映射
+## 使用注意
 
-### 4. 树表配置
-
-在生成模板中选择“树表”，填写对应字段配置。
-
-常见对应关系：
-- `treeCode`：当前节点主键字段
-- `treeParentCode`：父节点字段
-- `treeName`：树节点展示名称字段
-
-如果这三个字段选错，前端树表通常会出现层级异常或回显错误。
-
-![输入图片说明](https://foruda.gitee.com/images/1678976917918548901/f5886c5c_1766278.png "屏幕截图")
-
-## 主子表说明
-
-框架不支持也不推荐主子表生成。原因：
-
-- 多表关联场景复杂，易出现笛卡尔积
-- 复杂 SQL 需自行优化
-
-建议以单表生成作为基础，业务逻辑自行补充。
-
-## 预览与同步
-
-### 预览
-
-配置完成后可点击“预览”检查生成结构与字段是否正确。
-
-![输入图片说明](https://foruda.gitee.com/images/1678976924411765532/2e9747df_1766278.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1678976945982406065/ca7383bb_1766278.png "屏幕截图")
-
-### 同步
-
-表结构发生变化时，可点击“同步”与数据库结构保持一致。
-
-补充说明：
-- “同步”主要用于重新读取表结构，不等于保留你所有手改代码
-- 已经生成并二次开发过的模块，建议先预览差异再决定是否覆盖下载
-
-![输入图片说明](https://foruda.gitee.com/images/1678976952919156537/3c47c078_1766278.png "屏幕截图")
+- 当前生成器以单表生成为主，不推荐直接生成复杂主子表。
+- 已二次开发的模块不要直接覆盖，先预览或对比生成结果。
+- “同步”只重新读取表结构，不会理解你手写的业务逻辑。
+- 多数据源生成时，`dataName` 必须和动态数据源配置名一致。

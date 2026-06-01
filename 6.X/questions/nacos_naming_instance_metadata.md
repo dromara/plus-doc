@@ -1,5 +1,6 @@
-﻿# Nacos 报错 The Raft Group [naming_instance_metadata]
+# Nacos 报错 The Raft Group [naming_instance_metadata]
 - - -
+
 ## Nacos 服务下线报错问题
 
 问题描述：

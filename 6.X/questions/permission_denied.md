@@ -1,4 +1,4 @@
-﻿# Redis 报错 Permission denied
+# Redis 报错 Permission denied
 - - -
 
 ## 常见原因

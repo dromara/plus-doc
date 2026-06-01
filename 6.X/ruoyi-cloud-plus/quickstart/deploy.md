@@ -1,10 +1,6 @@
 ﻿# 应用部署
 - - -
 
-## 版本要求
-
-适用于 `>= 1.3.0`。
-
 ## 前置阅读
 
 请优先阅读 [IntelliJ IDEA 环境配置](/ruoyi-cloud-plus/quickstart/idea_environment.md)。
@@ -122,7 +118,7 @@ npm run build:prod
 
 ### 2. 上传静态资源
 
-构建后产物位于 `ruoyi-ui/dist`。  
+构建后产物位于 `plus-ui/dist`。  
 将 `dist` 目录内文件（不含 `dist` 本身）上传到 `docker/nginx/html`（或手动部署的静态目录）。
 
 ![输入图片说明](https://foruda.gitee.com/images/1662110914769648699/07f344c4_1766278.png "屏幕截图")

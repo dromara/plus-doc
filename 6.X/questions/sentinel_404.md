@@ -1,4 +1,4 @@
-﻿# 为什么删除 Sentinel
+# 为什么删除 Sentinel
 - - -
 
 ## 移除原因

@@ -1,63 +1,87 @@
 # 多数据源
 - - -
 
-## 默认数据库与依赖
+## 配置位置
 
-框架默认使用 `MySQL`。如需使用其他数据库，请在 `ruoyi-admin` 模块的 `pom.xml` 中增加对应 JDBC 依赖。
+单体项目的数据源配置在环境配置文件中：
 
-![输入图片说明](https://foruda.gitee.com/images/1721098535176969987/d42870ca_1766278.png "屏幕截图")
+```text
+ruoyi-admin/src/main/resources/application-dev.yml
+ruoyi-admin/src/main/resources/application-prod.yml
+```
 
-补充说明：
+核心节点：
 
-- 当前项目的多数据源配置位于各环境配置文件 `application-*.yml` 中的 `spring.datasource.dynamic`。
-- 默认主数据源名称为 `master`，并开启了 `strict: true`，即匹配不到数据源时会直接报错。
+```yaml
+spring:
+  datasource:
+    dynamic:
+      primary: master
+      strict: true
+      datasource:
+        master:
+          url: jdbc:mysql://localhost:3306/ry-vue
+```
 
-## 多数据源事务
+默认主数据源为 `master`。`strict: true` 已开启，`@DS` 指定的数据源不存在时会直接报错。
 
-多数据源事务处理请参考 [事务相关](/ruoyi-vue-plus/framework/explain/transaction.md)。
+## 模块位置
 
-## 功能概览
+动态数据源依赖在公共 MyBatis 模块中引入：
 
-多数据源框架官方文档：[dynamic-datasource](https://www.kancloud.cn/tracy5546/dynamic-datasource/2264611)
+```text
+ruoyi-common/ruoyi-common-mybatis
+```
 
-* 支持 数据源分组 ，适用于多种场景 纯粹多库 读写分离 一主多从 混合模式。
-* 支持数据库敏感配置信息 加密 ENC()。
-* 支持每个数据库独立初始化表结构schema和数据库database。
-* 支持无数据源启动，支持懒加载数据源（需要的时候再创建连接）。
-* 支持 自定义注解 ，需继承DS(3.2.0+)。
-* 提供并简化对Druid，HikariCp，BeeCp，Dbcp2的快速集成。
-* 提供对Mybatis-Plus，Quartz，ShardingJdbc，P6sy，Jndi等组件的集成方案。
-* 提供 自定义数据源来源 方案（如全从数据库加载）。
-* 提供项目启动后 动态增加移除数据源 方案。
-* 提供Mybatis环境下的 纯读写分离 方案。
-* 提供使用 spel动态参数 解析数据源方案。内置spel，session，header，支持自定义。
-* 支持 多层数据源嵌套切换 。（ServiceA >>> ServiceB >>> ServiceC）。
-* 提供 基于seata的分布式事务方案。
-* 提供 本地多数据源事务方案。 附：不能和原生spring事务混用。
+如需新增 Oracle、PostgreSQL、SQL Server 等数据库驱动，在 `ruoyi-admin` 或公共 MyBatis 模块中补充 JDBC 驱动依赖，并在 `application-*.yml` 新增数据源配置。
 
-## 用法说明
+## 使用方式
 
-数据源加载顺序：`方法 > 类 > 默认`
+在 Service 或 Mapper 方法上使用 `@DS`：
 
-![输入图片说明](https://foruda.gitee.com/images/1678979069737596299/abe8ae7f_1766278.png "屏幕截图")
+```java
+@DS("slave")
+public List<?> querySlaveData() {
+    return mapper.selectList();
+}
+```
 
-补充说明：
+数据源匹配优先级为：
 
-- 最常见的用法是在 Service 或 Mapper 方法上加 `@DS("数据源名")`。
-- 当前项目生成器模块已经使用了 `@DS("#dataName")` 这类 SpEL 写法，根据参数动态切换数据源。
-- 新增数据源后，`@DS` 中填写的名称必须和配置里的数据源 key 完全一致。
+```text
+方法注解 > 类注解 > 默认数据源
+```
 
-## 配置示例
+生成器使用 SpEL 动态切换数据源：
 
-![输入图片说明](https://foruda.gitee.com/images/1678979074000345758/b9238f0b_1766278.png "屏幕截图")
+```java
+@DS("#dataName")
+public List<GenTable> selectDbTableListByNames(String[] tableNames, String dataName) {
+    return genTableMapper.selectDbTableListByNames(tableNames);
+}
+```
 
-补充说明：
+对应源码：
 
-- 如果只是增加一个只读库或业务库，通常只需要补充新的 `datasource.xxx` 配置，并在对应方法上标记 `@DS("xxx")`。
-- 如果后续要接入 Seata，请同时关注动态数据源代理与 Seata 配置是否一致。
+```text
+ruoyi-modules/ruoyi-gen/src/main/java/org/dromara/gen/service/GenTableServiceImpl.java
+```
 
-## 异构数据库
+## 新增数据源步骤
 
-示例：`MySQL + Oracle`。具体配置请参考官方文档。
+1. 在 `spring.datasource.dynamic.datasource` 下新增数据源，例如 `slave`、`report`。
+2. 确认驱动依赖已经引入。
+3. 业务方法加 `@DS("slave")` 或对应数据源名。
+4. 如果该库也用于代码生成，前端生成页选择对应 `dataName` 后再导入表。
 
-![输入图片说明](https://foruda.gitee.com/images/1678979078387192317/2de94a78_1766278.png "屏幕截图")
+## 事务说明
+
+普通单库事务仍使用 Spring `@Transactional`。多数据源事务请参考：
+
+[事务相关](/6.X/ruoyi-vue-plus/framework/explain/transaction.md)
+
+使用注意：
+
+- `@DS` 和事务边界要放在同一个 AOP 可代理调用链上，避免同类内部直接调用导致注解不生效。
+- `strict: true` 下数据源名称必须完全匹配。
+- 不同数据库混用时，SQL 方言、字段类型、分页语法和驱动依赖都要单独确认。

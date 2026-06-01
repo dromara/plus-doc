@@ -1,4 +1,4 @@
-﻿# unable to read meta-data for class xxx
+# unable to read meta-data for class xxx
 - - -
 
 ## 常见原因

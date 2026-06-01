@@ -1,4 +1,4 @@
-﻿# 网关路由与放行
+# 网关路由与放行
 - - -
 
 ## 新增路由
@@ -9,7 +9,7 @@
 - WebFlux 网关：`script/config/nacos/ruoyi-gateway.yml`
 - MVC 网关：`script/config/nacos/ruoyi-gateway-mvc.yml`
 
-根据你实际启用的网关版本修改其中一个即可，不要两个一起生效。
+根据你实际启用的网关配置修改对应文件即可。
 
 路径格式：`/服务路径/controller路径/接口方法路径`  
 `*` 表示任意一级，`**` 表示任意多级。

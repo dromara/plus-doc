@@ -1,4 +1,4 @@
-﻿# SkyWalking 搭建与集成
+# SkyWalking 搭建与集成
 - - -
 
 ## 服务搭建

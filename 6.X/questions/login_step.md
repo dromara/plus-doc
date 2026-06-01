@@ -1,4 +1,5 @@
 # 关于登录调试步骤
+- - -
 
 ## 1：关闭 api 接口加密
 
@@ -16,7 +17,6 @@
 
 | 参数名        | 说明                  |
 |------------|---------------------|
-| tenantId   | 租户id                |
 | username   | 用户名                 |
 | password   | 密码                  |
 | rememberMe | 记住密码                |
@@ -29,7 +29,7 @@
 
 ### 3.1：使用接口文档请求
 
-1. 配置接口文档（[参考文档](/ruoyi-vue-plus/framework/association/doc)）
+1. 配置接口文档（[参考文档](/6.X/ruoyi-vue-plus/framework/association/doc)）
 2. 请求接口 `http://localhost:8080/auth/login`
 
 ![输入图片说明](https://foruda.gitee.com/images/1717039200581756307/97efbc9c_4959041.png "屏幕截图")

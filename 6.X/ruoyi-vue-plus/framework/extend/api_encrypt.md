@@ -9,59 +9,118 @@ API 加密主要用于防止传输过程被拦截（如代理劫持）。
 
 如有更优方案，欢迎反馈与共建。
 
-## 1. 使用注解 `@ApiEncrypt`
+## 模块位置
 
-- 标注该注解的接口，请求参数必须加密
-- `response` 参数控制响应是否加密，默认 `false`
-- 加解密逻辑由过滤器处理：`org.dromara.common.encrypt.filter.CryptoFilter`
+API 加解密由公共加密模块提供：
 
-补充说明：
+```text
+ruoyi-common/ruoyi-common-encrypt
+```
 
-- 当前项目里登录、注册、部分用户与租户相关接口已经使用了该能力。
-- 前端只有在请求头里显式携带 `isEncrypt: true` 时，才会对该次请求体执行加密。
+核心类：
 
-## 2. 配置方式
+```text
+annotation/ApiEncrypt.java
+filter/CryptoFilter.java
+filter/DecryptRequestBodyWrapper.java
+filter/EncryptResponseBodyWrapper.java
+properties/ApiDecryptProperties.java
+```
 
-后端配置：`application.yml`
+单体项目后端配置位于：
 
-![输入图片说明](https://foruda.gitee.com/images/1701131796468961065/83c464cd_4959041.png "屏幕截图")
+```text
+ruoyi-admin/src/main/resources/application.yml
+```
 
-前端配置：`.env.development` / `.env.production`
+前端实现位于：
 
-![输入图片说明](https://foruda.gitee.com/images/1709533252413969800/1d0dff25_1766278.png "屏幕截图")
+```text
+plus-ui/src/utils/request.ts
+plus-ui/src/utils/crypto.ts
+plus-ui/src/utils/jsencrypt.ts
+```
 
-注意事项：
+## 开启方式
 
-- 公私钥需前后端配对一致
-- 后端公钥对应前端私钥；后端私钥对应前端公钥
+后端在接口方法上标注：
 
-补充说明：
+```java
+@ApiEncrypt(response = true)
+@PostMapping("/login")
+public R<LoginVo> login(@RequestBody LoginBody loginBody) {
+    return R.ok(loginService.login(loginBody));
+}
+```
 
-- 后端配置节点为 `api-decrypt`，默认 `headerFlag` 是 `encrypt-key`。
-- 前端总开关是 `VITE_APP_ENCRYPT`，如果后端关闭该功能，前端也要同步关闭。
+`@ApiEncrypt` 只支持标注在方法上：
 
-## 3. 前端开启加密
+```java
+boolean response() default false;
+```
 
-在请求头中加入 `isEncrypt: true`：
+- 标注注解后，请求体需要按前端规则加密。
+- `response = true` 时响应体也会加密。
+- 未开启 `response` 时只处理请求解密。
 
-```js
+前端请求需要设置请求头：
+
+```ts
 headers: {
   isEncrypt: true
 }
 ```
 
-![输入图片说明](https://foruda.gitee.com/images/1701137141916998346/5e839bbe_4959041.png "屏幕截图")
+同时环境变量需要开启：
 
-补充说明：
+```text
+VITE_APP_ENCRYPT=true
+```
 
-- 当前前端实现只会对 `POST`、`PUT` 请求体进行加密，`GET` 请求不会走请求体加密流程。
-- 前端会随机生成 AES 密钥加密请求体，再用 RSA 处理 AES 密钥，通过 `encrypt-key` 请求头传给后端。
-- 响应如果带有同名响应头，前端会自动解密并还原成 JSON。
+当前前端只对 `POST`、`PUT` 请求体执行加密。
 
-## 4. 请求/响应加解密说明
+## 加密流程
 
-详见：[关于请求响应参数解密](/questions/api_encrypt.md)
+请求加密：
 
-## 密钥生成说明
+1. 前端生成随机 AES key。
+2. 使用 AES 加密请求体。
+3. 使用 RSA 公钥加密 AES key。
+4. 将加密后的 AES key 放入 `encrypt-key` 请求头。
+5. 后端 `CryptoFilter` 读取请求头，用 RSA 私钥解出 AES key，再解密请求体。
 
-![输入图片说明](https://foruda.gitee.com/images/1675577852271308699/9b30258e_1766278.png "屏幕截图")
+响应加密：
+
+1. 后端生成随机 AES key。
+2. 使用 AES 加密响应体。
+3. 使用 RSA 公钥加密 AES key。
+4. 将加密后的 AES key 放入 `encrypt-key` 响应头。
+5. 前端解出 AES key 后解密响应体。
+
+## 配置项
+
+后端主要配置：
+
+```yaml
+api-decrypt:
+  enabled: true
+  headerFlag: encrypt-key
+  publicKey: 前端解密响应密钥对应的公钥
+  privateKey: 后端解密请求密钥对应的私钥
+```
+
+字段含义：
+
+| 配置 | 说明 |
+| --- | --- |
+| `enabled` | 是否启用 API 加解密过滤器 |
+| `headerFlag` | 传递加密 AES key 的请求/响应头 |
+| `publicKey` | 后端响应加密时使用 |
+| `privateKey` | 后端请求解密时使用 |
+
+## 使用注意
+
+- 前后端密钥必须配对，密钥不一致会表现为登录、注册或用户保存接口解密失败。
+- 只有标注 `@ApiEncrypt` 的接口会强制走加解密逻辑。
+- `GET` 参数不会按请求体方式加密，敏感数据不要放在 URL 查询参数里。
+- API 加密只能降低明文传输暴露风险，不能替代 HTTPS、鉴权和后端权限校验。

@@ -1,46 +1,86 @@
 # 权限使用
-
 - - -
 
-前端封装了权限指令与权限判断函数，可快速实现按钮级别的显隐控制。
+前端权限由指令、工具函数和 `auth` 插件共同提供，数据来自当前登录用户的 `permissions` 与 `roles`。
 
-### 使用权限字符串 `v-hasPermi`
+## 权限指令
 
-```html
+指令注册位置：`src/directive/index.ts`
 
-<el-button v-hasPermi="['system:user:add']">存在权限字符串才能看到</el-button>
-<el-button v-hasPermi="['system:user:add', 'system:user:edit']">包含权限字符串才能看到</el-button>
+```typescript
+app.directive('hasPermi', hasPermi);
+app.directive('hasRoles', hasRoles);
 ```
 
-### 使用角色字符串 `v-hasRoles`
+模板中使用：
 
 ```html
+<el-button v-hasPermi="['system:user:add']" type="primary" icon="Plus">
+  新增
+</el-button>
 
-<el-button v-hasRoles="['admin']">管理员才能看到</el-button>
-<el-button v-hasRoles="['role1', 'role2']">包含角色才能看到</el-button>
+<el-button v-hasPermi="['system:user:edit']" type="success" icon="Edit">
+  修改
+</el-button>
+
+<el-button v-hasRoles="['admin']" type="danger">
+  管理员可见
+</el-button>
 ```
 
-补充说明：
-- 当前项目注册的指令是 `v-hasPermi` 与 `v-hasRoles`
-- 指令本质上会在无权限时直接移除对应 DOM 元素
-- 超级权限会按前端权限工具内置规则直接放行
+无权限时，指令会直接移除当前 DOM 元素。权限指令适合普通按钮、普通链接这类立即渲染的元素。
 
-### 使用全局权限函数
+## 条件判断函数
 
-在某些情况下不适合直接使用指令，例如 `el-tab-pane`、动态列、复杂渲染片段等场景，此时更适合配合 `v-if` 使用全局权限函数。
+延迟渲染的组件或插槽中，指令可能无法稳定执行，例如 `el-dropdown-item`。这类场景使用 `checkPermi`、`checkRole`：
+
+```typescript
+import { checkPermi, checkRole } from '@/utils/permission';
+```
 
 ```html
-<el-tabs>
-    <el-tab-pane v-if="checkPermi(['system:user:add'])" label="用户管理" name="user">用户管理</el-tab-pane>
-    <el-tab-pane v-if="checkPermi(['system:user:add', 'system:user:edit'])" label="参数管理" name="menu">参数管理</el-tab-pane>
-    <el-tab-pane v-if="checkRole(['admin'])" label="角色管理" name="role">角色管理</el-tab-pane>
-    <el-tab-pane v-if="checkRole(['admin','common'])" label="定时任务" name="job">定时任务</el-tab-pane>
-</el-tabs>
+<el-dropdown-menu>
+  <el-dropdown-item v-if="checkPermi(['system:user:import'])" icon="Top" @click="handleImport">
+    导入数据
+  </el-dropdown-item>
+  <el-dropdown-item v-if="checkPermi(['system:user:export'])" icon="Download" @click="handleExport">
+    导出数据
+  </el-dropdown-item>
+  <el-dropdown-item v-if="checkRole(['admin'])" icon="User">
+    管理员操作
+  </el-dropdown-item>
+</el-dropdown-menu>
 ```
 
-补充说明：
-- `checkPermi` / `checkRole` 是前端辅助函数，通常用于模板里的条件判断
-- 指令和函数都依赖当前登录用户返回的 `permissions`、`roles` 数据
+## 脚本中判断权限
 
-> **前端有了鉴权后端还需要鉴权吗？**:<br>
-> 前端的鉴权只是一个辅助功能，对于专业人员这些限制都是可以轻松绕过的，为保证服务器安全，无论前端是否进行了权限校验，后端接口都需要对会话请求再次进行权限校验！
+源码位置：`src/plugins/auth.ts`
+
+```typescript
+import auth from '@/plugins/auth';
+
+if (auth.hasPermi('system:user:add')) {
+  // 有新增权限
+}
+
+if (auth.hasPermiOr(['system:user:add', 'system:user:edit'])) {
+  // 拥有其中一个权限
+}
+
+if (auth.hasRole('admin')) {
+  // 管理员角色
+}
+```
+
+方法说明：
+
+| 方法 | 说明 |
+| --- | --- |
+| `hasPermi(permission)` | 是否拥有指定权限 |
+| `hasPermiOr(permissions)` | 是否拥有任一权限 |
+| `hasPermiAnd(permissions)` | 是否拥有全部权限 |
+| `hasRole(role)` | 是否拥有指定角色 |
+| `hasRoleOr(roles)` | 是否拥有任一角色 |
+| `hasRoleAnd(roles)` | 是否拥有全部角色 |
+
+前端权限只负责界面显隐，后端接口仍必须做权限校验。

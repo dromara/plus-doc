@@ -1,4 +1,5 @@
-﻿# Knife4j 对接说明
+# Knife4j 对接说明
+- - -
 
 经常有小伙伴希望可以对接 knife4j
 
@@ -16,7 +17,7 @@ knife4j 本身提供了独立的文档中间件 可以零成本的介入 openapi
 
 ![输入图片说明](https://foruda.gitee.com/images/1685953873117929554/22dce56e_1766278.png "屏幕截图")
 
-## Vue 版本示例
+## 单体项目示例
 
 ```yml
 knife4j:
@@ -36,7 +37,7 @@ knife4j:
 ```
 
 
-## Cloud 版本示例
+## Cloud 项目示例
 
 ```yml
 knife4j:

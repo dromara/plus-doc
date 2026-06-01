@@ -1,9 +1,5 @@
-﻿# 应用部署
+# 应用部署
 - - -
-
-## 版本要求
-
-适用于 `>= 4.3.0`。
 
 ## 前置阅读
 
@@ -45,10 +41,6 @@ mvn clean package -D maven.test.skip=true -P prod
 ### 5. 启动后端服务
 
 按实际部署方式启动生成的 `jar` 文件。
-
-## 部署视频
-
-[RuoYi-Vue-Plus 5.0 生产环境搭建部署](https://www.bilibili.com/video/BV1mL411e7ha/)
 
 ## Docker 后端部署
 
@@ -128,7 +120,7 @@ npm run build:prod
 
 ### 2. 上传静态资源
 
-构建后产物位于 `ruoyi-ui/dist`。  
+构建后产物位于 `plus-ui/dist`。  
 将 `dist` 目录内文件（不含 `dist` 本身）上传到 `docker/nginx/html`（或手动部署的静态目录）。
 
 ![输入图片说明](https://foruda.gitee.com/images/1662110914769648699/07f344c4_1766278.png "屏幕截图")

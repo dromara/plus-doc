@@ -1,4 +1,4 @@
-﻿# 权限控制
+# 权限控制
 - - -
 
 本文采用 `Sa-Token` 框架实现权限控制。[官方文档传送门](https://sa-token.cc/doc.html#/)
@@ -178,6 +178,6 @@ StpUtil.checkRoleAnd("superadmin", "admin");
 前端按钮控制默认也是基于当前登录用户返回的 `permissions`、`roles` 集合做判断。
 
 ## 忽略权限校验
-请参考文档：[接口放行](/ruoyi-vue-plus/framework/basic/interface_release?id=接口放行)
+请参考文档：[接口放行](/6.X/ruoyi-vue-plus/framework/basic/interface_release?id=接口放行)
 
 

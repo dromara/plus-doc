@@ -1,4 +1,4 @@
-﻿# 工作流初始化（版本 >= 5.3.0）
+# 工作流初始化
 - - -
 
 ## Warm-Flow 官方文档
@@ -148,7 +148,8 @@ public class DeptService {
 
 ### WorkflowService API
 
-通用接口位于 `common-core` 模块的 `WorkflowService`，提供发起、审批、变量设置与查询等能力。  
+通用接口位于 `ruoyi-api` 模块的 `WorkflowService`，提供发起、审批、变量设置与查询等能力。  
 用于业务模块与工作流模块交互，避免直接依赖工作流模块。
 
 ![输入图片说明](https://foruda.gitee.com/images/1737531677878180377/85899f22_1766278.png "屏幕截图")
+

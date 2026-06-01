@@ -1,8 +1,8 @@
 # 框架介绍
 - - -
-- `RuoYi-Vue-Plus` 分布式集群框架 [文档跳转](/ruoyi-vue-plus/home.md)
-- `RuoYi-Cloud-Plus` 微服务框架 [文档跳转](/ruoyi-cloud-plus/home.md)
-- `plus-ui` 统一 Vue3 前端项目 [文档跳转](/plus-ui/home.md)
+- `RuoYi-Vue-Plus` 分布式集群框架 [文档跳转](/6.X/ruoyi-vue-plus/home.md)
+- `RuoYi-Cloud-Plus` 微服务框架 [文档跳转](/6.X/ruoyi-cloud-plus/home.md)
+- `plus-ui` 统一 Vue3 前端项目 [文档跳转](/6.X/plus-ui/home.md)
 - `plus-doc` 统一文档项目
 
 ## 特别赞助
@@ -13,8 +13,8 @@
 
 | 介绍         | 项目名              | 项目地址                                                                                                                                                                           | 注意事项                       |
 |------------|:-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
-| 🔥 分布式集群框架 | RuoYi-Vue-Plus   | - [Gitee](https://gitee.com/dromara/RuoYi-Vue-Plus)<br> - [GitHub](https://github.com/dromara/RuoYi-Vue-Plus)<br> - [GitCode](https://gitcode.com/dromara/RuoYi-Vue-Plus)      | 重写RuoYi-Vue全方位升级(不兼容原框架)   |
-| 🔥 微服务框架   | RuoYi-Cloud-Plus | - [Gitee](https://gitee.com/dromara/RuoYi-Cloud-Plus)<br>- [GitHub](https://github.com/dromara/RuoYi-Cloud-Plus)<br> - [GitCode](https://gitcode.com/dromara/RuoYi-Cloud-Plus) | 重写RuoYi-Cloud全方位升级(不兼容原框架) |
+| 🔥 分布式集群框架 | RuoYi-Vue-Plus   | - [Gitee](https://gitee.com/dromara/RuoYi-Vue-Plus)<br> - [GitHub](https://github.com/dromara/RuoYi-Vue-Plus)<br> - [GitCode](https://gitcode.com/dromara/RuoYi-Vue-Plus)      | 分布式集群权限管理系统   |
+| 🔥 微服务框架   | RuoYi-Cloud-Plus | - [Gitee](https://gitee.com/dromara/RuoYi-Cloud-Plus)<br>- [GitHub](https://github.com/dromara/RuoYi-Cloud-Plus)<br> - [GitCode](https://gitcode.com/dromara/RuoYi-Cloud-Plus) | 微服务通用权限管理系统 |
 | 🔥 统一前端项目  | plus-ui          | - [Gitee](https://gitee.com/JavaLionLi/plus-ui)<br>- [GitHub](https://github.com/CrazyLionCat/plus-ui)<br> - [GitCode](https://gitcode.com/dromara/plus-ui)                      | Vue与Cloud项目通用前端            |
 | 🔥 统一文档项目  | plus-doc         | - [Gitee](https://gitee.com/dromara/plus-doc)<br>- [GitHub](https://github.com/dromara/plus-doc)                                                                               | 通用文档                       |
 
@@ -23,7 +23,6 @@
 
 | 功能    | 介绍                                    |
 |-------|---------------------------------------|
-| 租户管理  | 配置系统租户，支持 SaaS 场景下的多租户功能。             |
 | 用户管理  | 用户是系统操作者，该功能主要完成系统用户配置。               |
 | 部门管理  | 配置系统组织机构（公司、部门、小组），树结构展现支持数据权限。       |
 | 岗位管理  | 配置系统用户所属担任职务。                         |

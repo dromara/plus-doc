@@ -1,5 +1,6 @@
-﻿# Only one connection receive subscriber allowed
+# Only one connection receive subscriber allowed
 - - -
+
 ## 问题原因
 
 经多人反馈 共同点为全都是做` 小程序开发` 使用的 `uniapp` 发送的网络请求而出现这种问题**
@@ -11,5 +12,5 @@
 
 ## 解决方案
 
-1. 升级到已兼容该问题的框架版本。
-2. 在 `uniapp` 中为不同请求类型设置正确的 `Content-Type`。
+1. 在 `uniapp` 中为不同请求类型设置正确的 `Content-Type`。
+2. GET、DELETE 等无请求体接口不要强行声明 JSON 请求体。

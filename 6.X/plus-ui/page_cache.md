@@ -1,5 +1,4 @@
 # 页签缓存
-
 - - -
 
 框架的页签缓存机制基于 Vue 的 `<keep-alive>` 实现。当前项目并不是简单地把整个 `<router-view>` 缓存，而是通过 `tagsViewStore.cachedViews` 动态控制哪些页面进入缓存列表。<br>
@@ -32,9 +31,11 @@
 
 ```vue
 <router-view v-slot="{ Component, route }">
-  <keep-alive :include="tagsViewStore.cachedViews">
-    <component :is="Component" v-if="!route.meta.link" :key="route.path" />
-  </keep-alive>
+  <transition :enter-active-class="animate" mode="out-in">
+    <keep-alive :include="tagsViewStore.cachedViews">
+      <component :is="Component" v-if="!route.meta.link" :key="route.path" />
+    </keep-alive>
+  </transition>
 </router-view>
 ```
 
@@ -54,5 +55,5 @@
 ### 4. 常见注意事项
 
 - 路由 `name` 重复，会导致不同页面共用同一份缓存，表现通常是页面内容串页。
-- 不要再使用旧版 Vue2 的 `export default { name: 'xxx' }` 作为本文示例理解当前项目，当前项目主流写法是 `script setup + name`。
+- 当前项目主流写法是 `script setup + name`，页面组件名需要和路由 `name` 保持一致。
 - 带 `meta.link` 的外链页面走的是 `iframeViews` 逻辑，不属于普通 `keep-alive` 缓存。

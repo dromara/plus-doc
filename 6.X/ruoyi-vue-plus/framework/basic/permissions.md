@@ -1,4 +1,4 @@
-﻿# 关于数据权限
+# 关于数据权限
 - - -
 
 ## 功能概览
@@ -7,7 +7,7 @@
 - 查询、更新、删除统一受限
 - 支持自定义字段过滤
 - 支持 SpEL 模板与 Bean 动态处理
-- 支持与菜单权限标识符联合使用（5.2.X 新功能）
+- 支持与菜单权限标识符联合使用
 
 ## 关键组件
 
@@ -70,8 +70,6 @@ DataPermissionHelper.ignore(() -> { 业务代码 });
 Class result = DataPermissionHelper.ignore(() -> { return 业务代码 });
 ```
 
-如果同一段逻辑还涉及多租户过滤，请分别评估是否还需要配合租户忽略能力；数据权限与租户隔离彼此独立。
-
 ## 数据权限模板说明
 
 ![输入图片说明](https://foruda.gitee.com/images/1678978697141183499/cfc1cb6a_1766278.png "屏幕截图")
@@ -129,8 +127,7 @@ Class result = DataPermissionHelper.ignore(() -> { return 业务代码 });
 
 ## MyBatis-Plus 原生方法适配
 
-从 **5.3.0** 开始无需重写底层最终方法。  
-旧版本如需对 MP 原生方法生效，可在 Mapper 中新增 `default` 方法并调用 MP 原方法。
+MP 原生方法同样可以接入数据权限，不需要重写底层最终方法。
 
 ![输入图片说明](https://foruda.gitee.com/images/1751253016695554853/be854635_1766278.png "屏幕截图")
 
@@ -140,3 +137,4 @@ Class result = DataPermissionHelper.ignore(() -> { return 业务代码 });
 类级别标注后，类及父类方法都会参与数据权限过滤。
 
 ![输入图片说明](https://foruda.gitee.com/images/1678978767336534896/fb13ee99_1766278.png "屏幕截图")
+

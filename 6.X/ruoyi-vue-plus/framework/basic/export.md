@@ -1,183 +1,228 @@
-﻿# 导出功能
+# 导出功能
 - - -
 
 框架基于 `Apache Fesod(原EasyExcel)`（对 `Apache POI` 的封装与扩展）实现 Excel 导出。
 
 [Apache Fesod 文档地址](https://fesod.apache.org/)
 
-## 使用流程
+核心源码位置：
 
-### 1. 定义导出实体
+```text
+ruoyi-common/ruoyi-common-excel
+```
 
-以 `SysUserExportVo` 为例：
+## 基础导出
+
+定义导出对象时，使用 Fesod 注解描述列信息，建议加 `@ExcelIgnoreUnannotated`，只导出显式标注的字段。
 
 ```java
-/**
- * 用户ID
- */
-@ExcelProperty(value = "用户序号")
-private Long userId;
+@Data
+@ExcelIgnoreUnannotated
+public class UserExportVo {
 
-/**
- * 用户性别
- */
-@ExcelProperty(value = "用户性别", converter = ExcelDictConvert.class)
-@ExcelDictFormat(dictType = "sys_user_sex")
-private String sex;
+    @ExcelProperty(value = "用户昵称", index = 0)
+    private String nickName;
 
-/**
- * 帐号状态（0正常 1停用）
- */
-@ExcelProperty(value = "帐号状态", converter = ExcelDictConvert.class)
-@ExcelDictFormat(dictType = "sys_normal_disable")
-private String status;
+    @ExcelProperty(value = "性别", index = 1, converter = ExcelDictConvert.class)
+    @ExcelDictFormat(dictType = "sys_user_gender")
+    private String gender;
+
+    @ExcelProperty(value = "用户类型", index = 2, converter = ExcelEnumConvert.class)
+    @ExcelEnumFormat(enumClass = UserStatus.class, textField = "info")
+    private String userStatus;
+}
+```
+
+接口中直接写入 `HttpServletResponse`：
+
+```java
+@PostMapping("/export")
+public void export(UserBo bo, HttpServletResponse response) {
+    List<UserExportVo> list = userService.queryExportList(bo);
+
+    ExcelBuilder.of(list, UserExportVo.class)
+        .sheetName("用户数据")
+        .toResponse(response);
+}
+```
+
+常用链式配置：
+
+```java
+ExcelBuilder.of(list, UserExportVo.class)
+    .sheetName("用户数据")
+    .needHead(true)
+    .automaticMergeHead(true)
+    .includeFields(List.of("nickName", "gender"))
+    .excludeFields(List.of("remark"))
+    .columnWidth(20)
+    .rowHeight((short) 22, (short) 18)
+    .password("123456")
+    .toResponse(response);
+```
+
+## 合并单元格
+
+字段上使用 `@CellMerge`，导出时调用 `.merge()` 注册合并策略。
+
+```java
+@CellMerge
+@ExcelProperty(value = "部门名称", index = 0)
+private String deptName;
+```
+
+```java
+ExcelBuilder.of(list, UserExportVo.class)
+    .sheetName("用户数据")
+    .merge()
+    .toResponse(response);
+```
+
+`@CellMerge(mergeBy = {"deptName"})` 可以指定依赖字段，避免只按当前列值合并造成错位。
+
+## 下拉框
+
+字典和枚举字段会通过 `ExcelDownHandler` 自动处理为下拉选项：
+
+```java
+@ExcelProperty(value = "性别", index = 2, converter = ExcelDictConvert.class)
+@ExcelDictFormat(dictType = "sys_user_gender")
+private String gender;
+```
+
+业务动态下拉有两种方式。
+
+方式一：字段上使用 `@ExcelDynamicOptions`：
+
+```java
+public class DeptOptions implements ExcelOptionsProvider {
+    @Override
+    public Set<String> getOptions() {
+        return Set.of("研发部", "财务部", "市场部");
+    }
+}
+
+@ExcelProperty(value = "部门", index = 3)
+@ExcelDynamicOptions(providerClass = DeptOptions.class)
+private String deptName;
+```
+
+方式二：接口中构造 `DropDownOptions`，适合级联下拉：
+
+```java
+DropDownOptions provinceToCity = DropDownOptions.buildLinkedOptions(
+    provinceList,
+    5,
+    cityList,
+    6,
+    Province::getId,
+    City::getPid,
+    item -> DropDownOptions.createOptionValue(item.getName(), item.getId())
+);
+
+ExcelBuilder.of(list, ExportDemoVo.class)
+    .sheetName("下拉框示例")
+    .options(List.of(provinceToCity))
+    .toResponse(response);
+```
+
+`DropDownOptions.createOptionValue()` 会把显示值和业务 ID 拼成合法选项；导入时可用 `DropDownOptions.analyzeOptionValue()` 解析回来。
+
+## 批注和必填
+
+`DataWriteHandler` 会处理框架扩展注解：
+
+```java
+@ExcelRequired
+@ExcelNotation("手机号必须唯一")
+@ExcelProperty(value = "手机号", index = 4)
+private String phoneNumber;
 ```
 
 说明：
 
-- 使用 `@ExcelProperty` 标注需要导出的字段
-- `value` 为表头字段名，`converter` 为转换器
-- `@ExcelDictFormat` 为自定义注解，与字典转换器配合使用
-- 建议导出对象单独定义，不要直接把数据库实体原样暴露到 Excel
+- `@ExcelRequired` 会把表头字体标红
+- `@ExcelNotation` 会给表头增加批注
+- 两个注解仅适用于单层表头
 
-### 2. 编写导出接口
+## 自定义导出
 
-以 `SysUserController#export` 为例：
-
-```java
-@PostMapping("/export")
-public void export(SysUserBo user, HttpServletResponse response) {
-    List<SysUserVo> list = userService.selectUserList(user);
-    List<SysUserExportVo> listVo = MapstructUtils.convert(list, SysUserExportVo.class);
-    ExcelUtil.exportExcel(listVo, "用户数据", SysUserExportVo.class, response);
-}
-```
-
-补充说明：
-- 常见做法是 `Vo -> ExportVo` 再导出，这样便于控制列顺序、字段脱敏和字典转换
-- 导出接口通常是直接写 `HttpServletResponse` 输出流，因此方法返回值一般不再包装成 `R<?>`
-- 前端按钮权限通常会对应 `xxx:export`
-
-## 框架工具说明
-
-### 1. 字典转换器
-
-`ExcelDictConvert` 与 `@ExcelDictFormat` 搭配使用。
+需要分批写、同一 sheet 多次写、多个 sheet 或 table 时，使用 `ExcelBuilder.writer()`。
 
 ```java
-@ExcelProperty(value = "用户性别", converter = ExcelDictConvert.class)
-@ExcelDictFormat(dictType = "sys_user_sex")
-private String sex;
+ExcelBuilder.writer(UserExportVo.class)
+    .sheetName("自定义导出")
+    .toResponse(response, wrapper -> {
+        WriteSheet sheet = ExcelWriterWrapper.sheetBuilder("用户数据").build();
+
+        wrapper.write(firstPageList, sheet);
+        wrapper.write(secondPageList, sheet);
+
+        WriteSheet otherSheet = ExcelWriterWrapper.sheetBuilder("其他数据").build();
+        wrapper.write(otherList, otherSheet);
+    });
 ```
 
-也可使用表达式：
+`ExcelWriterWrapper` 只暴露安全的 `write`、`fill`、`buildSheet`、`buildTable` 等方法，避免业务代码直接关闭底层 `ExcelWriter` 或响应流。
+
+## ZIP 分页导出
+
+数据量较大且需要拆成多个 Excel 文件时：
 
 ```java
-@ExcelProperty(value = "用户性别", converter = ExcelDictConvert.class)
-@ExcelDictFormat(readConverterExp="0=男,1=女,2=未知", separator=",")
-private String sex;
+ExcelBuilder.of(list, UserExportVo.class)
+    .sheetName("用户数据")
+    .zip(1000)
+    .toResponse(response);
 ```
 
-`@ExcelDictFormat` 属性说明：
+当分片数量大于 1 时会输出 zip；只有一个分片时自动按普通 xlsx 输出。
 
-| 属性名称             | 类型     | 默认值 | 说明                       |
-|------------------|--------|-----|--------------------------|
-| dictType         | String | ""  | 字典 type（如：sys_user_sex）  |
-| readConverterExp | String | ""  | 读取内容转表达式（如：0=男,1=女,2=未知） |
-| separator        | String | "," | 表达式分隔符                   |
+## 模板导出
 
-### 2. 枚举转换器
+模板文件放在 `resources/excel/` 下，模板语法使用 Fesod 填充语法。
+
+单列表：
 
 ```java
-@ExcelProperty(value = "用户类型", index = 1, converter = ExcelEnumConvert.class)
-@ExcelEnumFormat(enumClass = UserStatus.class, textField = "info")
-private String userStatus;
+ExcelBuilder.template("excel/单列表.xlsx")
+    .filename("单列表")
+    .data(list)
+    .toResponse(response);
 ```
 
-`@ExcelEnumFormat` 属性说明：
-
-| 属性名称      | 类型         | 默认值  | 说明           |
-|-----------|------------|------|--------------|
-| enumClass | Enum Class | -    | 枚举类          |
-| codeField | String     | code | 枚举中的 code 字段 |
-| textField | String     | text | 枚举中的文本字段     |
-
-### 3. 合并单元格
-
-`@CellMerge` 用于合并相同列数据，需结合 `CellMergeStrategy` 使用。
+多列表：
 
 ```java
-@CellMerge
-@ExcelProperty(value = "部门id")
-private Long deptId;
+Map<String, Object> data = new HashMap<>();
+data.put("map", titleMap);
+data.put("data1", list1);
+data.put("data2", list2);
+
+ExcelBuilder.template("excel/多列表.xlsx")
+    .filename("多列表")
+    .multiList(data)
+    .toResponse(response);
 ```
 
-`@CellMerge` 属性说明：
-
-| 属性名称    | 类型       | 默认值 | 说明          |
-|---------|----------|-----|-------------|
-| index   | int      | -1  | 合并列下标（建议默认） |
-| mergeBy | String[] | {}  | 依赖字段名称      |
-
-导出时开启合并：
+多 sheet：
 
 ```java
-ExcelUtil.exportExcel(list, "测试单表", TestDemoVo.class, true, response);
+List<Map<String, Object>> sheets = List.of(
+    Map.of("data1", list1),
+    Map.of("data2", list2)
+);
+
+ExcelBuilder.template("excel/多sheet列表.xlsx")
+    .filename("多sheet列表")
+    .multiSheet(sheets)
+    .toResponse(response);
 ```
 
-![输入图片说明](https://foruda.gitee.com/images/1700128921644543994/e8d4704f_1766278.png "屏幕截图")
+参考示例：
 
-### 4. 复杂导出示例
-
-`TestExcelController` 提供多种导出示例：
-
-- 单列表多数据导出（模板导出）
-- 多列表多数据导出（模板导出）
-- 导出下拉框（`ExcelDictFormat` 默认下拉）
-
-模板位置：`ruoyi-modules/ruoyi-demo/src/main/resources/excel/`
-
-这些模板更适合作为结构示例参考，复杂业务仍建议按自己的导出字段和样式重新整理。
-
-![输入图片说明](https://foruda.gitee.com/images/1700124852002972562/d9f57a8c_4959041.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1700124885532359879/0d011d05_4959041.png "屏幕截图")
-
-![输入图片说明](https://foruda.gitee.com/images/1700125025931981176/105dbaaa_4959041.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1700125054011300002/71869c1d_4959041.png "屏幕截图")
-
-![输入图片说明](https://foruda.gitee.com/images/1700125265411678973/7f767719_4959041.png "屏幕截图")
-
-## 常用注解
-
-| 类型  | 注解名称                    | 使用举例                                                        | 说明                         |
-|-----|-------------------------|-------------------------------------------------------------|----------------------------|
-| 格式化 | @DateTimeFormat         | @DateTimeFormat(value=格式化值)                                 | 日期格式化                      |
-| 格式化 | @NumberFormat           | @NumberFormat(value=格式化值, roundingMode=舍入模式)                | 数值格式化                      |
-| 样式  | @ColumnWidth            | @ColumnWidth(value=值)                                       | 列宽                         |
-| 样式  | @ContentFontStyle       | @ContentFontStyle(color=颜色)                                 | 字体样式                       |
-| 样式  | @ContentLoopMerge       | @ContentLoopMerge(eachRow=行值, columnExtend=列值)              | 循环合并区域                     |
-| 样式  | @ContentRowHeight       | @ContentRowHeight(value=值)                                  | 行高                         |
-| 样式  | @ContentStyle           | -                                                           | 单元格样式                      |
-| 样式  | @HeadFontStyle          | @HeadFontStyle(color=颜色)                                    | 表头字体样式                     |
-| 样式  | @HeadRowHeight          | @HeadRowHeight(value=值)                                     | 表头行高                       |
-| 样式  | @HeadStyle              | -                                                           | 表头样式                       |
-| 样式  | @OnceAbsoluteMerge      | @OnceAbsoluteMerge(...)                                     | 合并单元格                      |
-| 属性  | @ExcelIgnore            | @ExcelIgnore                                                | 忽略字段                       |
-| 属性  | @ExcelIgnoreUnannotated | @ExcelIgnoreUnannotated                                     | 仅处理标注 `@ExcelProperty` 的字段 |
-| 属性  | @ExcelProperty          | @ExcelProperty(value=值, order=排序值, index=下标, converter=转换器) | 字段映射与排序                    |
-
-## 扩展说明
-
-### 自定义转换器
-
-实现 `com.alibaba.excel.converters.Converter`：
-
-![输入图片说明](https://foruda.gitee.com/images/1700104014304819918/33eb0c42_4959041.png "屏幕截图")
-
-转换方法示例：
-
-![输入图片说明](https://foruda.gitee.com/images/1700104426131801297/72931ef0_4959041.png "屏幕截图")
-
-## 更多功能
-
-更多导出能力请参考 [Apache Fesod 官方文档](https://fesod.apache.org/)。
+```text
+ruoyi-modules/ruoyi-demo/src/main/java/org/dromara/demo/controller/TestExcelController.java
+ruoyi-modules/ruoyi-demo/src/main/java/org/dromara/demo/service/impl/ExportExcelServiceImpl.java
+ruoyi-modules/ruoyi-demo/src/main/resources/excel/
+```

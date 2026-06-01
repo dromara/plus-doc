@@ -1,9 +1,10 @@
 # 使用者登记
 - - -
-**使用此开源项目的公司或者组织**
-> Vue版本登记地址: https://gitee.com/dromara/RuoYi-Vue-Plus/issues/I4QP39
 
-> Cloud版本登记地址: https://gitee.com/dromara/RuoYi-Cloud-Plus/issues/I4VJ7G
+**使用此开源项目的公司或者组织**
+> Vue项目登记地址: https://gitee.com/dromara/RuoYi-Vue-Plus/issues/I4QP39
+
+> Cloud项目登记地址: https://gitee.com/dromara/RuoYi-Cloud-Plus/issues/I4VJ7G
 
 | 公司名               | 官网                               | LOGO                                                                                                           |
 |-------------------|:---------------------------------|----------------------------------------------------------------------------------------------------------------|

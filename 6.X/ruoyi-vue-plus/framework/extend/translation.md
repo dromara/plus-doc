@@ -1,56 +1,99 @@
 # 翻译功能
 - - -
 
-## 版本
+## 模块位置
 
-- >= 4.6.0
+翻译功能由公共翻译模块提供：
 
-## 注解说明
+```text
+ruoyi-common/ruoyi-common-translation
+```
 
-`@Translation`：标注在实体字段上，用于声明需要翻译的字段。  
-`@TranslationType`：标注在实现类上，与 `@Translation` 的 `type` 一致，用于实现翻译逻辑。
+核心类：
 
-![输入图片说明](https://foruda.gitee.com/images/1675575648043199227/d04b3e21_1766278.png "屏幕截图")
+```text
+annotation/Translation.java
+annotation/TranslationType.java
+core/TranslationInterface.java
+core/handler/TranslationJsonFieldProcessor.java
+constant/TransConstant.java
+```
 
-补充说明：
+## 内置翻译类型
 
-- 这套能力适合把“数据库里存的 ID / code”在返回前自动翻译成可展示字段。
-- 常见场景包括用户名称、部门名称、字典标签、OSS 地址等。
+内置常量在 `TransConstant` 中定义：
 
-## 使用说明
+| 常量 | type | 说明 |
+| --- | --- | --- |
+| `USER_ID_TO_NAME` | `user_id_to_name` | 用户 ID 转账号 |
+| `USER_ID_TO_NICKNAME` | `user_id_to_nickname` | 用户 ID 转昵称 |
+| `DEPT_ID_TO_NAME` | `dept_id_to_name` | 部门 ID 转名称 |
+| `DICT_TYPE_TO_LABEL` | `dict_type_to_label` | 字典值转标签 |
+| `OSS_ID_TO_URL` | `oss_id_to_url` | OSS ID 转 URL |
 
-**注意：翻译功能基于序列化实现，仅适合小数据量场景，不适用于 Excel 等大数据量导出。**  
-建议缓存翻译结果，减少重复查询。
+对应实现位于：
 
-内置翻译类型：
+```text
+core/impl/UserNameTranslationImpl.java
+core/impl/NicknameTranslationImpl.java
+core/impl/DeptNameTranslationImpl.java
+core/impl/DictTypeTranslationImpl.java
+core/impl/OssUrlTranslationImpl.java
+```
 
-- 用户 ID -> 账号/用户名
-- 部门 ID -> 部门名称
-- 字典 type -> label
-- OSS ID -> URL
+## 使用方式
 
-示例说明：
+在 VO 字段上标注 `@Translation`：
 
-- 映射翻译：根据另一个字段映射到当前字段
-- 直接翻译：根据当前字段直接替换
-- 其他条件翻译：基于 `other` 自定义条件
+```java
+private Long userId;
 
-![输入图片说明](https://foruda.gitee.com/images/1675575977860232549/143b74f8_1766278.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1675576044011477847/13eb9f57_1766278.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1675576265894720924/70792f66_1766278.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1675576391012282823/f95c5d78_1766278.png "屏幕截图")
+@Translation(type = TransConstant.USER_ID_TO_NICKNAME, mapper = "userId")
+private String nickName;
+```
 
-补充说明：
+字典翻译：
 
-- 由于翻译发生在序列化阶段，所以返回列表越大，翻译开销越明显。
-- 如果是导出、批量同步、离线任务等大数据量场景，建议提前查询并手动组装，不要完全依赖序列化翻译。
+```java
+@Translation(type = TransConstant.DICT_TYPE_TO_LABEL, mapper = "status", other = "sys_normal_disable")
+private String statusName;
+```
 
-## 自定义扩展
+OSS 文件地址翻译：
 
-实现 `TranslationInterface` 并标注 `@TranslationType`，可参考框架默认实现。
+```java
+private String ossId;
 
-![输入图片说明](https://foruda.gitee.com/images/1676735436673932715/c3caa8d7_1766278.png "屏幕截图")
+@Translation(type = TransConstant.OSS_ID_TO_URL, mapper = "ossId")
+private String url;
+```
 
-补充说明：
+## 自定义翻译
 
-- 自定义翻译器时，建议优先考虑加缓存，避免每次序列化都重复查库或远程调用。
+实现 `TranslationInterface` 并标注 `@TranslationType`：
+
+```java
+@TranslationType(type = "order_id_to_no")
+@Component
+public class OrderNoTranslationImpl implements TranslationInterface<String> {
+
+    @Override
+    public String translation(Object key, String other) {
+        return orderService.getOrderNo(String.valueOf(key));
+    }
+}
+```
+
+使用：
+
+```java
+@Translation(type = "order_id_to_no", mapper = "orderId")
+private String orderNo;
+```
+
+## 使用注意
+
+- 翻译在 JSON 序列化阶段执行，主要用于接口返回展示。
+- 大列表、导出、批量接口要谨慎使用，远程查询类翻译必须做缓存或批量处理。
+- `type` 必须和 `@TranslationType` 完全一致。
+- `mapper` 指向来源字段；不配置时通常使用当前字段值作为 key。

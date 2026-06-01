@@ -1,6 +1,7 @@
 # 基于 RuoYi-Cloud-Plus 的扩展项目列表
 - - -
-[扩展项目列表跳转](/ruoyi-vue-plus/quickstart/extend_project.md)
+
+[扩展项目列表跳转](/6.X/ruoyi-vue-plus/quickstart/extend_project.md)
 
 说明：
 - 大多数扩展项目的接入思路、功能边界、使用方式，与 Vue 版本是一致的，可直接参考 Vue 版页面

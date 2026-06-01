@@ -1,4 +1,4 @@
-﻿# 系统用户相关
+# 系统用户相关
 - - -
 
 ## 功能概览
@@ -18,7 +18,7 @@
 `clientid: 前端配置的客户端ID`
 
 补充说明：
-- Cloud 与 Vue 使用的是同一套 `LoginHelper` 思路，日常取用户信息、判断超管/租户管理员的写法一致
+- Cloud 与 Vue 使用的是同一套 `LoginHelper` 思路，日常取用户信息、判断超管的写法一致
 - 前端 `clientid` 需要和认证中心的客户端配置保持一致，否则网关或服务侧会判定 token 与客户端不匹配
 - 如果是 `plus-ui` 默认工程，请同步检查 `VITE_APP_CLIENT_ID`
 
@@ -43,9 +43,6 @@ Long userId = LoginHelper.getUserId();
 // 获取登录用户账号
 String username = LoginHelper.getUsername();
 
-// 获取登录用户租户 ID
-String tenantId = LoginHelper.getTenantId();
-
 // 获取登录用户部门 ID
 Long deptId = LoginHelper.getDeptId();
 
@@ -65,7 +62,7 @@ Object obj = LoginHelper.getExtra(key);
 
 ![输入图片说明](https://foruda.gitee.com/images/1699591164562734430/42730add_1766278.png "屏幕截图")
 
-框架默认已经把常见登录上下文写入 token 扩展信息，例如 `tenantId`、`userId`、`userName`、`deptId`、`deptName`、`deptCategory`、`clientid`。
+框架默认已经把常见登录上下文写入 token 扩展信息，例如 `userId`、`userName`、`deptId`、`deptName`、`deptCategory`、`clientid`。
 
 ## 权限判断
 
@@ -74,14 +71,6 @@ Object obj = LoginHelper.getExtra(key);
 ```java
 boolean b = LoginHelper.isSuperAdmin();
 boolean b = LoginHelper.isSuperAdmin(userId);
-```
-
-是否为租户管理员：
-
-```java
-boolean b = LoginHelper.isTenantAdmin();
-// 示例：基于角色组判断
-boolean b = LoginHelper.isSuperAdmin(rolePermission);
 ```
 
 ## 参考文档

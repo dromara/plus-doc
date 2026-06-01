@@ -1,18 +1,19 @@
 # 如何对接国产数据库
+- - -
 
 > 1. 框架采用 mybatis-plus 几乎支持大部分市面上的数据库且框架内几乎没有sql语句存在
 <br>
-所以不用担心兼容性问题(顶多就是有一些关键字什么的 对接很简单)
+主要需要关注 JDBC 驱动、SQL 关键字和数据库方言差异。
 <br>
-> 2. 国产数据库大多都兼容主流三大数据库 mysql oracle postgresql
+> 2. 国产数据库通常会参考主流数据库协议或语法
 <br>
-例如 达梦兼容oracle 人大金仓兼容mysql oceanbase兼容mysql 等等
+例如达梦、人大金仓、OceanBase 等都需要按实际模式选择脚本和方言。
 
 # 对接方式
 
 ### 这里用 `达梦` 数据库为例
 
-1.首先增加 jdbc依赖包 `vue版本在ruoyi-admin模块下` `cloud版本在ruoyi-common-mybatis模块下`
+1. 首先增加 JDBC 依赖包。单体项目通常加在主应用模块，Cloud 项目通常加在 `ruoyi-common-mybatis` 模块。
 
 ![输入图片说明](https://foruda.gitee.com/images/1723288594335994875/216ae8e7_1766278.png "屏幕截图")
 
@@ -20,7 +21,7 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1723288760519808620/3db91ba5_1766278.png "屏幕截图")
 
-3.sql脚本使用框架内自带的sql文件根据兼容的数据库模式 例如 达梦用oracle的sql脚本
+3. SQL 脚本使用项目内自带脚本，根据目标数据库支持的模式选择，例如达梦可参考 Oracle 脚本。
 
 ![输入图片说明](https://foruda.gitee.com/images/1723289018873298537/4d95c892_1766278.png "屏幕截图")
 

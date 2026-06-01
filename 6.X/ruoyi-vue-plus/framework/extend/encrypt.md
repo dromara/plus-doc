@@ -1,56 +1,93 @@
 # 数据加解密
 - - -
 
-## 版本
+## 模块位置
 
-- >= 4.6.0
+数据库字段加解密由公共加密模块提供：
 
-## 功能说明
+```text
+ruoyi-common/ruoyi-common-encrypt
+```
 
-数据库字段在写入时加密、读取时解密。  
-支持算法：`BASE64`、`AES`、`RSA`、`SM2`、`SM4`。
+核心类：
 
-补充说明：
+```text
+annotation/EncryptField.java
+interceptor/MybatisEncryptInterceptor.java
+core/EncryptorManager.java
+properties/EncryptorProperties.java
+```
 
-- 当前项目默认配置位于 `application.yml` 的 `mybatis-encryptor` 节点，默认是关闭状态。
-- 框架通过 MyBatis 拦截器在入库和出库时自动处理加解密。
+单体项目全局配置在：
 
-## 注解 `@EncryptField`
+```text
+ruoyi-admin/src/main/resources/application.yml
+```
 
-![输入图片说明](https://foruda.gitee.com/images/1675577493013639395/cd920f15_1766278.png "屏幕截图")
+配置前缀：
 
-补充说明：
-
-- `@EncryptField` 可配置 `algorithm`、`password`、`publicKey`、`privateKey`、`encode`。
-- 当前实现只会处理 `String` 类型字段，其他类型不会按字段加密规则自动处理。
+```text
+mybatis-encryptor
+```
 
 ## 使用方式
 
-详细用法可参考 `TestEncryptController` 示例。
+在实体字段上标注 `@EncryptField`：
 
-### 1. 全局默认配置
+```java
+@EncryptField
+private String phone;
+```
 
-注解未指定时使用全局配置。
+指定算法和密钥：
 
-![输入图片说明](https://foruda.gitee.com/images/1675577674063566357/dee94786_1766278.png "屏幕截图")
+```java
+@EncryptField(
+    algorithm = AlgorithmType.RSA,
+    publicKey = "公钥",
+    privateKey = "私钥"
+)
+private String idCard;
+```
 
-### 2. 注解自定义配置
+支持参数：
 
-可在注解中指定算法与密钥配置。
+| 参数 | 说明 |
+| --- | --- |
+| `algorithm` | 加密算法，未指定时使用全局配置 |
+| `password` | AES、SM4 使用 |
+| `publicKey` | RSA、SM2 使用 |
+| `privateKey` | RSA、SM2 使用 |
+| `encode` | 编码方式 |
 
-![输入图片说明](https://foruda.gitee.com/images/1675577725117970708/7ee7a833_1766278.png "屏幕截图")
+支持算法：
 
-## 密钥生成说明
+```text
+BASE64
+AES
+RSA
+SM2
+SM4
+```
 
-![输入图片说明](https://foruda.gitee.com/images/1675577852271308699/9b30258e_1766278.png "屏幕截图")
+示例代码可参考：
 
-## 注意事项
+```text
+ruoyi-modules/ruoyi-demo/src/main/java/org/dromara/demo/domain/TestDemoEncrypt.java
+```
 
-- 必须使用实体类参与查询与持久化
-- 自定义 XML SQL 也应传入实体类
-- `LambdaQueryWrapper` 等无实体信息的查询无法获取加密注解，可能导致加密失效
+## 生效流程
 
-补充说明：
+`mybatis-encryptor.enable=true` 时会注册 `MybatisEncryptInterceptor`：
 
-- 如果自定义 SQL 查询结果不再映射回带有 `@EncryptField` 的实体类，也无法自动解密。
-- 因此字段加密场景下，建议优先保持“实体类入参 + 实体类出参”的使用方式。
+1. MyBatis 写入前扫描实体字段上的 `@EncryptField`。
+2. 对 `String` 类型字段加密。
+3. 查询结果映射回实体时自动解密。
+
+## 使用注意
+
+- 当前只处理 `String` 字段。
+- 查询、写入建议使用实体对象承载参数。
+- 自定义 XML SQL 如果绕过实体字段，框架无法读取 `@EncryptField`。
+- `LambdaQueryWrapper` 这类没有实体字段信息的条件，无法自动处理加密字段。
+- 加密字段不适合直接做模糊查询；等值查询也需要确保查询条件按同样算法加密。

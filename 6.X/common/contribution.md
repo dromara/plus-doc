@@ -1,5 +1,6 @@
 # 参与贡献的方式
 - - -
+
 参与贡献开源的方式有很多种 听作者来介绍
 
 ## 为开源项目点一个Star
@@ -16,9 +17,9 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1678934493115487351/0c45121e_1766278.png "屏幕截图")
 <br>
-<font size="4">Vue版本: [Gitee我要点Star](https://gitee.com/dromara/RuoYi-Vue-Plus/stargazers) [Github我要点Star](https://github.com/dromara/RuoYi-Vue-Plus)</font>
+<font size="4">Vue项目: [Gitee我要点Star](https://gitee.com/dromara/RuoYi-Vue-Plus/stargazers) [Github我要点Star](https://github.com/dromara/RuoYi-Vue-Plus)</font>
 <br>
-<font size="4">Cloud版本: [Gitee我要点Star](https://gitee.com/dromara/RuoYi-Cloud-Plus/stargazers) [Github我要点Star](https://github.com/dromara/RuoYi-Cloud-Plus)</font>
+<font size="4">Cloud项目: [Gitee我要点Star](https://gitee.com/dromara/RuoYi-Cloud-Plus/stargazers) [Github我要点Star](https://github.com/dromara/RuoYi-Cloud-Plus)</font>
 
 ## 为社区处理问题
 
@@ -53,7 +54,7 @@
 > 需求确定了以后就可以开始专注的写代码了<br>
 > 但在开始写代码之前 一定要先看一下如何正确的提交PR
 
-<font size="4">一点要仔细看: [如何提交PR](/common/pr.md) 👈点他点他</font>
+<font size="4">一点要仔细看: [如何提交PR](/6.X/common/pr.md) 👈点他点他</font>
 
 ## 如何成为项目成员
 

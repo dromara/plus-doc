@@ -1,6 +1,5 @@
-﻿# 实体 Bean 为空问题
+# 实体 Bean 为空问题
 - - -
-
 
 ## 问题现象
 
@@ -9,7 +8,7 @@
 
 ## 常见原因
 
-实体使用了 `@Accessors(chain = true)`，导致 `set` 方法返回值为 `this`，与部分框架的标准 Java Bean 约定不兼容。
+实体使用了 `@Accessors(chain = true)`，导致 `set` 方法返回值为 `this`，部分工具按标准 Java Bean 约定查找 `void setXxx(...)` 时会读取失败。
 
 ## 原因
 java 规范 set 返回值为 `void` 链式调用 set 返回值为 `this`<br>

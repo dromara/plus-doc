@@ -1,5 +1,6 @@
-﻿# 关于请求响应参数解密
----
+# 关于请求响应参数解密
+- - -
+
 ## 1：前端加密请求
 
 ![输入图片说明](https://foruda.gitee.com/images/1717033672316716771/8e30a2f1_4959041.png "屏幕截图")
@@ -50,7 +51,6 @@ String decryptBody = EncryptUtils.decryptByAes(requestBody, aesPassword);
 
 ```json
 {
-    "tenantId": "000000",
     "username": "admin",
     "password": "admin123",
     "rememberMe": false,
@@ -63,7 +63,6 @@ String decryptBody = EncryptUtils.decryptByAes(requestBody, aesPassword);
 
 | 参数名        | 说明                  |
 |------------|---------------------|
-| tenantId   | 租户id                |
 | username   | 用户名                 |
 | password   | 密码                  |
 | rememberMe | 记住密码                |

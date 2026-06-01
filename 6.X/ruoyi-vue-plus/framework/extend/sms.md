@@ -1,65 +1,76 @@
 # 短信模块
 - - -
 
-## 版本与配置
-
-### 版本 >= 5.1.0（sms4j）
-
 已完成 sms4j 集成，文档地址：https://sms4j.com/doc3/
 
-配置方式与厂商扩展请参考 sms4j 文档。
+## 模块位置
 
-![输入图片说明](https://foruda.gitee.com/images/1705573035997239848/2ca8512d_1766278.png "屏幕截图")
+单体项目短信验证码接口在：
 
-使用方式可参考 demo 模块示例：
+```text
+ruoyi-admin/src/main/java/org/dromara/web/controller/CaptchaController.java
+```
 
-![输入图片说明](https://foruda.gitee.com/images/1705573001447394180/2bd726d0_1766278.png "屏幕截图")
+公共短信能力由 `sms4j` 提供：
 
-补充说明：
+```text
+ruoyi-common/ruoyi-common-sms
+```
 
-- Vue 版本当前主流用法是 `sms4j`，配置位于各环境配置文件 `application-*.yml` 的 `sms` 节点。
-- `blends` 下可以同时配置多个厂商或多个账号，通过不同的配置 key 区分。
-- 发送时一般通过 `SmsFactory.getSmsBlend("配置key")` 选择具体通道。
+## 配置位置
 
-### 版本 4.2.0（SPI 方式）
+短信配置位于环境配置文件：
 
-短信模块采用 SPI 加载，支持 `阿里云`、`腾讯云`，可提交 PR 扩展。
+```text
+ruoyi-admin/src/main/resources/application-dev.yml
+ruoyi-admin/src/main/resources/application-prod.yml
+```
 
-参考 `ruoyi-demo` 的 pom 配置：
+`sms.blends` 下可以配置多个通道，代码通过配置 key 选择通道：
 
-![输入图片说明](https://foruda.gitee.com/images/1678979157797419426/cc9b7444_1766278.png "屏幕截图")
+```java
+SmsBlend smsBlend = SmsFactory.getSmsBlend("config1");
+```
 
-配置文件示例：
+`config1` 必须和 `sms.blends` 下的 key 对应。
 
-![输入图片说明](https://foruda.gitee.com/images/1678979163029635375/e5fd6e20_1766278.png "屏幕截图")
+## 接口路径
 
-参数说明：
+验证码接口：
 
-- `enabled`：短信功能开关
-- `endpoint`：厂家域名
-- `accessKeyId`：密钥 ID
-- `accessKeySecret`：密钥
-- `signName`：签名
-- `sdkAppId`：应用 ID（腾讯专用）
+```text
+GET /resource/sms/code?phoneNumber=手机号
+```
 
-## 功能使用
+处理流程：
 
-参考 demo 模块 `SmsController` 示例。  
-功能采用“模板模式”动态加载厂商模板，注入 `SmsTemplate` 即可使用。
+1. 校验手机号格式。
+2. 生成 4 位数字验证码。
+3. 使用 `GlobalConstants.CAPTCHA_CODE_KEY + phoneNumber` 写入 Redis。
+4. 通过 `SmsFactory.getSmsBlend("config1")` 获取通道。
+5. 调用 `sendMessage(phoneNumber, templateId, map)` 发送短信。
 
-![输入图片说明](https://foruda.gitee.com/images/1678979168699323982/e9301e84_1766278.png "屏幕截图")
+接口带有限流：
 
-补充说明：
+```java
+@RateLimiter(key = "#phonenumber", time = 60, count = 1)
+```
 
-- 当前 demo 中已经演示了通过 `SmsFactory.getSmsBlend("config1")`、`config2` 分别调用不同短信通道。
-- 模板参数通常使用 `LinkedHashMap` 传入，字段名和顺序要符合供应商模板要求。
+## 业务调用
 
-## 重点须知
+业务代码可直接使用 `SmsFactory`：
 
-不同厂家参数格式差异较大，请按规则配置：
+```java
+LinkedHashMap<String, String> params = new LinkedHashMap<>();
+params.put("code", "1234");
 
-![输入图片说明](https://foruda.gitee.com/images/1678979172581090456/ac1f10e8_1766278.png "屏幕截图")
+SmsBlend smsBlend = SmsFactory.getSmsBlend("config1");
+SmsResponse response = smsBlend.sendMessage(phoneNumber, templateId, params);
+```
 
-补充说明：
+## 使用注意
 
-- 真实业务里还应配合黑名单、发送频控、验证码缓存时效一起使用，避免短信轰炸和恶意调用。
+- 验证码模板 ID 当前示例为空，实际业务需要按供应商模板配置。
+- 模板参数使用 `LinkedHashMap`，字段名和顺序按供应商要求填写。
+- 验证码已写入 Redis，登录或校验时要使用同一 key 规则读取。
+- 生产环境应配合限流、黑名单、图形验证码或滑块验证码，避免短信轰炸。

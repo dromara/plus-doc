@@ -1,14 +1,10 @@
-﻿# 接口文档
+# 接口文档
 - - -
-
-## 版本说明
-
-- >= 4.3.0
 
 ## 背景说明
 
 `springfox` 与 `knife4j` 已停止维护，Bug 较多。  
-从 `4.3.0` 开始迁移到 `springdoc`，基于 `javadoc` 无注解生成 OpenAPI 结构。  
+当前项目使用 `springdoc`，基于 `javadoc` 无注解生成 OpenAPI 结构。  
 框架移除内置 UI，推荐使用外置文档工具。
 
 ## 文档工具选择
@@ -90,15 +86,9 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1678976534677430926/f32c64c5_1766278.png "屏幕截图")
 
-### 5. 鉴权设置（注意版本）
-
-**>= 5.X**
+### 5. 鉴权设置
 
 ![输入图片说明](https://foruda.gitee.com/images/1690966897370710566/6a688aea_1766278.png "屏幕截图")
-
-**4.X**
-
-![输入图片说明](https://foruda.gitee.com/images/1678976539608390075/77246461_1766278.png "屏幕截图")
 
 默认 key 为 `Authorization`：
 

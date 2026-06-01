@@ -1,4 +1,4 @@
-﻿# Sharding-Proxy 搭建分库分表
+# Sharding-Proxy 搭建分库分表
 - - -
 
 ## 使用示例

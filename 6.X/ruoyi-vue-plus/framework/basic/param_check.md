@@ -1,4 +1,4 @@
-﻿# 参数校验
+# 参数校验
 - - -
 
 参数校验基于 `spring-boot-starter-validation` 与 `hibernate-validator`，用于对请求参数进行统一校验。
@@ -157,4 +157,4 @@ private String userName;
 
 更多注解可参考包：`org.hibernate.validator`。
 
-Cloud 版本这里的参数校验方式与 Vue 版本基本一致，可直接参考本页。
+Cloud 文档中的参数校验说明可直接参考本页。

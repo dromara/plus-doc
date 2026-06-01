@@ -1,38 +1,145 @@
 # 开发规范
 - - -
 
-### 新增view
-> 在`@/views`文件下创建对应的文件夹，一般性一个路由对应一个文件， 该模块下的功能就建议在本文件夹下创建一个新文件夹，各个功能模块维护自己的`utils`或`components`组件。
+新页面尽量贴近现有 `src/views/system/config/index.vue`、`src/views/system/user/index.vue` 的组织方式：typed API、组合式 hooks、显式导入插件对象、页面内聚样式。
 
-补充说明：
+## 页面目录
 
-- 页面组件建议使用 `<script setup name="xxx">` 明确组件名，并与路由 `name` 保持一致，方便页签缓存、刷新和调试定位。
-- 页面专属的 `components`、`utils`、`hooks` 尽量放在当前业务目录下，就近维护，避免全部堆到全局目录。
-- 列表页建议统一保持 `queryParams`、`getList`、`handleQuery`、`resetQuery` 这类命名习惯，和现有页面及生成代码保持一致。
+业务页面放在 `src/views` 下，一个菜单页面对应一个目录或一个 `.vue` 文件。
 
-### 新增api
-> 在`@/api`文件夹下创建本模块对应的api服务。  
-> 在api服务同级创建`types.ts`类型声明文件。
+```text
+src/views/
+  system/
+    config/
+      index.vue
+    user/
+      index.vue
+      components/
+        DeptTree.vue
+```
 
-补充说明：
+建议：
 
-- 推荐目录结构为 `@/api/模块/index.ts` + `types.ts`，接口定义与类型声明分离，后续维护成本更低。
-- 页面中尽量直接引用 `VO`、`Query`、`Form` 等类型，避免长期使用 `any`。
-- 请求默认会自动携带 `Authorization`、`clientid`、`Content-Language`，只有特殊场景再通过请求头显式控制 `isToken`、`repeatSubmit`、`isEncrypt`。
+- 页面组件使用 `<script setup name="Config" lang="ts">`
+- `name` 与路由 `name` 保持一致
+- 页面专属组件放到当前业务目录的 `components`
+- 页面专属工具放到当前业务目录的 `utils` 或 `hooks`
+- 可跨模块复用的能力再放入 `src/components`、`src/hooks`、`src/utils`
 
-### 新增组件
-> 在全局的`@/components`写一些全局的组件，如富文本，各种搜索组件，封装的分页组件等等能被公用的组件。 每个页面或者模块特定的业务组件则会写在当前`@/views`下面。
-如：`@/views/system/user/components/xxx.vue`。这样拆分大大减轻了维护成本。
+## API 目录
 
-补充说明：
+接口放在 `src/api/模块/index.ts`，类型放在同级 `types.ts`。
 
-- `@/components` 更适合沉淀基础能力组件，和具体业务强耦合的组件建议保留在业务目录中。
-- 项目已通过 `unplugin-vue-components` 对大量 Element Plus 组件做按需自动导入，但 `@/components` 下的自定义组件并不是全部全局可用，仍要按实际导入方式处理。
+```text
+src/api/system/config/
+  index.ts
+  types.ts
+```
 
-### 新增样式
-> 页面的样式和组件是一个道理，全局的`@/style`放置一下全局公用的样式，每一个页面的样式就写在当前 views下面，请记住加上scoped 就只会作用在当前组件内了，避免造成全局的样式污染。
+接口函数示例：
 
-补充说明：
+```typescript
+import type { PageResult } from '@/api/types';
+import type { AxiosPromise } from '@/utils/api-types';
+import request from '@/utils/request';
+import type { ConfigQuery, ConfigVO } from './types';
 
-- 页面样式优先跟随页面文件维护，跨页面重复出现的变量、mixins、主题样式再抽到全局。
-- `scoped` 只能解决大部分样式隔离问题，如果需要覆盖第三方组件深层结构，再局部使用 `:deep()`，不要直接放大为全局样式覆盖。
+export function listConfig(query: ConfigQuery): AxiosPromise<PageResult<ConfigVO>> {
+  return request({
+    url: '/system/config/list',
+    method: 'get',
+    params: query
+  });
+}
+```
+
+类型命名建议：
+
+| 后缀 | 用途 |
+| --- | --- |
+| `VO` | 后端返回对象 |
+| `Query` | 查询参数 |
+| `Form` | 表单提交对象 |
+
+## 列表页结构
+
+列表页建议统一保留这些命名，方便生成代码和人工维护：
+
+```typescript
+const list = ref<ConfigVO[]>([]);
+const total = ref(0);
+const queryFormRef = ref<ElFormInstance>();
+const formRef = ref<ElFormInstance>();
+
+const data = reactive<PageData<ConfigForm, ConfigQuery>>({
+  form: { ...initFormData },
+  queryParams: {
+    pageNum: 1,
+    pageSize: 10
+  },
+  rules: {}
+});
+
+const { queryParams, form, rules } = toRefs(data);
+```
+
+常用 hooks：
+
+```typescript
+const { loading, withLoading } = useLoading(true);
+const { showSearch } = useSearchToggle();
+const { dateRange, applyDateRange, resetDateRange } = useDateRangeQuery();
+const { ids, single, multiple, handleSelectionChange } = useTableSelection<ConfigVO>(item => item.configId);
+```
+
+查询方法：
+
+```typescript
+const getList = async () => {
+  await withLoading(async () => {
+    const res = await listConfig(applyDateRange(queryParams.value));
+    list.value = res.data?.rows ?? [];
+    total.value = res.data?.total ?? 0;
+  });
+};
+```
+
+## 插件和工具
+
+组合式页面中优先显式导入：
+
+```typescript
+import modal from '@/plugins/modal';
+import auth from '@/plugins/auth';
+import tab from '@/plugins/tab';
+import { useDict } from '@/utils/dict';
+import { download as requestDownload } from '@/utils/request';
+import { parseTime } from '@/utils/ruoyi';
+```
+
+不要继续新增依赖 `proxy` 的写法。
+
+## 样式
+
+页面样式优先使用当前项目已有的页面 mixin：
+
+```vue
+<style lang="scss" scoped>
+@use '@/assets/styles/components/page-shell' as pageShell;
+
+@include pageShell.table-crud-page;
+</style>
+```
+
+说明：
+
+- 普通页面样式放在当前 `.vue` 文件中
+- 通用页面结构抽到 `src/assets/styles/components`
+- 覆盖第三方组件内部结构时使用局部 `:deep()`
+- 不要把业务页面样式直接写成全局覆盖
+
+## 组件
+
+通用组件放在 `src/components`，业务组件放在当前业务目录。
+
+当前项目会自动导入大量 Element Plus 组件和图标，但业务组件是否可直接使用取决于项目配置。写业务页面时，优先参考现有页面的导入方式。

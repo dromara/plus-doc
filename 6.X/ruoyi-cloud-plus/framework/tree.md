@@ -1,91 +1,99 @@
-﻿# 项目结构
+# 项目结构
 - - -
-## 目录结构
-v2.2.1
-~~~
-RuoYi-Cloud-Plus
-├─ ruoyi-api             // api模块
-│  └─ ruoyi-api-bom                // api模块依赖管理
-│  └─ ruoyi-api-resource           // 资源api模块
-│  └─ ruoyi-api-system             // 系统api模块
-│  └─ ruoyi-api-workflow           // 工作流api模块
-├─ ruoyi-auth            // 认证服务 [9210]
-├─ ruoyi-common          // 通用模块
-│  └─ ruoyi-common-alibaba-bom     // alibaba 依赖管理
-│  └─ ruoyi-common-bom             // common 依赖管理
-│  └─ ruoyi-common-bus             // 消息总线模块
-│  └─ ruoyi-common-core            // 核心功能模块
-│  └─ ruoyi-common-dict            // 字典集成模块
-│  └─ ruoyi-common-doc             // 文档集成模块
-│  └─ ruoyi-common-dubbo           // dubbo集成模块
-│  └─ ruoyi-common-elasticsearch   // ES集成模块
-│  └─ ruoyi-common-encrypt         // 数据加解密模块
-│  └─ ruoyi-common-excel           // excel集成模块
-│  └─ ruoyi-common-idempotent      // 幂等功能模块
-│  └─ ruoyi-common-job             // job定时任务集成模块
-│  └─ ruoyi-common-json            // json集成模块
-│  └─ ruoyi-common-loadbalancer    // 团队负载均衡集成模块
-│  └─ ruoyi-common-log             // 日志集成模块
-│  └─ ruoyi-common-logstash        // elk日志集成模块
-│  └─ ruoyi-common-mail            // 邮件集成模块
-│  └─ ruoyi-common-mybatis         // mybatis数据库相关集成模块
-│  └─ ruoyi-common-oss             // oss相关集成模块
-│  └─ ruoyi-common-prometheus      // prometheus监控
-│  └─ ruoyi-common-redis           // redis集成模块
-│  └─ ruoyi-common-satoken         // satoken集成模块
-│  └─ ruoyi-common-seata           // seata分布式事务集成模块
-│  └─ ruoyi-common-security        // 框架权限鉴权集成模块
-│  └─ ruoyi-common-sensitive       // 脱敏功能模块
-│  └─ ruoyi-common-sentinel        // sentinel集成模块
-│  └─ ruoyi-common-skylog          // skywalking日志收集模块
-│  └─ ruoyi-common-sms             // 短信集成模块
-│  └─ ruoyi-common-social          // 社交三方功能模块
-│  └─ ruoyi-common-sse             // sse流推送模块
-│  └─ ruoyi-common-tenant          // 租户功能模块
-│  └─ ruoyi-common-translation     // 通用翻译功能
-│  └─ ruoyi-common-web             // web服务集成模块
-│  └─ ruoyi-common-websocket       // websocket服务集成模块
-├─ ruoyi-example        // 例子模块
-│  └─ ruoyi-demo        // 演示模块 [9401]
-│  └─ ruoyi-test-mq     // mq演示模块 [9402]
-├─ ruoyi-gateway        // 网关模块 [8080]
-├─ ruoyi-modules        // 功能模块
-│  └─ ruoyi-gen                    // 代码生成模块 [9202]
-│  └─ ruoyi-job                    // 任务调度模块 [9203,9901]
-│  └─ ruoyi-resource               // 资源模块 [9204]
-│  └─ ruoyi-system                 // 系统模块 [9201]
-│  └─ ruoyi-workflow               // 工作流模块 [9205]
-├─ ruoyi-visual         // 可视化模块
-│  └─ ruoyi-monitor                // 服务监控模块 [9100]
-│  └─ ruoyi-nacos                  // nacos服务模块 [8848,9848,9849]
-│  └─ ruoyi-seata-server           // seata服务模块 [7091,8091]
-│  └─ ruoyi-sentinel-dashboard     // sentinel控制台模块 [8718]
-│  └─ ruoyi-snailjob-server        // 任务调度控制台模块 [8800,17888]
-├─ plus-ui              // 前端框架 [80]
-├─ config/nacos         // nacos配置文件(需复制到nacos配置中心使用)
-│  └─ sentinel-ruoyi-gateway.json  // sentinel对接gateway限流配置文件
-│  └─ seata-server.properties      // seata服务配置文件
-│  └─ application-common.yml              // 所有应用主共享配置文件
-│  └─ datasource.yml               // 所有应用共享数据源配置文件
-│  └─ ruoyi-auth.yml               // auth 模块配置文件
-│  └─ ruoyi-gateway.yml            // gateway 模块配置文件
-│  └─ ruoyi-gen.yml                // gen 模块配置文件
-│  └─ ruoyi-job.yml                // job 模块配置文件
-│  └─ ruoyi-monitor.yml            // monitor 模块配置文件
-│  └─ ruoyi-resource.yml           // resource 模块配置文件
-│  └─ ruoyi-sentinel-dashboard.yml // sentinel 控制台 模块配置文件
-│  └─ ruoyi-snailjob-server.yml    // snailjob 控制台 模块配置文件
-│  └─ ruoyi-system.yml             // systen 模块配置文件
-│  └─ ruoyi-workflow.yml           // workflow 模块配置文件
-├─ config/grafana       // grafana配置文件(需复制到grafana使用)
-│  └─ Nacos.json                        // Nacos监控页面
-│  └─ SLS JVM监控大盘.json               // JVM监控页面
-│  └─ Spring Boot 2.1 Statistics.json   // SpringBoot监控页面
-├─ sql                  // sql脚本
-├─ docker               // docker 配置脚本
-├─ .run                 // 执行脚本文件
-├─ .editorconfig        // 编辑器编码格式配置
-├─ LICENSE              // 开源协议
-├─ pom.xml              // 公共依赖
-├─ README.md            // 框架说明文件
-~~~
+
+## 后端结构
+
+```text
+RuoYi-Cloud-Plus/
+  ruoyi-api
+  ruoyi-auth
+  ruoyi-common
+  ruoyi-example
+  ruoyi-gateway
+  ruoyi-modules
+  ruoyi-visual
+  script
+```
+
+## ruoyi-api
+
+跨服务 API 与 DTO 定义：
+
+| 模块 | 说明 |
+| --- | --- |
+| `ruoyi-api-resource` | 资源服务远程接口 |
+| `ruoyi-api-system` | 系统服务远程接口 |
+| `ruoyi-api-workflow` | 工作流远程接口 |
+| `ruoyi-api-bom` | API 依赖管理 |
+
+## 核心服务
+
+| 模块 | 说明 |
+| --- | --- |
+| `ruoyi-gateway` | 网关服务，默认对外入口 |
+| `ruoyi-auth` | 认证中心，处理登录、验证码、授权登录 |
+| `ruoyi-modules/ruoyi-system` | 用户、角色、菜单、字典、参数等系统功能 |
+| `ruoyi-modules/ruoyi-resource` | OSS、邮件、短信、统一消息推送 |
+| `ruoyi-modules/ruoyi-gen` | 代码生成 |
+| `ruoyi-modules/ruoyi-job` | SnailJob 客户端与任务示例 |
+| `ruoyi-modules/ruoyi-workflow` | WarmFlow 工作流 |
+
+## ruoyi-common
+
+公共能力包：
+
+| 模块 | 说明 |
+| --- | --- |
+| `ruoyi-common-core` | 基础对象、常量、工具 |
+| `ruoyi-common-web` | Web、异常、过滤器 |
+| `ruoyi-common-security` | 安全与接口放行 |
+| `ruoyi-common-satoken` | Sa-Token 登录与权限 |
+| `ruoyi-common-dubbo` | Dubbo RPC 封装 |
+| `ruoyi-common-mybatis` | MyBatis-Plus、数据权限 |
+| `ruoyi-common-redis` | Redis、Redisson、限流、防重 |
+| `ruoyi-common-push` | SSE/WebSocket 统一消息推送 |
+| `ruoyi-common-mcp` | Spring AI MCP Client 封装 |
+| `ruoyi-common-mqtt` | MQTT 客户端接入 |
+| `ruoyi-common-oss` | S3 协议对象存储 |
+| `ruoyi-common-sms` | sms4j 短信 |
+| `ruoyi-common-mail` | 邮件发送 |
+| `ruoyi-common-doc` | SpringDoc 文档增强 |
+| `ruoyi-common-encrypt` | 数据加解密 |
+| `ruoyi-common-translation` | 数据翻译 |
+| `ruoyi-common-sensitive` | 数据脱敏 |
+| `ruoyi-common-seata` | Seata 分布式事务 |
+| `ruoyi-common-loadbalancer` | 团队路由与负载均衡扩展 |
+| `ruoyi-common-bus` | Spring Cloud Bus |
+
+## ruoyi-visual
+
+独立可视化服务：
+
+| 模块 | 说明 |
+| --- | --- |
+| `ruoyi-monitor` | Spring Boot Admin 监控中心 |
+| `ruoyi-snailjob-server` | SnailJob 调度中心 |
+
+## ruoyi-example
+
+| 模块 | 说明 |
+| --- | --- |
+| `ruoyi-demo` | 框架功能演示服务 |
+| `ruoyi-test-mq` | RabbitMQ、RocketMQ、Kafka 示例 |
+
+## script
+
+```text
+script/sql                 数据库脚本
+script/config/nacos        Nacos 配置文件
+script/docker              Docker 编排与中间件配置
+script/leave               工作流演示流程 JSON
+```
+
+主要 SQL：
+
+```text
+script/sql/ry-cloud.sql
+script/sql/ry-job.sql
+script/sql/ry-workflow.sql
+```

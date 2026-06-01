@@ -1,50 +1,95 @@
 # 数据脱敏
 - - -
 
-## 功能说明
+## 模块位置
 
-系统基于 `Jackson` 序列化策略，对标注 `@Sensitive` 的字段进行脱敏处理。
+脱敏功能由公共脱敏模块提供：
 
-补充说明：
+```text
+ruoyi-common/ruoyi-common-sensitive
+```
 
-- 脱敏发生在接口响应序列化阶段，因此通常用于“返回给前端时隐藏敏感信息”，不会直接改动数据库中的原始值。
-- 常见适用字段包括手机号、身份证号、邮箱、银行卡号、住址等。
+核心类：
+
+```text
+annotation/Sensitive.java
+core/SensitiveStrategy.java
+core/SensitiveService.java
+handler/SensitiveJsonFieldProcessor.java
+```
+
+脱敏发生在 JSON 序列化阶段，不会修改数据库原始值。
 
 ## 使用方式
 
-在字段上标注 `@Sensitive`，并指定策略与权限：
+在返回对象字段上标注 `@Sensitive`：
 
-![输入图片说明](https://foruda.gitee.com/images/1699523591703893602/ffd6dba2_1766278.png "屏幕截图")
+```java
+@Sensitive(strategy = SensitiveStrategy.PHONE)
+private String phone;
+```
 
-字段说明：
+指定可查看明文的角色或权限：
 
-- `strategy`：脱敏策略
-- `roleKey`：角色 code（满足角色可查看明文）
-- `perms`：权限 code（满足权限可查看明文）
+```java
+@Sensitive(
+    strategy = SensitiveStrategy.ID_CARD,
+    roleKey = {"admin"},
+    perms = {"system:user:query"}
+)
+private String idCard;
+```
 
-![输入图片说明](https://foruda.gitee.com/images/1678979315796014155/614adf91_1766278.png "屏幕截图")
+`SensitiveService.isSensitive(roleKey, perms)` 返回需要脱敏时，序列化会按策略处理字段。
 
-补充说明：
+## 内置策略
 
-- 如果同时配置了角色或权限放行条件，满足条件的用户可直接看到原文，不满足条件时才执行脱敏。
-- 该能力适合做“同一接口对不同权限用户返回不同展示效果”的场景。
+`SensitiveStrategy` 已内置：
 
-## 自定义脱敏策略
+```text
+ID_CARD
+PHONE
+ADDRESS
+EMAIL
+BANK_CARD
+CHINESE_NAME
+FIXED_PHONE
+USER_ID
+PASSWORD
+IPV4
+IPV6
+CAR_LICENSE
+FIRST_MASK
+STRING_MASK
+MASK_HIGH_SECURITY
+CLEAR
+CLEAR_TO_NULL
+```
 
-在 `SensitiveStrategy` 中新增策略实现：
+## 自定义策略
 
-![输入图片说明](https://foruda.gitee.com/images/1678979319996224858/3b3e3c8b_1766278.png "屏幕截图")
+简单规则可以直接在 `SensitiveStrategy` 中新增枚举：
 
-## 脱敏逻辑调整
+```java
+ORDER_NO(s -> DesensitizedUtils.mask(s, 4, 4, 6))
+```
 
-可通过通用接口自定义脱敏逻辑，支持不同系统使用不同规则。
+如果需要按登录用户、角色、权限决定是否脱敏，实现 `SensitiveService`：
 
-![输入图片说明](https://foruda.gitee.com/images/1678979325448998856/b262e425_1766278.png "屏幕截图")
+```java
+@Service
+public class CustomSensitiveService implements SensitiveService {
 
-默认逻辑：根据角色/权限或非管理员进行脱敏，可按需修改。
+    @Override
+    public boolean isSensitive(String[] roleKey, String[] perms) {
+        return !LoginHelper.isSuperAdmin();
+    }
+}
+```
 
-![输入图片说明](https://foruda.gitee.com/images/1699523752627488891/f82f2f50_1766278.png "屏幕截图")
+## 使用注意
 
-补充说明：
-
-- 如果项目对“管理员是否可见明文”的规则有特殊要求，可以通过 `SensitiveService` 的实现统一调整，而不是到每个字段单独分支判断。
+- 脱敏只影响接口响应，不影响数据库值和服务内部对象值。
+- 只对经过统一 JSON 序列化链路返回的数据生效。
+- 导出、手动拼接 JSON、Map 转换等场景需要单独确认是否经过脱敏处理。
+- 私钥、Token、证件号等高敏字段建议使用 `MASK_HIGH_SECURITY` 或 `CLEAR`。

@@ -1,85 +1,158 @@
 # 路由使用
 - - -
 
-框架的核心是通过路由自动生成对应导航，所以除了路由的基本配置，还需要了解框架提供了哪些配置项。
-### 路由配置
+前端路由由 `src/router/index.ts`、`src/store/modules/permission.ts` 和后端菜单共同组成。
+
+## 静态路由
+
+静态路由位于 `src/router/index.ts` 的 `constantRoutes`，用于登录、注册、错误页、首页、个人中心等无需动态权限加载的页面。
+
 ```typescript
-// 当设置 true 的时候该路由不会在侧边栏出现 如401，login等页面，或者如一些编辑页面/edit/1
-hidden: true // (默认 false)
-
-//当设置 noRedirect 的时候该路由在面包屑导航中不可被点击
-redirect: 'noRedirect'
-
-// 当你一个路由下面的 children 声明的路由大于1个时，自动会变成嵌套的模式--如组件页面
-// 只有一个时，会将那个子路由当做根路由显示在侧边栏--如引导页面
-// 若你想不管路由下面的 children 声明的个数都显示你的根路由
-// 你可以设置 alwaysShow: true，这样它就会忽略之前定义的规则，一直显示根路由
-alwaysShow: true
-
-name: 'router-name' // 设定路由的名字，一定要填写不然使用<keep-alive>时会出现各种问题
-query: '{"id": 1, "name": "ry"}'     // 访问路由的默认传递参数
-roles: ['admin', 'common']           // 访问路由的角色权限
-permissions: ['a:a:a', 'b:b:b']      // 访问路由的菜单权限
- 
-meta: {
-  title: 'title' // 设置该路由在侧边栏和面包屑中展示的名字
-  icon: 'svg-name' // 设置该路由图标，通常对应 src/assets/icons/svg 下的图标名
-  noCache: true // 如果设置为true，则不会被 <keep-alive> 缓存(默认 false)
-  breadcrumb: false //  如果设置为false，则不会在breadcrumb面包屑中显示(默认 true)
-  affix: true // 如果设置为true，它则会固定在tags-view中(默认 false)
-
-  // 当路由设置了该属性，则会高亮相对应的侧边栏。
-  // 这在某些场景非常有用，比如：一个文章的列表页路由为：/article/list
-  // 点击文章进入文章详情页，这时候路由为/article/1，但你想在侧边栏高亮文章列表的路由，就可以进行如下设置
-  activeMenu: '/article/list'
-}
+export const constantRoutes: RouteRecordRaw[] = [
+  {
+    path: '/login',
+    component: () => import('@/views/login.vue'),
+    hidden: true
+  },
+  {
+    path: '',
+    component: Layout,
+    redirect: '/index',
+    children: [
+      {
+        path: '/index',
+        component: () => import('@/views/index.vue'),
+        name: 'Index',
+        meta: { title: '首页', icon: 'dashboard', affix: true }
+      }
+    ]
+  }
+];
 ```
-**普通示例**
-```json
+
+路由历史模式使用：
+
+```typescript
+createWebHistory(import.meta.env.VITE_APP_CONTEXT_PATH)
+```
+
+部署到二级目录时，需要同步配置 `VITE_APP_CONTEXT_PATH`。
+
+## 动态路由
+
+动态菜单由后端返回，前端在 `src/store/modules/permission.ts` 中调用 `getRouters()`，再通过 `filterAsyncRouter` 转换为 Vue Router 可识别的路由。
+
+动态菜单中的 `component` 字段使用字符串：
+
+| component | 说明 |
+| --- | --- |
+| `Layout` | 主布局组件 |
+| `ParentView` | 父级占位组件 |
+| `InnerLink` | 内链 iframe 组件 |
+| `system/user/index` | 对应 `src/views/system/user/index.vue` |
+
+视图组件通过下面的方式预加载映射：
+
+```typescript
+const modules = import.meta.glob('./../../views/**/*.vue');
+```
+
+加载时会调用：
+
+```typescript
+loadView(route.component, route.name as string);
+```
+
+`loadView` 会通过 `createCustomNameComponent` 给动态组件补充组件名，所以后端菜单里的 `name` 必须唯一。
+
+## 菜单字段
+
+常用路由字段：
+
+```typescript
 {
-  path: '/system/test',
-  component: Layout,
+  path: '/system/user',
+  component: 'Layout',
   redirect: 'noRedirect',
   hidden: false,
   alwaysShow: true,
-  meta: { title: '系统管理', icon: 'system' },
+  name: 'System',
+  meta: {
+    title: '系统管理',
+    icon: 'system',
+    noCache: false,
+    breadcrumb: true,
+    affix: false,
+    activeMenu: '/system/user'
+  },
   children: [
     {
       path: 'index',
-      component: () => import('@/views/system/user/index.vue'),
-      name: 'Test',
+      component: 'system/user/index',
+      name: 'User',
       meta: {
-        title: '测试管理',
-        icon: 'user'
+        title: '用户管理',
+        icon: 'user',
+        noCache: false
       }
     }
   ]
 }
 ```
-**外链示例**
-```json
+
+字段说明：
+
+| 字段 | 说明 |
+| --- | --- |
+| `hidden` | 是否在侧边栏隐藏 |
+| `alwaysShow` | 只有一个子路由时仍显示父级菜单 |
+| `redirect: 'noRedirect'` | 面包屑不可点击 |
+| `name` | 路由名称，必须唯一 |
+| `query` | 默认 query 参数，通常为 JSON 字符串 |
+| `roles` | 本地动态路由角色权限 |
+| `permissions` | 本地动态路由权限字符串 |
+| `meta.title` | 菜单、面包屑、页签标题 |
+| `meta.icon` | 图标名，对应 `src/assets/icons/svg` |
+| `meta.noCache` | 是否不缓存页面 |
+| `meta.breadcrumb` | 是否显示面包屑 |
+| `meta.affix` | 是否固定页签 |
+| `meta.activeMenu` | 当前页面高亮的菜单路径 |
+
+## 外链和内链
+
+普通外链可直接配置完整 URL：
+
+```typescript
 {
-  path: 'http://ruoyi.vip',
-  meta: { title: '若依官网', icon: 'guide' }
+  path: 'https://gitee.com/dromara/RuoYi-Vue-Plus',
+  meta: { title: '项目地址', icon: 'guide' }
 }
 ```
-### 静态路由
-代表那些不需要动态判断权限的路由，如登录页、404、重定向页、个人中心等通用页面，在 `@/src/router/index.ts` 的 `constantRoutes` 中维护。
-### 动态路由
-代表那些需要根据用户动态判断权限并动态加载的页面，通常由后端菜单返回后在权限模块中转换成前端路由。
-> **提示**
-> * 动态路由可以在系统管理-菜单管理进行新增和修改操作，前端加载会自动请求接口获取菜单信息并转换成前端对应的路由。
-> * 当前项目基于 `Vite`，页面组件通常使用 `() => import('...')` 方式懒加载。
-> * 路由历史模式使用 `createWebHistory(import.meta.env.VITE_APP_CONTEXT_PATH)`，如果项目部署在二级目录，必须同步调整 `VITE_APP_CONTEXT_PATH`。
-### 常用方法
-想要跳转到不同的页面，使用`router.push`方法
-```Typescript
+
+内链 iframe 使用 `InnerLink`，最终由 `AppMain.vue` 中的 `iframe-toggle` 处理。
+
+## 跳转页面
+
+页面中使用 Vue Router：
+
+```typescript
 const router = useRouter();
-router.push({ path: "/system/user" });
+
+router.push({ path: '/system/user' });
+router.push({ path: '/system/user', query: { id: '1', name: '若依' } });
 ```
-跳转页面并设置请求参数，使用`query`属性
-```Typescript
-const router = useRouter();
-router.push({ path: "/system/user", query: {id: "1", name: "若依"} });
+
+如果跳转同时希望打开页签，也可以使用 `tab.openPage`：
+
+```typescript
+import tab from '@/plugins/tab';
+
+await tab.openPage('/system/user', '用户管理', { deptId: 100 });
 ```
-更多使用可以参考[vue-router](https://router.vuejs.org/zh/)官方文档。
+
+## 注意事项
+
+- 路由 `name` 不能为空，也不能重复；项目启动后会检查重复名称并弹出错误提示。
+- 页面缓存依赖路由 `name` 和组件名，详见 [页签缓存](/6.X/plus-ui/page_cache.md)。
+- 后端菜单中的组件路径不要以 `@/views` 开头，填写 `system/user/index` 这类相对 `views` 的路径。
+- 新增页面后，如果出现 404，优先检查菜单组件路径、路由名称重复、页面文件路径。

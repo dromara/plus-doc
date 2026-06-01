@@ -1,11 +1,11 @@
-﻿# 5.X项目初始化
+# 项目初始化
 - - -
 
 ## 分支选择
 
 | 分支       | 用途   | 说明             |
 |----------|------|----------------|
-| 5.X      | 稳定发布 | 推荐生产与学习        |
+| 6.X      | 稳定发布 | 推荐生产与学习        |
 | dev      | 开发分支 | 代码随时更新，不建议直接使用 |
 | future/* | 预览分支 | 新功能预览，稳定性不保证   |
 
@@ -16,19 +16,19 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1720080025744223375/0213a652_1766278.png "屏幕截图")
 
-| 组件            | 版本建议         | 说明                                                                       |
-|---------------|--------------|--------------------------------------------------------------------------|
-| JDK           | 17 / 21      | 推荐 OpenJDK [JDK下载地址](https://bell-sw.com/pages/downloads/)               |
-| MySQL         | 5.7 / 8.0    | 其他版本未测试，可反馈                                                              |
-| Oracle        | >= 12c       | 其他版本未测试，可反馈                                                              |
-| PostgreSQL    | 13 / 14 / 15 | 其他版本未测试，可反馈                                                              |
-| SQL Server    | 2017 / 2019  | 其他版本未测试，可反馈                                                              |
-| Redis         | >= 6.x       | 框架大量使用新特性 [win redis 下载地址](https://github.com/zkteco-home/redis-windows) |
-| MinIO         | 按需           | 可用 RustFS 替代（新方案需谨慎）                                                     |
-| Maven         | >= 3.8.x     | 构建工具                                                                     |
-| Node.js       | >= 20.15     | 其他版本未测试，可反馈                                                              |
-| npm           | >= 8.x       | 7.x 已确认存在问题                                                              |
-| IntelliJ IDEA | 见下方          | 有版本避坑说明                                                                  |
+| 组件            | 版本建议        | 说明                                                                       |
+|---------------|-------------|--------------------------------------------------------------------------|
+| JDK           | 21 / 25     | 推荐 OpenJDK [JDK下载地址](https://bell-sw.com/pages/downloads/)               |
+| MySQL         | 8.0 / 8.4   | 其他版本未测试，可反馈                                                              |
+| Oracle        | >= 12c      | 其他版本未测试，可反馈                                                              |
+| PostgreSQL    | 15 ... 18   | 其他版本未测试，可反馈                                                              |
+| SQL Server    | 2017 / 2019 | 其他版本未测试，可反馈                                                              |
+| Redis         | >= 6.x      | 框架大量使用新特性 [win redis 下载地址](https://github.com/zkteco-home/redis-windows) |
+| MinIO         | 按需          | 可用 RustFS 替代（新方案需谨慎）                                                     |
+| Maven         | >= 3.8.x    | 构建工具                                                                     |
+| Node.js       | >= 20.15    | 其他版本未测试，可反馈                                                              |
+| npm           | >= 10.x     | 7.x 已确认存在问题                                                              |
+| IntelliJ IDEA | 见下方         | 有版本避坑说明                                                                  |
 
 
 ## IntelliJ IDEA 版本建议
@@ -37,10 +37,6 @@
 - 2024.1 / 2024.2：Maven 插件无法刷新依赖
 - 2025.1 / 2025.2：存在已知问题
 - 推荐使用：2024.3（JDK17）或 2025.3（JDK21-25）
-
-## 搭建视频
-
-[RuoYi-Vue-Plus 5.0 搭建与运行](https://www.bilibili.com/video/BV1Fg4y137JK/)
 
 ## 初始化步骤
 
@@ -78,10 +74,11 @@
 
 - `MonitorAdminApplication`：Admin 监控服务  
 - `SnailJobServerApplication`：任务调度中心服务  
+- `SnailAiServerApplication`：任务调度中心服务
 - `DromaraApplication`：主应用服务
 
-> 建议先启动 `MonitorAdminApplication` 与 `SnailJobServerApplication`，最后启动 `DromaraApplication`。  
-> 工作流相关初始化请参考 [工作流初始化](/ruoyi-vue-plus/quickstart/worker_init.md)。
+> 建议先启动 `MonitorAdminApplication` 与 `SnailJobServerApplication` 与 `SnailAiServerApplication`，最后启动 `DromaraApplication`。  
+> 工作流相关初始化请参考 [工作流初始化](/6.X/ruoyi-vue-plus/quickstart/worker_init.md)。
 
 ## 示例：最小化启动
 

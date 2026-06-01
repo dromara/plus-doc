@@ -1,4 +1,4 @@
-﻿# 关于 OSS 模块使用
+# 关于 OSS 模块使用
 - - -
 
 ## 重点注意事项
@@ -17,7 +17,6 @@
 补充说明：
 - `OssFactory.instance()` 获取当前默认启用的 OSS 配置
 - `OssFactory.instance("configKey")` 可显式指定某一套配置
-- 如果系统开启了多租户，框架会按“租户 + 配置键”区分 OSS 客户端实例，避免不同租户相同 `configKey` 相互覆盖
 
 ![输入图片说明](https://foruda.gitee.com/images/1678978345529639839/d350ec0b_1766278.png "屏幕截图")
 

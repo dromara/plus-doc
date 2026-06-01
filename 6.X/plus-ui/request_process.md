@@ -1,84 +1,195 @@
 # 请求流程
 - - -
 
-### 交互流程
-一个完整的前端UI交互到服务器端处理流程是这样的：  
+前端请求统一由 `src/utils/request.ts` 封装，业务接口集中放在 `src/api`。
 
-1. UI 组件交互操作；
-2. 调用统一管理的 api service 请求函数；
-3. 使用封装的 `request.ts` 发送请求；
-4. 获取服务端返回；
-5. 更新 data；
+## 调用链路
 
-为了方便管理维护，统一的请求处理都放在`@/src/api`文件夹中，并且一般按照`model`维度进行拆分文件，如：
-```
-api/
+1. 页面调用 `src/api/**/index.ts` 中的接口函数。
+2. 接口函数调用 `src/utils/request.ts` 导出的 axios 实例。
+3. 请求拦截器注入 Token、客户端 ID、语言头，并处理 GET 参数、重复提交和加密。
+4. 响应拦截器处理业务状态码、登录过期、解密和错误提示。
+5. 页面只处理业务数据和业务分支。
+
+## API 目录
+
+```text
+src/api/
   system/
+    config/
+      index.ts
+      types.ts
     user/
       index.ts
       types.ts
-    role/
+  workflow/
+    task/
       index.ts
       types.ts
-  monitor/
-    operlog/
-      index.ts
-      types.ts
-    logininfor/
-      index.ts
-      types.ts
-  ...
 ```
-> **提示**  
-> 其中`@/src/utils/request.ts`是基于 axios 的封装，便于统一处理 `GET`、`POST` 等请求参数、请求头、错误提示和下载能力。  
-> 当前项目实际已经封装了：统一 `baseURL`、Token 注入、语言头透传、重复提交拦截、接口加解密、登录过期重定向、二进制下载等逻辑。
 
-### 当前项目默认配置
+`index.ts` 写接口函数，`types.ts` 写 `VO`、`Query`、`Form` 类型。
 
-- 默认 `baseURL` 读取自 `import.meta.env.VITE_APP_BASE_API`
-- 默认请求头会附带 `Authorization` 与 `clientid`
-- 当前前端项目使用的是 `Vite + TypeScript`，不是旧版 `Vue CLI`
-- 本地开发代理默认将 `VITE_APP_BASE_API` 转发到 `http://localhost:8080`
-- `RuoYi-Vue-Plus` 与 `RuoYi-Cloud-Plus` 共用这一套请求封装，Cloud 版差异主要在于 `8080` 一般对应网关
+## 类型约定
 
-### 请求示例
+通用响应类型位于 `src/utils/api-types.ts`：
+
 ```typescript
-// @/api/system/user/index.ts
-import request from '@/utils/request';
-import { UserQuery, UserVO } from './types';
+export interface RuoYiAjaxResult<T = unknown> {
+  code?: number;
+  msg?: string;
+  data?: T;
+}
 
-export const listUser = (query: UserQuery) => {
+export type AxiosPromise<T = unknown> = Promise<RuoYiAjaxResult<T>>;
+```
+
+分页返回类型位于 `src/api/types.ts`：
+
+```typescript
+export interface PageResult<T = any> {
+  total: number;
+  rows: T[];
+}
+```
+
+分页接口示例：
+
+```typescript
+import type { PageResult } from '@/api/types';
+import type { AxiosPromise } from '@/utils/api-types';
+import request from '@/utils/request';
+import type { ConfigQuery, ConfigVO } from './types';
+
+export function listConfig(query: ConfigQuery): AxiosPromise<PageResult<ConfigVO>> {
   return request({
-    url: '/system/user/list',
+    url: '/system/config/list',
     method: 'get',
     params: query
   });
-};
-
-// @/views/system/user/index.vue
-import api from '@/api/system/user';
-const res = await api.listUser(proxy?.addDateRange(queryParams.value, dateRange.value));
+}
 ```
-> **提示**  
-> 如果有不同的`baseURL`，直接通过覆盖的方式，让它具有不同的`baseURL`。
-> ```typescript
-> export const listUser = (query: UserQuery) => {
->   return request({
->     url: '/system/user/list',
->     method: 'get',
->     params: query,
->     baseURL: import.meta.env.VITE_APP_BASE_API
->   });
-> };
-> ```
 
-### 常用请求头约定
+详情接口示例：
 
-- `isToken: false`：本次请求不携带登录 Token
-- `repeatSubmit: false`：关闭重复提交校验
-- `isEncrypt: 'true'`：对当前请求体启用前端加密
+```typescript
+import type { AxiosPromise } from '@/utils/api-types';
+import request from '@/utils/request';
+import type { ConfigVO } from './types';
 
-### 下载接口说明
+export function getConfig(configId: string | number): AxiosPromise<ConfigVO> {
+  return request({
+    url: '/system/config/' + configId,
+    method: 'get'
+  });
+}
+```
 
-项目内统一下载方法位于 `@/src/utils/request.ts` 的 `download` 方法，适合导出 Excel、压缩包等二进制文件。  
-如果后端返回的是业务错误而不是文件流，前端会自动转文本解析并提示错误信息。
+新增、修改、删除示例：
+
+```typescript
+export function addConfig(data: ConfigForm) {
+  return request({
+    url: '/system/config',
+    method: 'post',
+    data
+  });
+}
+
+export function updateConfig(data: ConfigForm) {
+  return request({
+    url: '/system/config',
+    method: 'put',
+    data
+  });
+}
+
+export function delConfig(configId: string | number | Array<string | number>) {
+  return request({
+    url: '/system/config/' + configId,
+    method: 'delete'
+  });
+}
+```
+
+## 页面使用
+
+当前列表页推荐搭配通用 hooks：
+
+```typescript
+import { listConfig } from '@/api/system/config';
+import type { ConfigQuery, ConfigVO } from '@/api/system/config/types';
+import { useLoading } from '@/hooks/async/useLoading';
+import { useDateRangeQuery } from '@/hooks/form/useDateRangeQuery';
+
+const configList = ref<ConfigVO[]>([]);
+const total = ref(0);
+const { loading, withLoading } = useLoading(true);
+const { dateRange, applyDateRange } = useDateRangeQuery();
+
+const queryParams = ref<ConfigQuery>({
+  pageNum: 1,
+  pageSize: 10,
+  configName: '',
+  configKey: '',
+  configType: ''
+});
+
+const getList = async () => {
+  await withLoading(async () => {
+    const res = await listConfig(applyDateRange(queryParams.value));
+    configList.value = res.data?.rows ?? [];
+    total.value = res.data?.total ?? 0;
+  });
+};
+```
+
+## 请求头开关
+
+| Header | 说明 |
+| --- | --- |
+| `isToken: false` | 本次请求不携带 Token |
+| `repeatSubmit: false` | 关闭 POST/PUT 重复提交拦截 |
+| `isEncrypt: 'true'` | 开启 POST/PUT 请求体加密 |
+
+示例：
+
+```typescript
+request({
+  url: '/auth/code',
+  method: 'get',
+  headers: {
+    isToken: false
+  }
+});
+```
+
+加密请求示例：
+
+```typescript
+request({
+  url: '/system/user/resetPwd',
+  method: 'put',
+  headers: {
+    isEncrypt: 'true',
+    repeatSubmit: false
+  },
+  data
+});
+```
+
+## 下载
+
+普通导出使用 `src/utils/request.ts` 中的 `download`：
+
+```typescript
+import { download as requestDownload } from '@/utils/request';
+
+requestDownload(
+  'system/config/export',
+  { ...queryParams.value },
+  `config_${new Date().getTime()}.xlsx`
+);
+```
+
+OSS 文件和代码生成 zip 下载使用 `src/plugins/download.ts`，详见 [通用方法](/6.X/plus-ui/common_func.md)。

@@ -1,9 +1,5 @@
-﻿# 分页功能
+# 分页功能
 - - -
-
-## 适用版本
-
-- 3.5.0 版本
 
 ## 功能说明
 
@@ -51,4 +47,3 @@
 - `pageSize=10`
 - `orderByColumn=createTime`
 - `isAsc=desc`
-

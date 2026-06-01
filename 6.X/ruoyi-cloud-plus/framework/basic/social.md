@@ -1,9 +1,5 @@
-﻿# 第三方授权功能
+# 第三方授权功能
 - - -
-
-## 版本
-
-- 2.X
 
 ## 前置说明
 
@@ -21,7 +17,7 @@
 
 ### 2. 修改后端配置
 
-Cloud 版本通常在 Nacos 的 `ruoyi-auth.yml` 中配置 AppId/Secret 与回调地址。
+在 Nacos 的 `ruoyi-auth.yml` 中配置 AppId/Secret 与回调地址。
 
 `justauth.address` 需要填写前端对外可访问地址，回调地址会拼成 `${justauth.address}/social-callback?source=xxx`。
 

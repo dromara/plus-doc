@@ -1,11 +1,11 @@
-﻿# 2.X项目初始化
+﻿# 项目初始化
 - - -
 
 ## 分支选择
 
 | 分支       | 用途   | 说明             |
 |----------|------|----------------|
-| 2.X      | 稳定发布 | 推荐生产与学习        |
+| 6.X      | 稳定发布 | 推荐生产与学习        |
 | dev      | 开发分支 | 代码随时更新，不建议直接使用 |
 | future/* | 预览分支 | 新功能预览，稳定性不保证   |
 
@@ -16,20 +16,19 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1720080025744223375/0213a652_1766278.png "屏幕截图")
 
-| 组件         | 版本建议         | 说明                                                                       |
-|------------|--------------|--------------------------------------------------------------------------|
-| JDK        | 17 / 21      | 推荐 OpenJDK [JDK下载地址](https://bell-sw.com/pages/downloads/)               |
-| MySQL      | 5.7 / 8.0    | 其他版本未测试，可反馈                                                              |
-| Oracle     | >= 12c       | 其他版本未测试，可反馈                                                              |
-| PostgreSQL | 13 / 14 / 15 | 其他版本未测试，可反馈                                                              |
-| Redis      | >= 6.x       | 框架大量使用新特性 [win redis 下载地址](https://github.com/zkteco-home/redis-windows) |
-| MinIO      | 按需           | 可用 RustFS 替代（新方案需谨慎）                                                     |
-| Maven      | >= 3.8.x     | 构建工具                                                                     |
-| Node.js    | >= 20.15     | 其他版本未测试，可反馈                                                              |
-| npm        | >= 8.x       | 7.x 已确认存在问题                                                              |
-| Nacos      | >= 2.x       | 建议使用框架内置版本                                                               |
-| Sentinel   | 框架内置         | 建议使用框架内置版本                                                               |
-| Seata      | 框架内置         | 建议使用框架内置版本                                                               |
+| 组件         | 版本建议      | 说明                                                                       |
+|------------|-----------|--------------------------------------------------------------------------|
+| JDK        | 21 / 25   | 推荐 OpenJDK [JDK下载地址](https://bell-sw.com/pages/downloads/)               |
+| MySQL      | 8.0 / 8.4 | 其他版本未测试，可反馈                                                              |
+| Oracle     | >= 12c    | 其他版本未测试，可反馈                                                              |
+| PostgreSQL | 15 ... 18 | 其他版本未测试，可反馈                                                              |
+| Redis      | >= 6.x    | 框架大量使用新特性 [win redis 下载地址](https://github.com/zkteco-home/redis-windows) |
+| MinIO      | 按需        | 可用 RustFS 替代（新方案需谨慎）                                                     |
+| Maven      | >= 3.8.x  | 构建工具                                                                     |
+| Node.js    | >= 20.15  | 其他版本未测试，可反馈                                                              |
+| npm        | >= 10.x   | 7.x 已确认存在问题                                                              |
+| Nacos      | >= 3.x    | 建议使用框架内置版本                                                               |
+| Seata      | >= 2.X    | 建议使用框架内置版本                                                               |
 
 ## IntelliJ IDEA 版本建议
 
@@ -58,17 +57,7 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1717122730708924506/7f3aaecf_1766278.png "屏幕截图")
 
-### 4. Nacos 选择
-
-#### 4.1 使用内置 `ruoyi-nacos`
-
-修改 `ruoyi-nacos` 的数据库连接地址。
-
-![输入图片说明](https://foruda.gitee.com/images/1664422006264405180/cac5afc6_1766278.png "屏幕截图")
-
-后续流程与自建 Nacos 相同。
-
-#### 4.2 自建 Nacos
+### 4. 自建 Nacos
 
 **注意：自建 Nacos 必须与框架版本一致，Nacos 版本兼容性较差。**
 
@@ -114,11 +103,11 @@
 ![输入图片说明](https://foruda.gitee.com/images/1678979894464784408/0d020c07_1766278.png "屏幕截图")
 ![输入图片说明](https://foruda.gitee.com/images/1678979902433843257/12da2839_1766278.png "屏幕截图")
 
-### 6. 使用内置 `ruoyi-seata-server`
+### 6. 自建 `seata-server`
 
 执行 `ry-seata.sql` 初始化 Seata 服务端数据库。  
 修改 Nacos 中 `seata-server.properties` 的数据库地址。  
-启动 `ruoyi-seata-server` 服务。
+启动 `seata-server` 服务。
 
 ### 7. 服务启动顺序
 

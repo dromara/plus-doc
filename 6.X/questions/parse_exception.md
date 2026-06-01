@@ -1,5 +1,6 @@
-﻿# ParseException SQL 解析异常
+# ParseException SQL 解析异常
 - - -
+
 ## 异常内容
 
 `net.sf.jsqlparser.parser.ParseException: Encountered unexpected token:`
@@ -18,7 +19,7 @@
 
 ## 异常由来
 由 Mybatis-Plus 拦截器进行 SQL 解析导致<br>
-常见拦截器导致问题 `TenantLineInnerInterceptor` `DataPermissionInterceptor`
+常见拦截器导致问题 `DataPermissionInterceptor`
 
 ## 解决方案
 
@@ -36,5 +37,4 @@
 > 查看具体使用了哪些拦截器导致问题 使用忽略注解依次进行排除即可
 
 ![输入图片说明](https://foruda.gitee.com/images/1678981192902044584/fb1c41eb_1766278.png "屏幕截图")
-
 

@@ -1,27 +1,74 @@
 # 邮件功能
 - - -
 
-## 配置方式
+## 模块位置
 
-在配置文件中开启邮件功能：
+单体项目邮箱验证码接口在：
 
-![输入图片说明](https://foruda.gitee.com/images/1663555260932007318/fabb2bfa_1766278.png "屏幕截图")
+```text
+ruoyi-admin/src/main/java/org/dromara/web/controller/CaptchaController.java
+```
 
-- `enabled`：邮件功能开关
+公共邮件能力：
 
-补充说明：
+```text
+ruoyi-common/ruoyi-common-mail
+org.dromara.common.mail.core.MailBuilder
+```
 
-- Vue 版本邮件配置位于各环境配置文件 `application-*.yml` 中的 `mail` 节点。
-- 需要重点确认 `host`、`port`、`from`、`user`、`pass`、`sslEnable` 等参数是否和实际邮箱服务商一致。
-- 某些邮箱服务商使用的是授权码而不是登录密码，配置错误时通常会直接发信失败。
+## 配置位置
 
-## 功能使用
+邮件配置位于环境配置文件：
 
-参考 demo 模块 `MailController` 示例：
+```text
+ruoyi-admin/src/main/resources/application-dev.yml
+ruoyi-admin/src/main/resources/application-prod.yml
+```
 
-![输入图片说明](https://foruda.gitee.com/images/1663555374113593089/885b4db2_1766278.png "屏幕截图")
+配置前缀：
 
-补充说明：
+```text
+mail
+```
 
-- 邮件验证码、通知邮件这类业务，建议统一封装发送入口，不要在各业务模块里到处直接写发送逻辑。
-- 如果只是用于登录验证码或找回密码，也要配合限流、防刷和验证码有效期一起使用。
+`mail.enabled=false` 时验证码接口会直接返回未开启提示。
+
+## 接口路径
+
+验证码接口：
+
+```text
+GET /resource/email/code?email=邮箱地址
+```
+
+处理流程：
+
+1. 检查 `mail.enabled`。
+2. 校验邮箱格式。
+3. 生成 4 位数字验证码。
+4. 使用 `GlobalConstants.CAPTCHA_CODE_KEY + email` 写入 Redis。
+5. 通过 `MailBuilder` 发送验证码邮件。
+
+实际发送方法带有限流：
+
+```java
+@RateLimiter(key = "#email", time = 60, count = 1)
+```
+
+## 业务调用
+
+```java
+MailBuilder.of()
+    .to("user@example.com")
+    .subject("标题")
+    .text("内容")
+    .send();
+```
+
+`MailBuilder` 也支持 HTML 内容、抄送、密送、附件、内嵌图片等能力，按业务需要封装统一发送入口。
+
+## 使用注意
+
+- 邮箱服务商常使用授权码，不一定是登录密码。
+- 验证码已写入 Redis，登录或校验时要使用同一 key 规则读取。
+- 批量通知、营销邮件不建议直接复用验证码接口，应单独封装队列和重试机制。

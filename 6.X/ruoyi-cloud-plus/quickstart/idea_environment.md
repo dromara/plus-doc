@@ -1,4 +1,4 @@
-﻿# IntelliJ IDEA 环境配置
+# IntelliJ IDEA 环境配置
 - - -
 
 ## 配置建议

@@ -1,4 +1,4 @@
-﻿<img src="https://foruda.gitee.com/images/1679673773341074847/178e8451_1766278.png" width="50%" height="50%">
+<img src="https://foruda.gitee.com/images/1679673773341074847/178e8451_1766278.png" width="50%" height="50%">
 <div style="height: 10px; clear: both;"></div>
 
 - - -
@@ -8,14 +8,14 @@
 [![码云Gitee](https://gitee.com/dromara/RuoYi-Vue-Plus/badge/star.svg?theme=blue)](https://gitee.com/dromara/RuoYi-Vue-Plus)
 [![GitHub](https://img.shields.io/github/stars/dromara/RuoYi-Vue-Plus.svg?label=Github%20Stars)](https://github.com/dromara/RuoYi-Vue-Plus)
 [![Star](https://gitcode.com/dromara/RuoYi-Vue-Plus/star/badge.svg)](https://gitcode.com/dromara/RuoYi-Vue-Plus)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://gitee.com/dromara/RuoYi-Vue-Plus/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://gitee.com/dromara/RuoYi-Vue-Plus/blob/6.X/LICENSE)
 <br>
-[![RuoYi-Vue-Plus](https://img.shields.io/badge/RuoYi_Vue_Plus-5.6.1-success.svg)](https://gitee.com/dromara/RuoYi-Vue-Plus)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5-blue.svg)]()
-[![JDK-17](https://img.shields.io/badge/JDK-17-green.svg)]()
+[![RuoYi-Vue-Plus](https://img.shields.io/badge/RuoYi_Vue_Plus-6.0.0-success.svg)](https://gitee.com/dromara/RuoYi-Vue-Plus)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1-blue.svg)]()
 [![JDK-21](https://img.shields.io/badge/JDK-21-green.svg)]()
+[![JDK-25](https://img.shields.io/badge/JDK-25-green.svg)]()
 
-> Dromara RuoYi-Vue-Plus 是重写 RuoYi-Vue 针对 `分布式集群与多租户` 场景全方位升级(不兼容原框架)
+> Dromara RuoYi-Vue-Plus 是重写 RuoYi-Vue 针对 `分布式集群` 场景全方位升级(不兼容原框架)
 
 > 项目代码、文档 均开源免费可商用 遵循开源协议在项目中保留开源协议文件即可<br>
 活到老写到老 为兴趣而开源 为学习而开源 为让大家真正可以学到技术而开源
@@ -26,8 +26,8 @@
 |-------------|-------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
 | 前端项目        | 采用 Vue3 + TS + ElementPlus 重写                                                                                     | 基于Vue2/Vue3 + JS                                                                   | 
 | 后端项目结构      | 采用插件化 + 扩展包形式 结构解耦 易于扩展                                                                                           | 模块相互注入耦合严重难以扩展                                                                     | 
-| 后端代码风格      | 严格遵守Alibaba规范与项目统一配置的代码格式化                                                                                        | 代码书写与常规结构不同阅读障碍大                                                                   |
-| Web容器       | 采用 Undertow 基于 XNIO 的高性能容器                                                                                        | 采用 Tomcat                                                                          |
+| 后端代码风格      | 参考 Alibaba 规范与项目统一配置的代码格式化                                                                                        | 代码书写与常规结构不同阅读障碍大                                                                   |
+| Web容器       | 采用 Jetty 基于 Netty 的高性能容器                                                                                          | 采用 Tomcat                                                                          |
 | 权限认证        | 采用 Sa-Token、Jwt 静态使用功能齐全 低耦合 高扩展                                                                                  | Spring Security 配置繁琐扩展性极差                                                          |
 | 权限注解        | 采用 Sa-Token 支持注解 登录校验、角色校验、权限校验、二级认证校验、HttpBasic校验、忽略校验<br/>角色与权限校验支持多种条件 如 `AND` `OR` 或 `权限 OR 角色` 等复杂表达式        | 只支持是否存在匹配                                                                          |
 | 三方鉴权        | 采用 JustAuth 第三方登录组件 支持微信、钉钉等数十种三方认证                                                                               | 无                                                                                  |
@@ -35,7 +35,7 @@
 | 缓存数据库       | 支持 Redis >= 6 支持大部分新功能特性 如 分布式限流、分布式队列                                                                            | Redis 简单 get set 支持                                                                |
 | Redis客户端    | 采用 Redisson Redis官方推荐 基于Netty的客户端工具<br/>支持Redis 90%以上的命令 底层优化规避很多不正确的用法 例如: keys被转换为scan<br/>支持单机、哨兵、单主集群、多主集群等模式 | Lettuce + RedisTemplate 支持模式少 工具使用繁琐<br/>连接池采用 common-pool Bug多经常性出问题              |
 | 缓存注解        | 采用 Spring-Cache 注解 对其扩展了实现支持了更多功能<br/>例如 过期时间 最大空闲时间 组最大长度等 只需一个注解即可完成数据自动缓存                                      | 需手动编写Redis代码逻辑                                                                     |
-| ORM框架       | 采用 Mybatis-Plus 基于对象几乎不用写SQL全java操作 功能强大插件众多<br/>例如多租户插件 分页插件 乐观锁插件等等                                             | 采用 Mybatis 基于XML需要手写SQL                                                            |
+| ORM框架       | 采用 Mybatis-Plus 基于对象几乎不用写SQL全java操作 功能强大插件众多<br/>例如分页插件、乐观锁插件等等                                             | 采用 Mybatis 基于XML需要手写SQL                                                            |
 | SQL监控       | 采用 p6spy 可输出完整SQL与执行时间监控                                                                                          | log输出 需手动拼接sql与参数无法快速查看调试问题                                                        |
 | 数据分页        | 采用 Mybatis-Plus 分页插件<br/>框架对其进行了扩展 对象化分页对象 支持多种方式传参 支持前端多排序 复杂排序                                                  | 采用 PageHelper 仅支持单查询分页 参数只能从param传 只能单排序 功能扩展性差 体验不好                               |
 | 数据权限        | 采用 Mybatis-Plus 插件 自行分析拼接SQL 无感式过滤<br/>只需为Mapper设置好注解条件 支持多种自定义 不限于部门角色                                           | 采用 注解+aop 实现 基于部门角色 生成的sql兼容性差 不支持其他业务扩展<br/>生成sql后需手动拼接到具体业务sql上 对于多个Mapper查询不起作用 |
@@ -53,14 +53,14 @@
 | 分布式幂等       | 参考美团GTIS防重系统简化实现(细节可看文档)                                                                                          | 手动编写注解基于aop实现                                                                      |
 | 分布式锁        | 采用 Lock4j 底层基于 Redisson                                                                                           | 无                                                                                  |
 | 分布式任务调度     | 采用 SnailJob 天生支持分布式 统一的管理中心 支持多种数据库 支持分片重试DAG任务流等                                                                 | 采用 Quartz 基于数据库锁性能差 集群需要做很多配置与改造                                                   | 
-| 文件存储        | 采用 Minio 分布式文件存储 天生支持多机、多硬盘、多分片、多副本存储<br/>支持权限管理 安全可靠 文件可加密存储                                                     | 采用 本机文件存储 文件裸漏 易丢失泄漏 不支持集群有单点效应                                                    |
+| 文件存储        | 采用 Minio、RustFS 分布式文件存储 天生支持多机、多硬盘、多分片、多副本存储<br/>支持权限管理 安全可靠 文件可加密存储                                              | 采用 本机文件存储 文件裸漏 易丢失泄漏 不支持集群有单点效应                                                    |
 | 云存储         | 采用 AWS S3 协议客户端 支持 七牛、阿里、腾讯 等一切支持S3协议的厂家                                                                          | 不支持                                                                                |
 | 短信          | 采用 sms4j 短信融合包 支持数十种短信厂家 只需在yml配置好厂家密钥即可使用 可多厂家共用                                                                 | 不支持                                                                                |
 | 邮件          | 采用 mail-api 通用协议支持大部分邮件厂商                                                                                         | 不支持                                                                                |
 | 接口文档        | 采用 SpringDoc、javadoc 无注解零入侵基于java注释<br/>只需把注释写好 无需再写一大堆的文档注解了                                                     | 采用 Springfox 已停止维护 需要编写大量的注解来支持文档生成                                                | 
 | 校验框架        | 采用 Validation 支持注解与工具类校验 注解支持国际化                                                                                  | 仅支持注解 且注解不支持国际化                                                                    |
-| Excel框架     | 采用 Alibaba EasyExcel 基于插件化<br/>框架对其增加了很多功能 例如 自动合并相同内容 自动排列布局 字典翻译等                                               | 基于 POI 手写实现 功能有限 复杂 扩展性差                                                           |
-| 工作流支持       | 支持各种复杂审批 转办 委派 加减签 会签 或签 票签 等功能                                                                                   | 无                                                                                  |
+| Excel框架     | 采用 Apache Fesod(原Alibaba EasyExcel) 基于插件化<br/>框架对其增加了很多功能 例如 自动合并相同内容 自动排列布局 字典翻译等                                | 基于 POI 手写实现 功能有限 复杂 扩展性差                                                           |
+| 工作流支持       | 采用 WarmFlow 支持各种复杂审批 转办 委派 加减签 会签 或签 票签 等功能                                                                       | 无                                                                                  |
 | 工具类框架       | 采用 Hutool、Lombok 上百种工具覆盖90%的使用需求 基于注解自动生成 get set 等简化框架大量代码                                                       | 手写工具稳定性差易出问题 工具数量有限 代码臃肿需自己手写 get set 等                                            | 
 | 监控框架        | 采用 SpringBoot-Admin 基于SpringBoot官方 actuator 探针机制<br/>实时监控服务状态 框架还为其扩展了在线日志查看监控                                    | 无                                                                                  | 
 | 链路追踪        | 采用 Apache SkyWalking 还在为请求不知道去哪了 到哪出了问题而烦恼吗<br/>用了它即可实时查看请求经过的每一处每一个节点                                            | 无                                                                                  |
@@ -76,8 +76,6 @@
 
 | 业务     | 功能说明                                                                 | 本框架 | RuoYi            |
 |--------|----------------------------------------------------------------------|-----|------------------|
-| 租户管理   | 系统内租户的管理 如:租户套餐、过期时间、用户数量、企业信息等                                      | 支持  | 无                |
-| 租户套餐管理 | 系统内租户所能使用的套餐管理 如:套餐内所包含的菜单等                                          | 支持  | 无                |
 | 客户端管理  | 系统内对接的所有客户端管理 如: pc端、小程序端等<br>支持动态授权登录方式 如: 短信登录、密码登录等 支持动态控制token时效 | 支持  | 无                |
 | 用户管理   | 用户的管理配置 如:新增用户、分配用户所属部门、角色、岗位等                                       | 支持  | 支持               |
 | 部门管理   | 配置系统组织机构（公司、部门、小组） 树结构展现支持数据权限                                       | 支持  | 支持               |
@@ -97,7 +95,6 @@
 | 系统接口   | 根据业务代码自动生成相关的api接口文档                                                 | 支持  | 支持               |
 | 服务监控   | 监视集群系统CPU、内存、磁盘、堆栈、在线日志、Spring相关配置等                                  | 支持  | 仅支持单机CPU、内存、磁盘监控 |
 | 缓存监控   | 对系统的缓存信息查询，命令统计等。                                                    | 支持  | 支持               |
-| 在线构建器  | 拖动表单元素生成相应的HTML代码。                                                   | 支持  | 支持               |
 | 使用案例   | 系统的一些功能案例                                                            | 支持  | 不支持              |
 
 
@@ -105,23 +102,27 @@
 
 |                                                                                            |                                                                                            |
 |--------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| ![输入图片说明](https://foruda.gitee.com/images/1680077524361362822/270bb429_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680077619939771291/989bf9b6_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680077681751513929/1c27c5bd_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680077721559267315/74d63e23_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680077765638904515/1b75d4a6_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680078026375951297/eded7a4b_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078237104531207/0eb1b6a7_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680078254306078709/5931e22f_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078287971528493/0b9af60a_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680078308138770249/8d3b6696_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078352553634393/db5ef880_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680078378238393374/601e4357_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078414983206024/2aae27c1_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680078446738419874/ecce7d59_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078475971341775/149e8634_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680078491666717143/3fadece7_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078558863188826/fb8ced2a_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680078574561685461/ae68a0b2_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078594932772013/9d8bfec6_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680078626493093532/fcfe4ff6_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078643608812515/0295bd4f_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680078685196286463/d7612c81_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078703877318597/56fce0bc_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680078716586545643/b6dbd68f_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078734103217688/eb1e6aa6_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680078759131415480/73c525d8_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078779416197879/75e3ed02_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680078802329118061/77e10915_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078893627848351/34a1c342_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680078928175016986/f126ec4a_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680078941718318363/b68a0f72_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680078963175518631/3bb769a1_1766278.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1735829153637063344/3c21fd4c_1419627.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1735829181303499815/4522cefa_1419627.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1735829377205259767/76a705d7_1419627.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1722959592856812900/e2d0d342_1419627.png "屏幕截图") |
-| ![输入图片说明](https://foruda.gitee.com/images/1680079274333484664/4dfdc7c0_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1680079290467458224/d6715fcf_1766278.png "屏幕截图") |
+| ![输入图片说明](https://foruda.gitee.com/images/1780299033689126697/868ef1ea_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1780299052163404649/8d94165d_1766278.png "屏幕截图") |
+| ![输入图片说明](https://foruda.gitee.com/images/1780299074949590692/27f5bfb5_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1780299108816841231/619a7c57_1766278.png "屏幕截图") |
+| ![输入图片说明](https://foruda.gitee.com/images/1780299089818500856/862ba805_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1780299173744267947/95cb0cd3_1766278.png "屏幕截图") |
+| ![输入图片说明](https://foruda.gitee.com/images/1780299193694706123/28257dc1_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1780299147525013883/ebcd9dfe_1766278.png "屏幕截图") |
+| ![输入图片说明](https://foruda.gitee.com/images/1780299220007761523/dc7e27c9_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1780299235966983519/35b047e1_1766278.png "屏幕截图") |
+| ![输入图片说明](https://foruda.gitee.com/images/1780299250884681522/e5731314_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1780299267028602229/230d5428_1766278.png "屏幕截图") |
+| ![输入图片说明](https://foruda.gitee.com/images/1780299293149732467/19abcf6c_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1780299311267192779/e665c668_1766278.png "屏幕截图") |
+| ![输入图片说明](https://foruda.gitee.com/images/1780299327888096947/283a177f_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1780299348897579356/caac864e_1766278.png "屏幕截图") |
+| ![输入图片说明](https://foruda.gitee.com/images/1780299376680669014/452585fb_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1780299843158459866/ceebbb63_1766278.png "屏幕截图") |
+| ![输入图片说明](https://foruda.gitee.com/images/1780299432356918392/07abdf6a_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1780299465584172180/a2b2be12_1766278.png "屏幕截图") |
+| ![输入图片说明](https://foruda.gitee.com/images/1780299491233431530/d88bfa35_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1780299513358913413/f2f90032_1766278.png "屏幕截图") |
+| ![输入图片说明](https://foruda.gitee.com/images/1780299527419238776/549cb852_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1780299553918371792/43bd3bff_1766278.png "屏幕截图") |
+| ![输入图片说明](https://foruda.gitee.com/images/1780299586662735625/1107a3ee_1766278.png "屏幕截图") | ![输入图片说明](https://foruda.gitee.com/images/1780299613342135530/526d7859_1766278.png "屏幕截图") |
+
+
+
+
+
+
+
+
+
+
 

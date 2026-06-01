@@ -1,4 +1,4 @@
-﻿# 参数校验
+# 参数校验
 - - -
 
 参数校验基于 `spring-boot-starter-validation` 与 `hibernate-validator`，用于对请求参数进行统一校验。
