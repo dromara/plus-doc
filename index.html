@@ -88,6 +88,41 @@
             font-size: 16px;
         }
 
+        .home-sponsors {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 12px 0;
+        }
+
+        .home-sponsor {
+            display: inline-flex;
+            line-height: 0;
+        }
+
+        .home-sponsor img {
+            width: 300px;
+            height: 85px;
+        }
+
+        .home-sponsor-contact {
+            margin: 10px 0 0;
+        }
+
+        .version-switcher {
+            height: 34px;
+            padding: 0 28px 0 12px;
+            color: #34495e;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 34px;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 999px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            cursor: pointer;
+        }
+
         .sidebar-sponsor-section {
             padding: 0 15px 12px;
         }
@@ -131,6 +166,13 @@
 <body>
 <div id="app"></div>
 <script>
+    var DEFAULT_DOC_VERSION = '5.X';
+    var DOC_VERSIONS = [
+        { label: '5.X', value: '5.X' },
+        { label: '6.X', value: '6.X' }
+    ];
+    var DEFAULT_DOC_ROOT = '/' + DEFAULT_DOC_VERSION;
+
     window.$docsify = {
         // 项目名称
         // name: 'plus-doc',
@@ -139,14 +181,62 @@
         // 侧边栏支持，默认加载的是项目根目录下的_sidebar.md文件
         loadSidebar: true,
         alias: {
-            '/README.md': '/_readme.md',
-            '/common/_sidebar.md': '/_sidebar.md',
-            '/common/.*/_sidebar.md': '/_sidebar.md',
-            '/plus-ui/.*/_sidebar.md': '/plus-ui/_sidebar.md',
-            '/questions/.*/_sidebar.md': '/questions/_sidebar.md',
-            '/ruoyi-cloud-plus/.*/_sidebar.md': '/ruoyi-cloud-plus/_sidebar.md',
-            '/ruoyi-vue-plus/.*/_sidebar.md': '/ruoyi-vue-plus/_sidebar.md',
-            '/.*/_navbar.md': '/_navbar.md'
+            '/': DEFAULT_DOC_ROOT + '/_readme.md',
+            '/_readme': DEFAULT_DOC_ROOT + '/_readme.md',
+            '/README.md': DEFAULT_DOC_ROOT + '/_readme.md',
+            '/_readme.md': DEFAULT_DOC_ROOT + '/_readme.md',
+            '/_coverpage': DEFAULT_DOC_ROOT + '/_coverpage.md',
+            '/_coverpage.md': DEFAULT_DOC_ROOT + '/_coverpage.md',
+            '/_footer': DEFAULT_DOC_ROOT + '/_footer.md',
+            '/_footer.md': DEFAULT_DOC_ROOT + '/_footer.md',
+            '/_navbar': DEFAULT_DOC_ROOT + '/_navbar.md',
+            '/_navbar.md': DEFAULT_DOC_ROOT + '/_navbar.md',
+            '/_sidebar': DEFAULT_DOC_ROOT + '/_sidebar.md',
+            '/_sidebar.md': DEFAULT_DOC_ROOT + '/_sidebar.md',
+            '/5.X/': '/5.X/_readme.md',
+            '/5.X/_readme': '/5.X/_readme.md',
+            '/5.X/README.md': '/5.X/_readme.md',
+            '/5.X/_coverpage': '/5.X/_coverpage.md',
+            '/5.X/_footer': '/5.X/_footer.md',
+            '/5.X/_navbar': '/5.X/_navbar.md',
+            '/5.X/_sidebar': '/5.X/_sidebar.md',
+            '/5.X/common/_sidebar.md': '/5.X/_sidebar.md',
+            '/5.X/common/.*/_sidebar.md': '/5.X/_sidebar.md',
+            '/5.X/plus-ui/.*/_sidebar.md': '/5.X/plus-ui/_sidebar.md',
+            '/5.X/questions/.*/_sidebar.md': '/5.X/questions/_sidebar.md',
+            '/5.X/ruoyi-cloud-plus/.*/_sidebar.md': '/5.X/ruoyi-cloud-plus/_sidebar.md',
+            '/5.X/ruoyi-vue-plus/.*/_sidebar.md': '/5.X/ruoyi-vue-plus/_sidebar.md',
+            '/5.X/.*/_navbar.md': '/5.X/_navbar.md',
+            '/6.X/': '/6.X/_readme.md',
+            '/6.X/_readme': '/6.X/_readme.md',
+            '/6.X/README.md': '/6.X/_readme.md',
+            '/6.X/_coverpage': '/6.X/_coverpage.md',
+            '/6.X/_footer': '/6.X/_footer.md',
+            '/6.X/_navbar': '/6.X/_navbar.md',
+            '/6.X/_sidebar': '/6.X/_sidebar.md',
+            '/6.X/common/_sidebar.md': '/6.X/_sidebar.md',
+            '/6.X/common/.*/_sidebar.md': '/6.X/_sidebar.md',
+            '/6.X/plus-ui/.*/_sidebar.md': '/6.X/plus-ui/_sidebar.md',
+            '/6.X/questions/.*/_sidebar.md': '/6.X/questions/_sidebar.md',
+            '/6.X/ruoyi-cloud-plus/.*/_sidebar.md': '/6.X/ruoyi-cloud-plus/_sidebar.md',
+            '/6.X/ruoyi-vue-plus/.*/_sidebar.md': '/6.X/ruoyi-vue-plus/_sidebar.md',
+            '/6.X/.*/_navbar.md': '/6.X/_navbar.md',
+            '/common/_sidebar.md': DEFAULT_DOC_ROOT + '/_sidebar.md',
+            '/common/.*/_sidebar.md': DEFAULT_DOC_ROOT + '/_sidebar.md',
+            '/plus-ui/_sidebar.md': DEFAULT_DOC_ROOT + '/plus-ui/_sidebar.md',
+            '/plus-ui/.*/_sidebar.md': DEFAULT_DOC_ROOT + '/plus-ui/_sidebar.md',
+            '/questions/_sidebar.md': DEFAULT_DOC_ROOT + '/questions/_sidebar.md',
+            '/questions/.*/_sidebar.md': DEFAULT_DOC_ROOT + '/questions/_sidebar.md',
+            '/ruoyi-cloud-plus/_sidebar.md': DEFAULT_DOC_ROOT + '/ruoyi-cloud-plus/_sidebar.md',
+            '/ruoyi-cloud-plus/.*/_sidebar.md': DEFAULT_DOC_ROOT + '/ruoyi-cloud-plus/_sidebar.md',
+            '/ruoyi-vue-plus/_sidebar.md': DEFAULT_DOC_ROOT + '/ruoyi-vue-plus/_sidebar.md',
+            '/ruoyi-vue-plus/.*/_sidebar.md': DEFAULT_DOC_ROOT + '/ruoyi-vue-plus/_sidebar.md',
+            '/common/(.*)': DEFAULT_DOC_ROOT + '/common/$1',
+            '/plus-ui/(.*)': DEFAULT_DOC_ROOT + '/plus-ui/$1',
+            '/questions/(.*)': DEFAULT_DOC_ROOT + '/questions/$1',
+            '/ruoyi-cloud-plus/(.*)': DEFAULT_DOC_ROOT + '/ruoyi-cloud-plus/$1',
+            '/ruoyi-vue-plus/(.*)': DEFAULT_DOC_ROOT + '/ruoyi-vue-plus/$1',
+            '/.*/_navbar.md': DEFAULT_DOC_ROOT + '/_navbar.md'
         },
         // 导航栏支持，默认加载的是项目根目录下的_navbar.md文件
         loadNavbar: true,
@@ -181,37 +271,240 @@
 <script src="static/js/zoom-image.min.js"></script>
 <!-- 搜索功能支持 -->
 <script src="static/js/search.min.js"></script>
+<!-- 站点公共配置 -->
+<script src="static/js/site-config.js"></script>
 <script>
     (function() {
         var layoutTimer;
         var cachedSearchBox;
         var sponsorTimer;
-        var sidebarSponsors = [
-            {
-                href: 'https://gitee.com/dromara/MaxKey',
-                image: 'https://foruda.gitee.com/images/1700187453544179968/7342304a_1766278.png'
-            },
-            {
-                href: 'http://ccflow.org/?frm=ryPlus',
-                image: 'https://foruda.gitee.com/images/1704162419429172656/d0521e59_1766278.png'
-            },
-            {
-                href: 'https://www.mall4j.com/cn/?statId=11',
-                image: 'https://foruda.gitee.com/images/1743644193997673060/beabd304_1766278.jpeg'
-            },
-            {
-                href: 'https://gitee.com/aizuda/flowlong',
-                image: 'https://foruda.gitee.com/images/1752939345569324939/b9c50209_1766278.png'
-            },
-            {
-                href: 'https://topiam.cn?from=plus-doc',
-                image: 'https://foruda.gitee.com/images/1765071755540415213/3236e57d_1766278.png'
-            },
-            {
-                href: 'https://aicodelink.top/register?aff=pHeG',
-                image: 'https://foruda.gitee.com/images/1776404022458773988/1cbad8e4_1766278.png'
+        var versionTimer;
+        var versionNavObserver;
+        var observedVersionNav;
+        var syncingVersionLayout = false;
+        var siteConfig = window.PLUS_DOC_SITE_CONFIG || {};
+        var sponsorConfig = siteConfig.sponsors || {};
+        var sidebarSponsors = sponsorConfig.sidebar || [];
+        var homeSponsors = sponsorConfig.home || [];
+
+        function getRoutePath() {
+            return (window.location.hash || '#/').replace(/^#/, '') || '/';
+        }
+
+        function getVersionPattern() {
+            return DOC_VERSIONS.map(function(version) {
+                return version.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            }).join('|');
+        }
+
+        function stripVersionPrefix(path) {
+            var pattern = new RegExp('^/(?:' + getVersionPattern() + ')(?=/|$)');
+            return path.replace(pattern, '') || '/';
+        }
+
+        function getCurrentVersion() {
+            var pattern = new RegExp('^/(' + getVersionPattern() + ')(?=/|$)');
+            var matched = getRoutePath().match(pattern);
+            return matched ? matched[1] : DEFAULT_DOC_VERSION;
+        }
+
+        function switchDocVersion(version) {
+            var cleanPath = stripVersionPrefix(getRoutePath());
+
+            if (version === DEFAULT_DOC_VERSION) {
+                window.location.hash = cleanPath;
+                return;
             }
-        ];
+
+            window.location.hash = '/' + version + cleanPath;
+        }
+
+        function getVersionedHashHref(path) {
+            var cleanPath = stripVersionPrefix(path);
+            var currentVersion = getCurrentVersion();
+
+            if (currentVersion === DEFAULT_DOC_VERSION) {
+                return '#' + cleanPath;
+            }
+
+            return '#/' + currentVersion + cleanPath;
+        }
+
+        function renderHomeSponsors() {
+            var container = document.querySelector('#home-sponsors');
+            var sponsorList;
+            var contact;
+            var contactLink;
+
+            if (!container || !homeSponsors.length) {
+                return;
+            }
+
+            container.innerHTML = '';
+            sponsorList = document.createElement('div');
+            sponsorList.className = 'home-sponsors';
+
+            homeSponsors.forEach(function(item) {
+                var link = document.createElement('a');
+                var image = document.createElement('img');
+
+                link.className = 'home-sponsor';
+                link.href = item.href;
+                link.target = '_blank';
+                link.rel = 'noopener';
+
+                image.src = item.image;
+                image.width = 300;
+                image.height = 85;
+                image.alt = item.period || '';
+
+                link.appendChild(image);
+                sponsorList.appendChild(link);
+            });
+
+            container.appendChild(sponsorList);
+
+            if (sponsorConfig.contactText && sponsorConfig.contactLink) {
+                contact = document.createElement('p');
+                contact.className = 'home-sponsor-contact';
+
+                contactLink = document.createElement('a');
+                contactLink.href = getVersionedHashHref(sponsorConfig.contactLink);
+                contactLink.textContent = sponsorConfig.contactText;
+
+                contact.appendChild(contactLink);
+                container.appendChild(contact);
+            }
+        }
+
+        function syncVersionedLinks() {
+            var currentVersion = getCurrentVersion();
+
+            document.querySelectorAll('a[href^="#/"]').forEach(function(link) {
+                var hashPath = link.getAttribute('href').replace(/^#/, '') || '/';
+                var cleanPath = stripVersionPrefix(hashPath);
+                var targetHref;
+
+                if (currentVersion === DEFAULT_DOC_VERSION) {
+                    targetHref = '#' + cleanPath;
+                    if (link.getAttribute('href') !== targetHref) {
+                        link.setAttribute('href', targetHref);
+                    }
+                    return;
+                }
+
+                targetHref = '#/' + currentVersion + cleanPath;
+                if (link.getAttribute('href') !== targetHref) {
+                    link.setAttribute('href', targetHref);
+                }
+            });
+        }
+
+        function getNavMenuList(nav) {
+            for (var i = 0; i < nav.children.length; i++) {
+                if (nav.children[i].tagName === 'UL') {
+                    return nav.children[i];
+                }
+            }
+            return null;
+        }
+
+        function syncNavControlOrder(nav) {
+            var sourceList = getNavMenuList(nav);
+            var switcher = nav.querySelector('.version-switcher');
+            var searchSlot = nav.querySelector('.nav-search-slot');
+
+            if (!sourceList) {
+                return;
+            }
+
+            if (switcher && searchSlot && switcher.nextElementSibling !== searchSlot) {
+                nav.insertBefore(switcher, searchSlot);
+            } else if (switcher && !searchSlot && switcher.nextElementSibling !== sourceList) {
+                nav.insertBefore(switcher, sourceList);
+            }
+
+            if (searchSlot && searchSlot.nextElementSibling !== sourceList) {
+                nav.insertBefore(searchSlot, sourceList);
+            }
+        }
+
+        function renderVersionSwitcher() {
+            var nav = document.querySelector('nav.app-nav');
+            var sourceList;
+            var switcher;
+
+            if (!nav) {
+                return;
+            }
+
+            switcher = nav.querySelector('.version-switcher');
+            if (!switcher) {
+                switcher = document.createElement('select');
+                switcher.className = 'version-switcher';
+                switcher.setAttribute('aria-label', '文档版本切换');
+
+                DOC_VERSIONS.forEach(function(version) {
+                    var option = document.createElement('option');
+                    option.textContent = version.label;
+                    option.value = version.value;
+                    switcher.appendChild(option);
+                });
+
+                switcher.addEventListener('change', function() {
+                    switchDocVersion(switcher.value);
+                });
+
+                sourceList = getNavMenuList(nav);
+
+                nav.insertBefore(switcher, sourceList || nav.firstChild);
+            }
+
+            switcher.value = getCurrentVersion();
+            syncNavControlOrder(nav);
+        }
+
+        function syncVersionLayout() {
+            syncingVersionLayout = true;
+            renderVersionSwitcher();
+            syncVersionedLinks();
+            syncingVersionLayout = false;
+        }
+
+        function scheduleVersionLayout() {
+            window.clearTimeout(versionTimer);
+            versionTimer = window.setTimeout(syncVersionLayout, 0);
+            window.setTimeout(syncVersionLayout, 80);
+            window.setTimeout(syncVersionLayout, 240);
+        }
+
+        function observeVersionNav() {
+            var nav = document.querySelector('nav.app-nav');
+
+            if (!nav || !window.MutationObserver || observedVersionNav === nav) {
+                return;
+            }
+
+            if (versionNavObserver) {
+                versionNavObserver.disconnect();
+            }
+
+            observedVersionNav = nav;
+            versionNavObserver = new MutationObserver(function() {
+                if (!syncingVersionLayout) {
+                    scheduleVersionLayout();
+                }
+            });
+            versionNavObserver.observe(nav, {
+                childList: true,
+                subtree: true
+            });
+        }
+
+        function scheduleVersionNav() {
+            observeVersionNav();
+            scheduleVersionLayout();
+        }
 
         function restoreSidebarSearch(searchBox, aside) {
             if (!searchBox || !aside || !aside.parentNode) {
@@ -245,15 +538,11 @@
                 if (searchBox.parentNode !== existingSlot) {
                     existingSlot.appendChild(searchBox);
                 }
+                syncNavControlOrder(nav);
                 return;
             }
 
-            for (var i = 0; i < nav.children.length; i++) {
-                if (nav.children[i].tagName === 'UL') {
-                    sourceList = nav.children[i];
-                    break;
-                }
-            }
+            sourceList = getNavMenuList(nav);
             if (!sourceList) {
                 return;
             }
@@ -263,6 +552,7 @@
             searchSlot.appendChild(searchBox);
             nav.insertBefore(searchSlot, sourceList);
             nav.classList.add('app-nav--with-search');
+            syncNavControlOrder(nav);
         }
 
         function scheduleSearchLayout() {
@@ -344,14 +634,26 @@
             sponsorTimer = window.setTimeout(renderSidebarSponsors, 0);
         }
 
+        function scheduleHomeSponsors() {
+            window.setTimeout(renderHomeSponsors, 0);
+            window.setTimeout(renderHomeSponsors, 120);
+        }
+
         window.addEventListener('resize', scheduleSearchLayout);
+        window.addEventListener('hashchange', scheduleVersionNav);
         window.$docsify.plugins = [].concat(window.$docsify.plugins || [], function(hook) {
+            hook.mounted(scheduleVersionNav);
             hook.mounted(scheduleSearchLayout);
             hook.mounted(scheduleSidebarSponsors);
+            hook.mounted(scheduleHomeSponsors);
+            hook.doneEach(scheduleVersionNav);
             hook.doneEach(scheduleSearchLayout);
             hook.doneEach(scheduleSidebarSponsors);
+            hook.doneEach(scheduleHomeSponsors);
+            hook.ready(scheduleVersionNav);
             hook.ready(scheduleSearchLayout);
             hook.ready(scheduleSidebarSponsors);
+            hook.ready(scheduleHomeSponsors);
         });
     })();
 </script>
