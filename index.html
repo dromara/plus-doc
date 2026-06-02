@@ -308,6 +308,15 @@
             return matched ? matched[1] : DEFAULT_DOC_VERSION;
         }
 
+        function isCoverRoute() {
+            var cleanPath = stripVersionPrefix(getRoutePath());
+            return cleanPath === '/' || cleanPath === '/_coverpage' || cleanPath === '/_coverpage.md';
+        }
+
+        function isCoverVisible() {
+            return !!document.querySelector('section.cover.show');
+        }
+
         function switchDocVersion(version) {
             var cleanPath = stripVersionPrefix(getRoutePath());
 
@@ -439,6 +448,14 @@
             }
 
             switcher = nav.querySelector('.version-switcher');
+            if (isCoverRoute() || isCoverVisible()) {
+                if (switcher) {
+                    switcher.parentNode.removeChild(switcher);
+                }
+                syncNavControlOrder(nav);
+                return;
+            }
+
             if (!switcher) {
                 switcher = document.createElement('select');
                 switcher.className = 'version-switcher';
