@@ -59,12 +59,27 @@
     vertical-align: middle;
   }
 
+  section.cover {
+    justify-content: center;
+  }
+
   section.cover .cover-main {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 24px 16px;
+    text-align: center;
+  }
+
+  .cover-shell {
     box-sizing: border-box;
     width: 100%;
     max-width: 1120px;
     margin: 0 auto;
-    padding: 24px 12px;
+    padding: 0 12px;
     text-align: center;
   }
 
@@ -75,6 +90,28 @@
     font-size: 24px;
     font-size: clamp(17px, 4vw, 24px);
     line-height: 1.8;
+  }
+
+  .cover-actions a {
+    border: 1px solid #42b983;
+    border-color: var(--theme-color, #42b983);
+    border-radius: 2rem;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: #42b983;
+    background-color: var(--theme-color, #42b983);
+    display: inline-block;
+    font-size: 1.05rem;
+    letter-spacing: 0.1rem;
+    margin: 0.5rem 1rem;
+    padding: 0.75em 2rem;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  .cover-actions a:hover {
+    color: inherit;
+    opacity: 0.8;
   }
 
   @media screen and (max-width: 640px) {
@@ -100,7 +137,7 @@
       margin: 0.8em 0;
     }
 
-    section.cover .cover-main > p:last-child a {
+    .cover-actions a {
       width: min(100%, 260px);
       margin: 0.35rem auto;
       padding: 0.7em 1.2rem;
@@ -109,40 +146,43 @@
   }
 </style>
 
-<img class="cover-logo" src="static/image/logo.png" alt="RuoYi-Plus Logo">
+<div class="cover-shell">
+  <img class="cover-logo" src="static/image/logo.png" alt="RuoYi-Plus Logo">
 
-<div class="cover-projects">
-  <div class="cover-project">
-    <div class="cover-title">RuoYi-Vue-Plus</div>
-    <div class="cover-subtitle">多租户权限管理系统</div>
-    <div class="cover-badges">
-      <a href="https://gitee.com/dromara/RuoYi-Vue-Plus"><img src="https://gitee.com/dromara/RuoYi-Vue-Plus/badge/star.svg?theme=blue" alt="码云Gitee"></a>
-      <a href="https://github.com/dromara/RuoYi-Vue-Plus"><img src="https://img.shields.io/github/stars/dromara/RuoYi-Vue-Plus?style=social&amp;label=Github%20Stars" alt="GitHub Stars"></a>
-      <a href="https://gitcode.com/dromara/RuoYi-Vue-Plus"><img src="https://gitcode.com/dromara/RuoYi-Vue-Plus/star/badge.svg" alt="GitCode Star"></a>
-      <a href="https://gitee.com/dromara/RuoYi-Vue-Plus/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT"></a>
-      <a href="https://gitee.com/dromara/RuoYi-Vue-Plus"><img src="https://img.shields.io/badge/RuoYi_Vue_Plus-5.6.1-success.svg" alt="RuoYi-Vue-Plus 5.6.1"></a>
-      <img src="https://img.shields.io/badge/Spring%20Boot-3.5-blue.svg" alt="Spring Boot 3.5">
+  <div class="cover-projects">
+    <div class="cover-project">
+      <div class="cover-title">RuoYi-Vue-Plus</div>
+      <div class="cover-subtitle">多租户权限管理系统</div>
+      <div class="cover-badges">
+        <a href="https://gitee.com/dromara/RuoYi-Vue-Plus"><img src="https://gitee.com/dromara/RuoYi-Vue-Plus/badge/star.svg?theme=blue" alt="码云Gitee"></a>
+        <a href="https://github.com/dromara/RuoYi-Vue-Plus"><img src="https://img.shields.io/github/stars/dromara/RuoYi-Vue-Plus?style=social&amp;label=Github%20Stars" alt="GitHub Stars"></a>
+        <a href="https://gitcode.com/dromara/RuoYi-Vue-Plus"><img src="https://gitcode.com/dromara/RuoYi-Vue-Plus/star/badge.svg" alt="GitCode Star"></a>
+        <a href="https://gitee.com/dromara/RuoYi-Vue-Plus/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT"></a>
+        <a href="https://gitee.com/dromara/RuoYi-Vue-Plus"><img src="https://img.shields.io/badge/RuoYi_Vue_Plus-5.6.1-success.svg" alt="RuoYi-Vue-Plus 5.6.1"></a>
+        <img src="https://img.shields.io/badge/Spring%20Boot-3.5-blue.svg" alt="Spring Boot 3.5">
+      </div>
+    </div>
+
+    <div class="cover-project">
+      <div class="cover-title">RuoYi-Cloud-Plus</div>
+      <div class="cover-subtitle">微服务权限管理系统</div>
+      <div class="cover-badges">
+        <a href="https://gitee.com/dromara/RuoYi-Cloud-Plus"><img src="https://gitee.com/dromara/RuoYi-Cloud-Plus/badge/star.svg?theme=blue" alt="码云Gitee"></a>
+        <a href="https://github.com/dromara/RuoYi-Cloud-Plus"><img src="https://img.shields.io/github/stars/dromara/RuoYi-Cloud-Plus?style=social&amp;label=Github%20Stars" alt="GitHub Stars"></a>
+        <a href="https://gitcode.com/dromara/RuoYi-Cloud-Plus"><img src="https://gitcode.com/dromara/RuoYi-Cloud-Plus/star/badge.svg" alt="GitCode Star"></a>
+        <a href="https://gitee.com/dromara/RuoYi-Cloud-Plus/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT"></a>
+        <a href="https://gitee.com/dromara/RuoYi-Cloud-Plus"><img src="https://img.shields.io/badge/RuoYi_Cloud_Plus-2.6.1-success.svg" alt="RuoYi-Cloud-Plus 2.6.1"></a>
+        <img src="https://img.shields.io/badge/Spring%20Boot-3.5-blue.svg" alt="Spring Boot 3.5">
+      </div>
     </div>
   </div>
 
-  <div class="cover-project">
-    <div class="cover-title">RuoYi-Cloud-Plus</div>
-    <div class="cover-subtitle">微服务权限管理系统</div>
-    <div class="cover-badges">
-      <a href="https://gitee.com/dromara/RuoYi-Cloud-Plus"><img src="https://gitee.com/dromara/RuoYi-Cloud-Plus/badge/star.svg?theme=blue" alt="码云Gitee"></a>
-      <a href="https://github.com/dromara/RuoYi-Cloud-Plus"><img src="https://img.shields.io/github/stars/dromara/RuoYi-Cloud-Plus?style=social&amp;label=Github%20Stars" alt="GitHub Stars"></a>
-      <a href="https://gitcode.com/dromara/RuoYi-Cloud-Plus"><img src="https://gitcode.com/dromara/RuoYi-Cloud-Plus/star/badge.svg" alt="GitCode Star"></a>
-      <a href="https://gitee.com/dromara/RuoYi-Cloud-Plus/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT"></a>
-      <a href="https://gitee.com/dromara/RuoYi-Cloud-Plus"><img src="https://img.shields.io/badge/RuoYi_Cloud_Plus-2.6.1-success.svg" alt="RuoYi-Cloud-Plus 2.6.1"></a>
-      <img src="https://img.shields.io/badge/Spring%20Boot-3.5-blue.svg" alt="Spring Boot 3.5">
-    </div>
-  </div>
+  <blockquote>
+    <p>💪真正面向企业级的应用框架</p>
+    <p>组件化 模块化 轻耦合 高扩展 针对企业痛点 业界一流技术栈</p>
+  </blockquote>
+
+  <p>Copyright © 2018-2026 疯狂的狮子Li All Rights Reserved.</p>
+
+  <p class="cover-actions"><a href="#/5.X/_readme.md">开始使用 Let's Go</a></p>
 </div>
-
-> 💪真正面向企业级的应用框架
->
-> 组件化 模块化 轻耦合 高扩展 针对企业痛点 业界一流技术栈
-
-Copyright © 2018-2026 疯狂的狮子Li All Rights Reserved.
-
-[开始使用 Let's Go](/_readme)
