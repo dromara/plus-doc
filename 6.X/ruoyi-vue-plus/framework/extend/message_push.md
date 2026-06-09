@@ -8,8 +8,8 @@
 ```text
 ruoyi-common/ruoyi-common-push
 ruoyi-modules/ruoyi-system
-plus-ui-new/src/utils/push.ts
-plus-ui-new/src/api/system/message
+plus-ui/src/utils/push.ts
+plus-ui/src/api/system/message
 ```
 
 ## 后端配置
@@ -59,6 +59,15 @@ GET /resource/message
 GET /resource/message/close
 ```
 
+## 典型使用场景
+
+| 场景 | 推荐做法 |
+| --- | --- |
+| 系统通知 | 后端保存通知/站内信后，调用 `PushHelper` 推送给指定用户 |
+| 工作流待办 | 工作流服务在待办、抄送、审批完成后推送消息并跳转到对应页面 |
+| 全局广播 | 使用 `publishAll` 推送系统维护、升级提醒等全员消息 |
+| 业务提醒 | 自定义 `PushPayloadDTO`，在 `type`、`source`、`path` 中标识业务来源和跳转地址 |
+
 ## 推送工具
 
 业务代码使用：
@@ -76,12 +85,50 @@ PushHelper.publishAll(payload);
 PushPayloadDTO.of(type, source, message, data, path)
 ```
 
+## 后端发送示例
+
+### 发送给单个用户
+
+```java
+import org.dromara.common.push.helper.PushHelper;
+import org.dromara.common.push.model.PushPayloadDTO;
+
+public void notifyUser(Long userId) {
+    PushPayloadDTO payload = PushPayloadDTO.of(
+        "todo",
+        "workflow",
+        "你有一条新的待办任务",
+        Map.of("businessId", "10001"),
+        "/workflow/task/todo"
+    );
+    PushHelper.publishMessage(List.of(userId), payload);
+}
+```
+
+### 全员广播
+
+```java
+PushHelper.publishAll(
+    PushPayloadDTO.of("notice", "system", "系统将在 22:00 进行维护", null, "/system/notice")
+);
+```
+
+### Payload 字段建议
+
+| 字段 | 建议用途 |
+| --- | --- |
+| `type` | 消息类型，如 `notice`、`todo`、`alarm` |
+| `source` | 来源模块，如 `system`、`workflow`、`device` |
+| `message` | 前端通知展示内容 |
+| `data` | 业务扩展数据，如业务 ID、状态、跳转参数 |
+| `path` | 前端点击后跳转路径 |
+
 ## 前端配置
 
 配置位于：
 
 ```text
-plus-ui-new/.env.development
+plus-ui/.env.development
 ```
 
 ```env
@@ -110,10 +157,22 @@ plus-ui/src/utils/push.ts
 ruoyi-modules/ruoyi-workflow/.../FlwCommonServiceImpl.java
 ```
 
-如果生产环境使用 Nginx 代理 SSE，需要关闭代理缓冲：
+## 调试方法
+
+1. 登录系统后打开浏览器开发者工具 Network。
+2. 过滤 `resource/message`，确认 SSE 或 WebSocket 连接已建立。
+3. 后端调用 `PushHelper.sendMessage` 给当前登录用户发送一条测试消息。
+4. 确认前端右上角消息盒子数量变化，并出现 Element Plus 通知。
+5. 如果连接不断重试，检查 Token、代理路径、后端 `message.path` 与前端 `VITE_APP_MESSAGE_PATH` 是否一致。
+
+## 使用建议
+
+- 默认 `transport: sse`，前端 `.env.*` 中 `VITE_APP_MESSAGE_TRANSPORT` 需要与后端保持一致。
+- 开发环境路径默认为 `/resource/message`，如修改后端 `message.path`，需同步修改前端 `VITE_APP_MESSAGE_PATH`。
+- 生产环境使用 Nginx 代理 SSE 时，需要关闭代理缓冲：
 
 ```nginx
 proxy_buffering off;
 ```
 
-如果使用 WebSocket，需要配置 `Upgrade` 与 `Connection` 请求头。
+- 如果使用 WebSocket，需要配置 `Upgrade` 与 `Connection` 请求头。

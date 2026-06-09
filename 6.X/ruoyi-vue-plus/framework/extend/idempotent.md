@@ -38,6 +38,50 @@ utils/RedisUtils.java
 
 防重状态存储在 Redis 中。
 
+## 典型业务示例
+
+### 新增表单防重复点击
+
+```java
+@RepeatSubmit(interval = 3, timeUnit = TimeUnit.SECONDS, message = "请勿重复提交客户信息")
+@SaCheckPermission("crm:customer:add")
+@PostMapping
+public R<Void> add(@Validated(AddGroup.class) @RequestBody CustomerBo bo) {
+    return toAjax(customerService.insertByBo(bo));
+}
+```
+
+效果：同一用户 3 秒内对同一接口提交完全相同的请求体，只会放行第一次。
+
+### 导入接口防重复上传
+
+```java
+@RepeatSubmit(interval = 10, timeUnit = TimeUnit.SECONDS, message = "导入处理中，请勿重复提交")
+@PostMapping(value = "/importData", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+public R<String> importData(@RequestPart("file") MultipartFile file) throws Exception {
+    ExcelResult<CustomerImportVo> result = ExcelBuilder.read(file.getInputStream(), CustomerImportVo.class)
+        .doRead();
+    customerService.importData(result.getList());
+    return R.ok(result.getAnalysis());
+}
+```
+
+### 和业务幂等配合
+
+防重提交只能挡住短时间重复请求，订单支付、回调通知等场景还需要业务唯一键：
+
+```java
+@Transactional(rollbackFor = Exception.class)
+public void handlePayNotify(PayNotifyBo bo) {
+    // 业务唯一键兜底，防止不同请求参数绕过防重
+    if (payOrderMapper.existsByNotifyNo(bo.getNotifyNo())) {
+        return;
+    }
+    payOrderMapper.insertNotifyLog(bo.getNotifyNo(), bo.getOrderNo());
+    payOrderMapper.updateOrderStatus(bo.getOrderNo(), PayStatus.SUCCESS);
+}
+```
+
 ## 使用方式
 
 在 Controller 方法上标注 `@RepeatSubmit`：

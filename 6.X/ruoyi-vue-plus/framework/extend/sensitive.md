@@ -20,6 +20,42 @@ handler/SensitiveJsonFieldProcessor.java
 
 脱敏发生在 JSON 序列化阶段，不会修改数据库原始值。
 
+## VO 实战示例
+
+脱敏建议直接写在返回给前端的 VO 上，不要写在数据库实体上，避免影响内部业务处理。
+
+```java
+@Data
+public class CustomerVo implements Serializable {
+
+    private Long customerId;
+
+    private String customerName;
+
+    @Sensitive(strategy = SensitiveStrategy.PHONE)
+    private String mobile;
+
+    @Sensitive(strategy = SensitiveStrategy.EMAIL)
+    private String email;
+
+    @Sensitive(strategy = SensitiveStrategy.ID_CARD, roleKey = {"admin"}, perms = {"crm:customer:sensitive"})
+    private String idCard;
+
+    @Sensitive(strategy = SensitiveStrategy.ADDRESS)
+    private String address;
+}
+```
+
+返回效果示例：
+
+| 字段 | 原值 | 普通用户看到 | 有权限用户看到 |
+| --- | --- | --- | --- |
+| `mobile` | `13812345678` | `138****5678` | `13812345678` |
+| `email` | `test@example.com` | `t***@example.com` | `test@example.com` |
+| `idCard` | `320101199001011234` | `320***********1234` | `320101199001011234` |
+
+如果某个页面需要“查看完整号码”按钮，建议单独提供受控接口，并在接口上做权限、日志和二次确认，不要为了单个页面取消 VO 脱敏。
+
 ## 使用方式
 
 在返回对象字段上标注 `@Sensitive`：

@@ -16,6 +16,12 @@ org.dromara.common.mcp.config.McpAutoConfiguration
 org.dromara.common.mcp.core.McpClientTemplate
 ```
 
+## 默认状态
+
+`ruoyi-common-mcp` 是通用封装模块，本身不主动连接外部 MCP Server。只有在业务引入 Spring AI MCP Client 并配置出 `McpSyncClient` Bean 后，`McpAutoConfiguration` 才会注册 `McpClientTemplate` 供业务使用。
+
+当前模块同时声明了 MCP Client 与 MCP Server WebMVC starter，文档重点说明项目内封装的 Client 调用模板；如果需要对外暴露 MCP Server，请按 Spring AI MCP Server 约定另行补充业务端点与安全控制。
+
 ## 依赖能力
 
 模块引入：
@@ -68,5 +74,14 @@ MCP Client 的具体连接配置遵循 Spring AI MCP Client 约定。`ruoyi-comm
 - 调用文件系统、数据库、检索、浏览器等外部 MCP 工具。
 - 在 AI 业务中统一管理可用工具。
 - 将不同 MCP Server 的调用结果以统一结构返回给业务层。
+
+## 常见问题
+
+| 现象 | 排查方向 |
+| --- | --- |
+| `McpClientTemplate` 未注入 | 检查是否已创建 `McpSyncClient` Bean，或 MCP Client 自动配置是否生效 |
+| 工具列表为空 | 检查外部 MCP Server 是否已启动、连接配置是否正确 |
+| 调用工具失败 | 检查工具名称、参数结构和目标 Server 名称是否匹配 |
+| 只需要 AI 聊天 | 优先使用 SnailAI 文档，MCP 适合扩展外部工具调用能力 |
 
 如果业务只需要接入 SnailAI 聊天，优先阅读 [AI / SnailAI](/6.X/ruoyi-vue-plus/framework/extend/ai.md)。

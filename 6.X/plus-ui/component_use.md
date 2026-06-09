@@ -114,6 +114,11 @@ directive(app);
 <svg-icon icon-class="user" />
 ```
 
+## 样式与表格能力
+
+- UnoCSS 由 `vite/plugins/unocss.ts` 接入，规则集中在 `uno.config.ts`，当前使用 `presetWind3`、`presetAttributify`、图标/排版相关预设与常用 transformer。
+- VXETable 在 `src/main.ts` 中通过 `app.use(VXETable)` 全局注册，适合复杂表格、虚拟滚动、编辑表格等场景；普通后台列表页仍优先使用 Element Plus 表格与项目通用分页组件。
+
 ## 使用建议
 
 - Vue API、Vue Router、Pinia、VueUse API 可以直接使用自动导入结果。

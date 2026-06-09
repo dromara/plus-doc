@@ -9,8 +9,8 @@
 ruoyi-common/ruoyi-common-ai
 ruoyi-modules/ruoyi-ai
 ruoyi-extend/ruoyi-snailai-server
-plus-ui-new/src/views/ai
-plus-ui-new/src/api/ai
+plus-ui/src/views/ai
+plus-ui/src/api/ai
 ```
 
 ## 数据库脚本
@@ -102,11 +102,34 @@ plus-ui/src/views/ai/chat
 
 ## 启用步骤
 
+建议按“服务端可用 -> 主应用可连 -> 前端可用”的顺序验证：
+
 1. 导入 `script/sql/ry_ai.sql`。
 2. 启动 `ruoyi-extend/ruoyi-snailai-server`。
 3. 在 SnailAI Server 创建应用，拿到 `app-id` 和 `token`。
 4. 修改主应用 `snail-ai` 配置并设置 `enabled: true`。
 5. 启动 `ruoyi-admin`。
 6. 启动 `plus-ui`，进入 AI 聊天页面验证。
+
+## 验证要点
+
+| 检查项 | 说明 |
+| --- | --- |
+| SnailAI Server | 服务端口、gRPC 端口正常监听，控制台无数据库连接异常 |
+| 主应用配置 | `snail-ai.enabled=true`，`app-id`、`token` 与 SnailAI Server 应用一致 |
+| 用户注册 | 首次进入 AI 页面时能完成当前用户注册或绑定 |
+| 智能体列表 | `/snail-ai/agents` 能返回当前用户可用智能体 |
+| 流式响应 | 聊天接口返回 `text/event-stream`，前端能持续渲染内容 |
+
+生产环境还需要关注反向代理超时、缓冲、HTTPS 与跨域策略。
+
+## 常见问题
+
+| 现象 | 排查方向 |
+| --- | --- |
+| AI 页面没有可用智能体 | 确认已导入 `ry_ai.sql`，并在 SnailAI Server 中创建应用与智能体 |
+| 主应用调用 SnailAI 失败 | 检查 `snail-ai.enabled`、`server.host`、`server.port`、`app-id`、`token` |
+| 流式聊天无响应 | 检查 `chat-mode`、浏览器网络面板 SSE 响应、反向代理是否缓冲流式响应 |
+| 生产环境鉴权失败 | 不要使用默认 token，确认 SnailAI Server 与主应用配置一致 |
 
 生产环境必须替换默认 token，并按实际网络修改 Server 地址。

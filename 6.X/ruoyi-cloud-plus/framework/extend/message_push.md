@@ -68,7 +68,7 @@ script/config/nacos/ruoyi-gateway.yml
 
 ## 前端配置
 
-`plus-ui-new` 中的消息推送配置：
+`plus-ui` 中的消息推送配置：
 
 ```env
 VITE_APP_MESSAGE_ENABLED = true
@@ -79,7 +79,7 @@ VITE_APP_MESSAGE_PATH = '/resource/message'
 前端入口：
 
 ```text
-plus-ui-new/src/utils/push.ts
+plus-ui/src/utils/push.ts
 ```
 
 ## 关闭连接白名单

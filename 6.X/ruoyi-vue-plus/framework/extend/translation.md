@@ -41,6 +41,53 @@ core/impl/DictTypeTranslationImpl.java
 core/impl/OssUrlTranslationImpl.java
 ```
 
+## VO 实战示例
+
+客户列表经常需要把 `userId`、`deptId`、字典值、OSS ID 转成前端可直接展示的文本：
+
+```java
+@Data
+@ExcelIgnoreUnannotated
+public class CustomerVo implements Serializable {
+
+    private Long customerId;
+
+    private String customerName;
+
+    private Long userId;
+
+    @Translation(type = TransConstant.USER_ID_TO_NICKNAME, mapper = "userId")
+    private String userName;
+
+    private Long deptId;
+
+    @Translation(type = TransConstant.DEPT_ID_TO_NAME, mapper = "deptId")
+    private String deptName;
+
+    private String status;
+
+    @Translation(type = TransConstant.DICT_TYPE_TO_LABEL, mapper = "status", other = "sys_normal_disable")
+    private String statusName;
+
+    private String avatarOssId;
+
+    @Translation(type = TransConstant.OSS_ID_TO_URL, mapper = "avatarOssId")
+    private String avatarUrl;
+}
+```
+
+接口返回时，前端可直接使用 `userName`、`deptName`、`statusName`、`avatarUrl` 展示，不需要再额外请求用户、部门、字典、OSS 接口。
+
+### 导出中复用翻译结果
+
+如果导出对象和列表 VO 分开，建议在导出 VO 中也显式声明翻译字段，避免导出值仍是 ID：
+
+```java
+@ExcelProperty(value = "所属部门")
+@Translation(type = TransConstant.DEPT_ID_TO_NAME, mapper = "deptId")
+private String deptName;
+```
+
 ## 使用方式
 
 在 VO 字段上标注 `@Translation`：

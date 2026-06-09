@@ -31,6 +31,23 @@ pnpm dev
 # 构建生产环境
 pnpm build:prod
 
-# 前端访问地址 http://localhost:80
+# 前端访问地址默认 http://localhost:80
+# 端口由 .env.* 中的 VITE_APP_PORT 控制
 ```
 
+### 本地配置说明
+
+常用环境变量位于 `.env.development`、`.env.production`：
+
+| 配置 | 说明 |
+| --- | --- |
+| `VITE_APP_BASE_API` | 后端接口代理前缀，开发环境默认 `/dev-api` |
+| `VITE_APP_CONTEXT_PATH` | 前端部署访问前缀，例如 `/admin/` |
+| `VITE_APP_PORT` | 本地开发服务端口，默认 `80` |
+| `VITE_APP_ENCRYPT` | 接口加密开关，需与后端保持一致 |
+| `VITE_APP_CLIENT_ID` | 登录客户端 ID，需与后端客户端配置匹配 |
+| `VITE_APP_MESSAGE_ENABLED` | 统一消息推送开关 |
+| `VITE_APP_MESSAGE_TRANSPORT` | 消息推送方式：`sse` 或 `websocket` |
+| `VITE_APP_MESSAGE_PATH` | 消息推送连接路径 |
+
+开发环境接口代理在 `vite.config.ts` 中配置，默认将 `VITE_APP_BASE_API` 代理到后端服务。若后端端口或上下文路径调整，需要同步修改 `.env.*` 或代理配置。

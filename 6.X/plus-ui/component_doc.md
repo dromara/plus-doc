@@ -7,7 +7,9 @@
 
 ### 富文本编辑器
 
-[quill](https://github.com/quilljs/quill)
+[wangEditor Next](https://github.com/wangeditor-next/wangEditor-next)
+
+项目富文本组件位于 `src/components/Editor/index.vue`，使用 `@wangeditor-next/editor` 与 `@wangeditor-next/editor-for-vue` 实现。
 
 ### 富文本组件
 
@@ -19,8 +21,9 @@
 | height     | `number`  | 400    | 编辑器的高度（单位：px）              |
 | minHeight  | `number`  | 400    | 编辑器的最小高度（单位：px）          |
 | readOnly   | `boolean` | false  | 是否只读模式                          |
-| fileSize   | `number`  | 5      | 上传文件的最大大小（单位：MB）        |
-| type       | `string`  | url    | 图片上传的类型，支持 `url`和 `base64` |
+| fileSize   | `number`  | 5      | 上传图片的最大大小（单位：MB）        |
+| videoSize  | `number`  | 100    | 上传视频的最大大小（单位：MB）        |
+| type       | `string`  | url    | 图片/视频上传的类型，支持 `url` 和 `base64`；`url` 模式下内容存储 `oss://ossId` 标记 |
 
 #### 事件
 
@@ -31,7 +34,7 @@
 #### 功能说明
 
 1. **富文本编辑器**：
-   * 使用 `@vueup/vue-quill` 实现，支持多种富文本编辑功能，如加粗、斜体、下划线、删除线、引用、代码块、有序/无序列表、缩进、字体大小、标题、字体颜色、背景颜色、对齐方式、清除格式、链接、图片、视频等
+   * 使用 wangEditor Next 实现，支持常用富文本编辑能力，如加粗、斜体、下划线、删除线、引用、代码块、有序/无序列表、缩进、标题、颜色、对齐方式、清除格式、链接、图片、视频等。
    
      
    
@@ -39,16 +42,16 @@
    
    * 支持两种图片上传方式：`url` 和 `base64`
    
-   * 使用 `el-upload` 组件进行图片上传，上传前会校验文件类型和大小
+   * 图片/视频上传统一走 OSS 上传接口，上传时携带 `src/utils/request.ts` 中生成的全局请求头
    
-   * 上传成功后，将图片插入到编辑器中
+   * `url` 模式下保存为 `oss://ossId` 标记，编辑展示时批量解析为可访问 URL；`base64` 模式下直接插入 base64 内容
    
      
    
 3. **样式调整**：
    * 通过 `styles` 计算属性动态设置编辑器的高度和最小高度
    
-   * 自定义了一些 `Quill` 编辑器的样式，以适应项目需求
+   * 自定义了一些编辑器样式，以适应项目需求
    
      
 
@@ -72,6 +75,51 @@
 const editorContent = ref('<p>初始内容</p>');
 </script>
 ```
+
+#### 表单中保存富文本
+
+新增/编辑页面推荐直接把富文本字段放入表单对象：
+
+```vue
+<template>
+  <el-form ref="formRef" :model="form" label-width="100px">
+    <el-form-item label="文章标题" prop="title">
+      <el-input v-model="form.title" placeholder="请输入文章标题" />
+    </el-form-item>
+
+    <el-form-item label="文章内容" prop="content">
+      <editor
+        v-model="form.content"
+        :height="500"
+        :min-height="300"
+        :file-size="10"
+        :video-size="100"
+        type="url"
+      />
+    </el-form-item>
+  </el-form>
+</template>
+
+<script setup lang="ts">
+interface ArticleForm {
+  articleId?: string | number;
+  title: string;
+  content: string;
+}
+
+const form = reactive<ArticleForm>({
+  title: '',
+  content: ''
+});
+</script>
+```
+
+使用建议：
+
+- 业务表中富文本字段建议使用 `text` / `longtext` 类型。
+- `type="url"` 适合生产环境，图片/视频统一走 OSS，内容中保存 `oss://ossId` 标记。
+- `type="base64"` 适合临时演示，不建议保存大量内容到数据库。
+- 回显详情时直接把后端返回的 HTML 赋值给 `v-model` 即可，组件会处理 OSS 标记解析。
 
 ### 文件上传组件
 
@@ -135,6 +183,47 @@ const editorContent = ref('<p>初始内容</p>');
 const fileList = ref([]);
 </script>
 ```
+
+#### 业务表单中使用文件上传
+
+例如客户合同附件字段 `contractIds` 使用逗号分隔 OSS ID 保存：
+
+```vue
+<template>
+  <el-form :model="form" label-width="100px">
+    <el-form-item label="合同附件" prop="contractIds">
+      <file-upload
+        v-model="form.contractIds"
+        :limit="5"
+        :file-size="20"
+        :file-type="['pdf', 'doc', 'docx', 'xls', 'xlsx']"
+      />
+    </el-form-item>
+  </el-form>
+</template>
+
+<script setup lang="ts">
+const form = reactive({
+  customerId: undefined,
+  customerName: '',
+  contractIds: ''
+});
+</script>
+```
+
+后端字段建议：
+
+```java
+/** 合同附件 OSS ID，多个用逗号分隔 */
+private String contractIds;
+```
+
+常见用法：
+
+- 新增/修改：直接提交 `contractIds` 字段。
+- 详情回显：后端返回原始 OSS ID 字符串，组件自动加载文件列表。
+- 只允许单文件：设置 `:limit="1"`。
+- 限制大文件：调整 `fileSize`，单位为 MB。
 
 ### 图片展示组件
 
@@ -215,7 +304,40 @@ const form = reactive({
 </script>
 ```
 
+#### 头像/封面上传示例
 
+单图场景建议限制 `limit=1`，字段保存 OSS ID：
+
+```vue
+<template>
+  <el-form-item label="客户头像" prop="avatar">
+    <image-upload
+      v-model="form.avatar"
+      :limit="1"
+      :file-size="2"
+      :file-type="['png', 'jpg', 'jpeg']"
+      :compress-support="true"
+      :compress-target-size="200"
+    />
+  </el-form-item>
+</template>
+
+<script setup lang="ts">
+const form = reactive({
+  avatar: ''
+});
+</script>
+```
+
+列表页展示：
+
+```vue
+<el-table-column label="头像" align="center" prop="avatar">
+  <template #default="scope">
+    <image-preview :src="scope.row.avatar" width="40" height="40" />
+  </template>
+</el-table-column>
+```
 
 #### 参数说明
 

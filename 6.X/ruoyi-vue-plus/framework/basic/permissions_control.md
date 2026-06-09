@@ -83,6 +83,82 @@ StpUtil.checkPermissionAnd("system:user:list", "system:user:query");
 ```
 如果验证未通过，则抛出异常: `NotPermissionException`
 
+## 完整 Controller 示例
+
+以“客户管理”为例，后端接口建议同时写清楚菜单权限码，前端按钮权限也使用同一套标识。
+
+```java
+@Validated
+@RequiredArgsConstructor
+@RestController
+@RequestMapping("/crm/customer")
+public class CustomerController extends BaseController {
+
+    private final ICustomerService customerService;
+
+    /** 查询客户列表 */
+    @SaCheckPermission("crm:customer:list")
+    @GetMapping("/list")
+    public TableDataInfo<CustomerVo> list(CustomerBo bo, PageQuery pageQuery) {
+        return customerService.queryPageList(bo, pageQuery);
+    }
+
+    /** 查询客户详情 */
+    @SaCheckPermission("crm:customer:query")
+    @GetMapping("/{customerId}")
+    public R<CustomerVo> getInfo(@NotNull(message = "主键不能为空") @PathVariable Long customerId) {
+        return R.ok(customerService.queryById(customerId));
+    }
+
+    /** 新增客户 */
+    @SaCheckPermission("crm:customer:add")
+    @Log(title = "客户管理", businessType = BusinessType.INSERT)
+    @RepeatSubmit
+    @PostMapping
+    public R<Void> add(@Validated(AddGroup.class) @RequestBody CustomerBo bo) {
+        return toAjax(customerService.insertByBo(bo));
+    }
+
+    /** 修改客户 */
+    @SaCheckPermission("crm:customer:edit")
+    @Log(title = "客户管理", businessType = BusinessType.UPDATE)
+    @RepeatSubmit
+    @PutMapping
+    public R<Void> edit(@Validated(EditGroup.class) @RequestBody CustomerBo bo) {
+        return toAjax(customerService.updateByBo(bo));
+    }
+
+    /** 删除客户 */
+    @SaCheckPermission("crm:customer:remove")
+    @Log(title = "客户管理", businessType = BusinessType.DELETE)
+    @DeleteMapping("/{customerIds}")
+    public R<Void> remove(@PathVariable Long[] customerIds) {
+        return toAjax(customerService.deleteWithValidByIds(Arrays.asList(customerIds), true));
+    }
+}
+```
+
+对应菜单按钮权限建议：
+
+| 操作 | 权限标识 |
+| --- | --- |
+| 列表 | `crm:customer:list` |
+| 详情 | `crm:customer:query` |
+| 新增 | `crm:customer:add` |
+| 修改 | `crm:customer:edit` |
+| 删除 | `crm:customer:remove` |
+| 导出 | `crm:customer:export` |
+
+前端按钮示例：
+
+```vue
+<el-button v-hasPermi="['crm:customer:add']" type="primary" icon="Plus" @click="handleAdd">
+  新增
+</el-button>
+```
+
+注意：前端 `v-hasPermi` 只控制显隐，真正的安全控制必须以后端 `@SaCheckPermission` 为准。
+
 ## 角色校验
 角色校验指的是校验用户是否拥有某个指定角色。
 

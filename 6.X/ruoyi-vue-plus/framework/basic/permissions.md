@@ -52,6 +52,62 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1678978687179608427/d6b83c30_1766278.png "屏幕截图")
 
+## Mapper 实战示例
+
+以客户表 `crm_customer` 为例，表中常见数据权限字段：
+
+| 字段 | 用途 |
+| --- | --- |
+| `dept_id` | 数据所属部门，用于部门/部门及以下数据权限 |
+| `create_by` | 数据创建人，用于本人数据权限 |
+
+Mapper 方法建议这样写：
+
+```java
+public interface CustomerMapper extends BaseMapperPlus<CustomerMapper, Customer, CustomerVo> {
+
+    /** 客户列表：按部门和本人过滤 */
+    @DataPermission({
+        @DataColumn(key = "deptName", value = "dept_id"),
+        @DataColumn(key = "userName", value = "create_by")
+    })
+    Page<CustomerVo> selectPageCustomerList(@Param("page") Page<CustomerVo> page,
+                                            @Param(Constants.WRAPPER) Wrapper<Customer> queryWrapper);
+
+    /** 客户详情：同样建议加数据权限，避免越权查看 */
+    @DataPermission({
+        @DataColumn(key = "deptName", value = "dept_id"),
+        @DataColumn(key = "userName", value = "create_by")
+    })
+    CustomerVo selectCustomerById(Long customerId);
+}
+```
+
+如果是 XML SQL，字段要写成当前 SQL 中能识别的别名：
+
+```xml
+<select id="selectCustomerList" resultType="org.dromara.crm.domain.vo.CustomerVo">
+    select c.customer_id, c.customer_name, c.dept_id, c.create_by
+    from crm_customer c
+    ${ew.getCustomSqlSegment}
+</select>
+```
+
+对应注解应使用别名字段：
+
+```java
+@DataPermission({
+    @DataColumn(key = "deptName", value = "c.dept_id"),
+    @DataColumn(key = "userName", value = "c.create_by")
+})
+```
+
+常见错误：
+
+- SQL 中用了别名 `c`，注解却写 `dept_id`，生成条件后可能字段不明确。
+- 只给列表加了数据权限，详情/修改/删除没有加，导致越权查看或操作。
+- 多表查询中多个表都有 `dept_id`，但注解没有指定表别名。
+
 ## 忽略数据权限
 
 如需对单条 SQL 忽略数据权限，可在 Mapper 接口添加：

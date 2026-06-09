@@ -71,6 +71,15 @@ log.info("MqttGlobalMessageEvent => topic: {}, msg: {}", topic, payloadText);
 
 因此 MQTT 模块要求运行在 JDK 21。
 
+## 常见问题
+
+| 现象 | 排查方向 |
+| --- | --- |
+| 启动后没有 MQTT 连接 | 确认 `mqtt.client.enabled` 是否为 `true` |
+| 连接被服务端拒绝 | 检查 `ip`、`port`、`username`、`password` 与服务端 ACL |
+| 集群中只有一个实例能连接 | 检查多个实例是否共用了同一个 `client-id` |
+| 消息已收到但前端无提醒 | MQTT 只负责接收设备/业务消息，需要业务代码再调用统一消息推送 |
+
 ## 使用建议
 
 - `client-id` 必须唯一，生产环境不要多个实例共用同一个客户端 ID。

@@ -25,8 +25,8 @@
 | Redis      | >= 6.x    | 框架大量使用新特性 [win redis 下载地址](https://github.com/zkteco-home/redis-windows) |
 | MinIO      | 按需        | 可用 RustFS 替代（新方案需谨慎）                                                     |
 | Maven      | >= 3.8.x  | 构建工具                                                                     |
-| Node.js    | >= 20.15  | 其他版本未测试，可反馈                                                              |
-| npm        | >= 10.x   | 7.x 已确认存在问题                                                              |
+| Node.js    | >= 20.19.0 | 前端工程 `package.json` 已声明 engines 要求                                         |
+| pnpm       | >= 10.0.0 | 前端推荐包管理工具，使用 `pnpm install` 安装依赖                                      |
 | Nacos      | >= 3.x    | 建议使用框架内置版本                                                               |
 | Seata      | >= 2.X    | 建议使用框架内置版本                                                               |
 
@@ -35,7 +35,7 @@
 - 2023 全系列不推荐（问题较多）
 - 2024.1 / 2024.2：Maven 插件无法刷新依赖
 - 2025.1 / 2025.2：存在已知问题
-- 推荐使用：2024.3（JDK17）或 2025.3（JDK21-25）
+- 推荐使用：2024.3（JDK21）或 2025.3（JDK21，JDK25 请按需自行验证）
 
 ## 初始化步骤
 
@@ -45,7 +45,7 @@
 
 ### 2. 确认 JDK 版本与配置
 
-默认使用 `JDK17`，如需变更请同步修改项目配置。
+后端工程基于 `JDK21` 编译运行，请确认 IDEA Project SDK、Maven Runner JRE 与项目语言级别均使用 JDK21。
 
 ![输入图片说明](https://foruda.gitee.com/images/1678941027820943505/c688e01e_1766278.png "屏幕截图")
 ![输入图片说明](https://foruda.gitee.com/images/1678941120518807034/4d56fcc9_1766278.png "屏幕截图")
@@ -53,7 +53,7 @@
 ### 3. 导入数据库 SQL
 
 将 SQL 导入到与文件名对应的数据库（不要放到同一个库）。  
-默认数据库为 `MySQL`，如需使用其他数据库请参考 [多数据库数据源](/ruoyi-cloud-plus/framework/extend/dynamic_datasource.md)。
+默认数据库为 `MySQL`，如需使用其他数据库请参考 [多数据库数据源](/6.X/ruoyi-cloud-plus/framework/extend/dynamic_datasource.md)。
 
 ![输入图片说明](https://foruda.gitee.com/images/1717122730708924506/7f3aaecf_1766278.png "屏幕截图")
 

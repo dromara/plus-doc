@@ -41,6 +41,53 @@ plus-ui/src/utils/crypto.ts
 plus-ui/src/utils/jsencrypt.ts
 ```
 
+## 后端接口示例
+
+### 登录/提交类接口
+
+```java
+@SaIgnore
+@ApiEncrypt(response = true)
+@PostMapping("/login")
+public R<LoginVo> login(@RequestBody LoginBody loginBody) {
+    LoginVo loginVo = loginService.login(loginBody);
+    return R.ok(loginVo);
+}
+```
+
+### 普通业务保存接口
+
+```java
+@ApiEncrypt(response = true)
+@PutMapping("/profile/password")
+public R<Void> updatePassword(@RequestBody UserPasswordBo bo) {
+    userService.updatePassword(bo);
+    return R.ok();
+}
+```
+
+使用建议：
+
+- 登录、注册、修改密码、重置密钥等包含敏感字段的接口建议启用。
+- 列表查询、字典查询等普通 GET 接口不建议强行加密，避免增加排查成本。
+- `response = true` 会加密响应体，适合响应中包含敏感数据的场景。
+
+## 前端请求示例
+
+```typescript
+export function updatePassword(data: { oldPassword: string; newPassword: string }) {
+  return request({
+    url: '/system/user/profile/password',
+    method: 'put',
+    headers: {
+      isEncrypt: 'true',
+      repeatSubmit: false
+    },
+    data
+  });
+}
+```
+
 ## 开启方式
 
 后端在接口方法上标注：
@@ -118,7 +165,25 @@ api-decrypt:
 | `publicKey` | 后端响应加密时使用 |
 | `privateKey` | 后端请求解密时使用 |
 
+## 前后端配合步骤
+
+1. 后端确认 `api-decrypt.enabled=true`。
+2. 后端在需要加密的接口方法上增加 `@ApiEncrypt`。
+3. 如果响应也需要加密，设置 `@ApiEncrypt(response = true)`。
+4. 前端 `.env.*` 中确认 `VITE_APP_ENCRYPT=true`。
+5. 前端请求对应接口时设置 `headers.isEncrypt`。
+6. 使用浏览器 Network 检查请求头/响应头中是否存在 `encrypt-key`。
+
 ## 使用注意
+
+## 常见问题
+
+| 现象 | 排查方向 |
+| --- | --- |
+| 后端提示解密失败 | 检查前端 RSA 公钥是否与后端请求解密私钥配对 |
+| 前端提示响应解密失败 | 检查后端响应加密公钥是否与前端 RSA 私钥配对 |
+| GET 请求参数未加密 | 当前只对 POST、PUT 请求体加密，敏感信息不要放 URL |
+| 本地正常生产失败 | 检查生产环境 `.env.production`、后端密钥、反向代理是否过滤 `encrypt-key` 头 |
 
 - 前后端密钥必须配对，密钥不一致会表现为登录、注册或用户保存接口解密失败。
 - 只有标注 `@ApiEncrypt` 的接口会强制走加解密逻辑。
