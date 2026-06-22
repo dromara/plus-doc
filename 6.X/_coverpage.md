@@ -125,8 +125,8 @@
       <a href="https://github.com/dromara/RuoYi-Vue-Plus"><img src="https://img.shields.io/github/stars/dromara/RuoYi-Vue-Plus?style=social&amp;label=Github%20Stars" alt="GitHub Stars"></a>
       <a href="https://gitcode.com/dromara/RuoYi-Vue-Plus"><img src="https://gitcode.com/dromara/RuoYi-Vue-Plus/star/badge.svg" alt="GitCode Star"></a>
       <a href="https://gitee.com/dromara/RuoYi-Vue-Plus/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT"></a>
-      <a href="https://gitee.com/dromara/RuoYi-Vue-Plus"><img src="https://img.shields.io/badge/RuoYi_Vue_Plus-5.6.1-success.svg" alt="RuoYi-Vue-Plus 5.6.1"></a>
-      <img src="https://img.shields.io/badge/Spring%20Boot-3.5-blue.svg" alt="Spring Boot 3.5">
+      <a href="https://gitee.com/dromara/RuoYi-Vue-Plus"><img src="https://img.shields.io/badge/RuoYi_Vue_Plus-6.0.0-success.svg" alt="RuoYi-Vue-Plus 6.0.0"></a>
+      <img src="https://img.shields.io/badge/Spring%20Boot-4.1-blue.svg" alt="Spring Boot 4.1">
     </div>
   </div>
 
@@ -138,8 +138,8 @@
       <a href="https://github.com/dromara/RuoYi-Cloud-Plus"><img src="https://img.shields.io/github/stars/dromara/RuoYi-Cloud-Plus?style=social&amp;label=Github%20Stars" alt="GitHub Stars"></a>
       <a href="https://gitcode.com/dromara/RuoYi-Cloud-Plus"><img src="https://gitcode.com/dromara/RuoYi-Cloud-Plus/star/badge.svg" alt="GitCode Star"></a>
       <a href="https://gitee.com/dromara/RuoYi-Cloud-Plus/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT"></a>
-      <a href="https://gitee.com/dromara/RuoYi-Cloud-Plus"><img src="https://img.shields.io/badge/RuoYi_Cloud_Plus-2.6.1-success.svg" alt="RuoYi-Cloud-Plus 2.6.1"></a>
-      <img src="https://img.shields.io/badge/Spring%20Boot-3.5-blue.svg" alt="Spring Boot 3.5">
+      <a href="https://gitee.com/dromara/RuoYi-Cloud-Plus"><img src="https://img.shields.io/badge/RuoYi_Cloud_Plus-6.0.0-success.svg" alt="RuoYi-Cloud-Plus 6.0.0"></a>
+      <img src="https://img.shields.io/badge/Spring%20Boot-4.1-blue.svg" alt="Spring Boot 4.1">
     </div>
   </div>
 </div>
