@@ -43,11 +43,11 @@ window.PLUS_DOC_SITE_CONFIG = {
                 image: 'https://foruda.gitee.com/images/1770956996221923210/f45243c8_1766278.jpg',
                 period: '2026-02-13=>2027-02-13'
             },
-            {
-                href: 'https://aicodelink.top/register?aff=pHeG',
-                image: 'https://foruda.gitee.com/images/1776404022458773988/1cbad8e4_1766278.png',
-                period: '2026-04-17=>2027-04-17'
-            }
+            // {
+            //     href: 'https://aicodelink.top/register?aff=pHeG',
+            //     image: 'https://foruda.gitee.com/images/1776404022458773988/1cbad8e4_1766278.png',
+            //     period: '2026-04-17=>2027-04-17'
+            // }
         ],
         sidebar: [
             {
@@ -70,10 +70,10 @@ window.PLUS_DOC_SITE_CONFIG = {
                 href: 'https://topiam.cn?from=plus-doc',
                 image: 'https://foruda.gitee.com/images/1765071755540415213/3236e57d_1766278.png'
             },
-            {
-                href: 'https://aicodelink.top/register?aff=pHeG',
-                image: 'https://foruda.gitee.com/images/1776404022458773988/1cbad8e4_1766278.png'
-            }
+            // {
+            //     href: 'https://aicodelink.top/register?aff=pHeG',
+            //     image: 'https://foruda.gitee.com/images/1776404022458773988/1cbad8e4_1766278.png'
+            // }
         ]
     }
 };
