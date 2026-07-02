@@ -36,32 +36,33 @@
 
 ## 扩展项目列表 欢迎投稿
 
-| 项目介绍                               | 项目地址                                                                    |
-|------------------------------------|-------------------------------------------------------------------------|
-| 微服务扩展                              | https://gitee.com/dromara/RuoYi-Cloud-Plus                              |
-| Plus 学习笔记（常规功能）                    | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-vue-plus/home   |
-| Plus 学习笔记（微服务组件）                   | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-cloud-plus/home |
-| 基于 RuoYi-Vue-Plus 删除多租户与工作流        | https://gitee.com/ColorDreams/RuoYi-Vue-Plus-Single                     |
-| 重写 RuoYi-Vue-Plus-Single 部分功能实现移动端 | https://gitee.com/pengles/RuoYi-Vue-Plus-Single-App                     |
-| 基于 Golang 重写 RuoYi-Vue-Plus 版本     | https://github.com/cls-cloud/atlas-zero                                 |
-| 基于 Solon 重写 RuoYi-Vue-Plus 版本      | https://gitee.com/zc_master/ruoyi-solon-boot                            |
-| 基于 RuoYi-Vue-Plus 的 Flutter 客户端    | https://gitee.com/sunlunchang/ruoyi-plus-flutter                        |
-| 基于 RuoYi-Vue-Plus 的开源 ERP 系统       | https://gitee.com/haitang-lab/HaiTang-erp                               |
-| 基于 ruoyi-plus 实现 AI 聊天和绘画功能        | https://github.com/ageerle/ruoyi-ai                                     |
-| 基于 RuoYi-App 二次修改使用 Uniapp + Vue3  | https://gitee.com/wangying110166/ruo-yi-uni-app-plus                    |
-| 基于 RuoYi-App 对接 Plus 后端            | https://gitee.com/FnTop/RuoYi-App-Plus                                  |
-| 基于 vben(ant-design-vue) 前端项目       | https://gitee.com/dapppp/ruoyi-plus-vben                                |
-| 集成 GoView 版本                       | https://gitee.com/kdwqjwgqxx/RuoYi-Vue-Plus-GoView                      |
-| 基于 warm-flow 参考 Plus 书写工作流应用       | https://gitee.com/iyhk_0/smart-flow                                     |
-| mybatis-flex 版本                    | https://gitee.com/dataprince/ruoyi-flex                                 |
-| MybatisFlex-cloud 版本               | https://gitee.com/yhan219/ruoyi-cloud-flex                              |
-| blog 博客系统                          | https://gitee.com/kalashok-pan/zhi-blog-plus                            |
-| TDengine 时序数据库扩展                   | https://gitee.com/zhangbg/ruoyi-plus-tdengine                           |
-| Activiti 扩展                        | https://gitee.com/sgs98/RuoYi-Vue-Plus-Activiti                         |
-| Flowable 扩展                        | https://gitee.com/sgs98/RuoYi-Vue-Plus-Flowable                         |
-| Flowable 扩展                        | https://gitee.com/KonBAI-Q/ruoyi-flowable-plus                          |
-| mybatis-flex 版本                    | https://gitee.com/yhan219/ruoyi-vue-flex                                |
-| weblog 博客系统                        | https://gitee.com/fu-zhanshuai/fzshuai-weblog                           |
+| 项目介绍                                  | 项目地址                                                                    |
+|---------------------------------------|-------------------------------------------------------------------------|
+| 微服务扩展                                 | https://gitee.com/dromara/RuoYi-Cloud-Plus                              |
+| Plus 学习笔记（常规功能）                       | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-vue-plus/home   |
+| Plus 学习笔记（微服务组件）                      | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-cloud-plus/home |
+| 基于 RuoYi-Vue-Plus 删除多租户与工作流           | https://gitee.com/ColorDreams/RuoYi-Vue-Plus-Single                     |
+| 重写 RuoYi-Vue-Plus-Single 部分功能实现移动端    | https://gitee.com/pengles/RuoYi-Vue-Plus-Single-App                     |
+| 基于 Golang 重写 RuoYi-Vue-Plus 版本        | https://github.com/cls-cloud/atlas-zero                                 |
+| 基于 Solon 重写 RuoYi-Vue-Plus 版本         | https://gitee.com/zc_master/ruoyi-solon-boot                            |
+| 基于 RuoYi-Vue-Plus 的 Flutter 客户端       | https://gitee.com/sunlunchang/ruoyi-plus-flutter                        |
+| 基于 RuoYi-Vue-Plus 的开源 ERP 系统          | https://gitee.com/haitang-lab/HaiTang-erp                               |
+| 基于 ruoyi-plus 实现 AI 聊天和绘画功能           | https://github.com/ageerle/ruoyi-ai                                     |
+| 基于 RuoYi-App 二次修改使用 Uniapp + Vue3     | https://gitee.com/wangying110166/ruo-yi-uni-app-plus                    |
+| 基于 RuoYi-App 对接 Plus 后端               | https://gitee.com/FnTop/RuoYi-App-Plus                                  |
+| 基于 vben(ant-design-vue) 前端项目          | https://gitee.com/dapppp/ruoyi-plus-vben                                |
+| 基于 RuoYi-Vue-Plus 与 vben5 的一站式大数据分析系统 | https://gitee.com/DataVerge/data-verge-web                              |
+| 集成 GoView 版本                          | https://gitee.com/kdwqjwgqxx/RuoYi-Vue-Plus-GoView                      |
+| 基于 warm-flow 参考 Plus 书写工作流应用          | https://gitee.com/iyhk_0/smart-flow                                     |
+| mybatis-flex 版本                       | https://gitee.com/dataprince/ruoyi-flex                                 |
+| MybatisFlex-cloud 版本                  | https://gitee.com/yhan219/ruoyi-cloud-flex                              |
+| blog 博客系统                             | https://gitee.com/kalashok-pan/zhi-blog-plus                            |
+| TDengine 时序数据库扩展                      | https://gitee.com/zhangbg/ruoyi-plus-tdengine                           |
+| Activiti 扩展                           | https://gitee.com/sgs98/RuoYi-Vue-Plus-Activiti                         |
+| Flowable 扩展                           | https://gitee.com/sgs98/RuoYi-Vue-Plus-Flowable                         |
+| Flowable 扩展                           | https://gitee.com/KonBAI-Q/ruoyi-flowable-plus                          |
+| mybatis-flex 版本                       | https://gitee.com/yhan219/ruoyi-vue-flex                                |
+| weblog 博客系统                           | https://gitee.com/fu-zhanshuai/fzshuai-weblog                           |
 
 ## 投稿建议
 
