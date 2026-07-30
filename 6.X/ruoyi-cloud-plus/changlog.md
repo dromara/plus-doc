@@ -1,7 +1,7 @@
 # 更新日志
 - - -
 
-## 6.0.0-BETA - 2026-06-22
+## 6.0.0 - 2026-07-30
 
 ### 🔴 重大更新
 1. 不兼容整体升级 SpringBoot 4.X 全系列生态
@@ -24,14 +24,14 @@
 6. AWS-SDK 2.42.9
 7. bcpkix-jdk18on 1.84
 8. Spring AI 2.0.0
-9. snail-ai 0.0.6
-10. snailjob 2.0.0
-11. warm-flow 1.8.8
+9. snail-ai 1.1.1
+10. snailjob 2.0.2
+11. warm-flow 1.8.9
 12. MySQL 8.0.42 → 8.4.9
 13. Nginx 1.23.4 → 1.31.1
 14. Redis 7.2.8 → 8.6.3
 15. Minio 升级至 RELEASE.2026-04-17T00-00-00Z
-16. JDK 版本更新至 21.0.11（Dockerfile 同步适配）
+16. JDK 版本更新至 21.0.12（Dockerfile 同步适配）
 17. FastExcel 迁移至 Apache Fesod
 
 ### 🆕 功能新增
