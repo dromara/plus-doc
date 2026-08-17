@@ -46,8 +46,8 @@
 ### 2. 确认 JDK 版本与配置
 后端工程基于 `JDK21` 编译运行，请确认 IDEA Project SDK、Maven Runner JRE 与项目语言级别均使用 JDK21。
 
-![输入图片说明](https://foruda.gitee.com/images/1678941027820943505/c688e01e_1766278.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1678941120518807034/4d56fcc9_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1786950503538393242/3e4a082d_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1786950567877540841/f450be3d_1766278.png "屏幕截图")
 
 ### 3. 导入数据库 SQL
 请按顺序依次导入，默认使用 `MySQL`。  
@@ -55,7 +55,7 @@
 
 基础功能导入主库脚本即可；如需启用定时任务、工作流、AI 等扩展能力，请按需继续导入对应脚本，例如 `ry_job.sql`、`ry_workflow.sql`、`ry_ai.sql`。
 
-![输入图片说明](https://foruda.gitee.com/images/1726304546467780078/b78cabd4_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1786950836938192230/4b6edfe4_1766278.png "屏幕截图")
 
 ### 4. 配置主服务
 在已勾选的环境配置文件中填写数据库与 Redis 配置。

@@ -16,19 +16,19 @@
 
 ![输入图片说明](https://foruda.gitee.com/images/1720080025744223375/0213a652_1766278.png "屏幕截图")
 
-| 组件         | 版本建议      | 说明                                                                       |
-|------------|-----------|--------------------------------------------------------------------------|
-| JDK        | 21 / 25   | 推荐 OpenJDK [JDK下载地址](https://bell-sw.com/pages/downloads/)               |
-| MySQL      | 8.0 / 8.4 | 其他版本未测试，可反馈                                                              |
-| Oracle     | >= 12c    | 其他版本未测试，可反馈                                                              |
-| PostgreSQL | 15 ... 18 | 其他版本未测试，可反馈                                                              |
-| Redis      | >= 6.x    | 框架大量使用新特性 [win redis 下载地址](https://github.com/zkteco-home/redis-windows) |
-| MinIO      | 按需        | 可用 RustFS 替代（新方案需谨慎）                                                     |
-| Maven      | >= 3.8.x  | 构建工具                                                                     |
-| Node.js    | >= 20.19.0 | 前端工程 `package.json` 已声明 engines 要求                                         |
-| pnpm       | >= 10.0.0 | 前端推荐包管理工具，使用 `pnpm install` 安装依赖                                      |
-| Nacos      | >= 3.x    | 建议使用框架内置版本                                                               |
-| Seata      | >= 2.X    | 建议使用框架内置版本                                                               |
+| 组件         | 版本建议       | 说明                                                                       |
+|------------|------------|--------------------------------------------------------------------------|
+| JDK        | 21 / 25    | 推荐 OpenJDK [JDK下载地址](https://bell-sw.com/pages/downloads/)               |
+| MySQL      | 8.0 / 8.4  | 其他版本未测试，可反馈                                                              |
+| Oracle     | >= 12c     | 其他版本未测试，可反馈                                                              |
+| PostgreSQL | 15 ... 18  | 其他版本未测试，可反馈                                                              |
+| Redis      | >= 6.x     | 框架大量使用新特性 [win redis 下载地址](https://github.com/zkteco-home/redis-windows) |
+| MinIO      | 按需         | 可用 RustFS 替代（新方案需谨慎）                                                     |
+| Maven      | >= 3.8.x   | 构建工具                                                                     |
+| Node.js    | >= 20.19.0 | 前端工程 `package.json` 已声明 engines 要求                                       |
+| pnpm       | >= 10.0.0  | 前端推荐包管理工具，使用 `pnpm install` 安装依赖                                         |
+| Nacos      | >= 3.x     | 最新版本已经无法内置 建议自行下载官方版本搭建                                                  |
+| Seata      | >= 2.X     | 最新版本已经无法内置 建议自行下载官方版本搭建                                                  |
 
 ## IntelliJ IDEA 版本建议
 
@@ -47,21 +47,21 @@
 
 后端工程基于 `JDK21` 编译运行，请确认 IDEA Project SDK、Maven Runner JRE 与项目语言级别均使用 JDK21。
 
-![输入图片说明](https://foruda.gitee.com/images/1678941027820943505/c688e01e_1766278.png "屏幕截图")
-![输入图片说明](https://foruda.gitee.com/images/1678941120518807034/4d56fcc9_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1786950503538393242/3e4a082d_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1786950567877540841/f450be3d_1766278.png "屏幕截图")
 
 ### 3. 导入数据库 SQL
 
 将 SQL 导入到与文件名对应的数据库（不要放到同一个库）。  
 默认数据库为 `MySQL`，如需使用其他数据库请参考 [多数据库数据源](/6.X/ruoyi-cloud-plus/framework/extend/dynamic_datasource.md)。
 
-![输入图片说明](https://foruda.gitee.com/images/1717122730708924506/7f3aaecf_1766278.png "屏幕截图")
+![输入图片说明](https://foruda.gitee.com/images/1786950836938192230/4b6edfe4_1766278.png "屏幕截图")
 
 ### 4. 自建 Nacos
 
-**注意：自建 Nacos 必须与框架版本一致，Nacos 版本兼容性较差。**
+**注意：Nacos版本建议和框架内使用的客户端版本保持一致，Nacos 版本兼容性较差。**
 
-**Nacos 数据库必须指向 `ry-config`（此库为定制配置库，不可替换）。**
+**Nacos 数据库自行搭建 然后yml配置内指向具体的数据库**
 
 将项目 `script/config/nacos` 下所有配置复制到 Nacos 中。  
 建议手动复制内容，避免编码不一致导致解析问题。
@@ -105,7 +105,6 @@
 
 ### 6. 自建 `seata-server`
 
-执行 `ry-seata.sql` 初始化 Seata 服务端数据库。  
 修改 Nacos 中 `seata-server.properties` 的数据库地址。  
 启动 `seata-server` 服务。
 
