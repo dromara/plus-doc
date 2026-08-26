@@ -42,6 +42,7 @@
 | Plus 学习笔记（常规功能）                       | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-vue-plus/home   |
 | Plus 学习笔记（微服务组件）                      | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-cloud-plus/home |
 | 基于 RuoYi-Vue-Plus 删除多租户与工作流           | https://gitee.com/ColorDreams/RuoYi-Vue-Plus-Single                     |
+| 适配 RuoYi-Vue-Plus 6.x 的 uni-app 多端移动端 | https://gitee.com/lanzlz/RuoYi-App-Plus                                 |
 | 重写 RuoYi-Vue-Plus-Single 部分功能实现移动端    | https://gitee.com/pengles/RuoYi-Vue-Plus-Single-App                     |
 | 基于 Golang 重写 RuoYi-Vue-Plus 版本        | https://github.com/cls-cloud/atlas-zero                                 |
 | 基于 Solon 重写 RuoYi-Vue-Plus 版本         | https://gitee.com/zc_master/ruoyi-solon-boot                            |
