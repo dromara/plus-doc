@@ -36,6 +36,10 @@
     * [第三方授权功能](/6.X/ruoyi-cloud-plus/framework/basic/social.md)
     * [客户端管理功能](/6.X/ruoyi-cloud-plus/framework/basic/client.md)
   * 扩展功能
+    * [AI / SnailAI](/6.X/ruoyi-cloud-plus/framework/extend/ai.md)
+    * [MCP集成](/6.X/ruoyi-cloud-plus/framework/extend/mcp.md)
+    * [MQTT客户端](/6.X/ruoyi-cloud-plus/framework/extend/mqtt.md)
+    * [统一消息推送](/6.X/ruoyi-cloud-plus/framework/extend/message_push.md)
     * [多数据源](/6.X/ruoyi-cloud-plus/framework/extend/dynamic_datasource.md)
     * [短信模块](/6.X/ruoyi-cloud-plus/framework/extend/sms.md)
     * [邮件功能](/6.X/ruoyi-cloud-plus/framework/extend/mail.md)
@@ -45,9 +49,6 @@
     * [API加解密](/6.X/ruoyi-cloud-plus/framework/extend/api_encrypt.md)
     * [数据加解密](/6.X/ruoyi-cloud-plus/framework/extend/encrypt.md)
     * [翻译功能](/6.X/ruoyi-cloud-plus/framework/extend/translation.md)
-    * [统一消息推送](/6.X/ruoyi-cloud-plus/framework/extend/message_push.md)
-    * [MCP集成](/6.X/ruoyi-cloud-plus/framework/extend/mcp.md)
-    * [MQTT客户端](/6.X/ruoyi-cloud-plus/framework/extend/mqtt.md)
   * 功能说明
     * [事务相关](/6.X/ruoyi-cloud-plus/framework/explain/transaction.md)
     * [单元测试](/6.X/ruoyi-cloud-plus/framework/explain/test.md)
