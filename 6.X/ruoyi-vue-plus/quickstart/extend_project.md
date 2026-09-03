@@ -44,6 +44,7 @@
 | Plus 学习笔记（微服务组件）                      | https://zhonglingyuxiu1028.github.io/zlyx-space/#/ruoyi-cloud-plus/home |
 | 重写 RuoYi-Vue-Plus-Single 部分功能实现移动端    | https://gitee.com/pengles/RuoYi-Vue-Plus-Single-App                     |
 | 适配 RuoYi-Vue-Plus 6.x 的 uni-app 多端移动端 | https://gitee.com/lanzlz/RuoYi-App-Plus                                 |
+| 适配 RuoYi-Vue-Plus 6.x 的 Golang 版本        | https://gitee.com/handsome-npc/RuoYi-Go-Vue-Plus                      |
 | 基于 Golang 重写 RuoYi-Vue-Plus 版本        | https://github.com/cls-cloud/atlas-zero                                 |
 | 基于 Solon 重写 RuoYi-Vue-Plus 版本         | https://gitee.com/zc_master/ruoyi-solon-boot                            |
 | 基于 RuoYi-Vue-Plus 的 Flutter 客户端       | https://gitee.com/sunlunchang/ruoyi-plus-flutter                        |
